@@ -1,0 +1,7 @@
+C:\Users\tobia\Downloads\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj|a84ea280-c5e7-4771-89bf-b6bf730f7513
+C:\Users\tobia\Downloads\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\SerialPlot_lib\SerialPlot_lib.cylib\SerialPlot_lib.cyprj|238eb860-c5a1-4210-b7e1-b802ed05245b
+D:\Programas\PSoc\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|9903222e-68da-467d-b90f-c66fc1e2633c
+C:\Users\tobia\Documentos\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2a34c489-2466-45fa-93c5-290d73f3271f
+D:\Programas\PSoc\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|23e46eca-bacc-4d9d-8caf-4f437af4463c
+D:\Programas\PSoc\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|452c0cea-1346-4ed8-83ba-f07991c305c3
+D:\Programas\PSoc\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ad577807-aeae-4078-89de-a023517b4028

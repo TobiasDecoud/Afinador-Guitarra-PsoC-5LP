@@ -1,0 +1,2862 @@
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.syntax unified
+  20              		.global _printf_float
+  21              		.thumb
+  22              		.syntax unified
+  23              		.section	.text.DMA_Done_ISR,"ax",%progbits
+  24              		.align	2
+  25              		.global	DMA_Done_ISR
+  26              		.thumb
+  27              		.thumb_func
+  28              		.type	DMA_Done_ISR, %function
+  29              	DMA_Done_ISR:
+  30              	.LFB65:
+  31              		.file 1 "main.c"
+   1:main.c        **** #include "project.h"
+   2:main.c        **** #include <math.h>
+   3:main.c        **** #include <stdio.h>
+   4:main.c        **** #include <stdint.h>
+   5:main.c        **** #include <string.h>
+   6:main.c        **** 
+   7:main.c        **** #define N 1000
+   8:main.c        **** #define Q_FACTOR 8388608.0f
+   9:main.c        **** 
+  10:main.c        **** /* --- Buffers --- */
+  11:main.c        **** static uint8 x[N*4]; 
+  12:main.c        **** float y_entrada[N] = {0}; 
+  13:main.c        **** float y_salida[N] = {0}; // Inicializar a 0 es más seguro
+  14:main.c        **** static uint32_t y_entrada_q32[N]; 
+  15:main.c        **** static uint32_t y_salida_q32[N]; 
+  16:main.c        **** 
+  17:main.c        **** /* --- Variables de Control --- */
+  18:main.c        **** static uint16 n = 0;
+  19:main.c        **** volatile uint8 estado = 0u;
+  20:main.c        **** volatile uint8 dma_transfer_complete_flag = 0;
+  21:main.c        **** uint8 DMA_In_Chan, DMA_Out_Chan;
+  22:main.c        **** uint8 DMA_In_TD[1], DMA_Out_TD[1];
+  23:main.c        **** 
+  24:main.c        **** /* --- Prototipos --- */
+  25:main.c        **** CY_ISR_PROTO(RxIsr);
+  26:main.c        **** CY_ISR_PROTO(DMA_Done_ISR);
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 2
+
+
+  27:main.c        **** void my_Start();
+  28:main.c        **** void convertToIntFloat(const uint8_t* input, float* output, size_t inputSize);
+  29:main.c        **** void convertToQ32(const float* input, uint32_t* output, size_t size);
+  30:main.c        **** void convertFromQ32(const uint32_t* input, float* output, size_t size);
+  31:main.c        **** 
+  32:main.c        **** 
+  33:main.c        **** #if defined (__GNUC__)
+  34:main.c        ****     asm(".global _printf_float");
+  35:main.c        **** #endif
+  36:main.c        **** 
+  37:main.c        **** int main(void)
+  38:main.c        **** {
+  39:main.c        ****     my_Start();
+  40:main.c        ****     isr_rx_StartEx(RxIsr);
+  41:main.c        ****     isr_dma_done_StartEx(DMA_Done_ISR);
+  42:main.c        ****     CyGlobalIntEnable;
+  43:main.c        **** 
+  44:main.c        ****     DMA_In_Chan = DMA_In_DmaInitialize(4, 1, HI16(CYDEV_SRAM_BASE), HI16(CYDEV_PERIPH_BASE));
+  45:main.c        ****     DMA_In_TD[0] = CyDmaTdAllocate();
+  46:main.c        ****     DMA_Out_Chan = DMA_Out_DmaInitialize(4, 1, HI16(CYDEV_PERIPH_BASE), HI16(CYDEV_SRAM_BASE));
+  47:main.c        ****     DMA_Out_TD[0] = CyDmaTdAllocate();
+  48:main.c        ****  
+  49:main.c        ****     for(;;)
+  50:main.c        ****     {
+  51:main.c        ****         switch(estado) {
+  52:main.c        ****             case '0': break;
+  53:main.c        ****             case 'I': estado = '0'; break;
+  54:main.c        ****             
+  55:main.c        ****             case 'X': 
+  56:main.c        ****                 dma_transfer_complete_flag = 0;
+  57:main.c        ****                 
+  58:main.c        ****                 convertToQ32(y_entrada, y_entrada_q32, N);
+  59:main.c        ****                 
+  60:main.c        ****                 // Configurar el DMA de Entrada
+  61:main.c        ****                 CyDmaTdSetConfiguration(DMA_In_TD[0], N * 4, DMA_In_TD[0], CY_DMA_TD_INC_SRC_ADR);
+  62:main.c        ****                 CyDmaTdSetAddress(DMA_In_TD[0], LO16((uint32)y_entrada_q32), LO16((uint32)Filter_1_
+  63:main.c        ****                 
+  64:main.c        ****                 // Configurar el DMA de Salida (la interrupción se genera al final de este)
+  65:main.c        ****                 CyDmaTdSetConfiguration(DMA_Out_TD[0], N * 4, DMA_Out_TD[0], CY_DMA_TD_INC_DST_ADR 
+  66:main.c        ****                 CyDmaTdSetAddress(DMA_Out_TD[0], LO16((uint32)Filter_1_HOLDA_PTR), LO16((uint32)y_s
+  67:main.c        ****                 
+  68:main.c        ****                 CyDmaChSetInitialTd(DMA_In_Chan, DMA_In_TD[0]);
+  69:main.c        ****                 CyDmaChSetInitialTd(DMA_Out_Chan, DMA_Out_TD[0]);
+  70:main.c        ****                 
+  71:main.c        ****                 CyDmaChEnable(DMA_In_Chan, 1);
+  72:main.c        ****                 CyDmaChEnable(DMA_Out_Chan, 1);
+  73:main.c        ****                 
+  74:main.c        ****                 // <-- LA SOLUCIÓN DEFINITIVA BASADA EN EL DATASHEET
+  75:main.c        ****                 // Forzamos la PRIMERA transferencia del DMA por software.
+  76:main.c        ****                 // Esto envía el primer dato al Filtro, rompiendo el bloqueo.
+  77:main.c        ****                 // El resto de las transferencias se sincronizarán por hardware (drq).
+  78:main.c        ****                 CyDmaChSetRequest(DMA_In_Chan, 1);
+  79:main.c        ****                 
+  80:main.c        ****                 estado = 'W';
+  81:main.c        ****                 break;
+  82:main.c        **** 
+  83:main.c        ****             case 'W': 
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 3
+
+
+  84:main.c        ****                 if (dma_transfer_complete_flag == 1)
+  85:main.c        ****                 {
+  86:main.c        ****                     convertFromQ32(y_salida_q32, y_salida, N);
+  87:main.c        ****                     estado = '0';
+  88:main.c        ****                 }
+  89:main.c        ****                 break;
+  90:main.c        **** 
+  91:main.c        ****             case 'P': 
+  92:main.c        ****                 for(int j = 0; j < N; j++) { 
+  93:main.c        ****                     Chart_1_Plot(y_entrada[j]);
+  94:main.c        ****                 }
+  95:main.c        ****                 estado = '0';
+  96:main.c        ****                 break;
+  97:main.c        ****                 
+  98:main.c        ****             case 'F': 
+  99:main.c        ****                 for(int j = 0; j < N; j++) {
+ 100:main.c        ****                     Chart_1_Plot(y_salida[j]);
+ 101:main.c        ****                 }
+ 102:main.c        ****                 estado = '0';
+ 103:main.c        ****             break;
+ 104:main.c        ****         }
+ 105:main.c        ****     }
+ 106:main.c        **** }
+ 107:main.c        **** 
+ 108:main.c        **** /* --- ISRs y Funciones de Utilidad (SIN CAMBIOS) --- */
+ 109:main.c        **** 
+ 110:main.c        **** CY_ISR(DMA_Done_ISR)
+ 111:main.c        **** {
+  32              		.loc 1 111 0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36 0000 08B5     		push	{r3, lr}
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 3, -8
+  39              		.cfi_offset 14, -4
+ 112:main.c        ****     // Esta ISR se dispara cuando el DMA_Out termina,
+ 113:main.c        ****     // lo que significa que todo el bloque ha sido procesado.
+ 114:main.c        ****     dma_transfer_complete_flag = 1;
+  40              		.loc 1 114 0
+  41 0002 0122     		movs	r2, #1
+  42 0004 024B     		ldr	r3, .L3
+  43 0006 1A70     		strb	r2, [r3]
+ 115:main.c        ****     isr_dma_done_ClearPending();
+  44              		.loc 1 115 0
+  45 0008 FFF7FEFF 		bl	isr_dma_done_ClearPending
+  46              	.LVL0:
+  47 000c 08BD     		pop	{r3, pc}
+  48              	.L4:
+  49 000e 00BF     		.align	2
+  50              	.L3:
+  51 0010 00000000 		.word	.LANCHOR0
+  52              		.cfi_endproc
+  53              	.LFE65:
+  54              		.size	DMA_Done_ISR, .-DMA_Done_ISR
+  55              		.section	.text.convertToIntFloat,"ax",%progbits
+  56              		.align	2
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 4
+
+
+  57              		.global	convertToIntFloat
+  58              		.thumb
+  59              		.thumb_func
+  60              		.type	convertToIntFloat, %function
+  61              	convertToIntFloat:
+  62              	.LFB67:
+ 116:main.c        **** }
+ 117:main.c        **** 
+ 118:main.c        **** CY_ISR(RxIsr)
+ 119:main.c        **** {
+ 120:main.c        ****     uint8 rxData;
+ 121:main.c        ****     while((UART_1_GetRxBufferSize() > 0))
+ 122:main.c        ****     {
+ 123:main.c        ****         rxData = UART_1_ReadRxData();
+ 124:main.c        ****         if (rxData == 'I' || rxData == 'P' || rxData == 'F') {
+ 125:main.c        ****             estado = rxData;
+ 126:main.c        ****             n = 0;
+ 127:main.c        ****         } else {
+ 128:main.c        ****             if (n < (N * 4)) x[n++] = rxData;
+ 129:main.c        ****             if (n == (N * 4)) { 
+ 130:main.c        ****                 convertToIntFloat(x, y_entrada, N*4);
+ 131:main.c        ****                 estado = 'X'; 
+ 132:main.c        ****                 n = 0;
+ 133:main.c        ****             }
+ 134:main.c        ****         }
+ 135:main.c        ****     }
+ 136:main.c        ****     isr_rx_ClearPending(); 
+ 137:main.c        **** }
+ 138:main.c        **** 
+ 139:main.c        **** void convertToIntFloat(const uint8_t* input, float* output, size_t inputSize) {
+  63              		.loc 1 139 0
+  64              		.cfi_startproc
+  65              		@ args = 0, pretend = 0, frame = 8
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
+  68              	.LVL1:
+  69 0000 30B4     		push	{r4, r5}
+  70              		.cfi_def_cfa_offset 8
+  71              		.cfi_offset 4, -8
+  72              		.cfi_offset 5, -4
+  73 0002 82B0     		sub	sp, sp, #8
+  74              		.cfi_def_cfa_offset 16
+  75 0004 0546     		mov	r5, r0
+  76              	.LVL2:
+  77              	.LBB2:
+ 140:main.c        ****     for (size_t i = 0; i < inputSize; i += 4) {
+  78              		.loc 1 140 0
+  79 0006 0023     		movs	r3, #0
+  80 0008 06E0     		b	.L6
+  81              	.LVL3:
+  82              	.L7:
+  83              	.LBB3:
+ 141:main.c        ****         // Usar memcpy es más seguro y portable que el type-punning
+ 142:main.c        ****         uint32_t temp;
+ 143:main.c        ****         memcpy(&temp, input + i, sizeof(uint32_t));
+  84              		.loc 1 143 0 discriminator 3
+  85 000a E858     		ldr	r0, [r5, r3]	@ unaligned
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 5
+
+
+  86 000c 0190     		str	r0, [sp, #4]	@ unaligned
+ 144:main.c        ****         memcpy(output + (i / 4), &temp, sizeof(float));
+  87              		.loc 1 144 0 discriminator 3
+  88 000e 9C08     		lsrs	r4, r3, #2
+  89 0010 0198     		ldr	r0, [sp, #4]	@ unaligned
+  90 0012 41F82400 		str	r0, [r1, r4, lsl #2]	@ unaligned
+  91              	.LBE3:
+ 140:main.c        ****     for (size_t i = 0; i < inputSize; i += 4) {
+  92              		.loc 1 140 0 discriminator 3
+  93 0016 0433     		adds	r3, r3, #4
+  94              	.LVL4:
+  95              	.L6:
+ 140:main.c        ****     for (size_t i = 0; i < inputSize; i += 4) {
+  96              		.loc 1 140 0 is_stmt 0 discriminator 1
+  97 0018 9342     		cmp	r3, r2
+  98 001a F6D3     		bcc	.L7
+  99              	.LBE2:
+ 145:main.c        ****     }
+ 146:main.c        **** }
+ 100              		.loc 1 146 0 is_stmt 1
+ 101 001c 02B0     		add	sp, sp, #8
+ 102              		.cfi_def_cfa_offset 8
+ 103              		@ sp needed
+ 104 001e 30BC     		pop	{r4, r5}
+ 105              		.cfi_restore 5
+ 106              		.cfi_restore 4
+ 107              		.cfi_def_cfa_offset 0
+ 108              	.LVL5:
+ 109 0020 7047     		bx	lr
+ 110              		.cfi_endproc
+ 111              	.LFE67:
+ 112              		.size	convertToIntFloat, .-convertToIntFloat
+ 113 0022 00BF     		.section	.text.RxIsr,"ax",%progbits
+ 114              		.align	2
+ 115              		.global	RxIsr
+ 116              		.thumb
+ 117              		.thumb_func
+ 118              		.type	RxIsr, %function
+ 119              	RxIsr:
+ 120              	.LFB66:
+ 119:main.c        ****     uint8 rxData;
+ 121              		.loc 1 119 0
+ 122              		.cfi_startproc
+ 123              		@ args = 0, pretend = 0, frame = 0
+ 124              		@ frame_needed = 0, uses_anonymous_args = 0
+ 125 0000 10B5     		push	{r4, lr}
+ 126              		.cfi_def_cfa_offset 8
+ 127              		.cfi_offset 4, -8
+ 128              		.cfi_offset 14, -4
+ 121:main.c        ****     {
+ 129              		.loc 1 121 0
+ 130 0002 27E0     		b	.L10
+ 131              	.L15:
+ 123:main.c        ****         if (rxData == 'I' || rxData == 'P' || rxData == 'F') {
+ 132              		.loc 1 123 0
+ 133 0004 FFF7FEFF 		bl	UART_1_ReadRxData
+ 134              	.LVL6:
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 6
+
+
+ 124:main.c        ****             estado = rxData;
+ 135              		.loc 1 124 0
+ 136 0008 4928     		cmp	r0, #73
+ 137 000a 03D0     		beq	.L11
+ 124:main.c        ****             estado = rxData;
+ 138              		.loc 1 124 0 is_stmt 0 discriminator 1
+ 139 000c 5028     		cmp	r0, #80
+ 140 000e 01D0     		beq	.L11
+ 124:main.c        ****             estado = rxData;
+ 141              		.loc 1 124 0 discriminator 2
+ 142 0010 4628     		cmp	r0, #70
+ 143 0012 04D1     		bne	.L12
+ 144              	.L11:
+ 125:main.c        ****             n = 0;
+ 145              		.loc 1 125 0 is_stmt 1
+ 146 0014 134B     		ldr	r3, .L17
+ 147 0016 5870     		strb	r0, [r3, #1]
+ 126:main.c        ****         } else {
+ 148              		.loc 1 126 0
+ 149 0018 0022     		movs	r2, #0
+ 150 001a 5A80     		strh	r2, [r3, #2]	@ movhi
+ 151 001c 1AE0     		b	.L10
+ 152              	.L12:
+ 128:main.c        ****             if (n == (N * 4)) { 
+ 153              		.loc 1 128 0
+ 154 001e 114B     		ldr	r3, .L17
+ 155 0020 5B88     		ldrh	r3, [r3, #2]
+ 156 0022 B3F57A6F 		cmp	r3, #4000
+ 157 0026 04D2     		bcs	.L14
+ 128:main.c        ****             if (n == (N * 4)) { 
+ 158              		.loc 1 128 0 is_stmt 0 discriminator 1
+ 159 0028 0E4A     		ldr	r2, .L17
+ 160 002a 591C     		adds	r1, r3, #1
+ 161 002c 5180     		strh	r1, [r2, #2]	@ movhi
+ 162 002e 1344     		add	r3, r3, r2
+ 163 0030 1871     		strb	r0, [r3, #4]
+ 164              	.L14:
+ 129:main.c        ****                 convertToIntFloat(x, y_entrada, N*4);
+ 165              		.loc 1 129 0 is_stmt 1
+ 166 0032 0C4B     		ldr	r3, .L17
+ 167 0034 5B88     		ldrh	r3, [r3, #2]
+ 168 0036 B3F57A6F 		cmp	r3, #4000
+ 169 003a 0BD1     		bne	.L10
+ 130:main.c        ****                 estado = 'X'; 
+ 170              		.loc 1 130 0
+ 171 003c 094C     		ldr	r4, .L17
+ 172 003e 4FF47A62 		mov	r2, #4000
+ 173 0042 04F6A471 		addw	r1, r4, #4004
+ 174 0046 201D     		adds	r0, r4, #4
+ 175              	.LVL7:
+ 176 0048 FFF7FEFF 		bl	convertToIntFloat
+ 177              	.LVL8:
+ 131:main.c        ****                 n = 0;
+ 178              		.loc 1 131 0
+ 179 004c 5823     		movs	r3, #88
+ 180 004e 6370     		strb	r3, [r4, #1]
+ 132:main.c        ****             }
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 7
+
+
+ 181              		.loc 1 132 0
+ 182 0050 0023     		movs	r3, #0
+ 183 0052 6380     		strh	r3, [r4, #2]	@ movhi
+ 184              	.L10:
+ 121:main.c        ****     {
+ 185              		.loc 1 121 0
+ 186 0054 FFF7FEFF 		bl	UART_1_GetRxBufferSize
+ 187              	.LVL9:
+ 188 0058 0028     		cmp	r0, #0
+ 189 005a D3D1     		bne	.L15
+ 136:main.c        **** }
+ 190              		.loc 1 136 0
+ 191 005c FFF7FEFF 		bl	isr_rx_ClearPending
+ 192              	.LVL10:
+ 193 0060 10BD     		pop	{r4, pc}
+ 194              	.L18:
+ 195 0062 00BF     		.align	2
+ 196              	.L17:
+ 197 0064 00000000 		.word	.LANCHOR0
+ 198              		.cfi_endproc
+ 199              	.LFE66:
+ 200              		.size	RxIsr, .-RxIsr
+ 201              		.global	__aeabi_fmul
+ 202              		.global	__aeabi_f2iz
+ 203              		.section	.text.convertToQ32,"ax",%progbits
+ 204              		.align	2
+ 205              		.global	convertToQ32
+ 206              		.thumb
+ 207              		.thumb_func
+ 208              		.type	convertToQ32, %function
+ 209              	convertToQ32:
+ 210              	.LFB68:
+ 147:main.c        **** 
+ 148:main.c        **** void convertToQ32(const float* input, uint32_t* output, size_t size) {
+ 211              		.loc 1 148 0
+ 212              		.cfi_startproc
+ 213              		@ args = 0, pretend = 0, frame = 0
+ 214              		@ frame_needed = 0, uses_anonymous_args = 0
+ 215              	.LVL11:
+ 216 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 217              		.cfi_def_cfa_offset 24
+ 218              		.cfi_offset 3, -24
+ 219              		.cfi_offset 4, -20
+ 220              		.cfi_offset 5, -16
+ 221              		.cfi_offset 6, -12
+ 222              		.cfi_offset 7, -8
+ 223              		.cfi_offset 14, -4
+ 224 0002 0746     		mov	r7, r0
+ 225 0004 0E46     		mov	r6, r1
+ 226 0006 1546     		mov	r5, r2
+ 227              	.LVL12:
+ 228              	.LBB4:
+ 149:main.c        ****     for (size_t i = 0; i < size; i++) {
+ 229              		.loc 1 149 0
+ 230 0008 0024     		movs	r4, #0
+ 231 000a 0AE0     		b	.L20
+ 232              	.LVL13:
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 8
+
+
+ 233              	.L21:
+ 150:main.c        ****         output[i] = (int32_t)(input[i] * Q_FACTOR); 
+ 234              		.loc 1 150 0 discriminator 3
+ 235 000c 4FF09641 		mov	r1, #1258291200
+ 236 0010 57F82400 		ldr	r0, [r7, r4, lsl #2]	@ float
+ 237 0014 FFF7FEFF 		bl	__aeabi_fmul
+ 238              	.LVL14:
+ 239 0018 FFF7FEFF 		bl	__aeabi_f2iz
+ 240              	.LVL15:
+ 241 001c 46F82400 		str	r0, [r6, r4, lsl #2]
+ 149:main.c        ****     for (size_t i = 0; i < size; i++) {
+ 242              		.loc 1 149 0 discriminator 3
+ 243 0020 0134     		adds	r4, r4, #1
+ 244              	.LVL16:
+ 245              	.L20:
+ 149:main.c        ****     for (size_t i = 0; i < size; i++) {
+ 246              		.loc 1 149 0 is_stmt 0 discriminator 1
+ 247 0022 AC42     		cmp	r4, r5
+ 248 0024 F2D3     		bcc	.L21
+ 249              	.LBE4:
+ 151:main.c        ****     }
+ 152:main.c        **** }
+ 250              		.loc 1 152 0 is_stmt 1
+ 251 0026 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 252              		.cfi_endproc
+ 253              	.LFE68:
+ 254              		.size	convertToQ32, .-convertToQ32
+ 255              		.global	__aeabi_i2f
+ 256              		.section	.text.convertFromQ32,"ax",%progbits
+ 257              		.align	2
+ 258              		.global	convertFromQ32
+ 259              		.thumb
+ 260              		.thumb_func
+ 261              		.type	convertFromQ32, %function
+ 262              	convertFromQ32:
+ 263              	.LFB69:
+ 153:main.c        **** 
+ 154:main.c        **** void convertFromQ32(const uint32_t* input, float* output, size_t size) {
+ 264              		.loc 1 154 0
+ 265              		.cfi_startproc
+ 266              		@ args = 0, pretend = 0, frame = 0
+ 267              		@ frame_needed = 0, uses_anonymous_args = 0
+ 268              	.LVL17:
+ 269 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 270              		.cfi_def_cfa_offset 24
+ 271              		.cfi_offset 3, -24
+ 272              		.cfi_offset 4, -20
+ 273              		.cfi_offset 5, -16
+ 274              		.cfi_offset 6, -12
+ 275              		.cfi_offset 7, -8
+ 276              		.cfi_offset 14, -4
+ 277 0002 0746     		mov	r7, r0
+ 278 0004 0E46     		mov	r6, r1
+ 279 0006 1546     		mov	r5, r2
+ 280              	.LVL18:
+ 281              	.LBB5:
+ 155:main.c        ****     for (size_t i = 0; i < size; i++) {
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 9
+
+
+ 282              		.loc 1 155 0
+ 283 0008 0024     		movs	r4, #0
+ 284 000a 0AE0     		b	.L24
+ 285              	.LVL19:
+ 286              	.L25:
+ 156:main.c        ****         output[i] = (float)((int32_t)input[i] / Q_FACTOR);
+ 287              		.loc 1 156 0 discriminator 3
+ 288 000c 57F82400 		ldr	r0, [r7, r4, lsl #2]
+ 289 0010 FFF7FEFF 		bl	__aeabi_i2f
+ 290              	.LVL20:
+ 291 0014 4FF05051 		mov	r1, #872415232
+ 292 0018 FFF7FEFF 		bl	__aeabi_fmul
+ 293              	.LVL21:
+ 294 001c 46F82400 		str	r0, [r6, r4, lsl #2]	@ float
+ 155:main.c        ****     for (size_t i = 0; i < size; i++) {
+ 295              		.loc 1 155 0 discriminator 3
+ 296 0020 0134     		adds	r4, r4, #1
+ 297              	.LVL22:
+ 298              	.L24:
+ 155:main.c        ****     for (size_t i = 0; i < size; i++) {
+ 299              		.loc 1 155 0 is_stmt 0 discriminator 1
+ 300 0022 AC42     		cmp	r4, r5
+ 301 0024 F2D3     		bcc	.L25
+ 302              	.LBE5:
+ 157:main.c        ****     }
+ 158:main.c        **** }
+ 303              		.loc 1 158 0 is_stmt 1
+ 304 0026 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 305              		.cfi_endproc
+ 306              	.LFE69:
+ 307              		.size	convertFromQ32, .-convertFromQ32
+ 308              		.section	.text.my_Start,"ax",%progbits
+ 309              		.align	2
+ 310              		.global	my_Start
+ 311              		.thumb
+ 312              		.thumb_func
+ 313              		.type	my_Start, %function
+ 314              	my_Start:
+ 315              	.LFB70:
+ 159:main.c        **** 
+ 160:main.c        **** void my_Start(){    UART_1_Start();
+ 316              		.loc 1 160 0
+ 317              		.cfi_startproc
+ 318              		@ args = 0, pretend = 0, frame = 0
+ 319              		@ frame_needed = 0, uses_anonymous_args = 0
+ 320 0000 08B5     		push	{r3, lr}
+ 321              		.cfi_def_cfa_offset 8
+ 322              		.cfi_offset 3, -8
+ 323              		.cfi_offset 14, -4
+ 324              		.loc 1 160 0
+ 325 0002 FFF7FEFF 		bl	UART_1_Start
+ 326              	.LVL23:
+ 161:main.c        ****     Filter_1_Start(); 
+ 327              		.loc 1 161 0
+ 328 0006 FFF7FEFF 		bl	Filter_1_Start
+ 329              	.LVL24:
+ 330 000a 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 10
+
+
+ 331              		.cfi_endproc
+ 332              	.LFE70:
+ 333              		.size	my_Start, .-my_Start
+ 334              		.section	.text.main,"ax",%progbits
+ 335              		.align	2
+ 336              		.global	main
+ 337              		.thumb
+ 338              		.thumb_func
+ 339              		.type	main, %function
+ 340              	main:
+ 341              	.LFB64:
+  38:main.c        ****     my_Start();
+ 342              		.loc 1 38 0
+ 343              		.cfi_startproc
+ 344              		@ args = 0, pretend = 0, frame = 0
+ 345              		@ frame_needed = 0, uses_anonymous_args = 0
+ 346 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 347              		.cfi_def_cfa_offset 24
+ 348              		.cfi_offset 3, -24
+ 349              		.cfi_offset 4, -20
+ 350              		.cfi_offset 5, -16
+ 351              		.cfi_offset 6, -12
+ 352              		.cfi_offset 7, -8
+ 353              		.cfi_offset 14, -4
+  39:main.c        ****     isr_rx_StartEx(RxIsr);
+ 354              		.loc 1 39 0
+ 355 0002 FFF7FEFF 		bl	my_Start
+ 356              	.LVL25:
+  40:main.c        ****     isr_dma_done_StartEx(DMA_Done_ISR);
+ 357              		.loc 1 40 0
+ 358 0006 6348     		ldr	r0, .L44
+ 359 0008 FFF7FEFF 		bl	isr_rx_StartEx
+ 360              	.LVL26:
+  41:main.c        ****     CyGlobalIntEnable;
+ 361              		.loc 1 41 0
+ 362 000c 6248     		ldr	r0, .L44+4
+ 363 000e FFF7FEFF 		bl	isr_dma_done_StartEx
+ 364              	.LVL27:
+  42:main.c        **** 
+ 365              		.loc 1 42 0
+ 366              		.syntax unified
+ 367              	@ 42 "main.c" 1
+ 368 0012 62B6     		CPSIE   i
+ 369              	@ 0 "" 2
+  44:main.c        ****     DMA_In_TD[0] = CyDmaTdAllocate();
+ 370              		.loc 1 44 0
+ 371              		.thumb
+ 372              		.syntax unified
+ 373 0014 4FF48043 		mov	r3, #16384
+ 374 0018 41F6FF72 		movw	r2, #8191
+ 375 001c 0121     		movs	r1, #1
+ 376 001e 0420     		movs	r0, #4
+ 377 0020 FFF7FEFF 		bl	DMA_In_DmaInitialize
+ 378              	.LVL28:
+ 379 0024 5D4B     		ldr	r3, .L44+8
+ 380 0026 1870     		strb	r0, [r3]
+  45:main.c        ****     DMA_Out_Chan = DMA_Out_DmaInitialize(4, 1, HI16(CYDEV_PERIPH_BASE), HI16(CYDEV_SRAM_BASE));
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 11
+
+
+ 381              		.loc 1 45 0
+ 382 0028 FFF7FEFF 		bl	CyDmaTdAllocate
+ 383              	.LVL29:
+ 384 002c 5C4B     		ldr	r3, .L44+12
+ 385 002e 1870     		strb	r0, [r3]
+  46:main.c        ****     DMA_Out_TD[0] = CyDmaTdAllocate();
+ 386              		.loc 1 46 0
+ 387 0030 41F6FF73 		movw	r3, #8191
+ 388 0034 4FF48042 		mov	r2, #16384
+ 389 0038 0121     		movs	r1, #1
+ 390 003a 0420     		movs	r0, #4
+ 391 003c FFF7FEFF 		bl	DMA_Out_DmaInitialize
+ 392              	.LVL30:
+ 393 0040 584B     		ldr	r3, .L44+16
+ 394 0042 1870     		strb	r0, [r3]
+  47:main.c        ****  
+ 395              		.loc 1 47 0
+ 396 0044 FFF7FEFF 		bl	CyDmaTdAllocate
+ 397              	.LVL31:
+ 398 0048 574B     		ldr	r3, .L44+20
+ 399 004a 1870     		strb	r0, [r3]
+ 400              	.L31:
+  51:main.c        ****             case '0': break;
+ 401              		.loc 1 51 0
+ 402 004c 574B     		ldr	r3, .L44+24
+ 403 004e 5B78     		ldrb	r3, [r3, #1]	@ zero_extendqisi2
+ 404 0050 463B     		subs	r3, r3, #70
+ 405 0052 122B     		cmp	r3, #18
+ 406 0054 FAD8     		bhi	.L31
+ 407 0056 01A2     		adr	r2, .L33
+ 408 0058 52F823F0 		ldr	pc, [r2, r3, lsl #2]
+ 409              		.p2align 2
+ 410              	.L33:
+ 411 005c 85010000 		.word	.L41+1
+ 412 0060 4D000000 		.word	.L31+1
+ 413 0064 4D000000 		.word	.L31+1
+ 414 0068 A9000000 		.word	.L34+1
+ 415 006c 4D000000 		.word	.L31+1
+ 416 0070 4D000000 		.word	.L31+1
+ 417 0074 4D000000 		.word	.L31+1
+ 418 0078 4D000000 		.word	.L31+1
+ 419 007c 4D000000 		.word	.L31+1
+ 420 0080 4D000000 		.word	.L31+1
+ 421 0084 63010000 		.word	.L42+1
+ 422 0088 4D000000 		.word	.L31+1
+ 423 008c 4D000000 		.word	.L31+1
+ 424 0090 4D000000 		.word	.L31+1
+ 425 0094 4D000000 		.word	.L31+1
+ 426 0098 4D000000 		.word	.L31+1
+ 427 009c 4D000000 		.word	.L31+1
+ 428 00a0 33010000 		.word	.L36+1
+ 429 00a4 B1000000 		.word	.L37+1
+ 430              		.p2align 1
+ 431              	.L34:
+  53:main.c        ****             
+ 432              		.loc 1 53 0
+ 433 00a8 3022     		movs	r2, #48
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 12
+
+
+ 434 00aa 404B     		ldr	r3, .L44+24
+ 435 00ac 5A70     		strb	r2, [r3, #1]
+ 436 00ae CDE7     		b	.L31
+ 437              	.L37:
+  56:main.c        ****                 
+ 438              		.loc 1 56 0
+ 439 00b0 3E4C     		ldr	r4, .L44+24
+ 440 00b2 0023     		movs	r3, #0
+ 441 00b4 2370     		strb	r3, [r4]
+  58:main.c        ****                 
+ 442              		.loc 1 58 0
+ 443 00b6 3E4D     		ldr	r5, .L44+28
+ 444 00b8 4FF47A72 		mov	r2, #1000
+ 445 00bc 2946     		mov	r1, r5
+ 446 00be 04F6A470 		addw	r0, r4, #4004
+ 447 00c2 FFF7FEFF 		bl	convertToQ32
+ 448              	.LVL32:
+  61:main.c        ****                 CyDmaTdSetAddress(DMA_In_TD[0], LO16((uint32)y_entrada_q32), LO16((uint32)Filter_1_
+ 449              		.loc 1 61 0
+ 450 00c6 364F     		ldr	r7, .L44+12
+ 451 00c8 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
+ 452 00ca 0123     		movs	r3, #1
+ 453 00cc 0246     		mov	r2, r0
+ 454 00ce 4FF47A61 		mov	r1, #4000
+ 455 00d2 FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 456              	.LVL33:
+  62:main.c        ****                 
+ 457              		.loc 1 62 0
+ 458 00d6 4CF2A072 		movw	r2, #51104
+ 459 00da A9B2     		uxth	r1, r5
+ 460 00dc 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
+ 461 00de FFF7FEFF 		bl	CyDmaTdSetAddress
+ 462              	.LVL34:
+  65:main.c        ****                 CyDmaTdSetAddress(DMA_Out_TD[0], LO16((uint32)Filter_1_HOLDA_PTR), LO16((uint32)y_s
+ 463              		.loc 1 65 0
+ 464 00e2 314E     		ldr	r6, .L44+20
+ 465 00e4 3078     		ldrb	r0, [r6]	@ zero_extendqisi2
+ 466 00e6 0623     		movs	r3, #6
+ 467 00e8 0246     		mov	r2, r0
+ 468 00ea 4FF47A61 		mov	r1, #4000
+ 469 00ee FFF7FEFF 		bl	CyDmaTdSetConfiguration
+ 470              	.LVL35:
+  66:main.c        ****                 
+ 471              		.loc 1 66 0
+ 472 00f2 304A     		ldr	r2, .L44+32
+ 473 00f4 92B2     		uxth	r2, r2
+ 474 00f6 4CF2A871 		movw	r1, #51112
+ 475 00fa 3078     		ldrb	r0, [r6]	@ zero_extendqisi2
+ 476 00fc FFF7FEFF 		bl	CyDmaTdSetAddress
+ 477              	.LVL36:
+  68:main.c        ****                 CyDmaChSetInitialTd(DMA_Out_Chan, DMA_Out_TD[0]);
+ 478              		.loc 1 68 0
+ 479 0100 264D     		ldr	r5, .L44+8
+ 480 0102 3978     		ldrb	r1, [r7]	@ zero_extendqisi2
+ 481 0104 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 482 0106 FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 483              	.LVL37:
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 13
+
+
+  69:main.c        ****                 
+ 484              		.loc 1 69 0
+ 485 010a 264F     		ldr	r7, .L44+16
+ 486 010c 3178     		ldrb	r1, [r6]	@ zero_extendqisi2
+ 487 010e 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
+ 488 0110 FFF7FEFF 		bl	CyDmaChSetInitialTd
+ 489              	.LVL38:
+  71:main.c        ****                 CyDmaChEnable(DMA_Out_Chan, 1);
+ 490              		.loc 1 71 0
+ 491 0114 0121     		movs	r1, #1
+ 492 0116 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 493 0118 FFF7FEFF 		bl	CyDmaChEnable
+ 494              	.LVL39:
+  72:main.c        ****                 
+ 495              		.loc 1 72 0
+ 496 011c 0121     		movs	r1, #1
+ 497 011e 3878     		ldrb	r0, [r7]	@ zero_extendqisi2
+ 498 0120 FFF7FEFF 		bl	CyDmaChEnable
+ 499              	.LVL40:
+  78:main.c        ****                 
+ 500              		.loc 1 78 0
+ 501 0124 0121     		movs	r1, #1
+ 502 0126 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
+ 503 0128 FFF7FEFF 		bl	CyDmaChSetRequest
+ 504              	.LVL41:
+  80:main.c        ****                 break;
+ 505              		.loc 1 80 0
+ 506 012c 5723     		movs	r3, #87
+ 507 012e 6370     		strb	r3, [r4, #1]
+  81:main.c        **** 
+ 508              		.loc 1 81 0
+ 509 0130 8CE7     		b	.L31
+ 510              	.L36:
+  84:main.c        ****                 {
+ 511              		.loc 1 84 0
+ 512 0132 1E4B     		ldr	r3, .L44+24
+ 513 0134 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 514 0136 DBB2     		uxtb	r3, r3
+ 515 0138 012B     		cmp	r3, #1
+ 516 013a 87D1     		bne	.L31
+  86:main.c        ****                     estado = '0';
+ 517              		.loc 1 86 0
+ 518 013c 4FF47A72 		mov	r2, #1000
+ 519 0140 1D49     		ldr	r1, .L44+36
+ 520 0142 1C48     		ldr	r0, .L44+32
+ 521 0144 FFF7FEFF 		bl	convertFromQ32
+ 522              	.LVL42:
+  87:main.c        ****                 }
+ 523              		.loc 1 87 0
+ 524 0148 3022     		movs	r2, #48
+ 525 014a 184B     		ldr	r3, .L44+24
+ 526 014c 5A70     		strb	r2, [r3, #1]
+ 527 014e 7DE7     		b	.L31
+ 528              	.LVL43:
+ 529              	.L39:
+ 530              	.LBB6:
+  93:main.c        ****                 }
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 14
+
+
+ 531              		.loc 1 93 0 discriminator 3
+ 532 0150 164B     		ldr	r3, .L44+24
+ 533 0152 03EB8403 		add	r3, r3, r4, lsl #2
+ 534 0156 D3F8A40F 		ldr	r0, [r3, #4004]	@ float
+ 535 015a FFF7FEFF 		bl	Chart_1_Plot
+ 536              	.LVL44:
+  92:main.c        ****                     Chart_1_Plot(y_entrada[j]);
+ 537              		.loc 1 92 0 discriminator 3
+ 538 015e 0134     		adds	r4, r4, #1
+ 539              	.LVL45:
+ 540 0160 00E0     		b	.L35
+ 541              	.LVL46:
+ 542              	.L42:
+ 543              	.LBE6:
+  51:main.c        ****             case '0': break;
+ 544              		.loc 1 51 0
+ 545 0162 0024     		movs	r4, #0
+ 546              	.L35:
+ 547              	.LVL47:
+ 548              	.LBB7:
+  92:main.c        ****                     Chart_1_Plot(y_entrada[j]);
+ 549              		.loc 1 92 0 discriminator 1
+ 550 0164 B4F57A7F 		cmp	r4, #1000
+ 551 0168 F2DB     		blt	.L39
+ 552              	.LBE7:
+  95:main.c        ****                 break;
+ 553              		.loc 1 95 0
+ 554 016a 3022     		movs	r2, #48
+ 555 016c 0F4B     		ldr	r3, .L44+24
+ 556 016e 5A70     		strb	r2, [r3, #1]
+  96:main.c        ****                 
+ 557              		.loc 1 96 0
+ 558 0170 6CE7     		b	.L31
+ 559              	.LVL48:
+ 560              	.L40:
+ 561              	.LBB8:
+ 100:main.c        ****                 }
+ 562              		.loc 1 100 0 discriminator 3
+ 563 0172 124B     		ldr	r3, .L44+40
+ 564 0174 03EB8403 		add	r3, r3, r4, lsl #2
+ 565 0178 D3F89C0B 		ldr	r0, [r3, #2972]	@ float
+ 566 017c FFF7FEFF 		bl	Chart_1_Plot
+ 567              	.LVL49:
+  99:main.c        ****                     Chart_1_Plot(y_salida[j]);
+ 568              		.loc 1 99 0 discriminator 3
+ 569 0180 0134     		adds	r4, r4, #1
+ 570              	.LVL50:
+ 571 0182 00E0     		b	.L32
+ 572              	.LVL51:
+ 573              	.L41:
+ 574              	.LBE8:
+  51:main.c        ****             case '0': break;
+ 575              		.loc 1 51 0
+ 576 0184 0024     		movs	r4, #0
+ 577              	.L32:
+ 578              	.LVL52:
+ 579              	.LBB9:
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 15
+
+
+  99:main.c        ****                     Chart_1_Plot(y_salida[j]);
+ 580              		.loc 1 99 0 discriminator 1
+ 581 0186 B4F57A7F 		cmp	r4, #1000
+ 582 018a F2DB     		blt	.L40
+ 583              	.LBE9:
+ 102:main.c        ****             break;
+ 584              		.loc 1 102 0
+ 585 018c 3022     		movs	r2, #48
+ 586 018e 074B     		ldr	r3, .L44+24
+ 587 0190 5A70     		strb	r2, [r3, #1]
+ 103:main.c        ****         }
+ 588              		.loc 1 103 0
+ 589 0192 5BE7     		b	.L31
+ 590              	.L45:
+ 591              		.align	2
+ 592              	.L44:
+ 593 0194 00000000 		.word	RxIsr
+ 594 0198 00000000 		.word	DMA_Done_ISR
+ 595 019c 00000000 		.word	DMA_In_Chan
+ 596 01a0 00000000 		.word	DMA_In_TD
+ 597 01a4 00000000 		.word	DMA_Out_Chan
+ 598 01a8 00000000 		.word	DMA_Out_TD
+ 599 01ac 00000000 		.word	.LANCHOR0
+ 600 01b0 441F0000 		.word	.LANCHOR1+3660
+ 601 01b4 E42E0000 		.word	.LANCHOR2+3316
+ 602 01b8 843E0000 		.word	.LANCHOR3+2972
+ 603 01bc E8320000 		.word	.LANCHOR3
+ 604              		.cfi_endproc
+ 605              	.LFE64:
+ 606              		.size	main, .-main
+ 607              		.comm	DMA_Out_TD,1,4
+ 608              		.comm	DMA_In_TD,1,4
+ 609              		.comm	DMA_Out_Chan,1,1
+ 610              		.comm	DMA_In_Chan,1,1
+ 611              		.global	dma_transfer_complete_flag
+ 612              		.global	estado
+ 613              		.global	y_salida
+ 614              		.global	y_entrada
+ 615              		.bss
+ 616              		.align	2
+ 617              		.set	.LANCHOR0,. + 0
+ 618              		.set	.LANCHOR1,. + 4344
+ 619              		.set	.LANCHOR2,. + 8688
+ 620              		.set	.LANCHOR3,. + 13032
+ 621              		.type	dma_transfer_complete_flag, %object
+ 622              		.size	dma_transfer_complete_flag, 1
+ 623              	dma_transfer_complete_flag:
+ 624 0000 00       		.space	1
+ 625              		.type	estado, %object
+ 626              		.size	estado, 1
+ 627              	estado:
+ 628 0001 00       		.space	1
+ 629              		.type	n, %object
+ 630              		.size	n, 2
+ 631              	n:
+ 632 0002 0000     		.space	2
+ 633              		.type	x, %object
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 16
+
+
+ 634              		.size	x, 4000
+ 635              	x:
+ 636 0004 00000000 		.space	4000
+ 636      00000000 
+ 636      00000000 
+ 636      00000000 
+ 636      00000000 
+ 637              		.type	y_entrada, %object
+ 638              		.size	y_entrada, 4000
+ 639              	y_entrada:
+ 640 0fa4 00000000 		.space	4000
+ 640      00000000 
+ 640      00000000 
+ 640      00000000 
+ 640      00000000 
+ 641              		.type	y_entrada_q32, %object
+ 642              		.size	y_entrada_q32, 4000
+ 643              	y_entrada_q32:
+ 644 1f44 00000000 		.space	4000
+ 644      00000000 
+ 644      00000000 
+ 644      00000000 
+ 644      00000000 
+ 645              		.type	y_salida_q32, %object
+ 646              		.size	y_salida_q32, 4000
+ 647              	y_salida_q32:
+ 648 2ee4 00000000 		.space	4000
+ 648      00000000 
+ 648      00000000 
+ 648      00000000 
+ 648      00000000 
+ 649              		.type	y_salida, %object
+ 650              		.size	y_salida, 4000
+ 651              	y_salida:
+ 652 3e84 00000000 		.space	4000
+ 652      00000000 
+ 652      00000000 
+ 652      00000000 
+ 652      00000000 
+ 653              		.text
+ 654              	.Letext0:
+ 655              		.file 2 "d:\\programas\\psoc\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-e
+ 656              		.file 3 "d:\\programas\\psoc\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-e
+ 657              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 658              		.file 5 "d:\\programas\\psoc\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\lib\\gcc\\
+ 659              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 660              		.file 7 "Generated_Source\\PSoC5/isr_dma_done.h"
+ 661              		.file 8 "Generated_Source\\PSoC5/UART_1.h"
+ 662              		.file 9 "Generated_Source\\PSoC5/isr_rx.h"
+ 663              		.file 10 "Generated_Source\\PSoC5/Filter_1.h"
+ 664              		.file 11 "Generated_Source\\PSoC5/Chart_1.h"
+ 665              		.file 12 "Generated_Source\\PSoC5/DMA_In_dma.h"
+ 666              		.file 13 "Generated_Source\\PSoC5/CYDMAC.H"
+ 667              		.file 14 "Generated_Source\\PSoC5/DMA_Out_dma.h"
+ 668              		.section	.debug_info,"",%progbits
+ 669              	.Ldebug_info0:
+ 670 0000 C8060000 		.4byte	0x6c8
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 17
+
+
+ 671 0004 0400     		.2byte	0x4
+ 672 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 673 000a 04       		.byte	0x4
+ 674 000b 01       		.uleb128 0x1
+ 675 000c EA030000 		.4byte	.LASF64
+ 676 0010 0C       		.byte	0xc
+ 677 0011 4D030000 		.4byte	.LASF65
+ 678 0015 9E010000 		.4byte	.LASF66
+ 679 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 680 001d 00000000 		.4byte	0
+ 681 0021 00000000 		.4byte	.Ldebug_line0
+ 682 0025 02       		.uleb128 0x2
+ 683 0026 01       		.byte	0x1
+ 684 0027 06       		.byte	0x6
+ 685 0028 82020000 		.4byte	.LASF0
+ 686 002c 03       		.uleb128 0x3
+ 687 002d 5D010000 		.4byte	.LASF4
+ 688 0031 02       		.byte	0x2
+ 689 0032 1D       		.byte	0x1d
+ 690 0033 37000000 		.4byte	0x37
+ 691 0037 02       		.uleb128 0x2
+ 692 0038 01       		.byte	0x1
+ 693 0039 08       		.byte	0x8
+ 694 003a 59020000 		.4byte	.LASF1
+ 695 003e 02       		.uleb128 0x2
+ 696 003f 02       		.byte	0x2
+ 697 0040 05       		.byte	0x5
+ 698 0041 77000000 		.4byte	.LASF2
+ 699 0045 02       		.uleb128 0x2
+ 700 0046 02       		.byte	0x2
+ 701 0047 07       		.byte	0x7
+ 702 0048 EB020000 		.4byte	.LASF3
+ 703 004c 03       		.uleb128 0x3
+ 704 004d AF030000 		.4byte	.LASF5
+ 705 0051 02       		.byte	0x2
+ 706 0052 3F       		.byte	0x3f
+ 707 0053 57000000 		.4byte	0x57
+ 708 0057 02       		.uleb128 0x2
+ 709 0058 04       		.byte	0x4
+ 710 0059 05       		.byte	0x5
+ 711 005a 54010000 		.4byte	.LASF6
+ 712 005e 03       		.uleb128 0x3
+ 713 005f C0000000 		.4byte	.LASF7
+ 714 0063 02       		.byte	0x2
+ 715 0064 41       		.byte	0x41
+ 716 0065 69000000 		.4byte	0x69
+ 717 0069 02       		.uleb128 0x2
+ 718 006a 04       		.byte	0x4
+ 719 006b 07       		.byte	0x7
+ 720 006c 59030000 		.4byte	.LASF8
+ 721 0070 02       		.uleb128 0x2
+ 722 0071 08       		.byte	0x8
+ 723 0072 05       		.byte	0x5
+ 724 0073 46010000 		.4byte	.LASF9
+ 725 0077 02       		.uleb128 0x2
+ 726 0078 08       		.byte	0x8
+ 727 0079 07       		.byte	0x7
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 18
+
+
+ 728 007a 8E020000 		.4byte	.LASF10
+ 729 007e 04       		.uleb128 0x4
+ 730 007f 04       		.byte	0x4
+ 731 0080 05       		.byte	0x5
+ 732 0081 696E7400 		.ascii	"int\000"
+ 733 0085 02       		.uleb128 0x2
+ 734 0086 04       		.byte	0x4
+ 735 0087 07       		.byte	0x7
+ 736 0088 C4020000 		.4byte	.LASF11
+ 737 008c 03       		.uleb128 0x3
+ 738 008d 18010000 		.4byte	.LASF12
+ 739 0091 03       		.byte	0x3
+ 740 0092 18       		.byte	0x18
+ 741 0093 2C000000 		.4byte	0x2c
+ 742 0097 03       		.uleb128 0x3
+ 743 0098 18030000 		.4byte	.LASF13
+ 744 009c 03       		.byte	0x3
+ 745 009d 2C       		.byte	0x2c
+ 746 009e 4C000000 		.4byte	0x4c
+ 747 00a2 03       		.uleb128 0x3
+ 748 00a3 A5020000 		.4byte	.LASF14
+ 749 00a7 03       		.byte	0x3
+ 750 00a8 30       		.byte	0x30
+ 751 00a9 5E000000 		.4byte	0x5e
+ 752 00ad 05       		.uleb128 0x5
+ 753 00ae 20010000 		.4byte	.LASF15
+ 754 00b2 04       		.byte	0x4
+ 755 00b3 E901     		.2byte	0x1e9
+ 756 00b5 37000000 		.4byte	0x37
+ 757 00b9 05       		.uleb128 0x5
+ 758 00ba FF000000 		.4byte	.LASF16
+ 759 00be 04       		.byte	0x4
+ 760 00bf EA01     		.2byte	0x1ea
+ 761 00c1 45000000 		.4byte	0x45
+ 762 00c5 05       		.uleb128 0x5
+ 763 00c6 46030000 		.4byte	.LASF17
+ 764 00ca 04       		.byte	0x4
+ 765 00cb EB01     		.2byte	0x1eb
+ 766 00cd 69000000 		.4byte	0x69
+ 767 00d1 02       		.uleb128 0x2
+ 768 00d2 04       		.byte	0x4
+ 769 00d3 04       		.byte	0x4
+ 770 00d4 40010000 		.4byte	.LASF18
+ 771 00d8 02       		.uleb128 0x2
+ 772 00d9 08       		.byte	0x8
+ 773 00da 04       		.byte	0x4
+ 774 00db DC030000 		.4byte	.LASF19
+ 775 00df 02       		.uleb128 0x2
+ 776 00e0 01       		.byte	0x1
+ 777 00e1 08       		.byte	0x8
+ 778 00e2 FE020000 		.4byte	.LASF20
+ 779 00e6 05       		.uleb128 0x5
+ 780 00e7 54030000 		.4byte	.LASF21
+ 781 00eb 04       		.byte	0x4
+ 782 00ec 9302     		.2byte	0x293
+ 783 00ee F2000000 		.4byte	0xf2
+ 784 00f2 06       		.uleb128 0x6
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 19
+
+
+ 785 00f3 AD000000 		.4byte	0xad
+ 786 00f7 03       		.uleb128 0x3
+ 787 00f8 81000000 		.4byte	.LASF22
+ 788 00fc 05       		.byte	0x5
+ 789 00fd D8       		.byte	0xd8
+ 790 00fe 85000000 		.4byte	0x85
+ 791 0102 02       		.uleb128 0x2
+ 792 0103 08       		.byte	0x8
+ 793 0104 04       		.byte	0x4
+ 794 0105 7A010000 		.4byte	.LASF23
+ 795 0109 02       		.uleb128 0x2
+ 796 010a 04       		.byte	0x4
+ 797 010b 07       		.byte	0x7
+ 798 010c C5030000 		.4byte	.LASF24
+ 799 0110 07       		.uleb128 0x7
+ 800 0111 9C000000 		.4byte	.LASF25
+ 801 0115 01       		.byte	0x1
+ 802 0116 6E       		.byte	0x6e
+ 803 0117 00000000 		.4byte	.LFB65
+ 804 011b 14000000 		.4byte	.LFE65-.LFB65
+ 805 011f 01       		.uleb128 0x1
+ 806 0120 9C       		.byte	0x9c
+ 807 0121 2F010000 		.4byte	0x12f
+ 808 0125 08       		.uleb128 0x8
+ 809 0126 0C000000 		.4byte	.LVL0
+ 810 012a 10060000 		.4byte	0x610
+ 811 012e 00       		.byte	0
+ 812 012f 07       		.uleb128 0x7
+ 813 0130 06010000 		.4byte	.LASF26
+ 814 0134 01       		.byte	0x1
+ 815 0135 8B       		.byte	0x8b
+ 816 0136 00000000 		.4byte	.LFB67
+ 817 013a 22000000 		.4byte	.LFE67-.LFB67
+ 818 013e 01       		.uleb128 0x1
+ 819 013f 9C       		.byte	0x9c
+ 820 0140 9D010000 		.4byte	0x19d
+ 821 0144 09       		.uleb128 0x9
+ 822 0145 88000000 		.4byte	.LASF27
+ 823 0149 01       		.byte	0x1
+ 824 014a 8B       		.byte	0x8b
+ 825 014b 9D010000 		.4byte	0x19d
+ 826 014f 00000000 		.4byte	.LLST0
+ 827 0153 0A       		.uleb128 0xa
+ 828 0154 D5030000 		.4byte	.LASF28
+ 829 0158 01       		.byte	0x1
+ 830 0159 8B       		.byte	0x8b
+ 831 015a A8010000 		.4byte	0x1a8
+ 832 015e 01       		.uleb128 0x1
+ 833 015f 51       		.byte	0x51
+ 834 0160 0A       		.uleb128 0xa
+ 835 0161 20030000 		.4byte	.LASF29
+ 836 0165 01       		.byte	0x1
+ 837 0166 8B       		.byte	0x8b
+ 838 0167 F7000000 		.4byte	0xf7
+ 839 016b 01       		.uleb128 0x1
+ 840 016c 52       		.byte	0x52
+ 841 016d 0B       		.uleb128 0xb
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 20
+
+
+ 842 016e 06000000 		.4byte	.LBB2
+ 843 0172 16000000 		.4byte	.LBE2-.LBB2
+ 844 0176 0C       		.uleb128 0xc
+ 845 0177 6900     		.ascii	"i\000"
+ 846 0179 01       		.byte	0x1
+ 847 017a 8C       		.byte	0x8c
+ 848 017b F7000000 		.4byte	0xf7
+ 849 017f 2C000000 		.4byte	.LLST1
+ 850 0183 0B       		.uleb128 0xb
+ 851 0184 0A000000 		.4byte	.LBB3
+ 852 0188 0C000000 		.4byte	.LBE3-.LBB3
+ 853 018c 0D       		.uleb128 0xd
+ 854 018d 72000000 		.4byte	.LASF30
+ 855 0191 01       		.byte	0x1
+ 856 0192 8E       		.byte	0x8e
+ 857 0193 A2000000 		.4byte	0xa2
+ 858 0197 02       		.uleb128 0x2
+ 859 0198 91       		.byte	0x91
+ 860 0199 74       		.sleb128 -12
+ 861 019a 00       		.byte	0
+ 862 019b 00       		.byte	0
+ 863 019c 00       		.byte	0
+ 864 019d 0E       		.uleb128 0xe
+ 865 019e 04       		.byte	0x4
+ 866 019f A3010000 		.4byte	0x1a3
+ 867 01a3 0F       		.uleb128 0xf
+ 868 01a4 8C000000 		.4byte	0x8c
+ 869 01a8 0E       		.uleb128 0xe
+ 870 01a9 04       		.byte	0x4
+ 871 01aa D1000000 		.4byte	0xd1
+ 872 01ae 07       		.uleb128 0x7
+ 873 01af E5020000 		.4byte	.LASF31
+ 874 01b3 01       		.byte	0x1
+ 875 01b4 76       		.byte	0x76
+ 876 01b5 00000000 		.4byte	.LFB66
+ 877 01b9 68000000 		.4byte	.LFE66-.LFB66
+ 878 01bd 01       		.uleb128 0x1
+ 879 01be 9C       		.byte	0x9c
+ 880 01bf 10020000 		.4byte	0x210
+ 881 01c3 10       		.uleb128 0x10
+ 882 01c4 CE030000 		.4byte	.LASF32
+ 883 01c8 01       		.byte	0x1
+ 884 01c9 78       		.byte	0x78
+ 885 01ca AD000000 		.4byte	0xad
+ 886 01ce 4B000000 		.4byte	.LLST2
+ 887 01d2 08       		.uleb128 0x8
+ 888 01d3 08000000 		.4byte	.LVL6
+ 889 01d7 1B060000 		.4byte	0x61b
+ 890 01db 11       		.uleb128 0x11
+ 891 01dc 4C000000 		.4byte	.LVL8
+ 892 01e0 2F010000 		.4byte	0x12f
+ 893 01e4 FD010000 		.4byte	0x1fd
+ 894 01e8 12       		.uleb128 0x12
+ 895 01e9 01       		.uleb128 0x1
+ 896 01ea 50       		.byte	0x50
+ 897 01eb 02       		.uleb128 0x2
+ 898 01ec 74       		.byte	0x74
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 21
+
+
+ 899 01ed 04       		.sleb128 4
+ 900 01ee 12       		.uleb128 0x12
+ 901 01ef 01       		.uleb128 0x1
+ 902 01f0 51       		.byte	0x51
+ 903 01f1 03       		.uleb128 0x3
+ 904 01f2 74       		.byte	0x74
+ 905 01f3 A41F     		.sleb128 4004
+ 906 01f5 12       		.uleb128 0x12
+ 907 01f6 01       		.uleb128 0x1
+ 908 01f7 52       		.byte	0x52
+ 909 01f8 03       		.uleb128 0x3
+ 910 01f9 0A       		.byte	0xa
+ 911 01fa A00F     		.2byte	0xfa0
+ 912 01fc 00       		.byte	0
+ 913 01fd 08       		.uleb128 0x8
+ 914 01fe 58000000 		.4byte	.LVL9
+ 915 0202 26060000 		.4byte	0x626
+ 916 0206 08       		.uleb128 0x8
+ 917 0207 60000000 		.4byte	.LVL10
+ 918 020b 31060000 		.4byte	0x631
+ 919 020f 00       		.byte	0
+ 920 0210 13       		.uleb128 0x13
+ 921 0211 26010000 		.4byte	.LASF33
+ 922 0215 01       		.byte	0x1
+ 923 0216 94       		.byte	0x94
+ 924 0217 00000000 		.4byte	.LFB68
+ 925 021b 28000000 		.4byte	.LFE68-.LFB68
+ 926 021f 01       		.uleb128 0x1
+ 927 0220 9C       		.byte	0x9c
+ 928 0221 6A020000 		.4byte	0x26a
+ 929 0225 09       		.uleb128 0x9
+ 930 0226 88000000 		.4byte	.LASF27
+ 931 022a 01       		.byte	0x1
+ 932 022b 94       		.byte	0x94
+ 933 022c 6A020000 		.4byte	0x26a
+ 934 0230 5E000000 		.4byte	.LLST3
+ 935 0234 09       		.uleb128 0x9
+ 936 0235 D5030000 		.4byte	.LASF28
+ 937 0239 01       		.byte	0x1
+ 938 023a 94       		.byte	0x94
+ 939 023b 75020000 		.4byte	0x275
+ 940 023f 7C000000 		.4byte	.LLST4
+ 941 0243 09       		.uleb128 0x9
+ 942 0244 9D030000 		.4byte	.LASF34
+ 943 0248 01       		.byte	0x1
+ 944 0249 94       		.byte	0x94
+ 945 024a F7000000 		.4byte	0xf7
+ 946 024e 9A000000 		.4byte	.LLST5
+ 947 0252 0B       		.uleb128 0xb
+ 948 0253 08000000 		.4byte	.LBB4
+ 949 0257 1E000000 		.4byte	.LBE4-.LBB4
+ 950 025b 0C       		.uleb128 0xc
+ 951 025c 6900     		.ascii	"i\000"
+ 952 025e 01       		.byte	0x1
+ 953 025f 95       		.byte	0x95
+ 954 0260 F7000000 		.4byte	0xf7
+ 955 0264 B8000000 		.4byte	.LLST6
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 22
+
+
+ 956 0268 00       		.byte	0
+ 957 0269 00       		.byte	0
+ 958 026a 0E       		.uleb128 0xe
+ 959 026b 04       		.byte	0x4
+ 960 026c 70020000 		.4byte	0x270
+ 961 0270 0F       		.uleb128 0xf
+ 962 0271 D1000000 		.4byte	0xd1
+ 963 0275 0E       		.uleb128 0xe
+ 964 0276 04       		.byte	0x4
+ 965 0277 A2000000 		.4byte	0xa2
+ 966 027b 13       		.uleb128 0x13
+ 967 027c 83040000 		.4byte	.LASF35
+ 968 0280 01       		.byte	0x1
+ 969 0281 9A       		.byte	0x9a
+ 970 0282 00000000 		.4byte	.LFB69
+ 971 0286 28000000 		.4byte	.LFE69-.LFB69
+ 972 028a 01       		.uleb128 0x1
+ 973 028b 9C       		.byte	0x9c
+ 974 028c D5020000 		.4byte	0x2d5
+ 975 0290 09       		.uleb128 0x9
+ 976 0291 88000000 		.4byte	.LASF27
+ 977 0295 01       		.byte	0x1
+ 978 0296 9A       		.byte	0x9a
+ 979 0297 D5020000 		.4byte	0x2d5
+ 980 029b D7000000 		.4byte	.LLST7
+ 981 029f 09       		.uleb128 0x9
+ 982 02a0 D5030000 		.4byte	.LASF28
+ 983 02a4 01       		.byte	0x1
+ 984 02a5 9A       		.byte	0x9a
+ 985 02a6 A8010000 		.4byte	0x1a8
+ 986 02aa F5000000 		.4byte	.LLST8
+ 987 02ae 09       		.uleb128 0x9
+ 988 02af 9D030000 		.4byte	.LASF34
+ 989 02b3 01       		.byte	0x1
+ 990 02b4 9A       		.byte	0x9a
+ 991 02b5 F7000000 		.4byte	0xf7
+ 992 02b9 13010000 		.4byte	.LLST9
+ 993 02bd 0B       		.uleb128 0xb
+ 994 02be 08000000 		.4byte	.LBB5
+ 995 02c2 1E000000 		.4byte	.LBE5-.LBB5
+ 996 02c6 0C       		.uleb128 0xc
+ 997 02c7 6900     		.ascii	"i\000"
+ 998 02c9 01       		.byte	0x1
+ 999 02ca 9B       		.byte	0x9b
+ 1000 02cb F7000000 		.4byte	0xf7
+ 1001 02cf 31010000 		.4byte	.LLST10
+ 1002 02d3 00       		.byte	0
+ 1003 02d4 00       		.byte	0
+ 1004 02d5 0E       		.uleb128 0xe
+ 1005 02d6 04       		.byte	0x4
+ 1006 02d7 DB020000 		.4byte	0x2db
+ 1007 02db 0F       		.uleb128 0xf
+ 1008 02dc A2000000 		.4byte	0xa2
+ 1009 02e0 14       		.uleb128 0x14
+ 1010 02e1 86010000 		.4byte	.LASF67
+ 1011 02e5 01       		.byte	0x1
+ 1012 02e6 A0       		.byte	0xa0
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 23
+
+
+ 1013 02e7 00000000 		.4byte	.LFB70
+ 1014 02eb 0C000000 		.4byte	.LFE70-.LFB70
+ 1015 02ef 01       		.uleb128 0x1
+ 1016 02f0 9C       		.byte	0x9c
+ 1017 02f1 08030000 		.4byte	0x308
+ 1018 02f5 08       		.uleb128 0x8
+ 1019 02f6 06000000 		.4byte	.LVL23
+ 1020 02fa 3C060000 		.4byte	0x63c
+ 1021 02fe 08       		.uleb128 0x8
+ 1022 02ff 0A000000 		.4byte	.LVL24
+ 1023 0303 47060000 		.4byte	0x647
+ 1024 0307 00       		.byte	0
+ 1025 0308 15       		.uleb128 0x15
+ 1026 0309 BB000000 		.4byte	.LASF68
+ 1027 030d 01       		.byte	0x1
+ 1028 030e 25       		.byte	0x25
+ 1029 030f 7E000000 		.4byte	0x7e
+ 1030 0313 00000000 		.4byte	.LFB64
+ 1031 0317 C0010000 		.4byte	.LFE64-.LFB64
+ 1032 031b 01       		.uleb128 0x1
+ 1033 031c 9C       		.byte	0x9c
+ 1034 031d F4040000 		.4byte	0x4f4
+ 1035 0321 16       		.uleb128 0x16
+ 1036 0322 00000000 		.4byte	.Ldebug_ranges0+0
+ 1037 0326 41030000 		.4byte	0x341
+ 1038 032a 0C       		.uleb128 0xc
+ 1039 032b 6A00     		.ascii	"j\000"
+ 1040 032d 01       		.byte	0x1
+ 1041 032e 5C       		.byte	0x5c
+ 1042 032f 7E000000 		.4byte	0x7e
+ 1043 0333 50010000 		.4byte	.LLST11
+ 1044 0337 08       		.uleb128 0x8
+ 1045 0338 5E010000 		.4byte	.LVL44
+ 1046 033c 52060000 		.4byte	0x652
+ 1047 0340 00       		.byte	0
+ 1048 0341 16       		.uleb128 0x16
+ 1049 0342 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 1050 0346 61030000 		.4byte	0x361
+ 1051 034a 0C       		.uleb128 0xc
+ 1052 034b 6A00     		.ascii	"j\000"
+ 1053 034d 01       		.byte	0x1
+ 1054 034e 63       		.byte	0x63
+ 1055 034f 7E000000 		.4byte	0x7e
+ 1056 0353 6E010000 		.4byte	.LLST12
+ 1057 0357 08       		.uleb128 0x8
+ 1058 0358 80010000 		.4byte	.LVL49
+ 1059 035c 52060000 		.4byte	0x652
+ 1060 0360 00       		.byte	0
+ 1061 0361 08       		.uleb128 0x8
+ 1062 0362 06000000 		.4byte	.LVL25
+ 1063 0366 E0020000 		.4byte	0x2e0
+ 1064 036a 11       		.uleb128 0x11
+ 1065 036b 0C000000 		.4byte	.LVL26
+ 1066 036f 5D060000 		.4byte	0x65d
+ 1067 0373 81030000 		.4byte	0x381
+ 1068 0377 12       		.uleb128 0x12
+ 1069 0378 01       		.uleb128 0x1
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 24
+
+
+ 1070 0379 50       		.byte	0x50
+ 1071 037a 05       		.uleb128 0x5
+ 1072 037b 03       		.byte	0x3
+ 1073 037c 00000000 		.4byte	RxIsr
+ 1074 0380 00       		.byte	0
+ 1075 0381 11       		.uleb128 0x11
+ 1076 0382 12000000 		.4byte	.LVL27
+ 1077 0386 68060000 		.4byte	0x668
+ 1078 038a 98030000 		.4byte	0x398
+ 1079 038e 12       		.uleb128 0x12
+ 1080 038f 01       		.uleb128 0x1
+ 1081 0390 50       		.byte	0x50
+ 1082 0391 05       		.uleb128 0x5
+ 1083 0392 03       		.byte	0x3
+ 1084 0393 00000000 		.4byte	DMA_Done_ISR
+ 1085 0397 00       		.byte	0
+ 1086 0398 11       		.uleb128 0x11
+ 1087 0399 24000000 		.4byte	.LVL28
+ 1088 039d 73060000 		.4byte	0x673
+ 1089 03a1 BE030000 		.4byte	0x3be
+ 1090 03a5 12       		.uleb128 0x12
+ 1091 03a6 01       		.uleb128 0x1
+ 1092 03a7 50       		.byte	0x50
+ 1093 03a8 01       		.uleb128 0x1
+ 1094 03a9 34       		.byte	0x34
+ 1095 03aa 12       		.uleb128 0x12
+ 1096 03ab 01       		.uleb128 0x1
+ 1097 03ac 51       		.byte	0x51
+ 1098 03ad 01       		.uleb128 0x1
+ 1099 03ae 31       		.byte	0x31
+ 1100 03af 12       		.uleb128 0x12
+ 1101 03b0 01       		.uleb128 0x1
+ 1102 03b1 52       		.byte	0x52
+ 1103 03b2 03       		.uleb128 0x3
+ 1104 03b3 0A       		.byte	0xa
+ 1105 03b4 FF1F     		.2byte	0x1fff
+ 1106 03b6 12       		.uleb128 0x12
+ 1107 03b7 01       		.uleb128 0x1
+ 1108 03b8 53       		.byte	0x53
+ 1109 03b9 03       		.uleb128 0x3
+ 1110 03ba 0A       		.byte	0xa
+ 1111 03bb 0040     		.2byte	0x4000
+ 1112 03bd 00       		.byte	0
+ 1113 03be 08       		.uleb128 0x8
+ 1114 03bf 2C000000 		.4byte	.LVL29
+ 1115 03c3 7E060000 		.4byte	0x67e
+ 1116 03c7 11       		.uleb128 0x11
+ 1117 03c8 40000000 		.4byte	.LVL30
+ 1118 03cc 89060000 		.4byte	0x689
+ 1119 03d0 ED030000 		.4byte	0x3ed
+ 1120 03d4 12       		.uleb128 0x12
+ 1121 03d5 01       		.uleb128 0x1
+ 1122 03d6 50       		.byte	0x50
+ 1123 03d7 01       		.uleb128 0x1
+ 1124 03d8 34       		.byte	0x34
+ 1125 03d9 12       		.uleb128 0x12
+ 1126 03da 01       		.uleb128 0x1
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 25
+
+
+ 1127 03db 51       		.byte	0x51
+ 1128 03dc 01       		.uleb128 0x1
+ 1129 03dd 31       		.byte	0x31
+ 1130 03de 12       		.uleb128 0x12
+ 1131 03df 01       		.uleb128 0x1
+ 1132 03e0 52       		.byte	0x52
+ 1133 03e1 03       		.uleb128 0x3
+ 1134 03e2 0A       		.byte	0xa
+ 1135 03e3 0040     		.2byte	0x4000
+ 1136 03e5 12       		.uleb128 0x12
+ 1137 03e6 01       		.uleb128 0x1
+ 1138 03e7 53       		.byte	0x53
+ 1139 03e8 03       		.uleb128 0x3
+ 1140 03e9 0A       		.byte	0xa
+ 1141 03ea FF1F     		.2byte	0x1fff
+ 1142 03ec 00       		.byte	0
+ 1143 03ed 08       		.uleb128 0x8
+ 1144 03ee 48000000 		.4byte	.LVL31
+ 1145 03f2 7E060000 		.4byte	0x67e
+ 1146 03f6 11       		.uleb128 0x11
+ 1147 03f7 C6000000 		.4byte	.LVL32
+ 1148 03fb 10020000 		.4byte	0x210
+ 1149 03ff 18040000 		.4byte	0x418
+ 1150 0403 12       		.uleb128 0x12
+ 1151 0404 01       		.uleb128 0x1
+ 1152 0405 50       		.byte	0x50
+ 1153 0406 03       		.uleb128 0x3
+ 1154 0407 74       		.byte	0x74
+ 1155 0408 A41F     		.sleb128 4004
+ 1156 040a 12       		.uleb128 0x12
+ 1157 040b 01       		.uleb128 0x1
+ 1158 040c 51       		.byte	0x51
+ 1159 040d 02       		.uleb128 0x2
+ 1160 040e 75       		.byte	0x75
+ 1161 040f 00       		.sleb128 0
+ 1162 0410 12       		.uleb128 0x12
+ 1163 0411 01       		.uleb128 0x1
+ 1164 0412 52       		.byte	0x52
+ 1165 0413 03       		.uleb128 0x3
+ 1166 0414 0A       		.byte	0xa
+ 1167 0415 E803     		.2byte	0x3e8
+ 1168 0417 00       		.byte	0
+ 1169 0418 11       		.uleb128 0x11
+ 1170 0419 D6000000 		.4byte	.LVL33
+ 1171 041d 94060000 		.4byte	0x694
+ 1172 0421 32040000 		.4byte	0x432
+ 1173 0425 12       		.uleb128 0x12
+ 1174 0426 01       		.uleb128 0x1
+ 1175 0427 51       		.byte	0x51
+ 1176 0428 03       		.uleb128 0x3
+ 1177 0429 0A       		.byte	0xa
+ 1178 042a A00F     		.2byte	0xfa0
+ 1179 042c 12       		.uleb128 0x12
+ 1180 042d 01       		.uleb128 0x1
+ 1181 042e 53       		.byte	0x53
+ 1182 042f 01       		.uleb128 0x1
+ 1183 0430 31       		.byte	0x31
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 26
+
+
+ 1184 0431 00       		.byte	0
+ 1185 0432 11       		.uleb128 0x11
+ 1186 0433 E2000000 		.4byte	.LVL34
+ 1187 0437 9F060000 		.4byte	0x69f
+ 1188 043b 4D040000 		.4byte	0x44d
+ 1189 043f 12       		.uleb128 0x12
+ 1190 0440 01       		.uleb128 0x1
+ 1191 0441 51       		.byte	0x51
+ 1192 0442 02       		.uleb128 0x2
+ 1193 0443 75       		.byte	0x75
+ 1194 0444 00       		.sleb128 0
+ 1195 0445 12       		.uleb128 0x12
+ 1196 0446 01       		.uleb128 0x1
+ 1197 0447 52       		.byte	0x52
+ 1198 0448 03       		.uleb128 0x3
+ 1199 0449 0B       		.byte	0xb
+ 1200 044a A0C7     		.2byte	0xc7a0
+ 1201 044c 00       		.byte	0
+ 1202 044d 11       		.uleb128 0x11
+ 1203 044e F2000000 		.4byte	.LVL35
+ 1204 0452 94060000 		.4byte	0x694
+ 1205 0456 67040000 		.4byte	0x467
+ 1206 045a 12       		.uleb128 0x12
+ 1207 045b 01       		.uleb128 0x1
+ 1208 045c 51       		.byte	0x51
+ 1209 045d 03       		.uleb128 0x3
+ 1210 045e 0A       		.byte	0xa
+ 1211 045f A00F     		.2byte	0xfa0
+ 1212 0461 12       		.uleb128 0x12
+ 1213 0462 01       		.uleb128 0x1
+ 1214 0463 53       		.byte	0x53
+ 1215 0464 01       		.uleb128 0x1
+ 1216 0465 36       		.byte	0x36
+ 1217 0466 00       		.byte	0
+ 1218 0467 11       		.uleb128 0x11
+ 1219 0468 00010000 		.4byte	.LVL36
+ 1220 046c 9F060000 		.4byte	0x69f
+ 1221 0470 85040000 		.4byte	0x485
+ 1222 0474 12       		.uleb128 0x12
+ 1223 0475 01       		.uleb128 0x1
+ 1224 0476 51       		.byte	0x51
+ 1225 0477 03       		.uleb128 0x3
+ 1226 0478 0B       		.byte	0xb
+ 1227 0479 A8C7     		.2byte	0xc7a8
+ 1228 047b 12       		.uleb128 0x12
+ 1229 047c 01       		.uleb128 0x1
+ 1230 047d 52       		.byte	0x52
+ 1231 047e 05       		.uleb128 0x5
+ 1232 047f 03       		.byte	0x3
+ 1233 0480 E42E0000 		.4byte	.LANCHOR2+3316
+ 1234 0484 00       		.byte	0
+ 1235 0485 08       		.uleb128 0x8
+ 1236 0486 0A010000 		.4byte	.LVL37
+ 1237 048a AA060000 		.4byte	0x6aa
+ 1238 048e 08       		.uleb128 0x8
+ 1239 048f 14010000 		.4byte	.LVL38
+ 1240 0493 AA060000 		.4byte	0x6aa
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 27
+
+
+ 1241 0497 11       		.uleb128 0x11
+ 1242 0498 1C010000 		.4byte	.LVL39
+ 1243 049c B5060000 		.4byte	0x6b5
+ 1244 04a0 AA040000 		.4byte	0x4aa
+ 1245 04a4 12       		.uleb128 0x12
+ 1246 04a5 01       		.uleb128 0x1
+ 1247 04a6 51       		.byte	0x51
+ 1248 04a7 01       		.uleb128 0x1
+ 1249 04a8 31       		.byte	0x31
+ 1250 04a9 00       		.byte	0
+ 1251 04aa 11       		.uleb128 0x11
+ 1252 04ab 24010000 		.4byte	.LVL40
+ 1253 04af B5060000 		.4byte	0x6b5
+ 1254 04b3 BD040000 		.4byte	0x4bd
+ 1255 04b7 12       		.uleb128 0x12
+ 1256 04b8 01       		.uleb128 0x1
+ 1257 04b9 51       		.byte	0x51
+ 1258 04ba 01       		.uleb128 0x1
+ 1259 04bb 31       		.byte	0x31
+ 1260 04bc 00       		.byte	0
+ 1261 04bd 11       		.uleb128 0x11
+ 1262 04be 2C010000 		.4byte	.LVL41
+ 1263 04c2 C0060000 		.4byte	0x6c0
+ 1264 04c6 D0040000 		.4byte	0x4d0
+ 1265 04ca 12       		.uleb128 0x12
+ 1266 04cb 01       		.uleb128 0x1
+ 1267 04cc 51       		.byte	0x51
+ 1268 04cd 01       		.uleb128 0x1
+ 1269 04ce 31       		.byte	0x31
+ 1270 04cf 00       		.byte	0
+ 1271 04d0 17       		.uleb128 0x17
+ 1272 04d1 48010000 		.4byte	.LVL42
+ 1273 04d5 7B020000 		.4byte	0x27b
+ 1274 04d9 12       		.uleb128 0x12
+ 1275 04da 01       		.uleb128 0x1
+ 1276 04db 50       		.byte	0x50
+ 1277 04dc 05       		.uleb128 0x5
+ 1278 04dd 03       		.byte	0x3
+ 1279 04de E42E0000 		.4byte	.LANCHOR2+3316
+ 1280 04e2 12       		.uleb128 0x12
+ 1281 04e3 01       		.uleb128 0x1
+ 1282 04e4 51       		.byte	0x51
+ 1283 04e5 05       		.uleb128 0x5
+ 1284 04e6 03       		.byte	0x3
+ 1285 04e7 843E0000 		.4byte	.LANCHOR3+2972
+ 1286 04eb 12       		.uleb128 0x12
+ 1287 04ec 01       		.uleb128 0x1
+ 1288 04ed 52       		.byte	0x52
+ 1289 04ee 03       		.uleb128 0x3
+ 1290 04ef 0A       		.byte	0xa
+ 1291 04f0 E803     		.2byte	0x3e8
+ 1292 04f2 00       		.byte	0
+ 1293 04f3 00       		.byte	0
+ 1294 04f4 18       		.uleb128 0x18
+ 1295 04f5 AD000000 		.4byte	0xad
+ 1296 04f9 05050000 		.4byte	0x505
+ 1297 04fd 19       		.uleb128 0x19
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 28
+
+
+ 1298 04fe 09010000 		.4byte	0x109
+ 1299 0502 9F0F     		.2byte	0xf9f
+ 1300 0504 00       		.byte	0
+ 1301 0505 1A       		.uleb128 0x1a
+ 1302 0506 7800     		.ascii	"x\000"
+ 1303 0508 01       		.byte	0x1
+ 1304 0509 0B       		.byte	0xb
+ 1305 050a F4040000 		.4byte	0x4f4
+ 1306 050e 05       		.uleb128 0x5
+ 1307 050f 03       		.byte	0x3
+ 1308 0510 04000000 		.4byte	x
+ 1309 0514 18       		.uleb128 0x18
+ 1310 0515 A2000000 		.4byte	0xa2
+ 1311 0519 25050000 		.4byte	0x525
+ 1312 051d 19       		.uleb128 0x19
+ 1313 051e 09010000 		.4byte	0x109
+ 1314 0522 E703     		.2byte	0x3e7
+ 1315 0524 00       		.byte	0
+ 1316 0525 0D       		.uleb128 0xd
+ 1317 0526 82030000 		.4byte	.LASF36
+ 1318 052a 01       		.byte	0x1
+ 1319 052b 0E       		.byte	0xe
+ 1320 052c 14050000 		.4byte	0x514
+ 1321 0530 05       		.uleb128 0x5
+ 1322 0531 03       		.byte	0x3
+ 1323 0532 441F0000 		.4byte	y_entrada_q32
+ 1324 0536 0D       		.uleb128 0xd
+ 1325 0537 E3000000 		.4byte	.LASF37
+ 1326 053b 01       		.byte	0x1
+ 1327 053c 0F       		.byte	0xf
+ 1328 053d 14050000 		.4byte	0x514
+ 1329 0541 05       		.uleb128 0x5
+ 1330 0542 03       		.byte	0x3
+ 1331 0543 E42E0000 		.4byte	y_salida_q32
+ 1332 0547 1A       		.uleb128 0x1a
+ 1333 0548 6E00     		.ascii	"n\000"
+ 1334 054a 01       		.byte	0x1
+ 1335 054b 12       		.byte	0x12
+ 1336 054c B9000000 		.4byte	0xb9
+ 1337 0550 05       		.uleb128 0x5
+ 1338 0551 03       		.byte	0x3
+ 1339 0552 02000000 		.4byte	n
+ 1340 0556 1B       		.uleb128 0x1b
+ 1341 0557 90030000 		.4byte	.LASF38
+ 1342 055b 06       		.byte	0x6
+ 1343 055c 1207     		.2byte	0x712
+ 1344 055e 62050000 		.4byte	0x562
+ 1345 0562 06       		.uleb128 0x6
+ 1346 0563 97000000 		.4byte	0x97
+ 1347 0567 18       		.uleb128 0x18
+ 1348 0568 D1000000 		.4byte	0xd1
+ 1349 056c 78050000 		.4byte	0x578
+ 1350 0570 19       		.uleb128 0x19
+ 1351 0571 09010000 		.4byte	0x109
+ 1352 0575 E703     		.2byte	0x3e7
+ 1353 0577 00       		.byte	0
+ 1354 0578 1C       		.uleb128 0x1c
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 29
+
+
+ 1355 0579 3C030000 		.4byte	.LASF39
+ 1356 057d 01       		.byte	0x1
+ 1357 057e 0C       		.byte	0xc
+ 1358 057f 67050000 		.4byte	0x567
+ 1359 0583 05       		.uleb128 0x5
+ 1360 0584 03       		.byte	0x3
+ 1361 0585 00000000 		.4byte	y_entrada
+ 1362 0589 1C       		.uleb128 0x1c
+ 1363 058a 71010000 		.4byte	.LASF40
+ 1364 058e 01       		.byte	0x1
+ 1365 058f 0D       		.byte	0xd
+ 1366 0590 67050000 		.4byte	0x567
+ 1367 0594 05       		.uleb128 0x5
+ 1368 0595 03       		.byte	0x3
+ 1369 0596 00000000 		.4byte	y_salida
+ 1370 059a 1C       		.uleb128 0x1c
+ 1371 059b E3030000 		.4byte	.LASF41
+ 1372 059f 01       		.byte	0x1
+ 1373 05a0 13       		.byte	0x13
+ 1374 05a1 F2000000 		.4byte	0xf2
+ 1375 05a5 05       		.uleb128 0x5
+ 1376 05a6 03       		.byte	0x3
+ 1377 05a7 00000000 		.4byte	estado
+ 1378 05ab 1C       		.uleb128 0x1c
+ 1379 05ac 67020000 		.4byte	.LASF42
+ 1380 05b0 01       		.byte	0x1
+ 1381 05b1 14       		.byte	0x14
+ 1382 05b2 F2000000 		.4byte	0xf2
+ 1383 05b6 05       		.uleb128 0x5
+ 1384 05b7 03       		.byte	0x3
+ 1385 05b8 00000000 		.4byte	dma_transfer_complete_flag
+ 1386 05bc 1C       		.uleb128 0x1c
+ 1387 05bd B9030000 		.4byte	.LASF43
+ 1388 05c1 01       		.byte	0x1
+ 1389 05c2 15       		.byte	0x15
+ 1390 05c3 AD000000 		.4byte	0xad
+ 1391 05c7 05       		.uleb128 0x5
+ 1392 05c8 03       		.byte	0x3
+ 1393 05c9 00000000 		.4byte	DMA_In_Chan
+ 1394 05cd 1C       		.uleb128 0x1c
+ 1395 05ce 10000000 		.4byte	.LASF44
+ 1396 05d2 01       		.byte	0x1
+ 1397 05d3 15       		.byte	0x15
+ 1398 05d4 AD000000 		.4byte	0xad
+ 1399 05d8 05       		.uleb128 0x5
+ 1400 05d9 03       		.byte	0x3
+ 1401 05da 00000000 		.4byte	DMA_Out_Chan
+ 1402 05de 18       		.uleb128 0x18
+ 1403 05df AD000000 		.4byte	0xad
+ 1404 05e3 EE050000 		.4byte	0x5ee
+ 1405 05e7 1D       		.uleb128 0x1d
+ 1406 05e8 09010000 		.4byte	0x109
+ 1407 05ec 00       		.byte	0
+ 1408 05ed 00       		.byte	0
+ 1409 05ee 1C       		.uleb128 0x1c
+ 1410 05ef 67010000 		.4byte	.LASF45
+ 1411 05f3 01       		.byte	0x1
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 30
+
+
+ 1412 05f4 16       		.byte	0x16
+ 1413 05f5 DE050000 		.4byte	0x5de
+ 1414 05f9 05       		.uleb128 0x5
+ 1415 05fa 03       		.byte	0x3
+ 1416 05fb 00000000 		.4byte	DMA_In_TD
+ 1417 05ff 1C       		.uleb128 0x1c
+ 1418 0600 78040000 		.4byte	.LASF46
+ 1419 0604 01       		.byte	0x1
+ 1420 0605 16       		.byte	0x16
+ 1421 0606 DE050000 		.4byte	0x5de
+ 1422 060a 05       		.uleb128 0x5
+ 1423 060b 03       		.byte	0x3
+ 1424 060c 00000000 		.4byte	DMA_Out_TD
+ 1425 0610 1E       		.uleb128 0x1e
+ 1426 0611 58000000 		.4byte	.LASF47
+ 1427 0615 58000000 		.4byte	.LASF47
+ 1428 0619 07       		.byte	0x7
+ 1429 061a 28       		.byte	0x28
+ 1430 061b 1E       		.uleb128 0x1e
+ 1431 061c 2A030000 		.4byte	.LASF48
+ 1432 0620 2A030000 		.4byte	.LASF48
+ 1433 0624 08       		.byte	0x8
+ 1434 0625 6F       		.byte	0x6f
+ 1435 0626 1E       		.uleb128 0x1e
+ 1436 0627 6B030000 		.4byte	.LASF49
+ 1437 062b 6B030000 		.4byte	.LASF49
+ 1438 062f 08       		.byte	0x8
+ 1439 0630 73       		.byte	0x73
+ 1440 0631 1E       		.uleb128 0x1e
+ 1441 0632 D1020000 		.4byte	.LASF50
+ 1442 0636 D1020000 		.4byte	.LASF50
+ 1443 063a 09       		.byte	0x9
+ 1444 063b 28       		.byte	0x28
+ 1445 063c 1E       		.uleb128 0x1e
+ 1446 063d 33010000 		.4byte	.LASF51
+ 1447 0641 33010000 		.4byte	.LASF51
+ 1448 0645 08       		.byte	0x8
+ 1449 0646 54       		.byte	0x54
+ 1450 0647 1E       		.uleb128 0x1e
+ 1451 0648 8F010000 		.4byte	.LASF52
+ 1452 064c 8F010000 		.4byte	.LASF52
+ 1453 0650 0A       		.byte	0xa
+ 1454 0651 3C       		.byte	0x3c
+ 1455 0652 1E       		.uleb128 0x1e
+ 1456 0653 A2030000 		.4byte	.LASF53
+ 1457 0657 A2030000 		.4byte	.LASF53
+ 1458 065b 0B       		.byte	0xb
+ 1459 065c 4A       		.byte	0x4a
+ 1460 065d 1E       		.uleb128 0x1e
+ 1461 065e F0000000 		.4byte	.LASF54
+ 1462 0662 F0000000 		.4byte	.LASF54
+ 1463 0666 09       		.byte	0x9
+ 1464 0667 18       		.byte	0x18
+ 1465 0668 1E       		.uleb128 0x1e
+ 1466 0669 1D000000 		.4byte	.LASF55
+ 1467 066d 1D000000 		.4byte	.LASF55
+ 1468 0671 07       		.byte	0x7
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 31
+
+
+ 1469 0672 18       		.byte	0x18
+ 1470 0673 1E       		.uleb128 0x1e
+ 1471 0674 03030000 		.4byte	.LASF56
+ 1472 0678 03030000 		.4byte	.LASF56
+ 1473 067c 0C       		.byte	0xc
+ 1474 067d 1E       		.byte	0x1e
+ 1475 067e 1E       		.uleb128 0x1e
+ 1476 067f 00000000 		.4byte	.LASF57
+ 1477 0683 00000000 		.4byte	.LASF57
+ 1478 0687 0D       		.byte	0xd
+ 1479 0688 38       		.byte	0x38
+ 1480 0689 1E       		.uleb128 0x1e
+ 1481 068a AE020000 		.4byte	.LASF58
+ 1482 068e AE020000 		.4byte	.LASF58
+ 1483 0692 0E       		.byte	0xe
+ 1484 0693 1E       		.byte	0x1e
+ 1485 0694 1E       		.uleb128 0x1e
+ 1486 0695 CB000000 		.4byte	.LASF59
+ 1487 0699 CB000000 		.4byte	.LASF59
+ 1488 069d 0D       		.byte	0xd
+ 1489 069e 3B       		.byte	0x3b
+ 1490 069f 1E       		.uleb128 0x1e
+ 1491 06a0 32000000 		.4byte	.LASF60
+ 1492 06a4 32000000 		.4byte	.LASF60
+ 1493 06a8 0D       		.byte	0xd
+ 1494 06a9 3F       		.byte	0x3f
+ 1495 06aa 1E       		.uleb128 0x1e
+ 1496 06ab 44000000 		.4byte	.LASF61
+ 1497 06af 44000000 		.4byte	.LASF61
+ 1498 06b3 0D       		.byte	0xd
+ 1499 06b4 2F       		.byte	0x2f
+ 1500 06b5 1E       		.uleb128 0x1e
+ 1501 06b6 8E000000 		.4byte	.LASF62
+ 1502 06ba 8E000000 		.4byte	.LASF62
+ 1503 06be 0D       		.byte	0xd
+ 1504 06bf 29       		.byte	0x29
+ 1505 06c0 1E       		.uleb128 0x1e
+ 1506 06c1 A9000000 		.4byte	.LASF63
+ 1507 06c5 A9000000 		.4byte	.LASF63
+ 1508 06c9 0D       		.byte	0xd
+ 1509 06ca 30       		.byte	0x30
+ 1510 06cb 00       		.byte	0
+ 1511              		.section	.debug_abbrev,"",%progbits
+ 1512              	.Ldebug_abbrev0:
+ 1513 0000 01       		.uleb128 0x1
+ 1514 0001 11       		.uleb128 0x11
+ 1515 0002 01       		.byte	0x1
+ 1516 0003 25       		.uleb128 0x25
+ 1517 0004 0E       		.uleb128 0xe
+ 1518 0005 13       		.uleb128 0x13
+ 1519 0006 0B       		.uleb128 0xb
+ 1520 0007 03       		.uleb128 0x3
+ 1521 0008 0E       		.uleb128 0xe
+ 1522 0009 1B       		.uleb128 0x1b
+ 1523 000a 0E       		.uleb128 0xe
+ 1524 000b 55       		.uleb128 0x55
+ 1525 000c 17       		.uleb128 0x17
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 32
+
+
+ 1526 000d 11       		.uleb128 0x11
+ 1527 000e 01       		.uleb128 0x1
+ 1528 000f 10       		.uleb128 0x10
+ 1529 0010 17       		.uleb128 0x17
+ 1530 0011 00       		.byte	0
+ 1531 0012 00       		.byte	0
+ 1532 0013 02       		.uleb128 0x2
+ 1533 0014 24       		.uleb128 0x24
+ 1534 0015 00       		.byte	0
+ 1535 0016 0B       		.uleb128 0xb
+ 1536 0017 0B       		.uleb128 0xb
+ 1537 0018 3E       		.uleb128 0x3e
+ 1538 0019 0B       		.uleb128 0xb
+ 1539 001a 03       		.uleb128 0x3
+ 1540 001b 0E       		.uleb128 0xe
+ 1541 001c 00       		.byte	0
+ 1542 001d 00       		.byte	0
+ 1543 001e 03       		.uleb128 0x3
+ 1544 001f 16       		.uleb128 0x16
+ 1545 0020 00       		.byte	0
+ 1546 0021 03       		.uleb128 0x3
+ 1547 0022 0E       		.uleb128 0xe
+ 1548 0023 3A       		.uleb128 0x3a
+ 1549 0024 0B       		.uleb128 0xb
+ 1550 0025 3B       		.uleb128 0x3b
+ 1551 0026 0B       		.uleb128 0xb
+ 1552 0027 49       		.uleb128 0x49
+ 1553 0028 13       		.uleb128 0x13
+ 1554 0029 00       		.byte	0
+ 1555 002a 00       		.byte	0
+ 1556 002b 04       		.uleb128 0x4
+ 1557 002c 24       		.uleb128 0x24
+ 1558 002d 00       		.byte	0
+ 1559 002e 0B       		.uleb128 0xb
+ 1560 002f 0B       		.uleb128 0xb
+ 1561 0030 3E       		.uleb128 0x3e
+ 1562 0031 0B       		.uleb128 0xb
+ 1563 0032 03       		.uleb128 0x3
+ 1564 0033 08       		.uleb128 0x8
+ 1565 0034 00       		.byte	0
+ 1566 0035 00       		.byte	0
+ 1567 0036 05       		.uleb128 0x5
+ 1568 0037 16       		.uleb128 0x16
+ 1569 0038 00       		.byte	0
+ 1570 0039 03       		.uleb128 0x3
+ 1571 003a 0E       		.uleb128 0xe
+ 1572 003b 3A       		.uleb128 0x3a
+ 1573 003c 0B       		.uleb128 0xb
+ 1574 003d 3B       		.uleb128 0x3b
+ 1575 003e 05       		.uleb128 0x5
+ 1576 003f 49       		.uleb128 0x49
+ 1577 0040 13       		.uleb128 0x13
+ 1578 0041 00       		.byte	0
+ 1579 0042 00       		.byte	0
+ 1580 0043 06       		.uleb128 0x6
+ 1581 0044 35       		.uleb128 0x35
+ 1582 0045 00       		.byte	0
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 33
+
+
+ 1583 0046 49       		.uleb128 0x49
+ 1584 0047 13       		.uleb128 0x13
+ 1585 0048 00       		.byte	0
+ 1586 0049 00       		.byte	0
+ 1587 004a 07       		.uleb128 0x7
+ 1588 004b 2E       		.uleb128 0x2e
+ 1589 004c 01       		.byte	0x1
+ 1590 004d 3F       		.uleb128 0x3f
+ 1591 004e 19       		.uleb128 0x19
+ 1592 004f 03       		.uleb128 0x3
+ 1593 0050 0E       		.uleb128 0xe
+ 1594 0051 3A       		.uleb128 0x3a
+ 1595 0052 0B       		.uleb128 0xb
+ 1596 0053 3B       		.uleb128 0x3b
+ 1597 0054 0B       		.uleb128 0xb
+ 1598 0055 27       		.uleb128 0x27
+ 1599 0056 19       		.uleb128 0x19
+ 1600 0057 11       		.uleb128 0x11
+ 1601 0058 01       		.uleb128 0x1
+ 1602 0059 12       		.uleb128 0x12
+ 1603 005a 06       		.uleb128 0x6
+ 1604 005b 40       		.uleb128 0x40
+ 1605 005c 18       		.uleb128 0x18
+ 1606 005d 9742     		.uleb128 0x2117
+ 1607 005f 19       		.uleb128 0x19
+ 1608 0060 01       		.uleb128 0x1
+ 1609 0061 13       		.uleb128 0x13
+ 1610 0062 00       		.byte	0
+ 1611 0063 00       		.byte	0
+ 1612 0064 08       		.uleb128 0x8
+ 1613 0065 898201   		.uleb128 0x4109
+ 1614 0068 00       		.byte	0
+ 1615 0069 11       		.uleb128 0x11
+ 1616 006a 01       		.uleb128 0x1
+ 1617 006b 31       		.uleb128 0x31
+ 1618 006c 13       		.uleb128 0x13
+ 1619 006d 00       		.byte	0
+ 1620 006e 00       		.byte	0
+ 1621 006f 09       		.uleb128 0x9
+ 1622 0070 05       		.uleb128 0x5
+ 1623 0071 00       		.byte	0
+ 1624 0072 03       		.uleb128 0x3
+ 1625 0073 0E       		.uleb128 0xe
+ 1626 0074 3A       		.uleb128 0x3a
+ 1627 0075 0B       		.uleb128 0xb
+ 1628 0076 3B       		.uleb128 0x3b
+ 1629 0077 0B       		.uleb128 0xb
+ 1630 0078 49       		.uleb128 0x49
+ 1631 0079 13       		.uleb128 0x13
+ 1632 007a 02       		.uleb128 0x2
+ 1633 007b 17       		.uleb128 0x17
+ 1634 007c 00       		.byte	0
+ 1635 007d 00       		.byte	0
+ 1636 007e 0A       		.uleb128 0xa
+ 1637 007f 05       		.uleb128 0x5
+ 1638 0080 00       		.byte	0
+ 1639 0081 03       		.uleb128 0x3
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 34
+
+
+ 1640 0082 0E       		.uleb128 0xe
+ 1641 0083 3A       		.uleb128 0x3a
+ 1642 0084 0B       		.uleb128 0xb
+ 1643 0085 3B       		.uleb128 0x3b
+ 1644 0086 0B       		.uleb128 0xb
+ 1645 0087 49       		.uleb128 0x49
+ 1646 0088 13       		.uleb128 0x13
+ 1647 0089 02       		.uleb128 0x2
+ 1648 008a 18       		.uleb128 0x18
+ 1649 008b 00       		.byte	0
+ 1650 008c 00       		.byte	0
+ 1651 008d 0B       		.uleb128 0xb
+ 1652 008e 0B       		.uleb128 0xb
+ 1653 008f 01       		.byte	0x1
+ 1654 0090 11       		.uleb128 0x11
+ 1655 0091 01       		.uleb128 0x1
+ 1656 0092 12       		.uleb128 0x12
+ 1657 0093 06       		.uleb128 0x6
+ 1658 0094 00       		.byte	0
+ 1659 0095 00       		.byte	0
+ 1660 0096 0C       		.uleb128 0xc
+ 1661 0097 34       		.uleb128 0x34
+ 1662 0098 00       		.byte	0
+ 1663 0099 03       		.uleb128 0x3
+ 1664 009a 08       		.uleb128 0x8
+ 1665 009b 3A       		.uleb128 0x3a
+ 1666 009c 0B       		.uleb128 0xb
+ 1667 009d 3B       		.uleb128 0x3b
+ 1668 009e 0B       		.uleb128 0xb
+ 1669 009f 49       		.uleb128 0x49
+ 1670 00a0 13       		.uleb128 0x13
+ 1671 00a1 02       		.uleb128 0x2
+ 1672 00a2 17       		.uleb128 0x17
+ 1673 00a3 00       		.byte	0
+ 1674 00a4 00       		.byte	0
+ 1675 00a5 0D       		.uleb128 0xd
+ 1676 00a6 34       		.uleb128 0x34
+ 1677 00a7 00       		.byte	0
+ 1678 00a8 03       		.uleb128 0x3
+ 1679 00a9 0E       		.uleb128 0xe
+ 1680 00aa 3A       		.uleb128 0x3a
+ 1681 00ab 0B       		.uleb128 0xb
+ 1682 00ac 3B       		.uleb128 0x3b
+ 1683 00ad 0B       		.uleb128 0xb
+ 1684 00ae 49       		.uleb128 0x49
+ 1685 00af 13       		.uleb128 0x13
+ 1686 00b0 02       		.uleb128 0x2
+ 1687 00b1 18       		.uleb128 0x18
+ 1688 00b2 00       		.byte	0
+ 1689 00b3 00       		.byte	0
+ 1690 00b4 0E       		.uleb128 0xe
+ 1691 00b5 0F       		.uleb128 0xf
+ 1692 00b6 00       		.byte	0
+ 1693 00b7 0B       		.uleb128 0xb
+ 1694 00b8 0B       		.uleb128 0xb
+ 1695 00b9 49       		.uleb128 0x49
+ 1696 00ba 13       		.uleb128 0x13
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 35
+
+
+ 1697 00bb 00       		.byte	0
+ 1698 00bc 00       		.byte	0
+ 1699 00bd 0F       		.uleb128 0xf
+ 1700 00be 26       		.uleb128 0x26
+ 1701 00bf 00       		.byte	0
+ 1702 00c0 49       		.uleb128 0x49
+ 1703 00c1 13       		.uleb128 0x13
+ 1704 00c2 00       		.byte	0
+ 1705 00c3 00       		.byte	0
+ 1706 00c4 10       		.uleb128 0x10
+ 1707 00c5 34       		.uleb128 0x34
+ 1708 00c6 00       		.byte	0
+ 1709 00c7 03       		.uleb128 0x3
+ 1710 00c8 0E       		.uleb128 0xe
+ 1711 00c9 3A       		.uleb128 0x3a
+ 1712 00ca 0B       		.uleb128 0xb
+ 1713 00cb 3B       		.uleb128 0x3b
+ 1714 00cc 0B       		.uleb128 0xb
+ 1715 00cd 49       		.uleb128 0x49
+ 1716 00ce 13       		.uleb128 0x13
+ 1717 00cf 02       		.uleb128 0x2
+ 1718 00d0 17       		.uleb128 0x17
+ 1719 00d1 00       		.byte	0
+ 1720 00d2 00       		.byte	0
+ 1721 00d3 11       		.uleb128 0x11
+ 1722 00d4 898201   		.uleb128 0x4109
+ 1723 00d7 01       		.byte	0x1
+ 1724 00d8 11       		.uleb128 0x11
+ 1725 00d9 01       		.uleb128 0x1
+ 1726 00da 31       		.uleb128 0x31
+ 1727 00db 13       		.uleb128 0x13
+ 1728 00dc 01       		.uleb128 0x1
+ 1729 00dd 13       		.uleb128 0x13
+ 1730 00de 00       		.byte	0
+ 1731 00df 00       		.byte	0
+ 1732 00e0 12       		.uleb128 0x12
+ 1733 00e1 8A8201   		.uleb128 0x410a
+ 1734 00e4 00       		.byte	0
+ 1735 00e5 02       		.uleb128 0x2
+ 1736 00e6 18       		.uleb128 0x18
+ 1737 00e7 9142     		.uleb128 0x2111
+ 1738 00e9 18       		.uleb128 0x18
+ 1739 00ea 00       		.byte	0
+ 1740 00eb 00       		.byte	0
+ 1741 00ec 13       		.uleb128 0x13
+ 1742 00ed 2E       		.uleb128 0x2e
+ 1743 00ee 01       		.byte	0x1
+ 1744 00ef 3F       		.uleb128 0x3f
+ 1745 00f0 19       		.uleb128 0x19
+ 1746 00f1 03       		.uleb128 0x3
+ 1747 00f2 0E       		.uleb128 0xe
+ 1748 00f3 3A       		.uleb128 0x3a
+ 1749 00f4 0B       		.uleb128 0xb
+ 1750 00f5 3B       		.uleb128 0x3b
+ 1751 00f6 0B       		.uleb128 0xb
+ 1752 00f7 27       		.uleb128 0x27
+ 1753 00f8 19       		.uleb128 0x19
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 36
+
+
+ 1754 00f9 11       		.uleb128 0x11
+ 1755 00fa 01       		.uleb128 0x1
+ 1756 00fb 12       		.uleb128 0x12
+ 1757 00fc 06       		.uleb128 0x6
+ 1758 00fd 40       		.uleb128 0x40
+ 1759 00fe 18       		.uleb128 0x18
+ 1760 00ff 9642     		.uleb128 0x2116
+ 1761 0101 19       		.uleb128 0x19
+ 1762 0102 01       		.uleb128 0x1
+ 1763 0103 13       		.uleb128 0x13
+ 1764 0104 00       		.byte	0
+ 1765 0105 00       		.byte	0
+ 1766 0106 14       		.uleb128 0x14
+ 1767 0107 2E       		.uleb128 0x2e
+ 1768 0108 01       		.byte	0x1
+ 1769 0109 3F       		.uleb128 0x3f
+ 1770 010a 19       		.uleb128 0x19
+ 1771 010b 03       		.uleb128 0x3
+ 1772 010c 0E       		.uleb128 0xe
+ 1773 010d 3A       		.uleb128 0x3a
+ 1774 010e 0B       		.uleb128 0xb
+ 1775 010f 3B       		.uleb128 0x3b
+ 1776 0110 0B       		.uleb128 0xb
+ 1777 0111 11       		.uleb128 0x11
+ 1778 0112 01       		.uleb128 0x1
+ 1779 0113 12       		.uleb128 0x12
+ 1780 0114 06       		.uleb128 0x6
+ 1781 0115 40       		.uleb128 0x40
+ 1782 0116 18       		.uleb128 0x18
+ 1783 0117 9742     		.uleb128 0x2117
+ 1784 0119 19       		.uleb128 0x19
+ 1785 011a 01       		.uleb128 0x1
+ 1786 011b 13       		.uleb128 0x13
+ 1787 011c 00       		.byte	0
+ 1788 011d 00       		.byte	0
+ 1789 011e 15       		.uleb128 0x15
+ 1790 011f 2E       		.uleb128 0x2e
+ 1791 0120 01       		.byte	0x1
+ 1792 0121 3F       		.uleb128 0x3f
+ 1793 0122 19       		.uleb128 0x19
+ 1794 0123 03       		.uleb128 0x3
+ 1795 0124 0E       		.uleb128 0xe
+ 1796 0125 3A       		.uleb128 0x3a
+ 1797 0126 0B       		.uleb128 0xb
+ 1798 0127 3B       		.uleb128 0x3b
+ 1799 0128 0B       		.uleb128 0xb
+ 1800 0129 27       		.uleb128 0x27
+ 1801 012a 19       		.uleb128 0x19
+ 1802 012b 49       		.uleb128 0x49
+ 1803 012c 13       		.uleb128 0x13
+ 1804 012d 8701     		.uleb128 0x87
+ 1805 012f 19       		.uleb128 0x19
+ 1806 0130 11       		.uleb128 0x11
+ 1807 0131 01       		.uleb128 0x1
+ 1808 0132 12       		.uleb128 0x12
+ 1809 0133 06       		.uleb128 0x6
+ 1810 0134 40       		.uleb128 0x40
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 37
+
+
+ 1811 0135 18       		.uleb128 0x18
+ 1812 0136 9742     		.uleb128 0x2117
+ 1813 0138 19       		.uleb128 0x19
+ 1814 0139 01       		.uleb128 0x1
+ 1815 013a 13       		.uleb128 0x13
+ 1816 013b 00       		.byte	0
+ 1817 013c 00       		.byte	0
+ 1818 013d 16       		.uleb128 0x16
+ 1819 013e 0B       		.uleb128 0xb
+ 1820 013f 01       		.byte	0x1
+ 1821 0140 55       		.uleb128 0x55
+ 1822 0141 17       		.uleb128 0x17
+ 1823 0142 01       		.uleb128 0x1
+ 1824 0143 13       		.uleb128 0x13
+ 1825 0144 00       		.byte	0
+ 1826 0145 00       		.byte	0
+ 1827 0146 17       		.uleb128 0x17
+ 1828 0147 898201   		.uleb128 0x4109
+ 1829 014a 01       		.byte	0x1
+ 1830 014b 11       		.uleb128 0x11
+ 1831 014c 01       		.uleb128 0x1
+ 1832 014d 31       		.uleb128 0x31
+ 1833 014e 13       		.uleb128 0x13
+ 1834 014f 00       		.byte	0
+ 1835 0150 00       		.byte	0
+ 1836 0151 18       		.uleb128 0x18
+ 1837 0152 01       		.uleb128 0x1
+ 1838 0153 01       		.byte	0x1
+ 1839 0154 49       		.uleb128 0x49
+ 1840 0155 13       		.uleb128 0x13
+ 1841 0156 01       		.uleb128 0x1
+ 1842 0157 13       		.uleb128 0x13
+ 1843 0158 00       		.byte	0
+ 1844 0159 00       		.byte	0
+ 1845 015a 19       		.uleb128 0x19
+ 1846 015b 21       		.uleb128 0x21
+ 1847 015c 00       		.byte	0
+ 1848 015d 49       		.uleb128 0x49
+ 1849 015e 13       		.uleb128 0x13
+ 1850 015f 2F       		.uleb128 0x2f
+ 1851 0160 05       		.uleb128 0x5
+ 1852 0161 00       		.byte	0
+ 1853 0162 00       		.byte	0
+ 1854 0163 1A       		.uleb128 0x1a
+ 1855 0164 34       		.uleb128 0x34
+ 1856 0165 00       		.byte	0
+ 1857 0166 03       		.uleb128 0x3
+ 1858 0167 08       		.uleb128 0x8
+ 1859 0168 3A       		.uleb128 0x3a
+ 1860 0169 0B       		.uleb128 0xb
+ 1861 016a 3B       		.uleb128 0x3b
+ 1862 016b 0B       		.uleb128 0xb
+ 1863 016c 49       		.uleb128 0x49
+ 1864 016d 13       		.uleb128 0x13
+ 1865 016e 02       		.uleb128 0x2
+ 1866 016f 18       		.uleb128 0x18
+ 1867 0170 00       		.byte	0
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 38
+
+
+ 1868 0171 00       		.byte	0
+ 1869 0172 1B       		.uleb128 0x1b
+ 1870 0173 34       		.uleb128 0x34
+ 1871 0174 00       		.byte	0
+ 1872 0175 03       		.uleb128 0x3
+ 1873 0176 0E       		.uleb128 0xe
+ 1874 0177 3A       		.uleb128 0x3a
+ 1875 0178 0B       		.uleb128 0xb
+ 1876 0179 3B       		.uleb128 0x3b
+ 1877 017a 05       		.uleb128 0x5
+ 1878 017b 49       		.uleb128 0x49
+ 1879 017c 13       		.uleb128 0x13
+ 1880 017d 3F       		.uleb128 0x3f
+ 1881 017e 19       		.uleb128 0x19
+ 1882 017f 3C       		.uleb128 0x3c
+ 1883 0180 19       		.uleb128 0x19
+ 1884 0181 00       		.byte	0
+ 1885 0182 00       		.byte	0
+ 1886 0183 1C       		.uleb128 0x1c
+ 1887 0184 34       		.uleb128 0x34
+ 1888 0185 00       		.byte	0
+ 1889 0186 03       		.uleb128 0x3
+ 1890 0187 0E       		.uleb128 0xe
+ 1891 0188 3A       		.uleb128 0x3a
+ 1892 0189 0B       		.uleb128 0xb
+ 1893 018a 3B       		.uleb128 0x3b
+ 1894 018b 0B       		.uleb128 0xb
+ 1895 018c 49       		.uleb128 0x49
+ 1896 018d 13       		.uleb128 0x13
+ 1897 018e 3F       		.uleb128 0x3f
+ 1898 018f 19       		.uleb128 0x19
+ 1899 0190 02       		.uleb128 0x2
+ 1900 0191 18       		.uleb128 0x18
+ 1901 0192 00       		.byte	0
+ 1902 0193 00       		.byte	0
+ 1903 0194 1D       		.uleb128 0x1d
+ 1904 0195 21       		.uleb128 0x21
+ 1905 0196 00       		.byte	0
+ 1906 0197 49       		.uleb128 0x49
+ 1907 0198 13       		.uleb128 0x13
+ 1908 0199 2F       		.uleb128 0x2f
+ 1909 019a 0B       		.uleb128 0xb
+ 1910 019b 00       		.byte	0
+ 1911 019c 00       		.byte	0
+ 1912 019d 1E       		.uleb128 0x1e
+ 1913 019e 2E       		.uleb128 0x2e
+ 1914 019f 00       		.byte	0
+ 1915 01a0 3F       		.uleb128 0x3f
+ 1916 01a1 19       		.uleb128 0x19
+ 1917 01a2 3C       		.uleb128 0x3c
+ 1918 01a3 19       		.uleb128 0x19
+ 1919 01a4 6E       		.uleb128 0x6e
+ 1920 01a5 0E       		.uleb128 0xe
+ 1921 01a6 03       		.uleb128 0x3
+ 1922 01a7 0E       		.uleb128 0xe
+ 1923 01a8 3A       		.uleb128 0x3a
+ 1924 01a9 0B       		.uleb128 0xb
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 39
+
+
+ 1925 01aa 3B       		.uleb128 0x3b
+ 1926 01ab 0B       		.uleb128 0xb
+ 1927 01ac 00       		.byte	0
+ 1928 01ad 00       		.byte	0
+ 1929 01ae 00       		.byte	0
+ 1930              		.section	.debug_loc,"",%progbits
+ 1931              	.Ldebug_loc0:
+ 1932              	.LLST0:
+ 1933 0000 00000000 		.4byte	.LVL1
+ 1934 0004 0A000000 		.4byte	.LVL3
+ 1935 0008 0100     		.2byte	0x1
+ 1936 000a 50       		.byte	0x50
+ 1937 000b 0A000000 		.4byte	.LVL3
+ 1938 000f 20000000 		.4byte	.LVL5
+ 1939 0013 0100     		.2byte	0x1
+ 1940 0015 55       		.byte	0x55
+ 1941 0016 20000000 		.4byte	.LVL5
+ 1942 001a 22000000 		.4byte	.LFE67
+ 1943 001e 0400     		.2byte	0x4
+ 1944 0020 F3       		.byte	0xf3
+ 1945 0021 01       		.uleb128 0x1
+ 1946 0022 50       		.byte	0x50
+ 1947 0023 9F       		.byte	0x9f
+ 1948 0024 00000000 		.4byte	0
+ 1949 0028 00000000 		.4byte	0
+ 1950              	.LLST1:
+ 1951 002c 06000000 		.4byte	.LVL2
+ 1952 0030 0A000000 		.4byte	.LVL3
+ 1953 0034 0200     		.2byte	0x2
+ 1954 0036 30       		.byte	0x30
+ 1955 0037 9F       		.byte	0x9f
+ 1956 0038 0A000000 		.4byte	.LVL3
+ 1957 003c 22000000 		.4byte	.LFE67
+ 1958 0040 0100     		.2byte	0x1
+ 1959 0042 53       		.byte	0x53
+ 1960 0043 00000000 		.4byte	0
+ 1961 0047 00000000 		.4byte	0
+ 1962              	.LLST2:
+ 1963 004b 08000000 		.4byte	.LVL6
+ 1964 004f 48000000 		.4byte	.LVL7
+ 1965 0053 0100     		.2byte	0x1
+ 1966 0055 50       		.byte	0x50
+ 1967 0056 00000000 		.4byte	0
+ 1968 005a 00000000 		.4byte	0
+ 1969              	.LLST3:
+ 1970 005e 00000000 		.4byte	.LVL11
+ 1971 0062 0C000000 		.4byte	.LVL13
+ 1972 0066 0100     		.2byte	0x1
+ 1973 0068 50       		.byte	0x50
+ 1974 0069 0C000000 		.4byte	.LVL13
+ 1975 006d 28000000 		.4byte	.LFE68
+ 1976 0071 0100     		.2byte	0x1
+ 1977 0073 57       		.byte	0x57
+ 1978 0074 00000000 		.4byte	0
+ 1979 0078 00000000 		.4byte	0
+ 1980              	.LLST4:
+ 1981 007c 00000000 		.4byte	.LVL11
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 40
+
+
+ 1982 0080 0C000000 		.4byte	.LVL13
+ 1983 0084 0100     		.2byte	0x1
+ 1984 0086 51       		.byte	0x51
+ 1985 0087 0C000000 		.4byte	.LVL13
+ 1986 008b 28000000 		.4byte	.LFE68
+ 1987 008f 0100     		.2byte	0x1
+ 1988 0091 56       		.byte	0x56
+ 1989 0092 00000000 		.4byte	0
+ 1990 0096 00000000 		.4byte	0
+ 1991              	.LLST5:
+ 1992 009a 00000000 		.4byte	.LVL11
+ 1993 009e 0C000000 		.4byte	.LVL13
+ 1994 00a2 0100     		.2byte	0x1
+ 1995 00a4 52       		.byte	0x52
+ 1996 00a5 0C000000 		.4byte	.LVL13
+ 1997 00a9 28000000 		.4byte	.LFE68
+ 1998 00ad 0100     		.2byte	0x1
+ 1999 00af 55       		.byte	0x55
+ 2000 00b0 00000000 		.4byte	0
+ 2001 00b4 00000000 		.4byte	0
+ 2002              	.LLST6:
+ 2003 00b8 08000000 		.4byte	.LVL12
+ 2004 00bc 0C000000 		.4byte	.LVL13
+ 2005 00c0 0200     		.2byte	0x2
+ 2006 00c2 30       		.byte	0x30
+ 2007 00c3 9F       		.byte	0x9f
+ 2008 00c4 0C000000 		.4byte	.LVL13
+ 2009 00c8 28000000 		.4byte	.LFE68
+ 2010 00cc 0100     		.2byte	0x1
+ 2011 00ce 54       		.byte	0x54
+ 2012 00cf 00000000 		.4byte	0
+ 2013 00d3 00000000 		.4byte	0
+ 2014              	.LLST7:
+ 2015 00d7 00000000 		.4byte	.LVL17
+ 2016 00db 0C000000 		.4byte	.LVL19
+ 2017 00df 0100     		.2byte	0x1
+ 2018 00e1 50       		.byte	0x50
+ 2019 00e2 0C000000 		.4byte	.LVL19
+ 2020 00e6 28000000 		.4byte	.LFE69
+ 2021 00ea 0100     		.2byte	0x1
+ 2022 00ec 57       		.byte	0x57
+ 2023 00ed 00000000 		.4byte	0
+ 2024 00f1 00000000 		.4byte	0
+ 2025              	.LLST8:
+ 2026 00f5 00000000 		.4byte	.LVL17
+ 2027 00f9 0C000000 		.4byte	.LVL19
+ 2028 00fd 0100     		.2byte	0x1
+ 2029 00ff 51       		.byte	0x51
+ 2030 0100 0C000000 		.4byte	.LVL19
+ 2031 0104 28000000 		.4byte	.LFE69
+ 2032 0108 0100     		.2byte	0x1
+ 2033 010a 56       		.byte	0x56
+ 2034 010b 00000000 		.4byte	0
+ 2035 010f 00000000 		.4byte	0
+ 2036              	.LLST9:
+ 2037 0113 00000000 		.4byte	.LVL17
+ 2038 0117 0C000000 		.4byte	.LVL19
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 41
+
+
+ 2039 011b 0100     		.2byte	0x1
+ 2040 011d 52       		.byte	0x52
+ 2041 011e 0C000000 		.4byte	.LVL19
+ 2042 0122 28000000 		.4byte	.LFE69
+ 2043 0126 0100     		.2byte	0x1
+ 2044 0128 55       		.byte	0x55
+ 2045 0129 00000000 		.4byte	0
+ 2046 012d 00000000 		.4byte	0
+ 2047              	.LLST10:
+ 2048 0131 08000000 		.4byte	.LVL18
+ 2049 0135 0C000000 		.4byte	.LVL19
+ 2050 0139 0200     		.2byte	0x2
+ 2051 013b 30       		.byte	0x30
+ 2052 013c 9F       		.byte	0x9f
+ 2053 013d 0C000000 		.4byte	.LVL19
+ 2054 0141 28000000 		.4byte	.LFE69
+ 2055 0145 0100     		.2byte	0x1
+ 2056 0147 54       		.byte	0x54
+ 2057 0148 00000000 		.4byte	0
+ 2058 014c 00000000 		.4byte	0
+ 2059              	.LLST11:
+ 2060 0150 50010000 		.4byte	.LVL43
+ 2061 0154 62010000 		.4byte	.LVL46
+ 2062 0158 0100     		.2byte	0x1
+ 2063 015a 54       		.byte	0x54
+ 2064 015b 64010000 		.4byte	.LVL47
+ 2065 015f 72010000 		.4byte	.LVL48
+ 2066 0163 0100     		.2byte	0x1
+ 2067 0165 54       		.byte	0x54
+ 2068 0166 00000000 		.4byte	0
+ 2069 016a 00000000 		.4byte	0
+ 2070              	.LLST12:
+ 2071 016e 72010000 		.4byte	.LVL48
+ 2072 0172 84010000 		.4byte	.LVL51
+ 2073 0176 0100     		.2byte	0x1
+ 2074 0178 54       		.byte	0x54
+ 2075 0179 86010000 		.4byte	.LVL52
+ 2076 017d C0010000 		.4byte	.LFE64
+ 2077 0181 0100     		.2byte	0x1
+ 2078 0183 54       		.byte	0x54
+ 2079 0184 00000000 		.4byte	0
+ 2080 0188 00000000 		.4byte	0
+ 2081              		.section	.debug_aranges,"",%progbits
+ 2082 0000 4C000000 		.4byte	0x4c
+ 2083 0004 0200     		.2byte	0x2
+ 2084 0006 00000000 		.4byte	.Ldebug_info0
+ 2085 000a 04       		.byte	0x4
+ 2086 000b 00       		.byte	0
+ 2087 000c 0000     		.2byte	0
+ 2088 000e 0000     		.2byte	0
+ 2089 0010 00000000 		.4byte	.LFB65
+ 2090 0014 14000000 		.4byte	.LFE65-.LFB65
+ 2091 0018 00000000 		.4byte	.LFB67
+ 2092 001c 22000000 		.4byte	.LFE67-.LFB67
+ 2093 0020 00000000 		.4byte	.LFB66
+ 2094 0024 68000000 		.4byte	.LFE66-.LFB66
+ 2095 0028 00000000 		.4byte	.LFB68
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 42
+
+
+ 2096 002c 28000000 		.4byte	.LFE68-.LFB68
+ 2097 0030 00000000 		.4byte	.LFB69
+ 2098 0034 28000000 		.4byte	.LFE69-.LFB69
+ 2099 0038 00000000 		.4byte	.LFB70
+ 2100 003c 0C000000 		.4byte	.LFE70-.LFB70
+ 2101 0040 00000000 		.4byte	.LFB64
+ 2102 0044 C0010000 		.4byte	.LFE64-.LFB64
+ 2103 0048 00000000 		.4byte	0
+ 2104 004c 00000000 		.4byte	0
+ 2105              		.section	.debug_ranges,"",%progbits
+ 2106              	.Ldebug_ranges0:
+ 2107 0000 50010000 		.4byte	.LBB6
+ 2108 0004 62010000 		.4byte	.LBE6
+ 2109 0008 64010000 		.4byte	.LBB7
+ 2110 000c 6A010000 		.4byte	.LBE7
+ 2111 0010 00000000 		.4byte	0
+ 2112 0014 00000000 		.4byte	0
+ 2113 0018 72010000 		.4byte	.LBB8
+ 2114 001c 84010000 		.4byte	.LBE8
+ 2115 0020 86010000 		.4byte	.LBB9
+ 2116 0024 8C010000 		.4byte	.LBE9
+ 2117 0028 00000000 		.4byte	0
+ 2118 002c 00000000 		.4byte	0
+ 2119 0030 00000000 		.4byte	.LFB65
+ 2120 0034 14000000 		.4byte	.LFE65
+ 2121 0038 00000000 		.4byte	.LFB67
+ 2122 003c 22000000 		.4byte	.LFE67
+ 2123 0040 00000000 		.4byte	.LFB66
+ 2124 0044 68000000 		.4byte	.LFE66
+ 2125 0048 00000000 		.4byte	.LFB68
+ 2126 004c 28000000 		.4byte	.LFE68
+ 2127 0050 00000000 		.4byte	.LFB69
+ 2128 0054 28000000 		.4byte	.LFE69
+ 2129 0058 00000000 		.4byte	.LFB70
+ 2130 005c 0C000000 		.4byte	.LFE70
+ 2131 0060 00000000 		.4byte	.LFB64
+ 2132 0064 C0010000 		.4byte	.LFE64
+ 2133 0068 00000000 		.4byte	0
+ 2134 006c 00000000 		.4byte	0
+ 2135              		.section	.debug_line,"",%progbits
+ 2136              	.Ldebug_line0:
+ 2137 0000 3B030000 		.section	.debug_str,"MS",%progbits,1
+ 2137      02001902 
+ 2137      00000201 
+ 2137      FB0E0D00 
+ 2137      01010101 
+ 2138              	.LASF57:
+ 2139 0000 4379446D 		.ascii	"CyDmaTdAllocate\000"
+ 2139      61546441 
+ 2139      6C6C6F63 
+ 2139      61746500 
+ 2140              	.LASF44:
+ 2141 0010 444D415F 		.ascii	"DMA_Out_Chan\000"
+ 2141      4F75745F 
+ 2141      4368616E 
+ 2141      00
+ 2142              	.LASF55:
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 43
+
+
+ 2143 001d 6973725F 		.ascii	"isr_dma_done_StartEx\000"
+ 2143      646D615F 
+ 2143      646F6E65 
+ 2143      5F537461 
+ 2143      72744578 
+ 2144              	.LASF60:
+ 2145 0032 4379446D 		.ascii	"CyDmaTdSetAddress\000"
+ 2145      61546453 
+ 2145      65744164 
+ 2145      64726573 
+ 2145      7300
+ 2146              	.LASF61:
+ 2147 0044 4379446D 		.ascii	"CyDmaChSetInitialTd\000"
+ 2147      61436853 
+ 2147      6574496E 
+ 2147      69746961 
+ 2147      6C546400 
+ 2148              	.LASF47:
+ 2149 0058 6973725F 		.ascii	"isr_dma_done_ClearPending\000"
+ 2149      646D615F 
+ 2149      646F6E65 
+ 2149      5F436C65 
+ 2149      61725065 
+ 2150              	.LASF30:
+ 2151 0072 74656D70 		.ascii	"temp\000"
+ 2151      00
+ 2152              	.LASF2:
+ 2153 0077 73686F72 		.ascii	"short int\000"
+ 2153      7420696E 
+ 2153      7400
+ 2154              	.LASF22:
+ 2155 0081 73697A65 		.ascii	"size_t\000"
+ 2155      5F7400
+ 2156              	.LASF27:
+ 2157 0088 696E7075 		.ascii	"input\000"
+ 2157      7400
+ 2158              	.LASF62:
+ 2159 008e 4379446D 		.ascii	"CyDmaChEnable\000"
+ 2159      61436845 
+ 2159      6E61626C 
+ 2159      6500
+ 2160              	.LASF25:
+ 2161 009c 444D415F 		.ascii	"DMA_Done_ISR\000"
+ 2161      446F6E65 
+ 2161      5F495352 
+ 2161      00
+ 2162              	.LASF63:
+ 2163 00a9 4379446D 		.ascii	"CyDmaChSetRequest\000"
+ 2163      61436853 
+ 2163      65745265 
+ 2163      71756573 
+ 2163      7400
+ 2164              	.LASF68:
+ 2165 00bb 6D61696E 		.ascii	"main\000"
+ 2165      00
+ 2166              	.LASF7:
+ 2167 00c0 5F5F7569 		.ascii	"__uint32_t\000"
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 44
+
+
+ 2167      6E743332 
+ 2167      5F7400
+ 2168              	.LASF59:
+ 2169 00cb 4379446D 		.ascii	"CyDmaTdSetConfiguration\000"
+ 2169      61546453 
+ 2169      6574436F 
+ 2169      6E666967 
+ 2169      75726174 
+ 2170              	.LASF37:
+ 2171 00e3 795F7361 		.ascii	"y_salida_q32\000"
+ 2171      6C696461 
+ 2171      5F713332 
+ 2171      00
+ 2172              	.LASF54:
+ 2173 00f0 6973725F 		.ascii	"isr_rx_StartEx\000"
+ 2173      72785F53 
+ 2173      74617274 
+ 2173      457800
+ 2174              	.LASF16:
+ 2175 00ff 75696E74 		.ascii	"uint16\000"
+ 2175      313600
+ 2176              	.LASF26:
+ 2177 0106 636F6E76 		.ascii	"convertToIntFloat\000"
+ 2177      65727454 
+ 2177      6F496E74 
+ 2177      466C6F61 
+ 2177      7400
+ 2178              	.LASF12:
+ 2179 0118 75696E74 		.ascii	"uint8_t\000"
+ 2179      385F7400 
+ 2180              	.LASF15:
+ 2181 0120 75696E74 		.ascii	"uint8\000"
+ 2181      3800
+ 2182              	.LASF33:
+ 2183 0126 636F6E76 		.ascii	"convertToQ32\000"
+ 2183      65727454 
+ 2183      6F513332 
+ 2183      00
+ 2184              	.LASF51:
+ 2185 0133 55415254 		.ascii	"UART_1_Start\000"
+ 2185      5F315F53 
+ 2185      74617274 
+ 2185      00
+ 2186              	.LASF18:
+ 2187 0140 666C6F61 		.ascii	"float\000"
+ 2187      7400
+ 2188              	.LASF9:
+ 2189 0146 6C6F6E67 		.ascii	"long long int\000"
+ 2189      206C6F6E 
+ 2189      6720696E 
+ 2189      7400
+ 2190              	.LASF6:
+ 2191 0154 6C6F6E67 		.ascii	"long int\000"
+ 2191      20696E74 
+ 2191      00
+ 2192              	.LASF4:
+ 2193 015d 5F5F7569 		.ascii	"__uint8_t\000"
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 45
+
+
+ 2193      6E74385F 
+ 2193      7400
+ 2194              	.LASF45:
+ 2195 0167 444D415F 		.ascii	"DMA_In_TD\000"
+ 2195      496E5F54 
+ 2195      4400
+ 2196              	.LASF40:
+ 2197 0171 795F7361 		.ascii	"y_salida\000"
+ 2197      6C696461 
+ 2197      00
+ 2198              	.LASF23:
+ 2199 017a 6C6F6E67 		.ascii	"long double\000"
+ 2199      20646F75 
+ 2199      626C6500 
+ 2200              	.LASF67:
+ 2201 0186 6D795F53 		.ascii	"my_Start\000"
+ 2201      74617274 
+ 2201      00
+ 2202              	.LASF52:
+ 2203 018f 46696C74 		.ascii	"Filter_1_Start\000"
+ 2203      65725F31 
+ 2203      5F537461 
+ 2203      727400
+ 2204              	.LASF66:
+ 2205 019e 433A5C55 		.ascii	"C:\\Users\\tobia\\Downloads\\ProyectoPDS solo matla"
+ 2205      73657273 
+ 2205      5C746F62 
+ 2205      69615C44 
+ 2205      6F776E6C 
+ 2206 01cd 622D3230 		.ascii	"b-20251102T203416Z-1-001\\ProyectoPDS solo matlab-2"
+ 2206      32353131 
+ 2206      30325432 
+ 2206      30333431 
+ 2206      365A2D31 
+ 2207 01ff 30323531 		.ascii	"0251102T203416Z-1-001\\ProyectoPDS solo matlab\\lab"
+ 2207      31303254 
+ 2207      32303334 
+ 2207      31365A2D 
+ 2207      312D3030 
+ 2208 0230 352D6669 		.ascii	"5-fiuna-filtros_sencillos\\Design01.cydsn\000"
+ 2208      756E612D 
+ 2208      66696C74 
+ 2208      726F735F 
+ 2208      73656E63 
+ 2209              	.LASF1:
+ 2210 0259 756E7369 		.ascii	"unsigned char\000"
+ 2210      676E6564 
+ 2210      20636861 
+ 2210      7200
+ 2211              	.LASF42:
+ 2212 0267 646D615F 		.ascii	"dma_transfer_complete_flag\000"
+ 2212      7472616E 
+ 2212      73666572 
+ 2212      5F636F6D 
+ 2212      706C6574 
+ 2213              	.LASF0:
+ 2214 0282 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 46
+
+
+ 2214      65642063 
+ 2214      68617200 
+ 2215              	.LASF10:
+ 2216 028e 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2216      206C6F6E 
+ 2216      6720756E 
+ 2216      7369676E 
+ 2216      65642069 
+ 2217              	.LASF14:
+ 2218 02a5 75696E74 		.ascii	"uint32_t\000"
+ 2218      33325F74 
+ 2218      00
+ 2219              	.LASF58:
+ 2220 02ae 444D415F 		.ascii	"DMA_Out_DmaInitialize\000"
+ 2220      4F75745F 
+ 2220      446D6149 
+ 2220      6E697469 
+ 2220      616C697A 
+ 2221              	.LASF11:
+ 2222 02c4 756E7369 		.ascii	"unsigned int\000"
+ 2222      676E6564 
+ 2222      20696E74 
+ 2222      00
+ 2223              	.LASF50:
+ 2224 02d1 6973725F 		.ascii	"isr_rx_ClearPending\000"
+ 2224      72785F43 
+ 2224      6C656172 
+ 2224      50656E64 
+ 2224      696E6700 
+ 2225              	.LASF31:
+ 2226 02e5 52784973 		.ascii	"RxIsr\000"
+ 2226      7200
+ 2227              	.LASF3:
+ 2228 02eb 73686F72 		.ascii	"short unsigned int\000"
+ 2228      7420756E 
+ 2228      7369676E 
+ 2228      65642069 
+ 2228      6E7400
+ 2229              	.LASF20:
+ 2230 02fe 63686172 		.ascii	"char\000"
+ 2230      00
+ 2231              	.LASF56:
+ 2232 0303 444D415F 		.ascii	"DMA_In_DmaInitialize\000"
+ 2232      496E5F44 
+ 2232      6D61496E 
+ 2232      69746961 
+ 2232      6C697A65 
+ 2233              	.LASF13:
+ 2234 0318 696E7433 		.ascii	"int32_t\000"
+ 2234      325F7400 
+ 2235              	.LASF29:
+ 2236 0320 696E7075 		.ascii	"inputSize\000"
+ 2236      7453697A 
+ 2236      6500
+ 2237              	.LASF48:
+ 2238 032a 55415254 		.ascii	"UART_1_ReadRxData\000"
+ 2238      5F315F52 
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 47
+
+
+ 2238      65616452 
+ 2238      78446174 
+ 2238      6100
+ 2239              	.LASF39:
+ 2240 033c 795F656E 		.ascii	"y_entrada\000"
+ 2240      74726164 
+ 2240      6100
+ 2241              	.LASF17:
+ 2242 0346 75696E74 		.ascii	"uint32\000"
+ 2242      333200
+ 2243              	.LASF65:
+ 2244 034d 6D61696E 		.ascii	"main.c\000"
+ 2244      2E6300
+ 2245              	.LASF21:
+ 2246 0354 72656738 		.ascii	"reg8\000"
+ 2246      00
+ 2247              	.LASF8:
+ 2248 0359 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2248      20756E73 
+ 2248      69676E65 
+ 2248      6420696E 
+ 2248      7400
+ 2249              	.LASF49:
+ 2250 036b 55415254 		.ascii	"UART_1_GetRxBufferSize\000"
+ 2250      5F315F47 
+ 2250      65745278 
+ 2250      42756666 
+ 2250      65725369 
+ 2251              	.LASF36:
+ 2252 0382 795F656E 		.ascii	"y_entrada_q32\000"
+ 2252      74726164 
+ 2252      615F7133 
+ 2252      3200
+ 2253              	.LASF38:
+ 2254 0390 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2254      52784275 
+ 2254      66666572 
+ 2254      00
+ 2255              	.LASF34:
+ 2256 039d 73697A65 		.ascii	"size\000"
+ 2256      00
+ 2257              	.LASF53:
+ 2258 03a2 43686172 		.ascii	"Chart_1_Plot\000"
+ 2258      745F315F 
+ 2258      506C6F74 
+ 2258      00
+ 2259              	.LASF5:
+ 2260 03af 5F5F696E 		.ascii	"__int32_t\000"
+ 2260      7433325F 
+ 2260      7400
+ 2261              	.LASF43:
+ 2262 03b9 444D415F 		.ascii	"DMA_In_Chan\000"
+ 2262      496E5F43 
+ 2262      68616E00 
+ 2263              	.LASF24:
+ 2264 03c5 73697A65 		.ascii	"sizetype\000"
+ 2264      74797065 
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccZyLTtm.s 			page 48
+
+
+ 2264      00
+ 2265              	.LASF32:
+ 2266 03ce 72784461 		.ascii	"rxData\000"
+ 2266      746100
+ 2267              	.LASF28:
+ 2268 03d5 6F757470 		.ascii	"output\000"
+ 2268      757400
+ 2269              	.LASF19:
+ 2270 03dc 646F7562 		.ascii	"double\000"
+ 2270      6C6500
+ 2271              	.LASF41:
+ 2272 03e3 65737461 		.ascii	"estado\000"
+ 2272      646F00
+ 2273              	.LASF64:
+ 2274 03ea 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2274      43313120 
+ 2274      352E342E 
+ 2274      31203230 
+ 2274      31363036 
+ 2275 041d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2275      20726576 
+ 2275      6973696F 
+ 2275      6E203233 
+ 2275      37373135 
+ 2276 0450 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2276      66756E63 
+ 2276      74696F6E 
+ 2276      2D736563 
+ 2276      74696F6E 
+ 2277              	.LASF46:
+ 2278 0478 444D415F 		.ascii	"DMA_Out_TD\000"
+ 2278      4F75745F 
+ 2278      544400
+ 2279              	.LASF35:
+ 2280 0483 636F6E76 		.ascii	"convertFromQ32\000"
+ 2280      65727446 
+ 2280      726F6D51 
+ 2280      333200
+ 2281              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
