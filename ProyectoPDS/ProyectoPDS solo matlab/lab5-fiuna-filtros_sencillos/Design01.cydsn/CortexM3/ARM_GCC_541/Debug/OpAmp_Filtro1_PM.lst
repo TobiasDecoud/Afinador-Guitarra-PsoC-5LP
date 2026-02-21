@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
   28:Generated_Source\PSoC5/OpAmp_Filtro1_PM.c **** *  Saves the current user configuration registers.
   29:Generated_Source\PSoC5/OpAmp_Filtro1_PM.c **** * 
   30:Generated_Source\PSoC5/OpAmp_Filtro1_PM.c **** * Parameters:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 2
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 2
 
 
   31:Generated_Source\PSoC5/OpAmp_Filtro1_PM.c **** *  void
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
   54 0002 00BF     		.section	.text.OpAmp_Filtro1_Sleep,"ax",%progbits
   55              		.align	2
   56              		.global	OpAmp_Filtro1_Sleep
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 3
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 3
 
 
   57              		.thumb
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
   90:Generated_Source\PSoC5/OpAmp_Filtro1_PM.c ****          OpAmp_Filtro1_Stop();
   80              		.loc 1 90 0
   81 0012 FFF7FEFF 		bl	OpAmp_Filtro1_Stop
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 4
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 4
 
 
   82              	.LVL0:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  121:Generated_Source\PSoC5/OpAmp_Filtro1_PM.c **** void OpAmp_Filtro1_Wakeup(void) 
  122:Generated_Source\PSoC5/OpAmp_Filtro1_PM.c **** {
  106              		.loc 1 122 0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 5
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 5
 
 
  107              		.cfi_startproc
@@ -292,18 +292,18 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  148 000b 01       		.uleb128 0x1
  149 000c 72000000 		.4byte	.LASF23
  150 0010 0C       		.byte	0xc
- 151 0011 A9010000 		.4byte	.LASF24
- 152 0015 0D020000 		.4byte	.LASF25
+ 151 0011 29020000 		.4byte	.LASF24
+ 152 0015 99010000 		.4byte	.LASF25
  153 0019 00000000 		.4byte	.Ldebug_ranges0+0
  154 001d 00000000 		.4byte	0
  155 0021 00000000 		.4byte	.Ldebug_line0
  156 0025 02       		.uleb128 0x2
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 6
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 6
 
 
  157 0026 01       		.byte	0x1
  158 0027 06       		.byte	0x6
- 159 0028 E8010000 		.4byte	.LASF0
+ 159 0028 68020000 		.4byte	.LASF0
  160 002c 02       		.uleb128 0x2
  161 002d 01       		.byte	0x1
  162 002e 08       		.byte	0x8
@@ -311,7 +311,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  164 0033 02       		.uleb128 0x2
  165 0034 02       		.byte	0x2
  166 0035 05       		.byte	0x5
- 167 0036 C2020000 		.4byte	.LASF2
+ 167 0036 99020000 		.4byte	.LASF2
  168 003a 02       		.uleb128 0x2
  169 003b 02       		.byte	0x2
  170 003c 07       		.byte	0x7
@@ -319,7 +319,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  172 0041 02       		.uleb128 0x2
  173 0042 04       		.byte	0x4
  174 0043 05       		.byte	0x5
- 175 0044 99010000 		.4byte	.LASF4
+ 175 0044 19020000 		.4byte	.LASF4
  176 0048 02       		.uleb128 0x2
  177 0049 04       		.byte	0x4
  178 004a 07       		.byte	0x7
@@ -352,16 +352,16 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  205 007e 02       		.uleb128 0x2
  206 007f 08       		.byte	0x8
  207 0080 04       		.byte	0x4
- 208 0081 A2010000 		.4byte	.LASF10
+ 208 0081 22020000 		.4byte	.LASF10
  209 0085 02       		.uleb128 0x2
  210 0086 01       		.byte	0x1
  211 0087 08       		.byte	0x8
  212 0088 94010000 		.4byte	.LASF11
  213 008c 04       		.uleb128 0x4
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 7
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 7
 
 
- 214 008d CC020000 		.4byte	.LASF13
+ 214 008d A3020000 		.4byte	.LASF13
  215 0091 02       		.byte	0x2
  216 0092 9302     		.2byte	0x293
  217 0094 98000000 		.4byte	0x98
@@ -370,11 +370,11 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  220 009d 02       		.uleb128 0x2
  221 009e 08       		.byte	0x8
  222 009f 04       		.byte	0x4
- 223 00a0 B6020000 		.4byte	.LASF14
+ 223 00a0 8D020000 		.4byte	.LASF14
  224 00a4 02       		.uleb128 0x2
  225 00a5 04       		.byte	0x4
  226 00a6 07       		.byte	0x7
- 227 00a7 D1020000 		.4byte	.LASF15
+ 227 00a7 A8020000 		.4byte	.LASF15
  228 00ab 06       		.uleb128 0x6
  229 00ac 01       		.byte	0x1
  230 00ad 03       		.byte	0x3
@@ -393,7 +393,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  243 00c6 29       		.byte	0x29
  244 00c7 AB000000 		.4byte	0xab
  245 00cb 09       		.uleb128 0x9
- 246 00cc F4010000 		.4byte	.LASF17
+ 246 00cc 74020000 		.4byte	.LASF17
  247 00d0 01       		.byte	0x1
  248 00d1 25       		.byte	0x25
  249 00d2 00000000 		.4byte	.LFB0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  268 00fd 9C       		.byte	0x9c
  269 00fe 0C010000 		.4byte	0x10c
  270 0102 0B       		.uleb128 0xb
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 8
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 8
 
 
  271 0103 16000000 		.4byte	.LVL0
@@ -451,8 +451,8 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  298 0145 03       		.byte	0x3
  299 0146 34       		.byte	0x34
  300 0147 0D       		.uleb128 0xd
- 301 0148 D3010000 		.4byte	.LASF22
- 302 014c D3010000 		.4byte	.LASF22
+ 301 0148 53020000 		.4byte	.LASF22
+ 302 014c 53020000 		.4byte	.LASF22
  303 0150 03       		.byte	0x3
  304 0151 3B       		.byte	0x3b
  305 0152 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  325 0011 00       		.byte	0
  326 0012 00       		.byte	0
  327 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 9
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 9
 
 
  328 0014 24       		.uleb128 0x24
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  382 004a 07       		.uleb128 0x7
  383 004b 0D       		.uleb128 0xd
  384 004c 00       		.byte	0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 10
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 10
 
 
  385 004d 03       		.uleb128 0x3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  439 0084 0E       		.uleb128 0xe
  440 0085 3A       		.uleb128 0x3a
  441 0086 0B       		.uleb128 0xb
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 11
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 11
 
 
  442 0087 3B       		.uleb128 0x3b
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  496 00c0 0B       		.uleb128 0xb
  497 00c1 00       		.byte	0
  498 00c2 00       		.byte	0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 12
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 12
 
 
  499 00c3 00       		.byte	0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  540 002d 756E7369 		.ascii	"unsigned int\000"
  540      676E6564 
  540      20696E74 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 13
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 13
 
 
  540      00
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  558      315F5374 
  558      6F7000
  559              	.LASF9:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 14
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 14
 
 
  560 0156 666C6F61 		.ascii	"float\000"
@@ -803,72 +803,67 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 1
  567              	.LASF11:
  568 0194 63686172 		.ascii	"char\000"
  568      00
- 569              	.LASF4:
- 570 0199 6C6F6E67 		.ascii	"long int\000"
- 570      20696E74 
- 570      00
- 571              	.LASF10:
- 572 01a2 646F7562 		.ascii	"double\000"
- 572      6C6500
- 573              	.LASF24:
- 574 01a9 47656E65 		.ascii	"Generated_Source\\PSoC5\\OpAmp_Filtro1_PM.c\000"
- 574      72617465 
- 574      645F536F 
- 574      75726365 
- 574      5C50536F 
- 575              	.LASF22:
- 576 01d3 4F70416D 		.ascii	"OpAmp_Filtro1_Enable\000"
- 576      705F4669 
- 576      6C74726F 
- 576      315F456E 
- 576      61626C65 
- 577              	.LASF0:
- 578 01e8 7369676E 		.ascii	"signed char\000"
- 578      65642063 
- 578      68617200 
- 579              	.LASF17:
- 580 01f4 4F70416D 		.ascii	"OpAmp_Filtro1_SaveConfig\000"
+ 569              	.LASF25:
+ 570 0199 443A5C44 		.ascii	"D:\\Documentos\\GitHub\\Afinador-Guitarra-PsoC-5LP\\"
+ 570      6F63756D 
+ 570      656E746F 
+ 570      735C4769 
+ 570      74487562 
+ 571 01c9 50726F79 		.ascii	"ProyectoPDS\\ProyectoPDS solo matlab\\lab5-fiuna-fi"
+ 571      6563746F 
+ 571      5044535C 
+ 571      50726F79 
+ 571      6563746F 
+ 572 01fa 6C74726F 		.ascii	"ltros_sencillos\\Design01.cydsn\000"
+ 572      735F7365 
+ 572      6E63696C 
+ 572      6C6F735C 
+ 572      44657369 
+ 573              	.LASF4:
+ 574 0219 6C6F6E67 		.ascii	"long int\000"
+ 574      20696E74 
+ 574      00
+ 575              	.LASF10:
+ 576 0222 646F7562 		.ascii	"double\000"
+ 576      6C6500
+ 577              	.LASF24:
+ 578 0229 47656E65 		.ascii	"Generated_Source\\PSoC5\\OpAmp_Filtro1_PM.c\000"
+ 578      72617465 
+ 578      645F536F 
+ 578      75726365 
+ 578      5C50536F 
+ 579              	.LASF22:
+ 580 0253 4F70416D 		.ascii	"OpAmp_Filtro1_Enable\000"
  580      705F4669 
  580      6C74726F 
- 580      315F5361 
- 580      7665436F 
- 581              	.LASF25:
- 582 020d 433A5C55 		.ascii	"C:\\Users\\user\\Desktop\\ProyectoPDS_V11\\Proyecto"
- 582      73657273 
- 582      5C757365 
- 582      725C4465 
- 582      736B746F 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccbMXPUM.s 			page 15
+ 580      315F456E 
+ 580      61626C65 
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccWpDo1h.s 			page 15
 
 
- 583 023b 5044535F 		.ascii	"PDS_V11\\ProyectoPDS solo matlab-20251102T203416Z-1"
- 583      5631315C 
- 583      50726F79 
- 583      6563746F 
- 583      50445320 
- 584 026d 2D303031 		.ascii	"-001\\ProyectoPDS solo matlab\\lab5-fiuna-filtros_s"
- 584      5C50726F 
- 584      79656374 
- 584      6F504453 
- 584      20736F6C 
- 585 029e 656E6369 		.ascii	"encillos\\Design01.cydsn\000"
- 585      6C6C6F73 
- 585      5C446573 
- 585      69676E30 
- 585      312E6379 
- 586              	.LASF14:
- 587 02b6 6C6F6E67 		.ascii	"long double\000"
- 587      20646F75 
- 587      626C6500 
- 588              	.LASF2:
- 589 02c2 73686F72 		.ascii	"short int\000"
- 589      7420696E 
- 589      7400
- 590              	.LASF13:
- 591 02cc 72656738 		.ascii	"reg8\000"
- 591      00
- 592              	.LASF15:
- 593 02d1 73697A65 		.ascii	"sizetype\000"
- 593      74797065 
- 593      00
- 594              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 581              	.LASF0:
+ 582 0268 7369676E 		.ascii	"signed char\000"
+ 582      65642063 
+ 582      68617200 
+ 583              	.LASF17:
+ 584 0274 4F70416D 		.ascii	"OpAmp_Filtro1_SaveConfig\000"
+ 584      705F4669 
+ 584      6C74726F 
+ 584      315F5361 
+ 584      7665436F 
+ 585              	.LASF14:
+ 586 028d 6C6F6E67 		.ascii	"long double\000"
+ 586      20646F75 
+ 586      626C6500 
+ 587              	.LASF2:
+ 588 0299 73686F72 		.ascii	"short int\000"
+ 588      7420696E 
+ 588      7400
+ 589              	.LASF13:
+ 590 02a3 72656738 		.ascii	"reg8\000"
+ 590      00
+ 591              	.LASF15:
+ 592 02a8 73697A65 		.ascii	"sizetype\000"
+ 592      74797065 
+ 592      00
+ 593              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

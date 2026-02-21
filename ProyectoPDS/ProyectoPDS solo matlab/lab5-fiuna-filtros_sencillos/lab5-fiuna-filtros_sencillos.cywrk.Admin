@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lab5-fiuna-filtros_sencillos\Design01\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lab5-fiuna-filtros_sencillos\Design01\Source Files\configuracion.h">
 <ExpandedNodeIds>
 <v>lab5-fiuna-filtros_sencillos</v>
 <v>lab5-fiuna-filtros_sencillos\Design01</v>
@@ -160,6 +160,8 @@
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_dma_done.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\lcd_i2c.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Acoplador.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Acoplador_PM.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Filtro1.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Filtro1_PM.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Filtro2.lst</v>
@@ -168,6 +170,7 @@
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Vref_PM.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\PGA_1.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\PGA_1_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_1.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Entrada_F1.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Entrada_F2.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Salida_F1.lst</v>
@@ -178,6 +181,7 @@
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SCL_1.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SDA_1.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Status_Reg_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Vout_1.lst</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Design01.elf</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Design01.hex</v>
 <v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Design01.map</v>
@@ -303,15 +307,9 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\Design01.cydsn\gestion_hardware.c" />
-<name v=".\Design01.cydsn\Design01.cydwr" />
-<name v=".\Design01.cydsn\main.c" />
-<name v=".\Design01.cydsn\procesamiento.c" />
-<name v=".\Design01.cydsn\gestion_hardware.h" />
-<name v=".\Design01.cydsn\procesamiento.h" />
-<name v=".\Design01.cydsn\configuracion.h" />
-<name v=".\Design01.cydsn\coeficientes.h" />
 <name v=".\Design01.cydsn\coeficientes.c" />
+<name v=".\Design01.cydsn\coeficientes.h" />
+<name v=".\Design01.cydsn\configuracion.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -319,7 +317,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1242, 732" SelectedTabbedMdiWindow="5e84c803-61a5-4772-baaa-5b4a2a743cff"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="299985b9-5d5f-4b13-a4ea-3b8d806eb3cc" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="5e84c803-61a5-4772-baaa-5b4a2a743cff" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\gestion_hardware.c" Guid="4a799ccb-eafc-4bc8-ae7b-8d7911d8b33a" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cydwr" Guid="f01048cd-d034-4243-9c83-fde676a8c9c3" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\main.c" Guid="84b1b679-df82-41a8-8bc6-109f26279c93" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\procesamiento.c" Guid="a51376e5-86a5-464a-924d-7c7cd467db2d" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\gestion_hardware.h" Guid="ce26d367-ac1f-40e2-a9b0-26d865354d3b" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\procesamiento.h" Guid="bd022f04-dabc-4333-ba1d-dddb11b61476" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\configuracion.h" Guid="10dd6b3a-538e-4eb3-b6c2-9f84e3194be1" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\coeficientes.h" Guid="8b1dc95e-ea59-4110-ae7d-a20071e4ef0a" /><DocumentWindow Key="D:\Desktop\ProyectoPDS\ProyectoPDS_V10\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\coeficientes.c" Guid="fd7e04f6-ade7-4fa7-9d28-5cebd0fa87b5" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1242, 692" SelectedTabbedMdiWindow="d15c9ff2-9126-4174-b10d-571f795acf4b"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="299985b9-5d5f-4b13-a4ea-3b8d806eb3cc" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="d15c9ff2-9126-4174-b10d-571f795acf4b" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\coeficientes.c" Guid="3fc74102-ee23-44f6-a900-e0bc1825eb31" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\coeficientes.h" Guid="d1eab027-a1de-4f39-abbf-9595da123547" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\configuracion.h" Guid="73e85c61-fe5c-4447-87c5-0d7906a78ff5" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

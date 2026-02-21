@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
   49 000a 06E0     		b	.L2
   50              	.LVL2:
   51              	.L3:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 2
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 2
 
 
   52              	.LBB3:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
   93              		@ args = 0, pretend = 0, frame = 32
   94              		@ frame_needed = 0, uses_anonymous_args = 0
   95              	.LVL5:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 3
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 3
 
 
   96 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  141 003c DDE90201 		ldrd	r0, [sp, #8]
  142 0040 FFF7FEFF 		bl	__aeabi_dadd
  143              	.LVL9:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 4
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 4
 
 
  144 0044 CDE90201 		strd	r0, [sp, #8]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  194              	.L7:
   22:procesamiento.c ****         if (datos[i] & 0x01) { // Si hay pulso (LSB = 1)
  195              		.loc 1 22 0 discriminator 2
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 5
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 5
 
 
  196 009c 0134     		adds	r4, r4, #1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  242              	.LVL33:
  243 00e8 0446     		mov	r4, r0
  244              	.LVL34:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 6
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 6
 
 
  245 00ea 0D46     		mov	r5, r1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  293              	.L12:
  294              	.LBE7:
  295              	.LBE6:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 7
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 7
 
 
   20:procesamiento.c **** 
@@ -395,10 +395,10 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  321              		.size	Calcular_Frecuencia_Regresion, .-Calcular_Frecuencia_Regresion
  322              		.text
  323              	.Letext0:
- 324              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
- 325              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 324              		.file 2 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\inc
+ 325              		.file 3 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\inc
  326              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 327              		.file 5 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 327              		.file 5 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\lib\\gcc\\arm-none
  328              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
  329              		.section	.debug_info,"",%progbits
  330              	.Ldebug_info0:
@@ -407,18 +407,18 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  333 0006 00000000 		.4byte	.Ldebug_abbrev0
  334 000a 04       		.byte	0x4
  335 000b 01       		.uleb128 0x1
- 336 000c 38000000 		.4byte	.LASF37
+ 336 000c B8000000 		.4byte	.LASF37
  337 0010 0C       		.byte	0xc
- 338 0011 D3000000 		.4byte	.LASF38
- 339 0015 F0010000 		.4byte	.LASF39
+ 338 0011 53010000 		.4byte	.LASF38
+ 339 0015 33000000 		.4byte	.LASF39
  340 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
  341 001d 00000000 		.4byte	0
  342 0021 00000000 		.4byte	.Ldebug_line0
  343 0025 02       		.uleb128 0x2
  344 0026 01       		.byte	0x1
  345 0027 06       		.byte	0x6
- 346 0028 C1020000 		.4byte	.LASF0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 8
+ 346 0028 98020000 		.4byte	.LASF0
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 8
 
 
  347 002c 03       		.uleb128 0x3
@@ -429,15 +429,15 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  352 0037 02       		.uleb128 0x2
  353 0038 01       		.byte	0x1
  354 0039 08       		.byte	0x8
- 355 003a 1B010000 		.4byte	.LASF1
+ 355 003a 9B010000 		.4byte	.LASF1
  356 003e 02       		.uleb128 0x2
  357 003f 02       		.byte	0x2
  358 0040 05       		.byte	0x5
- 359 0041 DF010000 		.4byte	.LASF2
+ 359 0041 5F020000 		.4byte	.LASF2
  360 0045 02       		.uleb128 0x2
  361 0046 02       		.byte	0x2
  362 0047 07       		.byte	0x7
- 363 0048 E3000000 		.4byte	.LASF3
+ 363 0048 63010000 		.4byte	.LASF3
  364 004c 03       		.uleb128 0x3
  365 004d 11000000 		.4byte	.LASF5
  366 0051 02       		.byte	0x2
@@ -446,24 +446,24 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  369 0057 02       		.uleb128 0x2
  370 0058 04       		.byte	0x4
  371 0059 05       		.byte	0x5
- 372 005a AC020000 		.4byte	.LASF6
+ 372 005a 83020000 		.4byte	.LASF6
  373 005e 03       		.uleb128 0x3
- 374 005f 3B010000 		.4byte	.LASF7
+ 374 005f BB010000 		.4byte	.LASF7
  375 0063 02       		.byte	0x2
  376 0064 41       		.byte	0x41
  377 0065 69000000 		.4byte	0x69
  378 0069 02       		.uleb128 0x2
  379 006a 04       		.byte	0x4
  380 006b 07       		.byte	0x7
- 381 006c 29010000 		.4byte	.LASF8
+ 381 006c A9010000 		.4byte	.LASF8
  382 0070 02       		.uleb128 0x2
  383 0071 08       		.byte	0x8
  384 0072 05       		.byte	0x5
- 385 0073 BA010000 		.4byte	.LASF9
+ 385 0073 3A020000 		.4byte	.LASF9
  386 0077 02       		.uleb128 0x2
  387 0078 08       		.byte	0x8
  388 0079 07       		.byte	0x7
- 389 007a 66010000 		.4byte	.LASF10
+ 389 007a E6010000 		.4byte	.LASF10
  390 007e 04       		.uleb128 0x4
  391 007f 04       		.byte	0x4
  392 0080 05       		.byte	0x5
@@ -471,27 +471,27 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  394 0085 02       		.uleb128 0x2
  395 0086 04       		.byte	0x4
  396 0087 07       		.byte	0x7
- 397 0088 59010000 		.4byte	.LASF11
+ 397 0088 D9010000 		.4byte	.LASF11
  398 008c 03       		.uleb128 0x3
- 399 008d 7D010000 		.4byte	.LASF12
+ 399 008d FD010000 		.4byte	.LASF12
  400 0091 03       		.byte	0x3
  401 0092 18       		.byte	0x18
  402 0093 2C000000 		.4byte	0x2c
  403 0097 03       		.uleb128 0x3
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 9
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 9
 
 
- 404 0098 8B010000 		.4byte	.LASF13
+ 404 0098 0B020000 		.4byte	.LASF13
  405 009c 03       		.byte	0x3
  406 009d 2C       		.byte	0x2c
  407 009e 4C000000 		.4byte	0x4c
  408 00a2 03       		.uleb128 0x3
- 409 00a3 A3020000 		.4byte	.LASF14
+ 409 00a3 7A020000 		.4byte	.LASF14
  410 00a7 03       		.byte	0x3
  411 00a8 30       		.byte	0x30
  412 00a9 5E000000 		.4byte	0x5e
  413 00ad 05       		.uleb128 0x5
- 414 00ae 46010000 		.4byte	.LASF15
+ 414 00ae C6010000 		.4byte	.LASF15
  415 00b2 04       		.byte	0x4
  416 00b3 EA01     		.2byte	0x1ea
  417 00b5 45000000 		.4byte	0x45
@@ -506,7 +506,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  426 00c7 02       		.uleb128 0x2
  427 00c8 01       		.byte	0x1
  428 00c9 08       		.byte	0x8
- 429 00ca C8010000 		.4byte	.LASF18
+ 429 00ca 48020000 		.4byte	.LASF18
  430 00ce 03       		.uleb128 0x3
  431 00cf 0A000000 		.4byte	.LASF19
  432 00d3 05       		.byte	0x5
@@ -515,13 +515,13 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  435 00d9 02       		.uleb128 0x2
  436 00da 08       		.byte	0x8
  437 00db 04       		.byte	0x4
- 438 00dc B5020000 		.4byte	.LASF20
+ 438 00dc 8C020000 		.4byte	.LASF20
  439 00e0 02       		.uleb128 0x2
  440 00e1 04       		.byte	0x4
  441 00e2 07       		.byte	0x7
- 442 00e3 93010000 		.4byte	.LASF21
+ 442 00e3 13020000 		.4byte	.LASF21
  443 00e7 06       		.uleb128 0x6
- 444 00e8 F6000000 		.4byte	.LASF40
+ 444 00e8 76010000 		.4byte	.LASF40
  445 00ec 01       		.byte	0x1
  446 00ed 05       		.byte	0x5
  447 00ee 00000000 		.4byte	.LFB63
@@ -530,22 +530,22 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  450 00f7 9C       		.byte	0x9c
  451 00f8 5A010000 		.4byte	0x15a
  452 00fc 07       		.uleb128 0x7
- 453 00fd C6000000 		.4byte	.LASF22
+ 453 00fd 46010000 		.4byte	.LASF22
  454 0101 01       		.byte	0x1
  455 0102 05       		.byte	0x5
  456 0103 5A010000 		.4byte	0x15a
  457 0107 00000000 		.4byte	.LLST0
  458 010b 07       		.uleb128 0x7
- 459 010c E9010000 		.4byte	.LASF23
+ 459 010c 69020000 		.4byte	.LASF23
  460 0110 01       		.byte	0x1
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 10
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 10
 
 
  461 0111 05       		.byte	0x5
  462 0112 65010000 		.4byte	0x165
  463 0116 1E000000 		.4byte	.LLST1
  464 011a 07       		.uleb128 0x7
- 465 011b 33000000 		.4byte	.LASF24
+ 465 011b B3000000 		.4byte	.LASF24
  466 011f 01       		.byte	0x1
  467 0120 05       		.byte	0x5
  468 0121 CE000000 		.4byte	0xce
@@ -580,7 +580,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  497 0166 04       		.byte	0x4
  498 0167 A2000000 		.4byte	0xa2
  499 016b 0D       		.uleb128 0xd
- 500 016c 9C010000 		.4byte	.LASF41
+ 500 016c 1C020000 		.4byte	.LASF41
  501 0170 01       		.byte	0x1
  502 0171 11       		.byte	0x11
  503 0172 B9000000 		.4byte	0xb9
@@ -590,52 +590,52 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  507 017f 9C       		.byte	0x9c
  508 0180 64020000 		.4byte	0x264
  509 0184 07       		.uleb128 0x7
- 510 0185 53010000 		.4byte	.LASF26
+ 510 0185 D3010000 		.4byte	.LASF26
  511 0189 01       		.byte	0x1
  512 018a 11       		.byte	0x11
  513 018b 64020000 		.4byte	0x264
  514 018f 8C000000 		.4byte	.LLST5
  515 0193 07       		.uleb128 0x7
- 516 0194 33000000 		.4byte	.LASF24
+ 516 0194 B3000000 		.4byte	.LASF24
  517 0198 01       		.byte	0x1
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 11
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 11
 
 
  518 0199 11       		.byte	0x11
  519 019a AD000000 		.4byte	0xad
  520 019e B8000000 		.4byte	.LLST6
  521 01a2 0A       		.uleb128 0xa
- 522 01a3 85010000 		.4byte	.LASF27
+ 522 01a3 05020000 		.4byte	.LASF27
  523 01a7 01       		.byte	0x1
  524 01a8 12       		.byte	0x12
  525 01a9 C0000000 		.4byte	0xc0
  526 01ad D9000000 		.4byte	.LLST7
  527 01b1 0A       		.uleb128 0xa
- 528 01b2 4D010000 		.4byte	.LASF28
+ 528 01b2 CD010000 		.4byte	.LASF28
  529 01b6 01       		.byte	0x1
  530 01b7 12       		.byte	0x12
  531 01b8 C0000000 		.4byte	0xc0
  532 01bc 29010000 		.4byte	.LLST8
  533 01c0 0A       		.uleb128 0xa
- 534 01c1 CD020000 		.4byte	.LASF29
+ 534 01c1 A4020000 		.4byte	.LASF29
  535 01c5 01       		.byte	0x1
  536 01c6 12       		.byte	0x12
  537 01c7 C0000000 		.4byte	0xc0
  538 01cb 79010000 		.4byte	.LLST9
  539 01cf 0A       		.uleb128 0xa
- 540 01d0 CC000000 		.4byte	.LASF30
+ 540 01d0 4C010000 		.4byte	.LASF30
  541 01d4 01       		.byte	0x1
  542 01d5 12       		.byte	0x12
  543 01d6 C0000000 		.4byte	0xc0
  544 01da C9010000 		.4byte	.LLST10
  545 01de 0A       		.uleb128 0xa
- 546 01df CD010000 		.4byte	.LASF31
+ 546 01df 4D020000 		.4byte	.LASF31
  547 01e3 01       		.byte	0x1
  548 01e4 13       		.byte	0x13
  549 01e5 7E000000 		.4byte	0x7e
  550 01e9 05020000 		.4byte	.LLST11
  551 01ed 0A       		.uleb128 0xa
- 552 01ee 10010000 		.4byte	.LASF32
+ 552 01ee 90010000 		.4byte	.LASF32
  553 01f2 01       		.byte	0x1
  554 01f3 14       		.byte	0x14
  555 01f4 B9000000 		.4byte	0xb9
@@ -654,22 +654,22 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  568 0214 A6000000 		.4byte	.LBB6
  569 0218 98000000 		.4byte	.LBE6-.LBB6
  570 021c 0A       		.uleb128 0xa
- 571 021d D9010000 		.4byte	.LASF33
+ 571 021d 59020000 		.4byte	.LASF33
  572 0221 01       		.byte	0x1
  573 0222 21       		.byte	0x21
  574 0223 C0000000 		.4byte	0xc0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 12
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 12
 
 
  575 0227 97020000 		.4byte	.LLST14
  576 022b 0A       		.uleb128 0xa
- 577 022c 99020000 		.4byte	.LASF34
+ 577 022c 70020000 		.4byte	.LASF34
  578 0230 01       		.byte	0x1
  579 0231 22       		.byte	0x22
  580 0232 C0000000 		.4byte	0xc0
  581 0236 AF020000 		.4byte	.LLST15
  582 023a 0A       		.uleb128 0xa
- 583 023b E7020000 		.4byte	.LASF35
+ 583 023b BE020000 		.4byte	.LASF35
  584 023f 01       		.byte	0x1
  585 0240 23       		.byte	0x23
  586 0241 C0000000 		.4byte	0xc0
@@ -678,7 +678,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  589 024a 12010000 		.4byte	.LBB7
  590 024e 2C000000 		.4byte	.LBE7-.LBB7
  591 0252 0A       		.uleb128 0xa
- 592 0253 D4020000 		.4byte	.LASF36
+ 592 0253 AB020000 		.4byte	.LASF36
  593 0257 01       		.byte	0x1
  594 0258 26       		.byte	0x26
  595 0259 B9000000 		.4byte	0xb9
@@ -692,7 +692,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  603 026a 0C       		.uleb128 0xc
  604 026b 8C000000 		.4byte	0x8c
  605 026f 0F       		.uleb128 0xf
- 606 0270 03010000 		.4byte	.LASF42
+ 606 0270 83010000 		.4byte	.LASF42
  607 0274 06       		.byte	0x6
  608 0275 1207     		.2byte	0x712
  609 0277 7B020000 		.4byte	0x27b
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  629 000e 01       		.uleb128 0x1
  630 000f 10       		.uleb128 0x10
  631 0010 17       		.uleb128 0x17
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 13
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 13
 
 
  632 0011 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  686 0047 19       		.uleb128 0x19
  687 0048 03       		.uleb128 0x3
  688 0049 0E       		.uleb128 0xe
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 14
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 14
 
 
  689 004a 3A       		.uleb128 0x3a
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  743 0081 17       		.uleb128 0x17
  744 0082 00       		.byte	0
  745 0083 00       		.byte	0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 15
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 15
 
 
  746 0084 0A       		.uleb128 0xa
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  800 00bb 01       		.uleb128 0x1
  801 00bc 13       		.uleb128 0x13
  802 00bd 00       		.byte	0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 16
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 16
 
 
  803 00be 00       		.byte	0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  857 002d 20000000 		.4byte	.LFE63
  858 0031 0100     		.2byte	0x1
  859 0033 56       		.byte	0x56
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 17
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 17
 
 
  860 0034 00000000 		.4byte	0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  914 00c2 51       		.byte	0x51
  915 00c3 24000000 		.4byte	.LVL7
  916 00c7 58010000 		.4byte	.LFE64
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 18
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 18
 
 
  917 00cb 0400     		.2byte	0x4
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  971 0149 62000000 		.4byte	.LVL14
  972 014d 68000000 		.4byte	.LVL15
  973 0151 0600     		.2byte	0x6
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 19
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 19
 
 
  974 0153 50       		.byte	0x50
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  1028 01cd 24000000 		.4byte	.LVL7
  1029 01d1 0A00     		.2byte	0xa
  1030 01d3 9E       		.byte	0x9e
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 20
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 20
 
 
  1031 01d4 08       		.uleb128 0x8
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  1085 0255 04       		.uleb128 0x4
  1086 0256 00000000 		.4byte	0
  1087 025a 48010000 		.4byte	.LVL48
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 21
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 21
 
 
  1088 025e 58010000 		.4byte	.LFE64
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  1142              	.LLST16:
  1143 02d7 08010000 		.4byte	.LVL37
  1144 02db 24010000 		.4byte	.LVL41
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 22
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 22
 
 
  1145 02df 0600     		.2byte	0x6
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  1199 0014 00000000 		.4byte	0
  1200 0018 00000000 		.4byte	.LFB63
  1201 001c 20000000 		.4byte	.LFE63
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 23
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 23
 
 
  1202 0020 00000000 		.4byte	.LFB64
@@ -1327,8 +1327,8 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  1205 002c 00000000 		.4byte	0
  1206              		.section	.debug_line,"",%progbits
  1207              	.Ldebug_line0:
- 1208 0000 3F020000 		.section	.debug_str,"MS",%progbits,1
- 1208      0200D701 
+ 1208 0000 03020000 		.section	.debug_str,"MS",%progbits,1
+ 1208      02009B01 
  1208      00000201 
  1208      FB0E0D00 
  1208      01010101 
@@ -1353,193 +1353,188 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 1
  1219              	.LASF16:
  1220 002d 666C6F61 		.ascii	"float\000"
  1220      7400
- 1221              	.LASF24:
- 1222 0033 73697A65 		.ascii	"size\000"
- 1222      00
- 1223              	.LASF37:
- 1224 0038 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1224      43313120 
- 1224      352E342E 
- 1224      31203230 
- 1224      31363036 
- 1225 006b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1225      20726576 
- 1225      6973696F 
- 1225      6E203233 
- 1225      37373135 
- 1226 009e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1226      66756E63 
- 1226      74696F6E 
- 1226      2D736563 
- 1226      74696F6E 
- 1227              	.LASF22:
- 1228 00c6 696E7075 		.ascii	"input\000"
- 1228      7400
- 1229              	.LASF30:
- 1230 00cc 73756D5F 		.ascii	"sum_xx\000"
- 1230      787800
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 24
+ 1221              	.LASF39:
+ 1222 0033 443A5C44 		.ascii	"D:\\Documentos\\GitHub\\Afinador-Guitarra-PsoC-5LP\\"
+ 1222      6F63756D 
+ 1222      656E746F 
+ 1222      735C4769 
+ 1222      74487562 
+ 1223 0063 50726F79 		.ascii	"ProyectoPDS\\ProyectoPDS solo matlab\\lab5-fiuna-fi"
+ 1223      6563746F 
+ 1223      5044535C 
+ 1223      50726F79 
+ 1223      6563746F 
+ 1224 0094 6C74726F 		.ascii	"ltros_sencillos\\Design01.cydsn\000"
+ 1224      735F7365 
+ 1224      6E63696C 
+ 1224      6C6F735C 
+ 1224      44657369 
+ 1225              	.LASF24:
+ 1226 00b3 73697A65 		.ascii	"size\000"
+ 1226      00
+ 1227              	.LASF37:
+ 1228 00b8 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1228      43313120 
+ 1228      352E342E 
+ 1228      31203230 
+ 1228      31363036 
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 24
 
 
- 1231              	.LASF38:
- 1232 00d3 70726F63 		.ascii	"procesamiento.c\000"
- 1232      6573616D 
- 1232      69656E74 
- 1232      6F2E6300 
- 1233              	.LASF3:
- 1234 00e3 73686F72 		.ascii	"short unsigned int\000"
- 1234      7420756E 
- 1234      7369676E 
- 1234      65642069 
- 1234      6E7400
- 1235              	.LASF40:
- 1236 00f6 636F6E76 		.ascii	"convertToQ32\000"
- 1236      65727454 
- 1236      6F513332 
- 1236      00
- 1237              	.LASF42:
- 1238 0103 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1238      52784275 
- 1238      66666572 
- 1238      00
- 1239              	.LASF32:
- 1240 0110 66726563 		.ascii	"frecuencia\000"
- 1240      75656E63 
- 1240      696100
- 1241              	.LASF1:
- 1242 011b 756E7369 		.ascii	"unsigned char\000"
- 1242      676E6564 
- 1242      20636861 
- 1242      7200
- 1243              	.LASF8:
- 1244 0129 6C6F6E67 		.ascii	"long unsigned int\000"
- 1244      20756E73 
- 1244      69676E65 
- 1244      6420696E 
- 1244      7400
- 1245              	.LASF7:
- 1246 013b 5F5F7569 		.ascii	"__uint32_t\000"
- 1246      6E743332 
- 1246      5F7400
- 1247              	.LASF15:
- 1248 0146 75696E74 		.ascii	"uint16\000"
- 1248      313600
- 1249              	.LASF28:
- 1250 014d 73756D5F 		.ascii	"sum_y\000"
- 1250      7900
- 1251              	.LASF26:
- 1252 0153 6461746F 		.ascii	"datos\000"
- 1252      7300
- 1253              	.LASF11:
- 1254 0159 756E7369 		.ascii	"unsigned int\000"
- 1254      676E6564 
- 1254      20696E74 
- 1254      00
- 1255              	.LASF10:
- 1256 0166 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1256      206C6F6E 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 25
+ 1229 00eb 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1229      20726576 
+ 1229      6973696F 
+ 1229      6E203233 
+ 1229      37373135 
+ 1230 011e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1230      66756E63 
+ 1230      74696F6E 
+ 1230      2D736563 
+ 1230      74696F6E 
+ 1231              	.LASF22:
+ 1232 0146 696E7075 		.ascii	"input\000"
+ 1232      7400
+ 1233              	.LASF30:
+ 1234 014c 73756D5F 		.ascii	"sum_xx\000"
+ 1234      787800
+ 1235              	.LASF38:
+ 1236 0153 70726F63 		.ascii	"procesamiento.c\000"
+ 1236      6573616D 
+ 1236      69656E74 
+ 1236      6F2E6300 
+ 1237              	.LASF3:
+ 1238 0163 73686F72 		.ascii	"short unsigned int\000"
+ 1238      7420756E 
+ 1238      7369676E 
+ 1238      65642069 
+ 1238      6E7400
+ 1239              	.LASF40:
+ 1240 0176 636F6E76 		.ascii	"convertToQ32\000"
+ 1240      65727454 
+ 1240      6F513332 
+ 1240      00
+ 1241              	.LASF42:
+ 1242 0183 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1242      52784275 
+ 1242      66666572 
+ 1242      00
+ 1243              	.LASF32:
+ 1244 0190 66726563 		.ascii	"frecuencia\000"
+ 1244      75656E63 
+ 1244      696100
+ 1245              	.LASF1:
+ 1246 019b 756E7369 		.ascii	"unsigned char\000"
+ 1246      676E6564 
+ 1246      20636861 
+ 1246      7200
+ 1247              	.LASF8:
+ 1248 01a9 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1248      20756E73 
+ 1248      69676E65 
+ 1248      6420696E 
+ 1248      7400
+ 1249              	.LASF7:
+ 1250 01bb 5F5F7569 		.ascii	"__uint32_t\000"
+ 1250      6E743332 
+ 1250      5F7400
+ 1251              	.LASF15:
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 25
 
 
- 1256      6720756E 
- 1256      7369676E 
- 1256      65642069 
- 1257              	.LASF12:
- 1258 017d 75696E74 		.ascii	"uint8_t\000"
- 1258      385F7400 
- 1259              	.LASF27:
- 1260 0185 73756D5F 		.ascii	"sum_x\000"
- 1260      7800
- 1261              	.LASF13:
- 1262 018b 696E7433 		.ascii	"int32_t\000"
- 1262      325F7400 
- 1263              	.LASF21:
- 1264 0193 73697A65 		.ascii	"sizetype\000"
- 1264      74797065 
- 1264      00
- 1265              	.LASF41:
- 1266 019c 43616C63 		.ascii	"Calcular_Frecuencia_Regresion\000"
- 1266      756C6172 
- 1266      5F467265 
- 1266      6375656E 
- 1266      6369615F 
- 1267              	.LASF9:
- 1268 01ba 6C6F6E67 		.ascii	"long long int\000"
- 1268      206C6F6E 
- 1268      6720696E 
- 1268      7400
- 1269              	.LASF18:
- 1270 01c8 63686172 		.ascii	"char\000"
- 1270      00
- 1271              	.LASF31:
- 1272 01cd 70756C73 		.ascii	"pulse_count\000"
- 1272      655F636F 
- 1272      756E7400 
- 1273              	.LASF33:
- 1274 01d9 6E5F6462 		.ascii	"n_dbl\000"
- 1274      6C00
- 1275              	.LASF2:
- 1276 01df 73686F72 		.ascii	"short int\000"
- 1276      7420696E 
- 1276      7400
- 1277              	.LASF23:
- 1278 01e9 6F757470 		.ascii	"output\000"
- 1278      757400
- 1279              	.LASF39:
- 1280 01f0 433A5C55 		.ascii	"C:\\Users\\user\\Desktop\\ProyectoPDS_V11\\Proyecto"
- 1280      73657273 
- 1280      5C757365 
- 1280      725C4465 
- 1280      736B746F 
- 1281 021e 5044535F 		.ascii	"PDS_V11\\ProyectoPDS solo matlab-20251102T203416Z-1"
- 1281      5631315C 
- 1281      50726F79 
- 1281      6563746F 
- 1281      50445320 
- 1282 0250 2D303031 		.ascii	"-001\\ProyectoPDS solo matlab\\lab5-fiuna-filtros_s"
- 1282      5C50726F 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccvaLfik.s 			page 26
+ 1252 01c6 75696E74 		.ascii	"uint16\000"
+ 1252      313600
+ 1253              	.LASF28:
+ 1254 01cd 73756D5F 		.ascii	"sum_y\000"
+ 1254      7900
+ 1255              	.LASF26:
+ 1256 01d3 6461746F 		.ascii	"datos\000"
+ 1256      7300
+ 1257              	.LASF11:
+ 1258 01d9 756E7369 		.ascii	"unsigned int\000"
+ 1258      676E6564 
+ 1258      20696E74 
+ 1258      00
+ 1259              	.LASF10:
+ 1260 01e6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1260      206C6F6E 
+ 1260      6720756E 
+ 1260      7369676E 
+ 1260      65642069 
+ 1261              	.LASF12:
+ 1262 01fd 75696E74 		.ascii	"uint8_t\000"
+ 1262      385F7400 
+ 1263              	.LASF27:
+ 1264 0205 73756D5F 		.ascii	"sum_x\000"
+ 1264      7800
+ 1265              	.LASF13:
+ 1266 020b 696E7433 		.ascii	"int32_t\000"
+ 1266      325F7400 
+ 1267              	.LASF21:
+ 1268 0213 73697A65 		.ascii	"sizetype\000"
+ 1268      74797065 
+ 1268      00
+ 1269              	.LASF41:
+ 1270 021c 43616C63 		.ascii	"Calcular_Frecuencia_Regresion\000"
+ 1270      756C6172 
+ 1270      5F467265 
+ 1270      6375656E 
+ 1270      6369615F 
+ 1271              	.LASF9:
+ 1272 023a 6C6F6E67 		.ascii	"long long int\000"
+ 1272      206C6F6E 
+ 1272      6720696E 
+ 1272      7400
+ 1273              	.LASF18:
+ 1274 0248 63686172 		.ascii	"char\000"
+ 1274      00
+ 1275              	.LASF31:
+ 1276 024d 70756C73 		.ascii	"pulse_count\000"
+ 1276      655F636F 
+ 1276      756E7400 
+ 1277              	.LASF33:
+ 1278 0259 6E5F6462 		.ascii	"n_dbl\000"
+ 1278      6C00
+ 1279              	.LASF2:
+ 1280 025f 73686F72 		.ascii	"short int\000"
+ 1280      7420696E 
+ 1280      7400
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 26
 
 
- 1282      79656374 
- 1282      6F504453 
- 1282      20736F6C 
- 1283 0281 656E6369 		.ascii	"encillos\\Design01.cydsn\000"
- 1283      6C6C6F73 
- 1283      5C446573 
- 1283      69676E30 
- 1283      312E6379 
- 1284              	.LASF34:
- 1285 0299 6E756D65 		.ascii	"numerator\000"
- 1285      7261746F 
- 1285      7200
- 1286              	.LASF14:
- 1287 02a3 75696E74 		.ascii	"uint32_t\000"
- 1287      33325F74 
- 1287      00
- 1288              	.LASF6:
- 1289 02ac 6C6F6E67 		.ascii	"long int\000"
- 1289      20696E74 
- 1289      00
- 1290              	.LASF20:
- 1291 02b5 6C6F6E67 		.ascii	"long double\000"
- 1291      20646F75 
- 1291      626C6500 
- 1292              	.LASF0:
- 1293 02c1 7369676E 		.ascii	"signed char\000"
- 1293      65642063 
- 1293      68617200 
- 1294              	.LASF29:
- 1295 02cd 73756D5F 		.ascii	"sum_xy\000"
- 1295      787900
- 1296              	.LASF36:
- 1297 02d4 6176675F 		.ascii	"avg_period_samples\000"
- 1297      70657269 
- 1297      6F645F73 
- 1297      616D706C 
- 1297      657300
- 1298              	.LASF35:
- 1299 02e7 64656E6F 		.ascii	"denominator\000"
- 1299      6D696E61 
- 1299      746F7200 
- 1300              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1281              	.LASF23:
+ 1282 0269 6F757470 		.ascii	"output\000"
+ 1282      757400
+ 1283              	.LASF34:
+ 1284 0270 6E756D65 		.ascii	"numerator\000"
+ 1284      7261746F 
+ 1284      7200
+ 1285              	.LASF14:
+ 1286 027a 75696E74 		.ascii	"uint32_t\000"
+ 1286      33325F74 
+ 1286      00
+ 1287              	.LASF6:
+ 1288 0283 6C6F6E67 		.ascii	"long int\000"
+ 1288      20696E74 
+ 1288      00
+ 1289              	.LASF20:
+ 1290 028c 6C6F6E67 		.ascii	"long double\000"
+ 1290      20646F75 
+ 1290      626C6500 
+ 1291              	.LASF0:
+ 1292 0298 7369676E 		.ascii	"signed char\000"
+ 1292      65642063 
+ 1292      68617200 
+ 1293              	.LASF29:
+ 1294 02a4 73756D5F 		.ascii	"sum_xy\000"
+ 1294      787900
+ 1295              	.LASF36:
+ 1296 02ab 6176675F 		.ascii	"avg_period_samples\000"
+ 1296      70657269 
+ 1296      6F645F73 
+ 1296      616D706C 
+ 1296      657300
+ 1297              	.LASF35:
+ 1298 02be 64656E6F 		.ascii	"denominator\000"
+ 1298      6D696E61 
+ 1298      746F7200 
+ 1299              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

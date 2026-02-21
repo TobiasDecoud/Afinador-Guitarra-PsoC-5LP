@@ -1,5 +1,5 @@
---------------- Build Started: 02/17/2026 12:10:25 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-cydsfit.exe -.appdatapath "C:\Users\user\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\Users\user\Desktop\ProyectoPDS_V11\ProyectoPDS_V11\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj" -d CY8C5888LTI-LP097 -s "C:\Users\user\Desktop\ProyectoPDS_V11\ProyectoPDS_V11\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+--------------- Build Started: 02/21/2026 17:19:15 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+cydsfit.exe -.appdatapath "C:\Users\Admin\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj" -d CY8C5888LTI-LP097 -s "D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Generated_Source\PSoC5" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 HDL Generation...
 Synthesis...
@@ -22,77 +22,2995 @@ Dependency Generation...
 Cleanup...
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/coeficientes.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c coeficientes.c -o .\CortexM3\ARM_GCC_541\Debug\coeficientes.o
+coeficientes.c:105:2: warning: excess elements in array initializer
+  0xD3u, 0x74u, 0xF9u, 0x00u, /* Tap(50), -0.0511223077774048 */
+  ^
+coeficientes.c:105:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:105:9: warning: excess elements in array initializer
+  0xD3u, 0x74u, 0xF9u, 0x00u, /* Tap(50), -0.0511223077774048 */
+         ^
+coeficientes.c:105:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:105:16: warning: excess elements in array initializer
+  0xD3u, 0x74u, 0xF9u, 0x00u, /* Tap(50), -0.0511223077774048 */
+                ^
+coeficientes.c:105:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:105:23: warning: excess elements in array initializer
+  0xD3u, 0x74u, 0xF9u, 0x00u, /* Tap(50), -0.0511223077774048 */
+                       ^
+coeficientes.c:105:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:107:2: warning: excess elements in array initializer
+  0x7Du, 0x1Du, 0xF9u, 0x00u, /* Tap(51), -0.0537875890731812 */
+  ^
+coeficientes.c:107:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:107:9: warning: excess elements in array initializer
+  0x7Du, 0x1Du, 0xF9u, 0x00u, /* Tap(51), -0.0537875890731812 */
+         ^
+coeficientes.c:107:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:107:16: warning: excess elements in array initializer
+  0x7Du, 0x1Du, 0xF9u, 0x00u, /* Tap(51), -0.0537875890731812 */
+                ^
+coeficientes.c:107:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:107:23: warning: excess elements in array initializer
+  0x7Du, 0x1Du, 0xF9u, 0x00u, /* Tap(51), -0.0537875890731812 */
+                       ^
+coeficientes.c:107:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:109:2: warning: excess elements in array initializer
+  0x22u, 0x52u, 0xF9u, 0x00u, /* Tap(52), -0.0521810054779053 */
+  ^
+coeficientes.c:109:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:109:9: warning: excess elements in array initializer
+  0x22u, 0x52u, 0xF9u, 0x00u, /* Tap(52), -0.0521810054779053 */
+         ^
+coeficientes.c:109:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:109:16: warning: excess elements in array initializer
+  0x22u, 0x52u, 0xF9u, 0x00u, /* Tap(52), -0.0521810054779053 */
+                ^
+coeficientes.c:109:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:109:23: warning: excess elements in array initializer
+  0x22u, 0x52u, 0xF9u, 0x00u, /* Tap(52), -0.0521810054779053 */
+                       ^
+coeficientes.c:109:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:111:2: warning: excess elements in array initializer
+  0x03u, 0xFDu, 0xF9u, 0x00u, /* Tap(53), -0.0469661951065063 */
+  ^
+coeficientes.c:111:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:111:9: warning: excess elements in array initializer
+  0x03u, 0xFDu, 0xF9u, 0x00u, /* Tap(53), -0.0469661951065063 */
+         ^
+coeficientes.c:111:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:111:16: warning: excess elements in array initializer
+  0x03u, 0xFDu, 0xF9u, 0x00u, /* Tap(53), -0.0469661951065063 */
+                ^
+coeficientes.c:111:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:111:23: warning: excess elements in array initializer
+  0x03u, 0xFDu, 0xF9u, 0x00u, /* Tap(53), -0.0469661951065063 */
+                       ^
+coeficientes.c:111:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:113:2: warning: excess elements in array initializer
+  0xB0u, 0xFFu, 0xFAu, 0x00u, /* Tap(54), -0.0390720367431641 */
+  ^
+coeficientes.c:113:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:113:9: warning: excess elements in array initializer
+  0xB0u, 0xFFu, 0xFAu, 0x00u, /* Tap(54), -0.0390720367431641 */
+         ^
+coeficientes.c:113:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:113:16: warning: excess elements in array initializer
+  0xB0u, 0xFFu, 0xFAu, 0x00u, /* Tap(54), -0.0390720367431641 */
+                ^
+coeficientes.c:113:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:113:23: warning: excess elements in array initializer
+  0xB0u, 0xFFu, 0xFAu, 0x00u, /* Tap(54), -0.0390720367431641 */
+                       ^
+coeficientes.c:113:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:115:2: warning: excess elements in array initializer
+  0x33u, 0x37u, 0xFCu, 0x00u, /* Tap(55), -0.0295654535293579 */
+  ^
+coeficientes.c:115:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:115:9: warning: excess elements in array initializer
+  0x33u, 0x37u, 0xFCu, 0x00u, /* Tap(55), -0.0295654535293579 */
+         ^
+coeficientes.c:115:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:115:16: warning: excess elements in array initializer
+  0x33u, 0x37u, 0xFCu, 0x00u, /* Tap(55), -0.0295654535293579 */
+                ^
+coeficientes.c:115:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:115:23: warning: excess elements in array initializer
+  0x33u, 0x37u, 0xFCu, 0x00u, /* Tap(55), -0.0295654535293579 */
+                       ^
+coeficientes.c:115:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:117:2: warning: excess elements in array initializer
+  0x53u, 0x80u, 0xFDu, 0x00u, /* Tap(56), -0.0195213556289673 */
+  ^
+coeficientes.c:117:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:117:9: warning: excess elements in array initializer
+  0x53u, 0x80u, 0xFDu, 0x00u, /* Tap(56), -0.0195213556289673 */
+         ^
+coeficientes.c:117:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:117:16: warning: excess elements in array initializer
+  0x53u, 0x80u, 0xFDu, 0x00u, /* Tap(56), -0.0195213556289673 */
+                ^
+coeficientes.c:117:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:117:23: warning: excess elements in array initializer
+  0x53u, 0x80u, 0xFDu, 0x00u, /* Tap(56), -0.0195213556289673 */
+                       ^
+coeficientes.c:117:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:119:2: warning: excess elements in array initializer
+  0x53u, 0xBBu, 0xFEu, 0x00u, /* Tap(57), -0.00990831851959229 */
+  ^
+coeficientes.c:119:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:119:9: warning: excess elements in array initializer
+  0x53u, 0xBBu, 0xFEu, 0x00u, /* Tap(57), -0.00990831851959229 */
+         ^
+coeficientes.c:119:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:119:16: warning: excess elements in array initializer
+  0x53u, 0xBBu, 0xFEu, 0x00u, /* Tap(57), -0.00990831851959229 */
+                ^
+coeficientes.c:119:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:119:23: warning: excess elements in array initializer
+  0x53u, 0xBBu, 0xFEu, 0x00u, /* Tap(57), -0.00990831851959229 */
+                       ^
+coeficientes.c:119:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:121:2: warning: excess elements in array initializer
+  0xE3u, 0xCEu, 0xFFu, 0x00u, /* Tap(58), -0.00149881839752197 */
+  ^
+coeficientes.c:121:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:121:9: warning: excess elements in array initializer
+  0xE3u, 0xCEu, 0xFFu, 0x00u, /* Tap(58), -0.00149881839752197 */
+         ^
+coeficientes.c:121:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:121:16: warning: excess elements in array initializer
+  0xE3u, 0xCEu, 0xFFu, 0x00u, /* Tap(58), -0.00149881839752197 */
+                ^
+coeficientes.c:121:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:121:23: warning: excess elements in array initializer
+  0xE3u, 0xCEu, 0xFFu, 0x00u, /* Tap(58), -0.00149881839752197 */
+                       ^
+coeficientes.c:121:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:123:2: warning: excess elements in array initializer
+  0xDDu, 0xA9u, 0x00u, 0x00u, /* Tap(59), 0.00518381595611572 */
+  ^
+coeficientes.c:123:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:123:9: warning: excess elements in array initializer
+  0xDDu, 0xA9u, 0x00u, 0x00u, /* Tap(59), 0.00518381595611572 */
+         ^
+coeficientes.c:123:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:123:16: warning: excess elements in array initializer
+  0xDDu, 0xA9u, 0x00u, 0x00u, /* Tap(59), 0.00518381595611572 */
+                ^
+coeficientes.c:123:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:123:23: warning: excess elements in array initializer
+  0xDDu, 0xA9u, 0x00u, 0x00u, /* Tap(59), 0.00518381595611572 */
+                       ^
+coeficientes.c:123:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:125:2: warning: excess elements in array initializer
+  0xDBu, 0x43u, 0x01u, 0x00u, /* Tap(60), 0.00988328456878662 */
+  ^
+coeficientes.c:125:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:125:9: warning: excess elements in array initializer
+  0xDBu, 0x43u, 0x01u, 0x00u, /* Tap(60), 0.00988328456878662 */
+         ^
+coeficientes.c:125:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:125:16: warning: excess elements in array initializer
+  0xDBu, 0x43u, 0x01u, 0x00u, /* Tap(60), 0.00988328456878662 */
+                ^
+coeficientes.c:125:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:125:23: warning: excess elements in array initializer
+  0xDBu, 0x43u, 0x01u, 0x00u, /* Tap(60), 0.00988328456878662 */
+                       ^
+coeficientes.c:125:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:127:2: warning: excess elements in array initializer
+  0xA5u, 0x9Cu, 0x01u, 0x00u, /* Tap(61), 0.0125929117202759 */
+  ^
+coeficientes.c:127:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:127:9: warning: excess elements in array initializer
+  0xA5u, 0x9Cu, 0x01u, 0x00u, /* Tap(61), 0.0125929117202759 */
+         ^
+coeficientes.c:127:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:127:16: warning: excess elements in array initializer
+  0xA5u, 0x9Cu, 0x01u, 0x00u, /* Tap(61), 0.0125929117202759 */
+                ^
+coeficientes.c:127:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:127:23: warning: excess elements in array initializer
+  0xA5u, 0x9Cu, 0x01u, 0x00u, /* Tap(61), 0.0125929117202759 */
+                       ^
+coeficientes.c:127:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:129:2: warning: excess elements in array initializer
+  0xC5u, 0xBAu, 0x01u, 0x00u, /* Tap(62), 0.0135122537612915 */
+  ^
+coeficientes.c:129:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:129:9: warning: excess elements in array initializer
+  0xC5u, 0xBAu, 0x01u, 0x00u, /* Tap(62), 0.0135122537612915 */
+         ^
+coeficientes.c:129:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:129:16: warning: excess elements in array initializer
+  0xC5u, 0xBAu, 0x01u, 0x00u, /* Tap(62), 0.0135122537612915 */
+                ^
+coeficientes.c:129:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:129:23: warning: excess elements in array initializer
+  0xC5u, 0xBAu, 0x01u, 0x00u, /* Tap(62), 0.0135122537612915 */
+                       ^
+coeficientes.c:129:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:131:2: warning: excess elements in array initializer
+  0x7Eu, 0xA9u, 0x01u, 0x00u, /* Tap(63), 0.0129849910736084 */
+  ^
+coeficientes.c:131:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:131:9: warning: excess elements in array initializer
+  0x7Eu, 0xA9u, 0x01u, 0x00u, /* Tap(63), 0.0129849910736084 */
+         ^
+coeficientes.c:131:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:131:16: warning: excess elements in array initializer
+  0x7Eu, 0xA9u, 0x01u, 0x00u, /* Tap(63), 0.0129849910736084 */
+                ^
+coeficientes.c:131:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:131:23: warning: excess elements in array initializer
+  0x7Eu, 0xA9u, 0x01u, 0x00u, /* Tap(63), 0.0129849910736084 */
+                       ^
+coeficientes.c:131:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:133:2: warning: excess elements in array initializer
+  0x97u, 0x76u, 0x01u, 0x00u, /* Tap(64), 0.0114315748214722 */
+  ^
+coeficientes.c:133:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:133:9: warning: excess elements in array initializer
+  0x97u, 0x76u, 0x01u, 0x00u, /* Tap(64), 0.0114315748214722 */
+         ^
+coeficientes.c:133:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:133:16: warning: excess elements in array initializer
+  0x97u, 0x76u, 0x01u, 0x00u, /* Tap(64), 0.0114315748214722 */
+                ^
+coeficientes.c:133:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:133:23: warning: excess elements in array initializer
+  0x97u, 0x76u, 0x01u, 0x00u, /* Tap(64), 0.0114315748214722 */
+                       ^
+coeficientes.c:133:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:135:2: warning: excess elements in array initializer
+  0x39u, 0x30u, 0x01u, 0x00u, /* Tap(65), 0.00928413867950439 */
+  ^
+coeficientes.c:135:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:135:9: warning: excess elements in array initializer
+  0x39u, 0x30u, 0x01u, 0x00u, /* Tap(65), 0.00928413867950439 */
+         ^
+coeficientes.c:135:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:135:16: warning: excess elements in array initializer
+  0x39u, 0x30u, 0x01u, 0x00u, /* Tap(65), 0.00928413867950439 */
+                ^
+coeficientes.c:135:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:135:23: warning: excess elements in array initializer
+  0x39u, 0x30u, 0x01u, 0x00u, /* Tap(65), 0.00928413867950439 */
+                       ^
+coeficientes.c:135:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:137:2: warning: excess elements in array initializer
+  0x2Eu, 0xE3u, 0x00u, 0x00u, /* Tap(66), 0.00693297386169434 */
+  ^
+coeficientes.c:137:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:137:9: warning: excess elements in array initializer
+  0x2Eu, 0xE3u, 0x00u, 0x00u, /* Tap(66), 0.00693297386169434 */
+         ^
+coeficientes.c:137:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:137:16: warning: excess elements in array initializer
+  0x2Eu, 0xE3u, 0x00u, 0x00u, /* Tap(66), 0.00693297386169434 */
+                ^
+coeficientes.c:137:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:137:23: warning: excess elements in array initializer
+  0x2Eu, 0xE3u, 0x00u, 0x00u, /* Tap(66), 0.00693297386169434 */
+                       ^
+coeficientes.c:137:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:139:2: warning: excess elements in array initializer
+  0xA9u, 0x99u, 0x00u, 0x00u, /* Tap(67), 0.00468933582305908 */
+  ^
+coeficientes.c:139:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:139:9: warning: excess elements in array initializer
+  0xA9u, 0x99u, 0x00u, 0x00u, /* Tap(67), 0.00468933582305908 */
+         ^
+coeficientes.c:139:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:139:16: warning: excess elements in array initializer
+  0xA9u, 0x99u, 0x00u, 0x00u, /* Tap(67), 0.00468933582305908 */
+                ^
+coeficientes.c:139:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:139:23: warning: excess elements in array initializer
+  0xA9u, 0x99u, 0x00u, 0x00u, /* Tap(67), 0.00468933582305908 */
+                       ^
+coeficientes.c:139:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:141:2: warning: excess elements in array initializer
+  0xA7u, 0x5Au, 0x00u, 0x00u, /* Tap(68), 0.00276648998260498 */
+  ^
+coeficientes.c:141:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:141:9: warning: excess elements in array initializer
+  0xA7u, 0x5Au, 0x00u, 0x00u, /* Tap(68), 0.00276648998260498 */
+         ^
+coeficientes.c:141:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:141:16: warning: excess elements in array initializer
+  0xA7u, 0x5Au, 0x00u, 0x00u, /* Tap(68), 0.00276648998260498 */
+                ^
+coeficientes.c:141:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:141:23: warning: excess elements in array initializer
+  0xA7u, 0x5Au, 0x00u, 0x00u, /* Tap(68), 0.00276648998260498 */
+                       ^
+coeficientes.c:141:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:143:2: warning: excess elements in array initializer
+  0xDEu, 0x29u, 0x00u, 0x00u, /* Tap(69), 0.00127768516540527 */
+  ^
+coeficientes.c:143:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:143:9: warning: excess elements in array initializer
+  0xDEu, 0x29u, 0x00u, 0x00u, /* Tap(69), 0.00127768516540527 */
+         ^
+coeficientes.c:143:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:143:16: warning: excess elements in array initializer
+  0xDEu, 0x29u, 0x00u, 0x00u, /* Tap(69), 0.00127768516540527 */
+                ^
+coeficientes.c:143:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:143:23: warning: excess elements in array initializer
+  0xDEu, 0x29u, 0x00u, 0x00u, /* Tap(69), 0.00127768516540527 */
+                       ^
+coeficientes.c:143:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:145:2: warning: excess elements in array initializer
+  0x25u, 0x08u, 0x00u, 0x00u, /* Tap(70), 0.000248551368713379 */
+  ^
+coeficientes.c:145:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:145:9: warning: excess elements in array initializer
+  0x25u, 0x08u, 0x00u, 0x00u, /* Tap(70), 0.000248551368713379 */
+         ^
+coeficientes.c:145:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:145:16: warning: excess elements in array initializer
+  0x25u, 0x08u, 0x00u, 0x00u, /* Tap(70), 0.000248551368713379 */
+                ^
+coeficientes.c:145:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:145:23: warning: excess elements in array initializer
+  0x25u, 0x08u, 0x00u, 0x00u, /* Tap(70), 0.000248551368713379 */
+                       ^
+coeficientes.c:145:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:147:2: warning: excess elements in array initializer
+  0x20u, 0xF4u, 0xFFu, 0x00u, /* Tap(71), -0.000362396240234375 */
+  ^
+coeficientes.c:147:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:147:9: warning: excess elements in array initializer
+  0x20u, 0xF4u, 0xFFu, 0x00u, /* Tap(71), -0.000362396240234375 */
+         ^
+coeficientes.c:147:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:147:16: warning: excess elements in array initializer
+  0x20u, 0xF4u, 0xFFu, 0x00u, /* Tap(71), -0.000362396240234375 */
+                ^
+coeficientes.c:147:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:147:23: warning: excess elements in array initializer
+  0x20u, 0xF4u, 0xFFu, 0x00u, /* Tap(71), -0.000362396240234375 */
+                       ^
+coeficientes.c:147:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:149:2: warning: excess elements in array initializer
+  0x19u, 0xEBu, 0xFFu, 0x00u, /* Tap(72), -0.00063788890838623 */
+  ^
+coeficientes.c:149:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:149:9: warning: excess elements in array initializer
+  0x19u, 0xEBu, 0xFFu, 0x00u, /* Tap(72), -0.00063788890838623 */
+         ^
+coeficientes.c:149:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:149:16: warning: excess elements in array initializer
+  0x19u, 0xEBu, 0xFFu, 0x00u, /* Tap(72), -0.00063788890838623 */
+                ^
+coeficientes.c:149:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:149:23: warning: excess elements in array initializer
+  0x19u, 0xEBu, 0xFFu, 0x00u, /* Tap(72), -0.00063788890838623 */
+                       ^
+coeficientes.c:149:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:151:2: warning: excess elements in array initializer
+  0xC7u, 0xE9u, 0xFFu, 0x00u, /* Tap(73), -0.000678181648254395 */
+  ^
+coeficientes.c:151:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:151:9: warning: excess elements in array initializer
+  0xC7u, 0xE9u, 0xFFu, 0x00u, /* Tap(73), -0.000678181648254395 */
+         ^
+coeficientes.c:151:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:151:16: warning: excess elements in array initializer
+  0xC7u, 0xE9u, 0xFFu, 0x00u, /* Tap(73), -0.000678181648254395 */
+                ^
+coeficientes.c:151:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:151:23: warning: excess elements in array initializer
+  0xC7u, 0xE9u, 0xFFu, 0x00u, /* Tap(73), -0.000678181648254395 */
+                       ^
+coeficientes.c:151:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:153:2: warning: excess elements in array initializer
+  0xFBu, 0xECu, 0xFFu, 0x00u, /* Tap(74), -0.000580430030822754 */
+  ^
+coeficientes.c:153:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:153:9: warning: excess elements in array initializer
+  0xFBu, 0xECu, 0xFFu, 0x00u, /* Tap(74), -0.000580430030822754 */
+         ^
+coeficientes.c:153:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:153:16: warning: excess elements in array initializer
+  0xFBu, 0xECu, 0xFFu, 0x00u, /* Tap(74), -0.000580430030822754 */
+                ^
+coeficientes.c:153:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:153:23: warning: excess elements in array initializer
+  0xFBu, 0xECu, 0xFFu, 0x00u, /* Tap(74), -0.000580430030822754 */
+                       ^
+coeficientes.c:153:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:155:2: warning: excess elements in array initializer
+  0x12u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.000425100326538086 */
+  ^
+coeficientes.c:155:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:155:9: warning: excess elements in array initializer
+  0x12u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.000425100326538086 */
+         ^
+coeficientes.c:155:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:155:16: warning: excess elements in array initializer
+  0x12u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.000425100326538086 */
+                ^
+coeficientes.c:155:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:155:23: warning: excess elements in array initializer
+  0x12u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.000425100326538086 */
+                       ^
+coeficientes.c:155:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:157:2: warning: excess elements in array initializer
+  0x32u, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000268697738647461 */
+  ^
+coeficientes.c:157:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:157:9: warning: excess elements in array initializer
+  0x32u, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000268697738647461 */
+         ^
+coeficientes.c:157:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:157:16: warning: excess elements in array initializer
+  0x32u, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000268697738647461 */
+                ^
+coeficientes.c:157:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:157:23: warning: excess elements in array initializer
+  0x32u, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000268697738647461 */
+                       ^
+coeficientes.c:157:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:159:2: warning: excess elements in array initializer
+  0x4Cu, 0xFBu, 0xFFu, 0x00u, /* Tap(77), -0.000143527984619141 */
+  ^
+coeficientes.c:159:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:159:9: warning: excess elements in array initializer
+  0x4Cu, 0xFBu, 0xFFu, 0x00u, /* Tap(77), -0.000143527984619141 */
+         ^
+coeficientes.c:159:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:159:16: warning: excess elements in array initializer
+  0x4Cu, 0xFBu, 0xFFu, 0x00u, /* Tap(77), -0.000143527984619141 */
+                ^
+coeficientes.c:159:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:159:23: warning: excess elements in array initializer
+  0x4Cu, 0xFBu, 0xFFu, 0x00u, /* Tap(77), -0.000143527984619141 */
+                       ^
+coeficientes.c:159:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:161:2: warning: excess elements in array initializer
+  0x03u, 0xFEu, 0xFFu, 0x00u, /* Tap(78), -6.06775283813477E-05 */
+  ^
+coeficientes.c:161:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:161:9: warning: excess elements in array initializer
+  0x03u, 0xFEu, 0xFFu, 0x00u, /* Tap(78), -6.06775283813477E-05 */
+         ^
+coeficientes.c:161:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:161:16: warning: excess elements in array initializer
+  0x03u, 0xFEu, 0xFFu, 0x00u, /* Tap(78), -6.06775283813477E-05 */
+                ^
+coeficientes.c:161:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:161:23: warning: excess elements in array initializer
+  0x03u, 0xFEu, 0xFFu, 0x00u, /* Tap(78), -6.06775283813477E-05 */
+                       ^
+coeficientes.c:161:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:163:2: warning: excess elements in array initializer
+  0x75u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.65700912475586E-05 */
+  ^
+coeficientes.c:163:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:163:9: warning: excess elements in array initializer
+  0x75u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.65700912475586E-05 */
+         ^
+coeficientes.c:163:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:163:16: warning: excess elements in array initializer
+  0x75u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.65700912475586E-05 */
+                ^
+coeficientes.c:163:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:163:23: warning: excess elements in array initializer
+  0x75u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.65700912475586E-05 */
+                       ^
+coeficientes.c:163:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:165:2: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+  ^
+coeficientes.c:165:2: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:165:9: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+         ^
+coeficientes.c:165:9: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:165:16: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                ^
+coeficientes.c:165:16: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:165:23: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                       ^
+coeficientes.c:165:23: note: (near initialization for 'COEFFS_82_4')
+coeficientes.c:269:2: warning: excess elements in array initializer
+  0x49u, 0xB0u, 0xF8u, 0x00u, /* Tap(50), -0.0571202039718628 */
+  ^
+coeficientes.c:269:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:269:9: warning: excess elements in array initializer
+  0x49u, 0xB0u, 0xF8u, 0x00u, /* Tap(50), -0.0571202039718628 */
+         ^
+coeficientes.c:269:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:269:16: warning: excess elements in array initializer
+  0x49u, 0xB0u, 0xF8u, 0x00u, /* Tap(50), -0.0571202039718628 */
+                ^
+coeficientes.c:269:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:269:23: warning: excess elements in array initializer
+  0x49u, 0xB0u, 0xF8u, 0x00u, /* Tap(50), -0.0571202039718628 */
+                       ^
+coeficientes.c:269:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:271:2: warning: excess elements in array initializer
+  0x18u, 0x51u, 0xFAu, 0x00u, /* Tap(51), -0.0444002151489258 */
+  ^
+coeficientes.c:271:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:271:9: warning: excess elements in array initializer
+  0x18u, 0x51u, 0xFAu, 0x00u, /* Tap(51), -0.0444002151489258 */
+         ^
+coeficientes.c:271:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:271:16: warning: excess elements in array initializer
+  0x18u, 0x51u, 0xFAu, 0x00u, /* Tap(51), -0.0444002151489258 */
+                ^
+coeficientes.c:271:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:271:23: warning: excess elements in array initializer
+  0x18u, 0x51u, 0xFAu, 0x00u, /* Tap(51), -0.0444002151489258 */
+                       ^
+coeficientes.c:271:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:273:2: warning: excess elements in array initializer
+  0x49u, 0x6Bu, 0xFCu, 0x00u, /* Tap(52), -0.0279759168624878 */
+  ^
+coeficientes.c:273:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:273:9: warning: excess elements in array initializer
+  0x49u, 0x6Bu, 0xFCu, 0x00u, /* Tap(52), -0.0279759168624878 */
+         ^
+coeficientes.c:273:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:273:16: warning: excess elements in array initializer
+  0x49u, 0x6Bu, 0xFCu, 0x00u, /* Tap(52), -0.0279759168624878 */
+                ^
+coeficientes.c:273:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:273:23: warning: excess elements in array initializer
+  0x49u, 0x6Bu, 0xFCu, 0x00u, /* Tap(52), -0.0279759168624878 */
+                       ^
+coeficientes.c:273:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:275:2: warning: excess elements in array initializer
+  0xAFu, 0xA7u, 0xFEu, 0x00u, /* Tap(53), -0.0105077028274536 */
+  ^
+coeficientes.c:275:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:275:9: warning: excess elements in array initializer
+  0xAFu, 0xA7u, 0xFEu, 0x00u, /* Tap(53), -0.0105077028274536 */
+         ^
+coeficientes.c:275:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:275:16: warning: excess elements in array initializer
+  0xAFu, 0xA7u, 0xFEu, 0x00u, /* Tap(53), -0.0105077028274536 */
+                ^
+coeficientes.c:275:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:275:23: warning: excess elements in array initializer
+  0xAFu, 0xA7u, 0xFEu, 0x00u, /* Tap(53), -0.0105077028274536 */
+                       ^
+coeficientes.c:275:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:277:2: warning: excess elements in array initializer
+  0x2Fu, 0xB5u, 0x00u, 0x00u, /* Tap(54), 0.00552928447723389 */
+  ^
+coeficientes.c:277:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:277:9: warning: excess elements in array initializer
+  0x2Fu, 0xB5u, 0x00u, 0x00u, /* Tap(54), 0.00552928447723389 */
+         ^
+coeficientes.c:277:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:277:16: warning: excess elements in array initializer
+  0x2Fu, 0xB5u, 0x00u, 0x00u, /* Tap(54), 0.00552928447723389 */
+                ^
+coeficientes.c:277:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:277:23: warning: excess elements in array initializer
+  0x2Fu, 0xB5u, 0x00u, 0x00u, /* Tap(54), 0.00552928447723389 */
+                       ^
+coeficientes.c:277:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:279:2: warning: excess elements in array initializer
+  0x99u, 0x54u, 0x02u, 0x00u, /* Tap(55), 0.0182067155838013 */
+  ^
+coeficientes.c:279:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:279:9: warning: excess elements in array initializer
+  0x99u, 0x54u, 0x02u, 0x00u, /* Tap(55), 0.0182067155838013 */
+         ^
+coeficientes.c:279:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:279:16: warning: excess elements in array initializer
+  0x99u, 0x54u, 0x02u, 0x00u, /* Tap(55), 0.0182067155838013 */
+                ^
+coeficientes.c:279:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:279:23: warning: excess elements in array initializer
+  0x99u, 0x54u, 0x02u, 0x00u, /* Tap(55), 0.0182067155838013 */
+                       ^
+coeficientes.c:279:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:281:2: warning: excess elements in array initializer
+  0x12u, 0x60u, 0x03u, 0x00u, /* Tap(56), 0.0263693332672119 */
+  ^
+coeficientes.c:281:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:281:9: warning: excess elements in array initializer
+  0x12u, 0x60u, 0x03u, 0x00u, /* Tap(56), 0.0263693332672119 */
+         ^
+coeficientes.c:281:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:281:16: warning: excess elements in array initializer
+  0x12u, 0x60u, 0x03u, 0x00u, /* Tap(56), 0.0263693332672119 */
+                ^
+coeficientes.c:281:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:281:23: warning: excess elements in array initializer
+  0x12u, 0x60u, 0x03u, 0x00u, /* Tap(56), 0.0263693332672119 */
+                       ^
+coeficientes.c:281:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:283:2: warning: excess elements in array initializer
+  0x5Bu, 0xCDu, 0x03u, 0x00u, /* Tap(57), 0.0297044515609741 */
+  ^
+coeficientes.c:283:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:283:9: warning: excess elements in array initializer
+  0x5Bu, 0xCDu, 0x03u, 0x00u, /* Tap(57), 0.0297044515609741 */
+         ^
+coeficientes.c:283:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:283:16: warning: excess elements in array initializer
+  0x5Bu, 0xCDu, 0x03u, 0x00u, /* Tap(57), 0.0297044515609741 */
+                ^
+coeficientes.c:283:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:283:23: warning: excess elements in array initializer
+  0x5Bu, 0xCDu, 0x03u, 0x00u, /* Tap(57), 0.0297044515609741 */
+                       ^
+coeficientes.c:283:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:285:2: warning: excess elements in array initializer
+  0x30u, 0xABu, 0x03u, 0x00u, /* Tap(58), 0.0286617279052734 */
+  ^
+coeficientes.c:285:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:285:9: warning: excess elements in array initializer
+  0x30u, 0xABu, 0x03u, 0x00u, /* Tap(58), 0.0286617279052734 */
+         ^
+coeficientes.c:285:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:285:16: warning: excess elements in array initializer
+  0x30u, 0xABu, 0x03u, 0x00u, /* Tap(58), 0.0286617279052734 */
+                ^
+coeficientes.c:285:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:285:23: warning: excess elements in array initializer
+  0x30u, 0xABu, 0x03u, 0x00u, /* Tap(58), 0.0286617279052734 */
+                       ^
+coeficientes.c:285:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:287:2: warning: excess elements in array initializer
+  0xD4u, 0x1Au, 0x03u, 0x00u, /* Tap(59), 0.0242562294006348 */
+  ^
+coeficientes.c:287:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:287:9: warning: excess elements in array initializer
+  0xD4u, 0x1Au, 0x03u, 0x00u, /* Tap(59), 0.0242562294006348 */
+         ^
+coeficientes.c:287:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:287:16: warning: excess elements in array initializer
+  0xD4u, 0x1Au, 0x03u, 0x00u, /* Tap(59), 0.0242562294006348 */
+                ^
+coeficientes.c:287:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:287:23: warning: excess elements in array initializer
+  0xD4u, 0x1Au, 0x03u, 0x00u, /* Tap(59), 0.0242562294006348 */
+                       ^
+coeficientes.c:287:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:289:2: warning: excess elements in array initializer
+  0x94u, 0x47u, 0x02u, 0x00u, /* Tap(60), 0.0178093910217285 */
+  ^
+coeficientes.c:289:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:289:9: warning: excess elements in array initializer
+  0x94u, 0x47u, 0x02u, 0x00u, /* Tap(60), 0.0178093910217285 */
+         ^
+coeficientes.c:289:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:289:16: warning: excess elements in array initializer
+  0x94u, 0x47u, 0x02u, 0x00u, /* Tap(60), 0.0178093910217285 */
+                ^
+coeficientes.c:289:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:289:23: warning: excess elements in array initializer
+  0x94u, 0x47u, 0x02u, 0x00u, /* Tap(60), 0.0178093910217285 */
+                       ^
+coeficientes.c:289:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:291:2: warning: excess elements in array initializer
+  0xF5u, 0x5Du, 0x01u, 0x00u, /* Tap(61), 0.0106798410415649 */
+  ^
+coeficientes.c:291:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:291:9: warning: excess elements in array initializer
+  0xF5u, 0x5Du, 0x01u, 0x00u, /* Tap(61), 0.0106798410415649 */
+         ^
+coeficientes.c:291:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:291:16: warning: excess elements in array initializer
+  0xF5u, 0x5Du, 0x01u, 0x00u, /* Tap(61), 0.0106798410415649 */
+                ^
+coeficientes.c:291:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:291:23: warning: excess elements in array initializer
+  0xF5u, 0x5Du, 0x01u, 0x00u, /* Tap(61), 0.0106798410415649 */
+                       ^
+coeficientes.c:291:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:293:2: warning: excess elements in array initializer
+  0x48u, 0x84u, 0x00u, 0x00u, /* Tap(62), 0.00403690338134766 */
+  ^
+coeficientes.c:293:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:293:9: warning: excess elements in array initializer
+  0x48u, 0x84u, 0x00u, 0x00u, /* Tap(62), 0.00403690338134766 */
+         ^
+coeficientes.c:293:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:293:16: warning: excess elements in array initializer
+  0x48u, 0x84u, 0x00u, 0x00u, /* Tap(62), 0.00403690338134766 */
+                ^
+coeficientes.c:293:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:293:23: warning: excess elements in array initializer
+  0x48u, 0x84u, 0x00u, 0x00u, /* Tap(62), 0.00403690338134766 */
+                       ^
+coeficientes.c:293:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:295:2: warning: excess elements in array initializer
+  0xB2u, 0xD5u, 0xFFu, 0x00u, /* Tap(63), -0.00129103660583496 */
+  ^
+coeficientes.c:295:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:295:9: warning: excess elements in array initializer
+  0xB2u, 0xD5u, 0xFFu, 0x00u, /* Tap(63), -0.00129103660583496 */
+         ^
+coeficientes.c:295:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:295:16: warning: excess elements in array initializer
+  0xB2u, 0xD5u, 0xFFu, 0x00u, /* Tap(63), -0.00129103660583496 */
+                ^
+coeficientes.c:295:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:295:23: warning: excess elements in array initializer
+  0xB2u, 0xD5u, 0xFFu, 0x00u, /* Tap(63), -0.00129103660583496 */
+                       ^
+coeficientes.c:295:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:297:2: warning: excess elements in array initializer
+  0x20u, 0x60u, 0xFFu, 0x00u, /* Tap(64), -0.00487899780273438 */
+  ^
+coeficientes.c:297:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:297:9: warning: excess elements in array initializer
+  0x20u, 0x60u, 0xFFu, 0x00u, /* Tap(64), -0.00487899780273438 */
+         ^
+coeficientes.c:297:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:297:16: warning: excess elements in array initializer
+  0x20u, 0x60u, 0xFFu, 0x00u, /* Tap(64), -0.00487899780273438 */
+                ^
+coeficientes.c:297:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:297:23: warning: excess elements in array initializer
+  0x20u, 0x60u, 0xFFu, 0x00u, /* Tap(64), -0.00487899780273438 */
+                       ^
+coeficientes.c:297:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:299:2: warning: excess elements in array initializer
+  0xFBu, 0x24u, 0xFFu, 0x00u, /* Tap(65), -0.00668394565582275 */
+  ^
+coeficientes.c:299:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:299:9: warning: excess elements in array initializer
+  0xFBu, 0x24u, 0xFFu, 0x00u, /* Tap(65), -0.00668394565582275 */
+         ^
+coeficientes.c:299:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:299:16: warning: excess elements in array initializer
+  0xFBu, 0x24u, 0xFFu, 0x00u, /* Tap(65), -0.00668394565582275 */
+                ^
+coeficientes.c:299:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:299:23: warning: excess elements in array initializer
+  0xFBu, 0x24u, 0xFFu, 0x00u, /* Tap(65), -0.00668394565582275 */
+                       ^
+coeficientes.c:299:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:301:2: warning: excess elements in array initializer
+  0xEDu, 0x1Bu, 0xFFu, 0x00u, /* Tap(66), -0.00696027278900146 */
+  ^
+coeficientes.c:301:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:301:9: warning: excess elements in array initializer
+  0xEDu, 0x1Bu, 0xFFu, 0x00u, /* Tap(66), -0.00696027278900146 */
+         ^
+coeficientes.c:301:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:301:16: warning: excess elements in array initializer
+  0xEDu, 0x1Bu, 0xFFu, 0x00u, /* Tap(66), -0.00696027278900146 */
+                ^
+coeficientes.c:301:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:301:23: warning: excess elements in array initializer
+  0xEDu, 0x1Bu, 0xFFu, 0x00u, /* Tap(66), -0.00696027278900146 */
+                       ^
+coeficientes.c:301:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:303:2: warning: excess elements in array initializer
+  0xCAu, 0x36u, 0xFFu, 0x00u, /* Tap(67), -0.00614047050476074 */
+  ^
+coeficientes.c:303:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:303:9: warning: excess elements in array initializer
+  0xCAu, 0x36u, 0xFFu, 0x00u, /* Tap(67), -0.00614047050476074 */
+         ^
+coeficientes.c:303:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:303:16: warning: excess elements in array initializer
+  0xCAu, 0x36u, 0xFFu, 0x00u, /* Tap(67), -0.00614047050476074 */
+                ^
+coeficientes.c:303:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:303:23: warning: excess elements in array initializer
+  0xCAu, 0x36u, 0xFFu, 0x00u, /* Tap(67), -0.00614047050476074 */
+                       ^
+coeficientes.c:303:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:305:2: warning: excess elements in array initializer
+  0x96u, 0x65u, 0xFFu, 0x00u, /* Tap(68), -0.00471234321594238 */
+  ^
+coeficientes.c:305:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:305:9: warning: excess elements in array initializer
+  0x96u, 0x65u, 0xFFu, 0x00u, /* Tap(68), -0.00471234321594238 */
+         ^
+coeficientes.c:305:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:305:16: warning: excess elements in array initializer
+  0x96u, 0x65u, 0xFFu, 0x00u, /* Tap(68), -0.00471234321594238 */
+                ^
+coeficientes.c:305:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:305:23: warning: excess elements in array initializer
+  0x96u, 0x65u, 0xFFu, 0x00u, /* Tap(68), -0.00471234321594238 */
+                       ^
+coeficientes.c:305:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:307:2: warning: excess elements in array initializer
+  0xE0u, 0x99u, 0xFFu, 0x00u, /* Tap(69), -0.00311660766601563 */
+  ^
+coeficientes.c:307:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:307:9: warning: excess elements in array initializer
+  0xE0u, 0x99u, 0xFFu, 0x00u, /* Tap(69), -0.00311660766601563 */
+         ^
+coeficientes.c:307:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:307:16: warning: excess elements in array initializer
+  0xE0u, 0x99u, 0xFFu, 0x00u, /* Tap(69), -0.00311660766601563 */
+                ^
+coeficientes.c:307:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:307:23: warning: excess elements in array initializer
+  0xE0u, 0x99u, 0xFFu, 0x00u, /* Tap(69), -0.00311660766601563 */
+                       ^
+coeficientes.c:307:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:309:2: warning: excess elements in array initializer
+  0xEEu, 0xC8u, 0xFFu, 0x00u, /* Tap(70), -0.00168061256408691 */
+  ^
+coeficientes.c:309:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:309:9: warning: excess elements in array initializer
+  0xEEu, 0xC8u, 0xFFu, 0x00u, /* Tap(70), -0.00168061256408691 */
+         ^
+coeficientes.c:309:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:309:16: warning: excess elements in array initializer
+  0xEEu, 0xC8u, 0xFFu, 0x00u, /* Tap(70), -0.00168061256408691 */
+                ^
+coeficientes.c:309:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:309:23: warning: excess elements in array initializer
+  0xEEu, 0xC8u, 0xFFu, 0x00u, /* Tap(70), -0.00168061256408691 */
+                       ^
+coeficientes.c:309:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:311:2: warning: excess elements in array initializer
+  0xA1u, 0xECu, 0xFFu, 0x00u, /* Tap(71), -0.000591158866882324 */
+  ^
+coeficientes.c:311:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:311:9: warning: excess elements in array initializer
+  0xA1u, 0xECu, 0xFFu, 0x00u, /* Tap(71), -0.000591158866882324 */
+         ^
+coeficientes.c:311:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:311:16: warning: excess elements in array initializer
+  0xA1u, 0xECu, 0xFFu, 0x00u, /* Tap(71), -0.000591158866882324 */
+                ^
+coeficientes.c:311:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:311:23: warning: excess elements in array initializer
+  0xA1u, 0xECu, 0xFFu, 0x00u, /* Tap(71), -0.000591158866882324 */
+                       ^
+coeficientes.c:311:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:313:2: warning: excess elements in array initializer
+  0x25u, 0x03u, 0x00u, 0x00u, /* Tap(72), 9.59634780883789E-05 */
+  ^
+coeficientes.c:313:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:313:9: warning: excess elements in array initializer
+  0x25u, 0x03u, 0x00u, 0x00u, /* Tap(72), 9.59634780883789E-05 */
+         ^
+coeficientes.c:313:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:313:16: warning: excess elements in array initializer
+  0x25u, 0x03u, 0x00u, 0x00u, /* Tap(72), 9.59634780883789E-05 */
+                ^
+coeficientes.c:313:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:313:23: warning: excess elements in array initializer
+  0x25u, 0x03u, 0x00u, 0x00u, /* Tap(72), 9.59634780883789E-05 */
+                       ^
+coeficientes.c:313:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:315:2: warning: excess elements in array initializer
+  0xDFu, 0x0Du, 0x00u, 0x00u, /* Tap(73), 0.000423312187194824 */
+  ^
+coeficientes.c:315:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:315:9: warning: excess elements in array initializer
+  0xDFu, 0x0Du, 0x00u, 0x00u, /* Tap(73), 0.000423312187194824 */
+         ^
+coeficientes.c:315:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:315:16: warning: excess elements in array initializer
+  0xDFu, 0x0Du, 0x00u, 0x00u, /* Tap(73), 0.000423312187194824 */
+                ^
+coeficientes.c:315:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:315:23: warning: excess elements in array initializer
+  0xDFu, 0x0Du, 0x00u, 0x00u, /* Tap(73), 0.000423312187194824 */
+                       ^
+coeficientes.c:315:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:317:2: warning: excess elements in array initializer
+  0x06u, 0x10u, 0x00u, 0x00u, /* Tap(74), 0.000488996505737305 */
+  ^
+coeficientes.c:317:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:317:9: warning: excess elements in array initializer
+  0x06u, 0x10u, 0x00u, 0x00u, /* Tap(74), 0.000488996505737305 */
+         ^
+coeficientes.c:317:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:317:16: warning: excess elements in array initializer
+  0x06u, 0x10u, 0x00u, 0x00u, /* Tap(74), 0.000488996505737305 */
+                ^
+coeficientes.c:317:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:317:23: warning: excess elements in array initializer
+  0x06u, 0x10u, 0x00u, 0x00u, /* Tap(74), 0.000488996505737305 */
+                       ^
+coeficientes.c:317:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:319:2: warning: excess elements in array initializer
+  0x47u, 0x0Du, 0x00u, 0x00u, /* Tap(75), 0.000405192375183105 */
+  ^
+coeficientes.c:319:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:319:9: warning: excess elements in array initializer
+  0x47u, 0x0Du, 0x00u, 0x00u, /* Tap(75), 0.000405192375183105 */
+         ^
+coeficientes.c:319:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:319:16: warning: excess elements in array initializer
+  0x47u, 0x0Du, 0x00u, 0x00u, /* Tap(75), 0.000405192375183105 */
+                ^
+coeficientes.c:319:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:319:23: warning: excess elements in array initializer
+  0x47u, 0x0Du, 0x00u, 0x00u, /* Tap(75), 0.000405192375183105 */
+                       ^
+coeficientes.c:319:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:321:2: warning: excess elements in array initializer
+  0xC9u, 0x08u, 0x00u, 0x00u, /* Tap(76), 0.000268101692199707 */
+  ^
+coeficientes.c:321:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:321:9: warning: excess elements in array initializer
+  0xC9u, 0x08u, 0x00u, 0x00u, /* Tap(76), 0.000268101692199707 */
+         ^
+coeficientes.c:321:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:321:16: warning: excess elements in array initializer
+  0xC9u, 0x08u, 0x00u, 0x00u, /* Tap(76), 0.000268101692199707 */
+                ^
+coeficientes.c:321:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:321:23: warning: excess elements in array initializer
+  0xC9u, 0x08u, 0x00u, 0x00u, /* Tap(76), 0.000268101692199707 */
+                       ^
+coeficientes.c:321:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:323:2: warning: excess elements in array initializer
+  0xA6u, 0x04u, 0x00u, 0x00u, /* Tap(77), 0.00014185905456543 */
+  ^
+coeficientes.c:323:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:323:9: warning: excess elements in array initializer
+  0xA6u, 0x04u, 0x00u, 0x00u, /* Tap(77), 0.00014185905456543 */
+         ^
+coeficientes.c:323:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:323:16: warning: excess elements in array initializer
+  0xA6u, 0x04u, 0x00u, 0x00u, /* Tap(77), 0.00014185905456543 */
+                ^
+coeficientes.c:323:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:323:23: warning: excess elements in array initializer
+  0xA6u, 0x04u, 0x00u, 0x00u, /* Tap(77), 0.00014185905456543 */
+                       ^
+coeficientes.c:323:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:325:2: warning: excess elements in array initializer
+  0xD5u, 0x01u, 0x00u, 0x00u, /* Tap(78), 5.59091567993164E-05 */
+  ^
+coeficientes.c:325:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:325:9: warning: excess elements in array initializer
+  0xD5u, 0x01u, 0x00u, 0x00u, /* Tap(78), 5.59091567993164E-05 */
+         ^
+coeficientes.c:325:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:325:16: warning: excess elements in array initializer
+  0xD5u, 0x01u, 0x00u, 0x00u, /* Tap(78), 5.59091567993164E-05 */
+                ^
+coeficientes.c:325:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:325:23: warning: excess elements in array initializer
+  0xD5u, 0x01u, 0x00u, 0x00u, /* Tap(78), 5.59091567993164E-05 */
+                       ^
+coeficientes.c:325:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:327:2: warning: excess elements in array initializer
+  0x6Du, 0x00u, 0x00u, 0x00u, /* Tap(79), 1.29938125610352E-05 */
+  ^
+coeficientes.c:327:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:327:9: warning: excess elements in array initializer
+  0x6Du, 0x00u, 0x00u, 0x00u, /* Tap(79), 1.29938125610352E-05 */
+         ^
+coeficientes.c:327:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:327:16: warning: excess elements in array initializer
+  0x6Du, 0x00u, 0x00u, 0x00u, /* Tap(79), 1.29938125610352E-05 */
+                ^
+coeficientes.c:327:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:327:23: warning: excess elements in array initializer
+  0x6Du, 0x00u, 0x00u, 0x00u, /* Tap(79), 1.29938125610352E-05 */
+                       ^
+coeficientes.c:327:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:329:2: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+  ^
+coeficientes.c:329:2: note: (near initialization for 'COEFFS_110')
+coeficientes.c:329:9: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+         ^
+coeficientes.c:329:9: note: (near initialization for 'COEFFS_110')
+coeficientes.c:329:16: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                ^
+coeficientes.c:329:16: note: (near initialization for 'COEFFS_110')
+coeficientes.c:329:23: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                       ^
+coeficientes.c:329:23: note: (near initialization for 'COEFFS_110')
+coeficientes.c:434:2: warning: excess elements in array initializer
+  0x56u, 0x3Cu, 0xFFu, 0x00u, /* Tap(50), -0.00597119331359863 */
+  ^
+coeficientes.c:434:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:434:9: warning: excess elements in array initializer
+  0x56u, 0x3Cu, 0xFFu, 0x00u, /* Tap(50), -0.00597119331359863 */
+         ^
+coeficientes.c:434:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:434:16: warning: excess elements in array initializer
+  0x56u, 0x3Cu, 0xFFu, 0x00u, /* Tap(50), -0.00597119331359863 */
+                ^
+coeficientes.c:434:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:434:23: warning: excess elements in array initializer
+  0x56u, 0x3Cu, 0xFFu, 0x00u, /* Tap(50), -0.00597119331359863 */
+                       ^
+coeficientes.c:434:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:436:2: warning: excess elements in array initializer
+  0x8Au, 0x8Bu, 0x02u, 0x00u, /* Tap(51), 0.019883394241333 */
+  ^
+coeficientes.c:436:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:436:9: warning: excess elements in array initializer
+  0x8Au, 0x8Bu, 0x02u, 0x00u, /* Tap(51), 0.019883394241333 */
+         ^
+coeficientes.c:436:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:436:16: warning: excess elements in array initializer
+  0x8Au, 0x8Bu, 0x02u, 0x00u, /* Tap(51), 0.019883394241333 */
+                ^
+coeficientes.c:436:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:436:23: warning: excess elements in array initializer
+  0x8Au, 0x8Bu, 0x02u, 0x00u, /* Tap(51), 0.019883394241333 */
+                       ^
+coeficientes.c:436:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:438:2: warning: excess elements in array initializer
+  0x4Du, 0xE6u, 0x04u, 0x00u, /* Tap(52), 0.0382782220840454 */
+  ^
+coeficientes.c:438:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:438:9: warning: excess elements in array initializer
+  0x4Du, 0xE6u, 0x04u, 0x00u, /* Tap(52), 0.0382782220840454 */
+         ^
+coeficientes.c:438:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:438:16: warning: excess elements in array initializer
+  0x4Du, 0xE6u, 0x04u, 0x00u, /* Tap(52), 0.0382782220840454 */
+                ^
+coeficientes.c:438:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:438:23: warning: excess elements in array initializer
+  0x4Du, 0xE6u, 0x04u, 0x00u, /* Tap(52), 0.0382782220840454 */
+                       ^
+coeficientes.c:438:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:440:2: warning: excess elements in array initializer
+  0x00u, 0xEAu, 0x05u, 0x00u, /* Tap(53), 0.04620361328125 */
+  ^
+coeficientes.c:440:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:440:9: warning: excess elements in array initializer
+  0x00u, 0xEAu, 0x05u, 0x00u, /* Tap(53), 0.04620361328125 */
+         ^
+coeficientes.c:440:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:440:16: warning: excess elements in array initializer
+  0x00u, 0xEAu, 0x05u, 0x00u, /* Tap(53), 0.04620361328125 */
+                ^
+coeficientes.c:440:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:440:23: warning: excess elements in array initializer
+  0x00u, 0xEAu, 0x05u, 0x00u, /* Tap(53), 0.04620361328125 */
+                       ^
+coeficientes.c:440:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:442:2: warning: excess elements in array initializer
+  0x94u, 0x8Fu, 0x05u, 0x00u, /* Tap(54), 0.0434441566467285 */
+  ^
+coeficientes.c:442:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:442:9: warning: excess elements in array initializer
+  0x94u, 0x8Fu, 0x05u, 0x00u, /* Tap(54), 0.0434441566467285 */
+         ^
+coeficientes.c:442:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:442:16: warning: excess elements in array initializer
+  0x94u, 0x8Fu, 0x05u, 0x00u, /* Tap(54), 0.0434441566467285 */
+                ^
+coeficientes.c:442:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:442:23: warning: excess elements in array initializer
+  0x94u, 0x8Fu, 0x05u, 0x00u, /* Tap(54), 0.0434441566467285 */
+                       ^
+coeficientes.c:442:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:444:2: warning: excess elements in array initializer
+  0x24u, 0x21u, 0x04u, 0x00u, /* Tap(55), 0.0322613716125488 */
+  ^
+coeficientes.c:444:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:444:9: warning: excess elements in array initializer
+  0x24u, 0x21u, 0x04u, 0x00u, /* Tap(55), 0.0322613716125488 */
+         ^
+coeficientes.c:444:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:444:16: warning: excess elements in array initializer
+  0x24u, 0x21u, 0x04u, 0x00u, /* Tap(55), 0.0322613716125488 */
+                ^
+coeficientes.c:444:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:444:23: warning: excess elements in array initializer
+  0x24u, 0x21u, 0x04u, 0x00u, /* Tap(55), 0.0322613716125488 */
+                       ^
+coeficientes.c:444:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:446:2: warning: excess elements in array initializer
+  0x81u, 0x1Cu, 0x02u, 0x00u, /* Tap(56), 0.0164948701858521 */
+  ^
+coeficientes.c:446:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:446:9: warning: excess elements in array initializer
+  0x81u, 0x1Cu, 0x02u, 0x00u, /* Tap(56), 0.0164948701858521 */
+         ^
+coeficientes.c:446:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:446:16: warning: excess elements in array initializer
+  0x81u, 0x1Cu, 0x02u, 0x00u, /* Tap(56), 0.0164948701858521 */
+                ^
+coeficientes.c:446:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:446:23: warning: excess elements in array initializer
+  0x81u, 0x1Cu, 0x02u, 0x00u, /* Tap(56), 0.0164948701858521 */
+                       ^
+coeficientes.c:446:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:448:2: warning: excess elements in array initializer
+  0xF6u, 0x0Cu, 0x00u, 0x00u, /* Tap(57), 0.000395536422729492 */
+  ^
+coeficientes.c:448:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:448:9: warning: excess elements in array initializer
+  0xF6u, 0x0Cu, 0x00u, 0x00u, /* Tap(57), 0.000395536422729492 */
+         ^
+coeficientes.c:448:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:448:16: warning: excess elements in array initializer
+  0xF6u, 0x0Cu, 0x00u, 0x00u, /* Tap(57), 0.000395536422729492 */
+                ^
+coeficientes.c:448:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:448:23: warning: excess elements in array initializer
+  0xF6u, 0x0Cu, 0x00u, 0x00u, /* Tap(57), 0.000395536422729492 */
+                       ^
+coeficientes.c:448:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:450:2: warning: excess elements in array initializer
+  0x7Du, 0x67u, 0xFEu, 0x00u, /* Tap(58), -0.0124667882919312 */
+  ^
+coeficientes.c:450:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:450:9: warning: excess elements in array initializer
+  0x7Du, 0x67u, 0xFEu, 0x00u, /* Tap(58), -0.0124667882919312 */
+         ^
+coeficientes.c:450:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:450:16: warning: excess elements in array initializer
+  0x7Du, 0x67u, 0xFEu, 0x00u, /* Tap(58), -0.0124667882919312 */
+                ^
+coeficientes.c:450:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:450:23: warning: excess elements in array initializer
+  0x7Du, 0x67u, 0xFEu, 0x00u, /* Tap(58), -0.0124667882919312 */
+                       ^
+coeficientes.c:450:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:452:2: warning: excess elements in array initializer
+  0x61u, 0x72u, 0xFDu, 0x00u, /* Tap(59), -0.0199469327926636 */
+  ^
+coeficientes.c:452:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:452:9: warning: excess elements in array initializer
+  0x61u, 0x72u, 0xFDu, 0x00u, /* Tap(59), -0.0199469327926636 */
+         ^
+coeficientes.c:452:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:452:16: warning: excess elements in array initializer
+  0x61u, 0x72u, 0xFDu, 0x00u, /* Tap(59), -0.0199469327926636 */
+                ^
+coeficientes.c:452:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:452:23: warning: excess elements in array initializer
+  0x61u, 0x72u, 0xFDu, 0x00u, /* Tap(59), -0.0199469327926636 */
+                       ^
+coeficientes.c:452:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:454:2: warning: excess elements in array initializer
+  0xF0u, 0x3Cu, 0xFDu, 0x00u, /* Tap(60), -0.0215778350830078 */
+  ^
+coeficientes.c:454:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:454:9: warning: excess elements in array initializer
+  0xF0u, 0x3Cu, 0xFDu, 0x00u, /* Tap(60), -0.0215778350830078 */
+         ^
+coeficientes.c:454:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:454:16: warning: excess elements in array initializer
+  0xF0u, 0x3Cu, 0xFDu, 0x00u, /* Tap(60), -0.0215778350830078 */
+                ^
+coeficientes.c:454:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:454:23: warning: excess elements in array initializer
+  0xF0u, 0x3Cu, 0xFDu, 0x00u, /* Tap(60), -0.0215778350830078 */
+                       ^
+coeficientes.c:454:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:456:2: warning: excess elements in array initializer
+  0xACu, 0xA6u, 0xFDu, 0x00u, /* Tap(61), -0.0183510780334473 */
+  ^
+coeficientes.c:456:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:456:9: warning: excess elements in array initializer
+  0xACu, 0xA6u, 0xFDu, 0x00u, /* Tap(61), -0.0183510780334473 */
+         ^
+coeficientes.c:456:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:456:16: warning: excess elements in array initializer
+  0xACu, 0xA6u, 0xFDu, 0x00u, /* Tap(61), -0.0183510780334473 */
+                ^
+coeficientes.c:456:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:456:23: warning: excess elements in array initializer
+  0xACu, 0xA6u, 0xFDu, 0x00u, /* Tap(61), -0.0183510780334473 */
+                       ^
+coeficientes.c:456:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:458:2: warning: excess elements in array initializer
+  0x4Eu, 0x71u, 0xFEu, 0x00u, /* Tap(62), -0.01216721534729 */
+  ^
+coeficientes.c:458:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:458:9: warning: excess elements in array initializer
+  0x4Eu, 0x71u, 0xFEu, 0x00u, /* Tap(62), -0.01216721534729 */
+         ^
+coeficientes.c:458:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:458:16: warning: excess elements in array initializer
+  0x4Eu, 0x71u, 0xFEu, 0x00u, /* Tap(62), -0.01216721534729 */
+                ^
+coeficientes.c:458:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:458:23: warning: excess elements in array initializer
+  0x4Eu, 0x71u, 0xFEu, 0x00u, /* Tap(62), -0.01216721534729 */
+                       ^
+coeficientes.c:458:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:460:2: warning: excess elements in array initializer
+  0xB7u, 0x56u, 0xFFu, 0x00u, /* Tap(63), -0.00516617298126221 */
+  ^
+coeficientes.c:460:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:460:9: warning: excess elements in array initializer
+  0xB7u, 0x56u, 0xFFu, 0x00u, /* Tap(63), -0.00516617298126221 */
+         ^
+coeficientes.c:460:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:460:16: warning: excess elements in array initializer
+  0xB7u, 0x56u, 0xFFu, 0x00u, /* Tap(63), -0.00516617298126221 */
+                ^
+coeficientes.c:460:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:460:23: warning: excess elements in array initializer
+  0xB7u, 0x56u, 0xFFu, 0x00u, /* Tap(63), -0.00516617298126221 */
+                       ^
+coeficientes.c:460:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:462:2: warning: excess elements in array initializer
+  0x30u, 0x1Cu, 0x00u, 0x00u, /* Tap(64), 0.000860214233398438 */
+  ^
+coeficientes.c:462:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:462:9: warning: excess elements in array initializer
+  0x30u, 0x1Cu, 0x00u, 0x00u, /* Tap(64), 0.000860214233398438 */
+         ^
+coeficientes.c:462:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:462:16: warning: excess elements in array initializer
+  0x30u, 0x1Cu, 0x00u, 0x00u, /* Tap(64), 0.000860214233398438 */
+                ^
+coeficientes.c:462:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:462:23: warning: excess elements in array initializer
+  0x30u, 0x1Cu, 0x00u, 0x00u, /* Tap(64), 0.000860214233398438 */
+                       ^
+coeficientes.c:462:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:464:2: warning: excess elements in array initializer
+  0x4Cu, 0x9Eu, 0x00u, 0x00u, /* Tap(65), 0.00483083724975586 */
+  ^
+coeficientes.c:464:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:464:9: warning: excess elements in array initializer
+  0x4Cu, 0x9Eu, 0x00u, 0x00u, /* Tap(65), 0.00483083724975586 */
+         ^
+coeficientes.c:464:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:464:16: warning: excess elements in array initializer
+  0x4Cu, 0x9Eu, 0x00u, 0x00u, /* Tap(65), 0.00483083724975586 */
+                ^
+coeficientes.c:464:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:464:23: warning: excess elements in array initializer
+  0x4Cu, 0x9Eu, 0x00u, 0x00u, /* Tap(65), 0.00483083724975586 */
+                       ^
+coeficientes.c:464:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:466:2: warning: excess elements in array initializer
+  0xC9u, 0xD3u, 0x00u, 0x00u, /* Tap(66), 0.00646317005157471 */
+  ^
+coeficientes.c:466:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:466:9: warning: excess elements in array initializer
+  0xC9u, 0xD3u, 0x00u, 0x00u, /* Tap(66), 0.00646317005157471 */
+         ^
+coeficientes.c:466:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:466:16: warning: excess elements in array initializer
+  0xC9u, 0xD3u, 0x00u, 0x00u, /* Tap(66), 0.00646317005157471 */
+                ^
+coeficientes.c:466:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:466:23: warning: excess elements in array initializer
+  0xC9u, 0xD3u, 0x00u, 0x00u, /* Tap(66), 0.00646317005157471 */
+                       ^
+coeficientes.c:466:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:468:2: warning: excess elements in array initializer
+  0xD7u, 0xC8u, 0x00u, 0x00u, /* Tap(67), 0.00612914562225342 */
+  ^
+coeficientes.c:468:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:468:9: warning: excess elements in array initializer
+  0xD7u, 0xC8u, 0x00u, 0x00u, /* Tap(67), 0.00612914562225342 */
+         ^
+coeficientes.c:468:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:468:16: warning: excess elements in array initializer
+  0xD7u, 0xC8u, 0x00u, 0x00u, /* Tap(67), 0.00612914562225342 */
+                ^
+coeficientes.c:468:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:468:23: warning: excess elements in array initializer
+  0xD7u, 0xC8u, 0x00u, 0x00u, /* Tap(67), 0.00612914562225342 */
+                       ^
+coeficientes.c:468:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:470:2: warning: excess elements in array initializer
+  0xC8u, 0x95u, 0x00u, 0x00u, /* Tap(68), 0.00457096099853516 */
+  ^
+coeficientes.c:470:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:470:9: warning: excess elements in array initializer
+  0xC8u, 0x95u, 0x00u, 0x00u, /* Tap(68), 0.00457096099853516 */
+         ^
+coeficientes.c:470:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:470:16: warning: excess elements in array initializer
+  0xC8u, 0x95u, 0x00u, 0x00u, /* Tap(68), 0.00457096099853516 */
+                ^
+coeficientes.c:470:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:470:23: warning: excess elements in array initializer
+  0xC8u, 0x95u, 0x00u, 0x00u, /* Tap(68), 0.00457096099853516 */
+                       ^
+coeficientes.c:470:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:472:2: warning: excess elements in array initializer
+  0x12u, 0x55u, 0x00u, 0x00u, /* Tap(69), 0.00259613990783691 */
+  ^
+coeficientes.c:472:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:472:9: warning: excess elements in array initializer
+  0x12u, 0x55u, 0x00u, 0x00u, /* Tap(69), 0.00259613990783691 */
+         ^
+coeficientes.c:472:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:472:16: warning: excess elements in array initializer
+  0x12u, 0x55u, 0x00u, 0x00u, /* Tap(69), 0.00259613990783691 */
+                ^
+coeficientes.c:472:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:472:23: warning: excess elements in array initializer
+  0x12u, 0x55u, 0x00u, 0x00u, /* Tap(69), 0.00259613990783691 */
+                       ^
+coeficientes.c:472:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:474:2: warning: excess elements in array initializer
+  0x94u, 0x1Bu, 0x00u, 0x00u, /* Tap(70), 0.000841617584228516 */
+  ^
+coeficientes.c:474:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:474:9: warning: excess elements in array initializer
+  0x94u, 0x1Bu, 0x00u, 0x00u, /* Tap(70), 0.000841617584228516 */
+         ^
+coeficientes.c:474:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:474:16: warning: excess elements in array initializer
+  0x94u, 0x1Bu, 0x00u, 0x00u, /* Tap(70), 0.000841617584228516 */
+                ^
+coeficientes.c:474:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:474:23: warning: excess elements in array initializer
+  0x94u, 0x1Bu, 0x00u, 0x00u, /* Tap(70), 0.000841617584228516 */
+                       ^
+coeficientes.c:474:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:476:2: warning: excess elements in array initializer
+  0xC4u, 0xF4u, 0xFFu, 0x00u, /* Tap(71), -0.000342845916748047 */
+  ^
+coeficientes.c:476:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:476:9: warning: excess elements in array initializer
+  0xC4u, 0xF4u, 0xFFu, 0x00u, /* Tap(71), -0.000342845916748047 */
+         ^
+coeficientes.c:476:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:476:16: warning: excess elements in array initializer
+  0xC4u, 0xF4u, 0xFFu, 0x00u, /* Tap(71), -0.000342845916748047 */
+                ^
+coeficientes.c:476:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:476:23: warning: excess elements in array initializer
+  0xC4u, 0xF4u, 0xFFu, 0x00u, /* Tap(71), -0.000342845916748047 */
+                       ^
+coeficientes.c:476:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:478:2: warning: excess elements in array initializer
+  0xC3u, 0xE2u, 0xFFu, 0x00u, /* Tap(72), -0.000892281532287598 */
+  ^
+coeficientes.c:478:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:478:9: warning: excess elements in array initializer
+  0xC3u, 0xE2u, 0xFFu, 0x00u, /* Tap(72), -0.000892281532287598 */
+         ^
+coeficientes.c:478:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:478:16: warning: excess elements in array initializer
+  0xC3u, 0xE2u, 0xFFu, 0x00u, /* Tap(72), -0.000892281532287598 */
+                ^
+coeficientes.c:478:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:478:23: warning: excess elements in array initializer
+  0xC3u, 0xE2u, 0xFFu, 0x00u, /* Tap(72), -0.000892281532287598 */
+                       ^
+coeficientes.c:478:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:480:2: warning: excess elements in array initializer
+  0x1Du, 0xE1u, 0xFFu, 0x00u, /* Tap(73), -0.000942587852478027 */
+  ^
+coeficientes.c:480:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:480:9: warning: excess elements in array initializer
+  0x1Du, 0xE1u, 0xFFu, 0x00u, /* Tap(73), -0.000942587852478027 */
+         ^
+coeficientes.c:480:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:480:16: warning: excess elements in array initializer
+  0x1Du, 0xE1u, 0xFFu, 0x00u, /* Tap(73), -0.000942587852478027 */
+                ^
+coeficientes.c:480:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:480:23: warning: excess elements in array initializer
+  0x1Du, 0xE1u, 0xFFu, 0x00u, /* Tap(73), -0.000942587852478027 */
+                       ^
+coeficientes.c:480:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:482:2: warning: excess elements in array initializer
+  0x9Au, 0xE8u, 0xFFu, 0x00u, /* Tap(74), -0.00071406364440918 */
+  ^
+coeficientes.c:482:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:482:9: warning: excess elements in array initializer
+  0x9Au, 0xE8u, 0xFFu, 0x00u, /* Tap(74), -0.00071406364440918 */
+         ^
+coeficientes.c:482:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:482:16: warning: excess elements in array initializer
+  0x9Au, 0xE8u, 0xFFu, 0x00u, /* Tap(74), -0.00071406364440918 */
+                ^
+coeficientes.c:482:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:482:23: warning: excess elements in array initializer
+  0x9Au, 0xE8u, 0xFFu, 0x00u, /* Tap(74), -0.00071406364440918 */
+                       ^
+coeficientes.c:482:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:484:2: warning: excess elements in array initializer
+  0x80u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.0004119873046875 */
+  ^
+coeficientes.c:484:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:484:9: warning: excess elements in array initializer
+  0x80u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.0004119873046875 */
+         ^
+coeficientes.c:484:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:484:16: warning: excess elements in array initializer
+  0x80u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.0004119873046875 */
+                ^
+coeficientes.c:484:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:484:23: warning: excess elements in array initializer
+  0x80u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.0004119873046875 */
+                       ^
+coeficientes.c:484:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:486:2: warning: excess elements in array initializer
+  0x7Cu, 0xFAu, 0xFFu, 0x00u, /* Tap(76), -0.000168323516845703 */
+  ^
+coeficientes.c:486:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:486:9: warning: excess elements in array initializer
+  0x7Cu, 0xFAu, 0xFFu, 0x00u, /* Tap(76), -0.000168323516845703 */
+         ^
+coeficientes.c:486:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:486:16: warning: excess elements in array initializer
+  0x7Cu, 0xFAu, 0xFFu, 0x00u, /* Tap(76), -0.000168323516845703 */
+                ^
+coeficientes.c:486:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:486:23: warning: excess elements in array initializer
+  0x7Cu, 0xFAu, 0xFFu, 0x00u, /* Tap(76), -0.000168323516845703 */
+                       ^
+coeficientes.c:486:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:488:2: warning: excess elements in array initializer
+  0x00u, 0xFFu, 0xFFu, 0x00u, /* Tap(77), -3.0517578125E-05 */
+  ^
+coeficientes.c:488:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:488:9: warning: excess elements in array initializer
+  0x00u, 0xFFu, 0xFFu, 0x00u, /* Tap(77), -3.0517578125E-05 */
+         ^
+coeficientes.c:488:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:488:16: warning: excess elements in array initializer
+  0x00u, 0xFFu, 0xFFu, 0x00u, /* Tap(77), -3.0517578125E-05 */
+                ^
+coeficientes.c:488:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:488:23: warning: excess elements in array initializer
+  0x00u, 0xFFu, 0xFFu, 0x00u, /* Tap(77), -3.0517578125E-05 */
+                       ^
+coeficientes.c:488:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:490:2: warning: excess elements in array initializer
+  0x89u, 0x00u, 0x00u, 0x00u, /* Tap(78), 1.6331672668457E-05 */
+  ^
+coeficientes.c:490:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:490:9: warning: excess elements in array initializer
+  0x89u, 0x00u, 0x00u, 0x00u, /* Tap(78), 1.6331672668457E-05 */
+         ^
+coeficientes.c:490:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:490:16: warning: excess elements in array initializer
+  0x89u, 0x00u, 0x00u, 0x00u, /* Tap(78), 1.6331672668457E-05 */
+                ^
+coeficientes.c:490:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:490:23: warning: excess elements in array initializer
+  0x89u, 0x00u, 0x00u, 0x00u, /* Tap(78), 1.6331672668457E-05 */
+                       ^
+coeficientes.c:490:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:492:2: warning: excess elements in array initializer
+  0x74u, 0x00u, 0x00u, 0x00u, /* Tap(79), 1.38282775878906E-05 */
+  ^
+coeficientes.c:492:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:492:9: warning: excess elements in array initializer
+  0x74u, 0x00u, 0x00u, 0x00u, /* Tap(79), 1.38282775878906E-05 */
+         ^
+coeficientes.c:492:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:492:16: warning: excess elements in array initializer
+  0x74u, 0x00u, 0x00u, 0x00u, /* Tap(79), 1.38282775878906E-05 */
+                ^
+coeficientes.c:492:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:492:23: warning: excess elements in array initializer
+  0x74u, 0x00u, 0x00u, 0x00u, /* Tap(79), 1.38282775878906E-05 */
+                       ^
+coeficientes.c:492:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:494:2: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+  ^
+coeficientes.c:494:2: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:494:9: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+         ^
+coeficientes.c:494:9: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:494:16: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                ^
+coeficientes.c:494:16: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:494:23: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                       ^
+coeficientes.c:494:23: note: (near initialization for 'COEFFS_146_83')
+coeficientes.c:598:2: warning: excess elements in array initializer
+  0x7Au, 0xA0u, 0x07u, 0x00u, /* Tap(50), 0.0595848560333252 */
+  ^
+coeficientes.c:598:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:598:9: warning: excess elements in array initializer
+  0x7Au, 0xA0u, 0x07u, 0x00u, /* Tap(50), 0.0595848560333252 */
+         ^
+coeficientes.c:598:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:598:16: warning: excess elements in array initializer
+  0x7Au, 0xA0u, 0x07u, 0x00u, /* Tap(50), 0.0595848560333252 */
+                ^
+coeficientes.c:598:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:598:23: warning: excess elements in array initializer
+  0x7Au, 0xA0u, 0x07u, 0x00u, /* Tap(50), 0.0595848560333252 */
+                       ^
+coeficientes.c:598:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:600:2: warning: excess elements in array initializer
+  0x86u, 0x58u, 0x06u, 0x00u, /* Tap(51), 0.0495765209197998 */
+  ^
+coeficientes.c:600:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:600:9: warning: excess elements in array initializer
+  0x86u, 0x58u, 0x06u, 0x00u, /* Tap(51), 0.0495765209197998 */
+         ^
+coeficientes.c:600:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:600:16: warning: excess elements in array initializer
+  0x86u, 0x58u, 0x06u, 0x00u, /* Tap(51), 0.0495765209197998 */
+                ^
+coeficientes.c:600:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:600:23: warning: excess elements in array initializer
+  0x86u, 0x58u, 0x06u, 0x00u, /* Tap(51), 0.0495765209197998 */
+                       ^
+coeficientes.c:600:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:602:2: warning: excess elements in array initializer
+  0x18u, 0xFFu, 0x02u, 0x00u, /* Tap(52), 0.0234098434448242 */
+  ^
+coeficientes.c:602:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:602:9: warning: excess elements in array initializer
+  0x18u, 0xFFu, 0x02u, 0x00u, /* Tap(52), 0.0234098434448242 */
+         ^
+coeficientes.c:602:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:602:16: warning: excess elements in array initializer
+  0x18u, 0xFFu, 0x02u, 0x00u, /* Tap(52), 0.0234098434448242 */
+                ^
+coeficientes.c:602:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:602:23: warning: excess elements in array initializer
+  0x18u, 0xFFu, 0x02u, 0x00u, /* Tap(52), 0.0234098434448242 */
+                       ^
+coeficientes.c:602:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:604:2: warning: excess elements in array initializer
+  0xE4u, 0x12u, 0xFFu, 0x00u, /* Tap(53), -0.00723600387573242 */
+  ^
+coeficientes.c:604:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:604:9: warning: excess elements in array initializer
+  0xE4u, 0x12u, 0xFFu, 0x00u, /* Tap(53), -0.00723600387573242 */
+         ^
+coeficientes.c:604:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:604:16: warning: excess elements in array initializer
+  0xE4u, 0x12u, 0xFFu, 0x00u, /* Tap(53), -0.00723600387573242 */
+                ^
+coeficientes.c:604:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:604:23: warning: excess elements in array initializer
+  0xE4u, 0x12u, 0xFFu, 0x00u, /* Tap(53), -0.00723600387573242 */
+                       ^
+coeficientes.c:604:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:606:2: warning: excess elements in array initializer
+  0x42u, 0x15u, 0xFCu, 0x00u, /* Tap(54), -0.0306012630462646 */
+  ^
+coeficientes.c:606:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:606:9: warning: excess elements in array initializer
+  0x42u, 0x15u, 0xFCu, 0x00u, /* Tap(54), -0.0306012630462646 */
+         ^
+coeficientes.c:606:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:606:16: warning: excess elements in array initializer
+  0x42u, 0x15u, 0xFCu, 0x00u, /* Tap(54), -0.0306012630462646 */
+                ^
+coeficientes.c:606:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:606:23: warning: excess elements in array initializer
+  0x42u, 0x15u, 0xFCu, 0x00u, /* Tap(54), -0.0306012630462646 */
+                       ^
+coeficientes.c:606:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:608:2: warning: excess elements in array initializer
+  0x2Fu, 0xF5u, 0xFAu, 0x00u, /* Tap(55), -0.0393925905227661 */
+  ^
+coeficientes.c:608:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:608:9: warning: excess elements in array initializer
+  0x2Fu, 0xF5u, 0xFAu, 0x00u, /* Tap(55), -0.0393925905227661 */
+         ^
+coeficientes.c:608:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:608:16: warning: excess elements in array initializer
+  0x2Fu, 0xF5u, 0xFAu, 0x00u, /* Tap(55), -0.0393925905227661 */
+                ^
+coeficientes.c:608:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:608:23: warning: excess elements in array initializer
+  0x2Fu, 0xF5u, 0xFAu, 0x00u, /* Tap(55), -0.0393925905227661 */
+                       ^
+coeficientes.c:608:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:610:2: warning: excess elements in array initializer
+  0x3Fu, 0xC9u, 0xFBu, 0x00u, /* Tap(56), -0.0329209566116333 */
+  ^
+coeficientes.c:610:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:610:9: warning: excess elements in array initializer
+  0x3Fu, 0xC9u, 0xFBu, 0x00u, /* Tap(56), -0.0329209566116333 */
+         ^
+coeficientes.c:610:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:610:16: warning: excess elements in array initializer
+  0x3Fu, 0xC9u, 0xFBu, 0x00u, /* Tap(56), -0.0329209566116333 */
+                ^
+coeficientes.c:610:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:610:23: warning: excess elements in array initializer
+  0x3Fu, 0xC9u, 0xFBu, 0x00u, /* Tap(56), -0.0329209566116333 */
+                       ^
+coeficientes.c:610:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:612:2: warning: excess elements in array initializer
+  0xE0u, 0xE9u, 0xFDu, 0x00u, /* Tap(57), -0.0163002014160156 */
+  ^
+coeficientes.c:612:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:612:9: warning: excess elements in array initializer
+  0xE0u, 0xE9u, 0xFDu, 0x00u, /* Tap(57), -0.0163002014160156 */
+         ^
+coeficientes.c:612:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:612:16: warning: excess elements in array initializer
+  0xE0u, 0xE9u, 0xFDu, 0x00u, /* Tap(57), -0.0163002014160156 */
+                ^
+coeficientes.c:612:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:612:23: warning: excess elements in array initializer
+  0xE0u, 0xE9u, 0xFDu, 0x00u, /* Tap(57), -0.0163002014160156 */
+                       ^
+coeficientes.c:612:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:614:2: warning: excess elements in array initializer
+  0xACu, 0x52u, 0x00u, 0x00u, /* Tap(58), 0.00252294540405273 */
+  ^
+coeficientes.c:614:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:614:9: warning: excess elements in array initializer
+  0xACu, 0x52u, 0x00u, 0x00u, /* Tap(58), 0.00252294540405273 */
+         ^
+coeficientes.c:614:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:614:16: warning: excess elements in array initializer
+  0xACu, 0x52u, 0x00u, 0x00u, /* Tap(58), 0.00252294540405273 */
+                ^
+coeficientes.c:614:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:614:23: warning: excess elements in array initializer
+  0xACu, 0x52u, 0x00u, 0x00u, /* Tap(58), 0.00252294540405273 */
+                       ^
+coeficientes.c:614:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:616:2: warning: excess elements in array initializer
+  0x8Du, 0x17u, 0x02u, 0x00u, /* Tap(59), 0.0163437128067017 */
+  ^
+coeficientes.c:616:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:616:9: warning: excess elements in array initializer
+  0x8Du, 0x17u, 0x02u, 0x00u, /* Tap(59), 0.0163437128067017 */
+         ^
+coeficientes.c:616:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:616:16: warning: excess elements in array initializer
+  0x8Du, 0x17u, 0x02u, 0x00u, /* Tap(59), 0.0163437128067017 */
+                ^
+coeficientes.c:616:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:616:23: warning: excess elements in array initializer
+  0x8Du, 0x17u, 0x02u, 0x00u, /* Tap(59), 0.0163437128067017 */
+                       ^
+coeficientes.c:616:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:618:2: warning: excess elements in array initializer
+  0xAAu, 0xBAu, 0x02u, 0x00u, /* Tap(60), 0.0213215351104736 */
+  ^
+coeficientes.c:618:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:618:9: warning: excess elements in array initializer
+  0xAAu, 0xBAu, 0x02u, 0x00u, /* Tap(60), 0.0213215351104736 */
+         ^
+coeficientes.c:618:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:618:16: warning: excess elements in array initializer
+  0xAAu, 0xBAu, 0x02u, 0x00u, /* Tap(60), 0.0213215351104736 */
+                ^
+coeficientes.c:618:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:618:23: warning: excess elements in array initializer
+  0xAAu, 0xBAu, 0x02u, 0x00u, /* Tap(60), 0.0213215351104736 */
+                       ^
+coeficientes.c:618:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:620:2: warning: excess elements in array initializer
+  0xB5u, 0x45u, 0x02u, 0x00u, /* Tap(61), 0.0177522897720337 */
+  ^
+coeficientes.c:620:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:620:9: warning: excess elements in array initializer
+  0xB5u, 0x45u, 0x02u, 0x00u, /* Tap(61), 0.0177522897720337 */
+         ^
+coeficientes.c:620:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:620:16: warning: excess elements in array initializer
+  0xB5u, 0x45u, 0x02u, 0x00u, /* Tap(61), 0.0177522897720337 */
+                ^
+coeficientes.c:620:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:620:23: warning: excess elements in array initializer
+  0xB5u, 0x45u, 0x02u, 0x00u, /* Tap(61), 0.0177522897720337 */
+                       ^
+coeficientes.c:620:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:622:2: warning: excess elements in array initializer
+  0x34u, 0x28u, 0x01u, 0x00u, /* Tap(62), 0.00903940200805664 */
+  ^
+coeficientes.c:622:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:622:9: warning: excess elements in array initializer
+  0x34u, 0x28u, 0x01u, 0x00u, /* Tap(62), 0.00903940200805664 */
+         ^
+coeficientes.c:622:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:622:16: warning: excess elements in array initializer
+  0x34u, 0x28u, 0x01u, 0x00u, /* Tap(62), 0.00903940200805664 */
+                ^
+coeficientes.c:622:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:622:23: warning: excess elements in array initializer
+  0x34u, 0x28u, 0x01u, 0x00u, /* Tap(62), 0.00903940200805664 */
+                       ^
+coeficientes.c:622:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:624:2: warning: excess elements in array initializer
+  0xB4u, 0xF4u, 0xFFu, 0x00u, /* Tap(63), -0.000344753265380859 */
+  ^
+coeficientes.c:624:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:624:9: warning: excess elements in array initializer
+  0xB4u, 0xF4u, 0xFFu, 0x00u, /* Tap(63), -0.000344753265380859 */
+         ^
+coeficientes.c:624:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:624:16: warning: excess elements in array initializer
+  0xB4u, 0xF4u, 0xFFu, 0x00u, /* Tap(63), -0.000344753265380859 */
+                ^
+coeficientes.c:624:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:624:23: warning: excess elements in array initializer
+  0xB4u, 0xF4u, 0xFFu, 0x00u, /* Tap(63), -0.000344753265380859 */
+                       ^
+coeficientes.c:624:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:626:2: warning: excess elements in array initializer
+  0x80u, 0x1Fu, 0xFFu, 0x00u, /* Tap(64), -0.0068511962890625 */
+  ^
+coeficientes.c:626:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:626:9: warning: excess elements in array initializer
+  0x80u, 0x1Fu, 0xFFu, 0x00u, /* Tap(64), -0.0068511962890625 */
+         ^
+coeficientes.c:626:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:626:16: warning: excess elements in array initializer
+  0x80u, 0x1Fu, 0xFFu, 0x00u, /* Tap(64), -0.0068511962890625 */
+                ^
+coeficientes.c:626:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:626:23: warning: excess elements in array initializer
+  0x80u, 0x1Fu, 0xFFu, 0x00u, /* Tap(64), -0.0068511962890625 */
+                       ^
+coeficientes.c:626:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:628:2: warning: excess elements in array initializer
+  0x6Du, 0xD9u, 0xFEu, 0x00u, /* Tap(65), -0.00898969173431396 */
+  ^
+coeficientes.c:628:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:628:9: warning: excess elements in array initializer
+  0x6Du, 0xD9u, 0xFEu, 0x00u, /* Tap(65), -0.00898969173431396 */
+         ^
+coeficientes.c:628:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:628:16: warning: excess elements in array initializer
+  0x6Du, 0xD9u, 0xFEu, 0x00u, /* Tap(65), -0.00898969173431396 */
+                ^
+coeficientes.c:628:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:628:23: warning: excess elements in array initializer
+  0x6Du, 0xD9u, 0xFEu, 0x00u, /* Tap(65), -0.00898969173431396 */
+                       ^
+coeficientes.c:628:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:630:2: warning: excess elements in array initializer
+  0x51u, 0x0Fu, 0xFFu, 0x00u, /* Tap(66), -0.00734508037567139 */
+  ^
+coeficientes.c:630:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:630:9: warning: excess elements in array initializer
+  0x51u, 0x0Fu, 0xFFu, 0x00u, /* Tap(66), -0.00734508037567139 */
+         ^
+coeficientes.c:630:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:630:16: warning: excess elements in array initializer
+  0x51u, 0x0Fu, 0xFFu, 0x00u, /* Tap(66), -0.00734508037567139 */
+                ^
+coeficientes.c:630:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:630:23: warning: excess elements in array initializer
+  0x51u, 0x0Fu, 0xFFu, 0x00u, /* Tap(66), -0.00734508037567139 */
+                       ^
+coeficientes.c:630:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:632:2: warning: excess elements in array initializer
+  0x23u, 0x85u, 0xFFu, 0x00u, /* Tap(67), -0.00374948978424072 */
+  ^
+coeficientes.c:632:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:632:9: warning: excess elements in array initializer
+  0x23u, 0x85u, 0xFFu, 0x00u, /* Tap(67), -0.00374948978424072 */
+         ^
+coeficientes.c:632:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:632:16: warning: excess elements in array initializer
+  0x23u, 0x85u, 0xFFu, 0x00u, /* Tap(67), -0.00374948978424072 */
+                ^
+coeficientes.c:632:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:632:23: warning: excess elements in array initializer
+  0x23u, 0x85u, 0xFFu, 0x00u, /* Tap(67), -0.00374948978424072 */
+                       ^
+coeficientes.c:632:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:634:2: warning: excess elements in array initializer
+  0xFEu, 0xF9u, 0xFFu, 0x00u, /* Tap(68), -0.000183343887329102 */
+  ^
+coeficientes.c:634:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:634:9: warning: excess elements in array initializer
+  0xFEu, 0xF9u, 0xFFu, 0x00u, /* Tap(68), -0.000183343887329102 */
+         ^
+coeficientes.c:634:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:634:16: warning: excess elements in array initializer
+  0xFEu, 0xF9u, 0xFFu, 0x00u, /* Tap(68), -0.000183343887329102 */
+                ^
+coeficientes.c:634:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:634:23: warning: excess elements in array initializer
+  0xFEu, 0xF9u, 0xFFu, 0x00u, /* Tap(68), -0.000183343887329102 */
+                       ^
+coeficientes.c:634:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:636:2: warning: excess elements in array initializer
+  0x77u, 0x43u, 0x00u, 0x00u, /* Tap(69), 0.00205886363983154 */
+  ^
+coeficientes.c:636:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:636:9: warning: excess elements in array initializer
+  0x77u, 0x43u, 0x00u, 0x00u, /* Tap(69), 0.00205886363983154 */
+         ^
+coeficientes.c:636:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:636:16: warning: excess elements in array initializer
+  0x77u, 0x43u, 0x00u, 0x00u, /* Tap(69), 0.00205886363983154 */
+                ^
+coeficientes.c:636:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:636:23: warning: excess elements in array initializer
+  0x77u, 0x43u, 0x00u, 0x00u, /* Tap(69), 0.00205886363983154 */
+                       ^
+coeficientes.c:636:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:638:2: warning: excess elements in array initializer
+  0x1Cu, 0x57u, 0x00u, 0x00u, /* Tap(70), 0.00265836715698242 */
+  ^
+coeficientes.c:638:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:638:9: warning: excess elements in array initializer
+  0x1Cu, 0x57u, 0x00u, 0x00u, /* Tap(70), 0.00265836715698242 */
+         ^
+coeficientes.c:638:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:638:16: warning: excess elements in array initializer
+  0x1Cu, 0x57u, 0x00u, 0x00u, /* Tap(70), 0.00265836715698242 */
+                ^
+coeficientes.c:638:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:638:23: warning: excess elements in array initializer
+  0x1Cu, 0x57u, 0x00u, 0x00u, /* Tap(70), 0.00265836715698242 */
+                       ^
+coeficientes.c:638:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:640:2: warning: excess elements in array initializer
+  0x76u, 0x43u, 0x00u, 0x00u, /* Tap(71), 0.00205874443054199 */
+  ^
+coeficientes.c:640:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:640:9: warning: excess elements in array initializer
+  0x76u, 0x43u, 0x00u, 0x00u, /* Tap(71), 0.00205874443054199 */
+         ^
+coeficientes.c:640:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:640:16: warning: excess elements in array initializer
+  0x76u, 0x43u, 0x00u, 0x00u, /* Tap(71), 0.00205874443054199 */
+                ^
+coeficientes.c:640:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:640:23: warning: excess elements in array initializer
+  0x76u, 0x43u, 0x00u, 0x00u, /* Tap(71), 0.00205874443054199 */
+                       ^
+coeficientes.c:640:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:642:2: warning: excess elements in array initializer
+  0xDEu, 0x20u, 0x00u, 0x00u, /* Tap(72), 0.00100302696228027 */
+  ^
+coeficientes.c:642:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:642:9: warning: excess elements in array initializer
+  0xDEu, 0x20u, 0x00u, 0x00u, /* Tap(72), 0.00100302696228027 */
+         ^
+coeficientes.c:642:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:642:16: warning: excess elements in array initializer
+  0xDEu, 0x20u, 0x00u, 0x00u, /* Tap(72), 0.00100302696228027 */
+                ^
+coeficientes.c:642:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:642:23: warning: excess elements in array initializer
+  0xDEu, 0x20u, 0x00u, 0x00u, /* Tap(72), 0.00100302696228027 */
+                       ^
+coeficientes.c:642:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:644:2: warning: excess elements in array initializer
+  0x81u, 0x03u, 0x00u, 0x00u, /* Tap(73), 0.000106930732727051 */
+  ^
+coeficientes.c:644:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:644:9: warning: excess elements in array initializer
+  0x81u, 0x03u, 0x00u, 0x00u, /* Tap(73), 0.000106930732727051 */
+         ^
+coeficientes.c:644:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:644:16: warning: excess elements in array initializer
+  0x81u, 0x03u, 0x00u, 0x00u, /* Tap(73), 0.000106930732727051 */
+                ^
+coeficientes.c:644:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:644:23: warning: excess elements in array initializer
+  0x81u, 0x03u, 0x00u, 0x00u, /* Tap(73), 0.000106930732727051 */
+                       ^
+coeficientes.c:644:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:646:2: warning: excess elements in array initializer
+  0x78u, 0xF4u, 0xFFu, 0x00u, /* Tap(74), -0.000351905822753906 */
+  ^
+coeficientes.c:646:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:646:9: warning: excess elements in array initializer
+  0x78u, 0xF4u, 0xFFu, 0x00u, /* Tap(74), -0.000351905822753906 */
+         ^
+coeficientes.c:646:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:646:16: warning: excess elements in array initializer
+  0x78u, 0xF4u, 0xFFu, 0x00u, /* Tap(74), -0.000351905822753906 */
+                ^
+coeficientes.c:646:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:646:23: warning: excess elements in array initializer
+  0x78u, 0xF4u, 0xFFu, 0x00u, /* Tap(74), -0.000351905822753906 */
+                       ^
+coeficientes.c:646:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:648:2: warning: excess elements in array initializer
+  0x85u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.000411391258239746 */
+  ^
+coeficientes.c:648:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:648:9: warning: excess elements in array initializer
+  0x85u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.000411391258239746 */
+         ^
+coeficientes.c:648:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:648:16: warning: excess elements in array initializer
+  0x85u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.000411391258239746 */
+                ^
+coeficientes.c:648:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:648:23: warning: excess elements in array initializer
+  0x85u, 0xF2u, 0xFFu, 0x00u, /* Tap(75), -0.000411391258239746 */
+                       ^
+coeficientes.c:648:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:650:2: warning: excess elements in array initializer
+  0x48u, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000266075134277344 */
+  ^
+coeficientes.c:650:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:650:9: warning: excess elements in array initializer
+  0x48u, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000266075134277344 */
+         ^
+coeficientes.c:650:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:650:16: warning: excess elements in array initializer
+  0x48u, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000266075134277344 */
+                ^
+coeficientes.c:650:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:650:23: warning: excess elements in array initializer
+  0x48u, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000266075134277344 */
+                       ^
+coeficientes.c:650:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:652:2: warning: excess elements in array initializer
+  0xA8u, 0xFCu, 0xFFu, 0x00u, /* Tap(77), -0.000102043151855469 */
+  ^
+coeficientes.c:652:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:652:9: warning: excess elements in array initializer
+  0xA8u, 0xFCu, 0xFFu, 0x00u, /* Tap(77), -0.000102043151855469 */
+         ^
+coeficientes.c:652:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:652:16: warning: excess elements in array initializer
+  0xA8u, 0xFCu, 0xFFu, 0x00u, /* Tap(77), -0.000102043151855469 */
+                ^
+coeficientes.c:652:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:652:23: warning: excess elements in array initializer
+  0xA8u, 0xFCu, 0xFFu, 0x00u, /* Tap(77), -0.000102043151855469 */
+                       ^
+coeficientes.c:652:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:654:2: warning: excess elements in array initializer
+  0xA6u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -1.07288360595703E-05 */
+  ^
+coeficientes.c:654:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:654:9: warning: excess elements in array initializer
+  0xA6u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -1.07288360595703E-05 */
+         ^
+coeficientes.c:654:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:654:16: warning: excess elements in array initializer
+  0xA6u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -1.07288360595703E-05 */
+                ^
+coeficientes.c:654:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:654:23: warning: excess elements in array initializer
+  0xA6u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -1.07288360595703E-05 */
+                       ^
+coeficientes.c:654:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:656:2: warning: excess elements in array initializer
+  0x4Eu, 0x00u, 0x00u, 0x00u, /* Tap(79), 9.29832458496094E-06 */
+  ^
+coeficientes.c:656:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:656:9: warning: excess elements in array initializer
+  0x4Eu, 0x00u, 0x00u, 0x00u, /* Tap(79), 9.29832458496094E-06 */
+         ^
+coeficientes.c:656:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:656:16: warning: excess elements in array initializer
+  0x4Eu, 0x00u, 0x00u, 0x00u, /* Tap(79), 9.29832458496094E-06 */
+                ^
+coeficientes.c:656:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:656:23: warning: excess elements in array initializer
+  0x4Eu, 0x00u, 0x00u, 0x00u, /* Tap(79), 9.29832458496094E-06 */
+                       ^
+coeficientes.c:656:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:658:2: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+  ^
+coeficientes.c:658:2: note: (near initialization for 'COEFFS_196')
+coeficientes.c:658:9: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+         ^
+coeficientes.c:658:9: note: (near initialization for 'COEFFS_196')
+coeficientes.c:658:16: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                ^
+coeficientes.c:658:16: note: (near initialization for 'COEFFS_196')
+coeficientes.c:658:23: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                       ^
+coeficientes.c:658:23: note: (near initialization for 'COEFFS_196')
+coeficientes.c:763:2: warning: excess elements in array initializer
+  0xE6u, 0xBCu, 0x00u, 0x00u, /* Tap(50), 0.00576472282409668 */
+  ^
+coeficientes.c:763:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:763:9: warning: excess elements in array initializer
+  0xE6u, 0xBCu, 0x00u, 0x00u, /* Tap(50), 0.00576472282409668 */
+         ^
+coeficientes.c:763:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:763:16: warning: excess elements in array initializer
+  0xE6u, 0xBCu, 0x00u, 0x00u, /* Tap(50), 0.00576472282409668 */
+                ^
+coeficientes.c:763:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:763:23: warning: excess elements in array initializer
+  0xE6u, 0xBCu, 0x00u, 0x00u, /* Tap(50), 0.00576472282409668 */
+                       ^
+coeficientes.c:763:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:765:2: warning: excess elements in array initializer
+  0xBAu, 0x7Au, 0xFBu, 0x00u, /* Tap(51), -0.0353171825408936 */
+  ^
+coeficientes.c:765:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:765:9: warning: excess elements in array initializer
+  0xBAu, 0x7Au, 0xFBu, 0x00u, /* Tap(51), -0.0353171825408936 */
+         ^
+coeficientes.c:765:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:765:16: warning: excess elements in array initializer
+  0xBAu, 0x7Au, 0xFBu, 0x00u, /* Tap(51), -0.0353171825408936 */
+                ^
+coeficientes.c:765:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:765:23: warning: excess elements in array initializer
+  0xBAu, 0x7Au, 0xFBu, 0x00u, /* Tap(51), -0.0353171825408936 */
+                       ^
+coeficientes.c:765:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:767:2: warning: excess elements in array initializer
+  0x91u, 0x5Cu, 0xF9u, 0x00u, /* Tap(52), -0.0518625974655151 */
+  ^
+coeficientes.c:767:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:767:9: warning: excess elements in array initializer
+  0x91u, 0x5Cu, 0xF9u, 0x00u, /* Tap(52), -0.0518625974655151 */
+         ^
+coeficientes.c:767:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:767:16: warning: excess elements in array initializer
+  0x91u, 0x5Cu, 0xF9u, 0x00u, /* Tap(52), -0.0518625974655151 */
+                ^
+coeficientes.c:767:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:767:23: warning: excess elements in array initializer
+  0x91u, 0x5Cu, 0xF9u, 0x00u, /* Tap(52), -0.0518625974655151 */
+                       ^
+coeficientes.c:767:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:769:2: warning: excess elements in array initializer
+  0x84u, 0x21u, 0xFBu, 0x00u, /* Tap(53), -0.0380396842956543 */
+  ^
+coeficientes.c:769:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:769:9: warning: excess elements in array initializer
+  0x84u, 0x21u, 0xFBu, 0x00u, /* Tap(53), -0.0380396842956543 */
+         ^
+coeficientes.c:769:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:769:16: warning: excess elements in array initializer
+  0x84u, 0x21u, 0xFBu, 0x00u, /* Tap(53), -0.0380396842956543 */
+                ^
+coeficientes.c:769:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:769:23: warning: excess elements in array initializer
+  0x84u, 0x21u, 0xFBu, 0x00u, /* Tap(53), -0.0380396842956543 */
+                       ^
+coeficientes.c:769:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:771:2: warning: excess elements in array initializer
+  0x07u, 0x3Eu, 0xFFu, 0x00u, /* Tap(54), -0.00591957569122314 */
+  ^
+coeficientes.c:771:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:771:9: warning: excess elements in array initializer
+  0x07u, 0x3Eu, 0xFFu, 0x00u, /* Tap(54), -0.00591957569122314 */
+         ^
+coeficientes.c:771:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:771:16: warning: excess elements in array initializer
+  0x07u, 0x3Eu, 0xFFu, 0x00u, /* Tap(54), -0.00591957569122314 */
+                ^
+coeficientes.c:771:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:771:23: warning: excess elements in array initializer
+  0x07u, 0x3Eu, 0xFFu, 0x00u, /* Tap(54), -0.00591957569122314 */
+                       ^
+coeficientes.c:771:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:773:2: warning: excess elements in array initializer
+  0x09u, 0x12u, 0x03u, 0x00u, /* Tap(55), 0.023987889289856 */
+  ^
+coeficientes.c:773:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:773:9: warning: excess elements in array initializer
+  0x09u, 0x12u, 0x03u, 0x00u, /* Tap(55), 0.023987889289856 */
+         ^
+coeficientes.c:773:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:773:16: warning: excess elements in array initializer
+  0x09u, 0x12u, 0x03u, 0x00u, /* Tap(55), 0.023987889289856 */
+                ^
+coeficientes.c:773:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:773:23: warning: excess elements in array initializer
+  0x09u, 0x12u, 0x03u, 0x00u, /* Tap(55), 0.023987889289856 */
+                       ^
+coeficientes.c:773:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:775:2: warning: excess elements in array initializer
+  0x51u, 0x93u, 0x04u, 0x00u, /* Tap(56), 0.0357457399368286 */
+  ^
+coeficientes.c:775:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:775:9: warning: excess elements in array initializer
+  0x51u, 0x93u, 0x04u, 0x00u, /* Tap(56), 0.0357457399368286 */
+         ^
+coeficientes.c:775:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:775:16: warning: excess elements in array initializer
+  0x51u, 0x93u, 0x04u, 0x00u, /* Tap(56), 0.0357457399368286 */
+                ^
+coeficientes.c:775:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:775:23: warning: excess elements in array initializer
+  0x51u, 0x93u, 0x04u, 0x00u, /* Tap(56), 0.0357457399368286 */
+                       ^
+coeficientes.c:775:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:777:2: warning: excess elements in array initializer
+  0xF4u, 0x5Du, 0x03u, 0x00u, /* Tap(57), 0.0263047218322754 */
+  ^
+coeficientes.c:777:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:777:9: warning: excess elements in array initializer
+  0xF4u, 0x5Du, 0x03u, 0x00u, /* Tap(57), 0.0263047218322754 */
+         ^
+coeficientes.c:777:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:777:16: warning: excess elements in array initializer
+  0xF4u, 0x5Du, 0x03u, 0x00u, /* Tap(57), 0.0263047218322754 */
+                ^
+coeficientes.c:777:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:777:23: warning: excess elements in array initializer
+  0xF4u, 0x5Du, 0x03u, 0x00u, /* Tap(57), 0.0263047218322754 */
+                       ^
+coeficientes.c:777:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:779:2: warning: excess elements in array initializer
+  0x06u, 0xA2u, 0x00u, 0x00u, /* Tap(58), 0.0049445629119873 */
+  ^
+coeficientes.c:779:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:779:9: warning: excess elements in array initializer
+  0x06u, 0xA2u, 0x00u, 0x00u, /* Tap(58), 0.0049445629119873 */
+         ^
+coeficientes.c:779:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:779:16: warning: excess elements in array initializer
+  0x06u, 0xA2u, 0x00u, 0x00u, /* Tap(58), 0.0049445629119873 */
+                ^
+coeficientes.c:779:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:779:23: warning: excess elements in array initializer
+  0x06u, 0xA2u, 0x00u, 0x00u, /* Tap(58), 0.0049445629119873 */
+                       ^
+coeficientes.c:779:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:781:2: warning: excess elements in array initializer
+  0xC9u, 0x2Au, 0xFEu, 0x00u, /* Tap(59), -0.0143193006515503 */
+  ^
+coeficientes.c:781:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:781:9: warning: excess elements in array initializer
+  0xC9u, 0x2Au, 0xFEu, 0x00u, /* Tap(59), -0.0143193006515503 */
+         ^
+coeficientes.c:781:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:781:16: warning: excess elements in array initializer
+  0xC9u, 0x2Au, 0xFEu, 0x00u, /* Tap(59), -0.0143193006515503 */
+                ^
+coeficientes.c:781:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:781:23: warning: excess elements in array initializer
+  0xC9u, 0x2Au, 0xFEu, 0x00u, /* Tap(59), -0.0143193006515503 */
+                       ^
+coeficientes.c:781:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:783:2: warning: excess elements in array initializer
+  0xF6u, 0x3Bu, 0xFDu, 0x00u, /* Tap(60), -0.0216076374053955 */
+  ^
+coeficientes.c:783:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:783:9: warning: excess elements in array initializer
+  0xF6u, 0x3Bu, 0xFDu, 0x00u, /* Tap(60), -0.0216076374053955 */
+         ^
+coeficientes.c:783:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:783:16: warning: excess elements in array initializer
+  0xF6u, 0x3Bu, 0xFDu, 0x00u, /* Tap(60), -0.0216076374053955 */
+                ^
+coeficientes.c:783:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:783:23: warning: excess elements in array initializer
+  0xF6u, 0x3Bu, 0xFDu, 0x00u, /* Tap(60), -0.0216076374053955 */
+                       ^
+coeficientes.c:783:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:785:2: warning: excess elements in array initializer
+  0x6Du, 0xF8u, 0xFDu, 0x00u, /* Tap(61), -0.015856146812439 */
+  ^
+coeficientes.c:785:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:785:9: warning: excess elements in array initializer
+  0x6Du, 0xF8u, 0xFDu, 0x00u, /* Tap(61), -0.015856146812439 */
+         ^
+coeficientes.c:785:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:785:16: warning: excess elements in array initializer
+  0x6Du, 0xF8u, 0xFDu, 0x00u, /* Tap(61), -0.015856146812439 */
+                ^
+coeficientes.c:785:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:785:23: warning: excess elements in array initializer
+  0x6Du, 0xF8u, 0xFDu, 0x00u, /* Tap(61), -0.015856146812439 */
+                       ^
+coeficientes.c:785:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:787:2: warning: excess elements in array initializer
+  0x58u, 0x90u, 0xFFu, 0x00u, /* Tap(62), -0.00340747833251953 */
+  ^
+coeficientes.c:787:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:787:9: warning: excess elements in array initializer
+  0x58u, 0x90u, 0xFFu, 0x00u, /* Tap(62), -0.00340747833251953 */
+         ^
+coeficientes.c:787:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:787:16: warning: excess elements in array initializer
+  0x58u, 0x90u, 0xFFu, 0x00u, /* Tap(62), -0.00340747833251953 */
+                ^
+coeficientes.c:787:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:787:23: warning: excess elements in array initializer
+  0x58u, 0x90u, 0xFFu, 0x00u, /* Tap(62), -0.00340747833251953 */
+                       ^
+coeficientes.c:787:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:789:2: warning: excess elements in array initializer
+  0x67u, 0xF0u, 0x00u, 0x00u, /* Tap(63), 0.00733649730682373 */
+  ^
+coeficientes.c:789:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:789:9: warning: excess elements in array initializer
+  0x67u, 0xF0u, 0x00u, 0x00u, /* Tap(63), 0.00733649730682373 */
+         ^
+coeficientes.c:789:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:789:16: warning: excess elements in array initializer
+  0x67u, 0xF0u, 0x00u, 0x00u, /* Tap(63), 0.00733649730682373 */
+                ^
+coeficientes.c:789:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:789:23: warning: excess elements in array initializer
+  0x67u, 0xF0u, 0x00u, 0x00u, /* Tap(63), 0.00733649730682373 */
+                       ^
+coeficientes.c:789:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:791:2: warning: excess elements in array initializer
+  0x87u, 0x6Du, 0x01u, 0x00u, /* Tap(64), 0.0111550092697144 */
+  ^
+coeficientes.c:791:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:791:9: warning: excess elements in array initializer
+  0x87u, 0x6Du, 0x01u, 0x00u, /* Tap(64), 0.0111550092697144 */
+         ^
+coeficientes.c:791:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:791:16: warning: excess elements in array initializer
+  0x87u, 0x6Du, 0x01u, 0x00u, /* Tap(64), 0.0111550092697144 */
+                ^
+coeficientes.c:791:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:791:23: warning: excess elements in array initializer
+  0x87u, 0x6Du, 0x01u, 0x00u, /* Tap(64), 0.0111550092697144 */
+                       ^
+coeficientes.c:791:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:793:2: warning: excess elements in array initializer
+  0xDAu, 0x08u, 0x01u, 0x00u, /* Tap(65), 0.00808262825012207 */
+  ^
+coeficientes.c:793:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:793:9: warning: excess elements in array initializer
+  0xDAu, 0x08u, 0x01u, 0x00u, /* Tap(65), 0.00808262825012207 */
+         ^
+coeficientes.c:793:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:793:16: warning: excess elements in array initializer
+  0xDAu, 0x08u, 0x01u, 0x00u, /* Tap(65), 0.00808262825012207 */
+                ^
+coeficientes.c:793:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:793:23: warning: excess elements in array initializer
+  0xDAu, 0x08u, 0x01u, 0x00u, /* Tap(65), 0.00808262825012207 */
+                       ^
+coeficientes.c:793:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:795:2: warning: excess elements in array initializer
+  0x59u, 0x3Eu, 0x00u, 0x00u, /* Tap(66), 0.00190269947052002 */
+  ^
+coeficientes.c:795:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:795:9: warning: excess elements in array initializer
+  0x59u, 0x3Eu, 0x00u, 0x00u, /* Tap(66), 0.00190269947052002 */
+         ^
+coeficientes.c:795:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:795:16: warning: excess elements in array initializer
+  0x59u, 0x3Eu, 0x00u, 0x00u, /* Tap(66), 0.00190269947052002 */
+                ^
+coeficientes.c:795:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:795:23: warning: excess elements in array initializer
+  0x59u, 0x3Eu, 0x00u, 0x00u, /* Tap(66), 0.00190269947052002 */
+                       ^
+coeficientes.c:795:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:797:2: warning: excess elements in array initializer
+  0x8Eu, 0x9Au, 0xFFu, 0x00u, /* Tap(67), -0.00309586524963379 */
+  ^
+coeficientes.c:797:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:797:9: warning: excess elements in array initializer
+  0x8Eu, 0x9Au, 0xFFu, 0x00u, /* Tap(67), -0.00309586524963379 */
+         ^
+coeficientes.c:797:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:797:16: warning: excess elements in array initializer
+  0x8Eu, 0x9Au, 0xFFu, 0x00u, /* Tap(67), -0.00309586524963379 */
+                ^
+coeficientes.c:797:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:797:23: warning: excess elements in array initializer
+  0x8Eu, 0x9Au, 0xFFu, 0x00u, /* Tap(67), -0.00309586524963379 */
+                       ^
+coeficientes.c:797:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:799:2: warning: excess elements in array initializer
+  0x52u, 0x66u, 0xFFu, 0x00u, /* Tap(68), -0.00468993186950684 */
+  ^
+coeficientes.c:799:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:799:9: warning: excess elements in array initializer
+  0x52u, 0x66u, 0xFFu, 0x00u, /* Tap(68), -0.00468993186950684 */
+         ^
+coeficientes.c:799:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:799:16: warning: excess elements in array initializer
+  0x52u, 0x66u, 0xFFu, 0x00u, /* Tap(68), -0.00468993186950684 */
+                ^
+coeficientes.c:799:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:799:23: warning: excess elements in array initializer
+  0x52u, 0x66u, 0xFFu, 0x00u, /* Tap(68), -0.00468993186950684 */
+                       ^
+coeficientes.c:799:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:801:2: warning: excess elements in array initializer
+  0x09u, 0x94u, 0xFFu, 0x00u, /* Tap(69), -0.00329482555389404 */
+  ^
+coeficientes.c:801:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:801:9: warning: excess elements in array initializer
+  0x09u, 0x94u, 0xFFu, 0x00u, /* Tap(69), -0.00329482555389404 */
+         ^
+coeficientes.c:801:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:801:16: warning: excess elements in array initializer
+  0x09u, 0x94u, 0xFFu, 0x00u, /* Tap(69), -0.00329482555389404 */
+                ^
+coeficientes.c:801:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:801:23: warning: excess elements in array initializer
+  0x09u, 0x94u, 0xFFu, 0x00u, /* Tap(69), -0.00329482555389404 */
+                       ^
+coeficientes.c:801:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:803:2: warning: excess elements in array initializer
+  0x5Au, 0xE5u, 0xFFu, 0x00u, /* Tap(70), -0.00081324577331543 */
+  ^
+coeficientes.c:803:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:803:9: warning: excess elements in array initializer
+  0x5Au, 0xE5u, 0xFFu, 0x00u, /* Tap(70), -0.00081324577331543 */
+         ^
+coeficientes.c:803:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:803:16: warning: excess elements in array initializer
+  0x5Au, 0xE5u, 0xFFu, 0x00u, /* Tap(70), -0.00081324577331543 */
+                ^
+coeficientes.c:803:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:803:23: warning: excess elements in array initializer
+  0x5Au, 0xE5u, 0xFFu, 0x00u, /* Tap(70), -0.00081324577331543 */
+                       ^
+coeficientes.c:803:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:805:2: warning: excess elements in array initializer
+  0x84u, 0x20u, 0x00u, 0x00u, /* Tap(71), 0.000992298126220703 */
+  ^
+coeficientes.c:805:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:805:9: warning: excess elements in array initializer
+  0x84u, 0x20u, 0x00u, 0x00u, /* Tap(71), 0.000992298126220703 */
+         ^
+coeficientes.c:805:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:805:16: warning: excess elements in array initializer
+  0x84u, 0x20u, 0x00u, 0x00u, /* Tap(71), 0.000992298126220703 */
+                ^
+coeficientes.c:805:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:805:23: warning: excess elements in array initializer
+  0x84u, 0x20u, 0x00u, 0x00u, /* Tap(71), 0.000992298126220703 */
+                       ^
+coeficientes.c:805:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:807:2: warning: excess elements in array initializer
+  0xB5u, 0x2Fu, 0x00u, 0x00u, /* Tap(72), 0.00145590305328369 */
+  ^
+coeficientes.c:807:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:807:9: warning: excess elements in array initializer
+  0xB5u, 0x2Fu, 0x00u, 0x00u, /* Tap(72), 0.00145590305328369 */
+         ^
+coeficientes.c:807:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:807:16: warning: excess elements in array initializer
+  0xB5u, 0x2Fu, 0x00u, 0x00u, /* Tap(72), 0.00145590305328369 */
+                ^
+coeficientes.c:807:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:807:23: warning: excess elements in array initializer
+  0xB5u, 0x2Fu, 0x00u, 0x00u, /* Tap(72), 0.00145590305328369 */
+                       ^
+coeficientes.c:807:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:809:2: warning: excess elements in array initializer
+  0x2Bu, 0x1Fu, 0x00u, 0x00u, /* Tap(73), 0.000951170921325684 */
+  ^
+coeficientes.c:809:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:809:9: warning: excess elements in array initializer
+  0x2Bu, 0x1Fu, 0x00u, 0x00u, /* Tap(73), 0.000951170921325684 */
+         ^
+coeficientes.c:809:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:809:16: warning: excess elements in array initializer
+  0x2Bu, 0x1Fu, 0x00u, 0x00u, /* Tap(73), 0.000951170921325684 */
+                ^
+coeficientes.c:809:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:809:23: warning: excess elements in array initializer
+  0x2Bu, 0x1Fu, 0x00u, 0x00u, /* Tap(73), 0.000951170921325684 */
+                       ^
+coeficientes.c:809:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:811:2: warning: excess elements in array initializer
+  0x84u, 0x07u, 0x00u, 0x00u, /* Tap(74), 0.000229358673095703 */
+  ^
+coeficientes.c:811:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:811:9: warning: excess elements in array initializer
+  0x84u, 0x07u, 0x00u, 0x00u, /* Tap(74), 0.000229358673095703 */
+         ^
+coeficientes.c:811:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:811:16: warning: excess elements in array initializer
+  0x84u, 0x07u, 0x00u, 0x00u, /* Tap(74), 0.000229358673095703 */
+                ^
+coeficientes.c:811:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:811:23: warning: excess elements in array initializer
+  0x84u, 0x07u, 0x00u, 0x00u, /* Tap(74), 0.000229358673095703 */
+                       ^
+coeficientes.c:811:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:813:2: warning: excess elements in array initializer
+  0x89u, 0xF9u, 0xFFu, 0x00u, /* Tap(75), -0.000197291374206543 */
+  ^
+coeficientes.c:813:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:813:9: warning: excess elements in array initializer
+  0x89u, 0xF9u, 0xFFu, 0x00u, /* Tap(75), -0.000197291374206543 */
+         ^
+coeficientes.c:813:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:813:16: warning: excess elements in array initializer
+  0x89u, 0xF9u, 0xFFu, 0x00u, /* Tap(75), -0.000197291374206543 */
+                ^
+coeficientes.c:813:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:813:23: warning: excess elements in array initializer
+  0x89u, 0xF9u, 0xFFu, 0x00u, /* Tap(75), -0.000197291374206543 */
+                       ^
+coeficientes.c:813:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:815:2: warning: excess elements in array initializer
+  0xACu, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000254154205322266 */
+  ^
+coeficientes.c:815:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:815:9: warning: excess elements in array initializer
+  0xACu, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000254154205322266 */
+         ^
+coeficientes.c:815:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:815:16: warning: excess elements in array initializer
+  0xACu, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000254154205322266 */
+                ^
+coeficientes.c:815:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:815:23: warning: excess elements in array initializer
+  0xACu, 0xF7u, 0xFFu, 0x00u, /* Tap(76), -0.000254154205322266 */
+                       ^
+coeficientes.c:815:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:817:2: warning: excess elements in array initializer
+  0xACu, 0xFBu, 0xFFu, 0x00u, /* Tap(77), -0.000132083892822266 */
+  ^
+coeficientes.c:817:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:817:9: warning: excess elements in array initializer
+  0xACu, 0xFBu, 0xFFu, 0x00u, /* Tap(77), -0.000132083892822266 */
+         ^
+coeficientes.c:817:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:817:16: warning: excess elements in array initializer
+  0xACu, 0xFBu, 0xFFu, 0x00u, /* Tap(77), -0.000132083892822266 */
+                ^
+coeficientes.c:817:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:817:23: warning: excess elements in array initializer
+  0xACu, 0xFBu, 0xFFu, 0x00u, /* Tap(77), -0.000132083892822266 */
+                       ^
+coeficientes.c:817:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:819:2: warning: excess elements in array initializer
+  0x39u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -2.37226486206055E-05 */
+  ^
+coeficientes.c:819:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:819:9: warning: excess elements in array initializer
+  0x39u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -2.37226486206055E-05 */
+         ^
+coeficientes.c:819:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:819:16: warning: excess elements in array initializer
+  0x39u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -2.37226486206055E-05 */
+                ^
+coeficientes.c:819:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:819:23: warning: excess elements in array initializer
+  0x39u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -2.37226486206055E-05 */
+                       ^
+coeficientes.c:819:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:821:2: warning: excess elements in array initializer
+  0x47u, 0x00u, 0x00u, 0x00u, /* Tap(79), 8.46385955810547E-06 */
+  ^
+coeficientes.c:821:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:821:9: warning: excess elements in array initializer
+  0x47u, 0x00u, 0x00u, 0x00u, /* Tap(79), 8.46385955810547E-06 */
+         ^
+coeficientes.c:821:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:821:16: warning: excess elements in array initializer
+  0x47u, 0x00u, 0x00u, 0x00u, /* Tap(79), 8.46385955810547E-06 */
+                ^
+coeficientes.c:821:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:821:23: warning: excess elements in array initializer
+  0x47u, 0x00u, 0x00u, 0x00u, /* Tap(79), 8.46385955810547E-06 */
+                       ^
+coeficientes.c:821:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:823:2: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+  ^
+coeficientes.c:823:2: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:823:9: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+         ^
+coeficientes.c:823:9: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:823:16: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                ^
+coeficientes.c:823:16: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:823:23: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                       ^
+coeficientes.c:823:23: note: (near initialization for 'COEFFS_246_94')
+coeficientes.c:927:2: warning: excess elements in array initializer
+  0xCFu, 0x68u, 0xFBu, 0x00u, /* Tap(50), -0.035863995552063 */
+  ^
+coeficientes.c:927:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:927:9: warning: excess elements in array initializer
+  0xCFu, 0x68u, 0xFBu, 0x00u, /* Tap(50), -0.035863995552063 */
+         ^
+coeficientes.c:927:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:927:16: warning: excess elements in array initializer
+  0xCFu, 0x68u, 0xFBu, 0x00u, /* Tap(50), -0.035863995552063 */
+                ^
+coeficientes.c:927:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:927:23: warning: excess elements in array initializer
+  0xCFu, 0x68u, 0xFBu, 0x00u, /* Tap(50), -0.035863995552063 */
+                       ^
+coeficientes.c:927:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:929:2: warning: excess elements in array initializer
+  0x96u, 0xC5u, 0x02u, 0x00u, /* Tap(51), 0.0216548442840576 */
+  ^
+coeficientes.c:929:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:929:9: warning: excess elements in array initializer
+  0x96u, 0xC5u, 0x02u, 0x00u, /* Tap(51), 0.0216548442840576 */
+         ^
+coeficientes.c:929:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:929:16: warning: excess elements in array initializer
+  0x96u, 0xC5u, 0x02u, 0x00u, /* Tap(51), 0.0216548442840576 */
+                ^
+coeficientes.c:929:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:929:23: warning: excess elements in array initializer
+  0x96u, 0xC5u, 0x02u, 0x00u, /* Tap(51), 0.0216548442840576 */
+                       ^
+coeficientes.c:929:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:931:2: warning: excess elements in array initializer
+  0x2Au, 0x9Eu, 0x06u, 0x00u, /* Tap(52), 0.0517017841339111 */
+  ^
+coeficientes.c:931:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:931:9: warning: excess elements in array initializer
+  0x2Au, 0x9Eu, 0x06u, 0x00u, /* Tap(52), 0.0517017841339111 */
+         ^
+coeficientes.c:931:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:931:16: warning: excess elements in array initializer
+  0x2Au, 0x9Eu, 0x06u, 0x00u, /* Tap(52), 0.0517017841339111 */
+                ^
+coeficientes.c:931:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:931:23: warning: excess elements in array initializer
+  0x2Au, 0x9Eu, 0x06u, 0x00u, /* Tap(52), 0.0517017841339111 */
+                       ^
+coeficientes.c:931:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:933:2: warning: excess elements in array initializer
+  0x21u, 0xDAu, 0x03u, 0x00u, /* Tap(53), 0.0300942659378052 */
+  ^
+coeficientes.c:933:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:933:9: warning: excess elements in array initializer
+  0x21u, 0xDAu, 0x03u, 0x00u, /* Tap(53), 0.0300942659378052 */
+         ^
+coeficientes.c:933:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:933:16: warning: excess elements in array initializer
+  0x21u, 0xDAu, 0x03u, 0x00u, /* Tap(53), 0.0300942659378052 */
+                ^
+coeficientes.c:933:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:933:23: warning: excess elements in array initializer
+  0x21u, 0xDAu, 0x03u, 0x00u, /* Tap(53), 0.0300942659378052 */
+                       ^
+coeficientes.c:933:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:935:2: warning: excess elements in array initializer
+  0xC8u, 0x01u, 0xFEu, 0x00u, /* Tap(54), -0.0155706405639648 */
+  ^
+coeficientes.c:935:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:935:9: warning: excess elements in array initializer
+  0xC8u, 0x01u, 0xFEu, 0x00u, /* Tap(54), -0.0155706405639648 */
+         ^
+coeficientes.c:935:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:935:16: warning: excess elements in array initializer
+  0xC8u, 0x01u, 0xFEu, 0x00u, /* Tap(54), -0.0155706405639648 */
+                ^
+coeficientes.c:935:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:935:23: warning: excess elements in array initializer
+  0xC8u, 0x01u, 0xFEu, 0x00u, /* Tap(54), -0.0155706405639648 */
+                       ^
+coeficientes.c:935:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:937:2: warning: excess elements in array initializer
+  0xDDu, 0xF1u, 0xFAu, 0x00u, /* Tap(55), -0.0394939184188843 */
+  ^
+coeficientes.c:937:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:937:9: warning: excess elements in array initializer
+  0xDDu, 0xF1u, 0xFAu, 0x00u, /* Tap(55), -0.0394939184188843 */
+         ^
+coeficientes.c:937:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:937:16: warning: excess elements in array initializer
+  0xDDu, 0xF1u, 0xFAu, 0x00u, /* Tap(55), -0.0394939184188843 */
+                ^
+coeficientes.c:937:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:937:23: warning: excess elements in array initializer
+  0xDDu, 0xF1u, 0xFAu, 0x00u, /* Tap(55), -0.0394939184188843 */
+                       ^
+coeficientes.c:937:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:939:2: warning: excess elements in array initializer
+  0x9Au, 0xFBu, 0xFCu, 0x00u, /* Tap(56), -0.0235717296600342 */
+  ^
+coeficientes.c:939:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:939:9: warning: excess elements in array initializer
+  0x9Au, 0xFBu, 0xFCu, 0x00u, /* Tap(56), -0.0235717296600342 */
+         ^
+coeficientes.c:939:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:939:16: warning: excess elements in array initializer
+  0x9Au, 0xFBu, 0xFCu, 0x00u, /* Tap(56), -0.0235717296600342 */
+                ^
+coeficientes.c:939:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:939:23: warning: excess elements in array initializer
+  0x9Au, 0xFBu, 0xFCu, 0x00u, /* Tap(56), -0.0235717296600342 */
+                       ^
+coeficientes.c:939:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:941:2: warning: excess elements in array initializer
+  0x78u, 0x53u, 0x01u, 0x00u, /* Tap(57), 0.0103597640991211 */
+  ^
+coeficientes.c:941:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:941:9: warning: excess elements in array initializer
+  0x78u, 0x53u, 0x01u, 0x00u, /* Tap(57), 0.0103597640991211 */
+         ^
+coeficientes.c:941:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:941:16: warning: excess elements in array initializer
+  0x78u, 0x53u, 0x01u, 0x00u, /* Tap(57), 0.0103597640991211 */
+                ^
+coeficientes.c:941:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:941:23: warning: excess elements in array initializer
+  0x78u, 0x53u, 0x01u, 0x00u, /* Tap(57), 0.0103597640991211 */
+                       ^
+coeficientes.c:941:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:943:2: warning: excess elements in array initializer
+  0x78u, 0x98u, 0x03u, 0x00u, /* Tap(58), 0.0280904769897461 */
+  ^
+coeficientes.c:943:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:943:9: warning: excess elements in array initializer
+  0x78u, 0x98u, 0x03u, 0x00u, /* Tap(58), 0.0280904769897461 */
+         ^
+coeficientes.c:943:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:943:16: warning: excess elements in array initializer
+  0x78u, 0x98u, 0x03u, 0x00u, /* Tap(58), 0.0280904769897461 */
+                ^
+coeficientes.c:943:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:943:23: warning: excess elements in array initializer
+  0x78u, 0x98u, 0x03u, 0x00u, /* Tap(58), 0.0280904769897461 */
+                       ^
+coeficientes.c:943:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:945:2: warning: excess elements in array initializer
+  0xEEu, 0x30u, 0x02u, 0x00u, /* Tap(59), 0.0171182155609131 */
+  ^
+coeficientes.c:945:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:945:9: warning: excess elements in array initializer
+  0xEEu, 0x30u, 0x02u, 0x00u, /* Tap(59), 0.0171182155609131 */
+         ^
+coeficientes.c:945:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:945:16: warning: excess elements in array initializer
+  0xEEu, 0x30u, 0x02u, 0x00u, /* Tap(59), 0.0171182155609131 */
+                ^
+coeficientes.c:945:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:945:23: warning: excess elements in array initializer
+  0xEEu, 0x30u, 0x02u, 0x00u, /* Tap(59), 0.0171182155609131 */
+                       ^
+coeficientes.c:945:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:947:2: warning: excess elements in array initializer
+  0x1Bu, 0x31u, 0xFFu, 0x00u, /* Tap(60), -0.00631392002105713 */
+  ^
+coeficientes.c:947:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:947:9: warning: excess elements in array initializer
+  0x1Bu, 0x31u, 0xFFu, 0x00u, /* Tap(60), -0.00631392002105713 */
+         ^
+coeficientes.c:947:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:947:16: warning: excess elements in array initializer
+  0x1Bu, 0x31u, 0xFFu, 0x00u, /* Tap(60), -0.00631392002105713 */
+                ^
+coeficientes.c:947:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:947:23: warning: excess elements in array initializer
+  0x1Bu, 0x31u, 0xFFu, 0x00u, /* Tap(60), -0.00631392002105713 */
+                       ^
+coeficientes.c:947:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:949:2: warning: excess elements in array initializer
+  0xE5u, 0xA3u, 0xFDu, 0x00u, /* Tap(61), -0.0184358358383179 */
+  ^
+coeficientes.c:949:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:949:9: warning: excess elements in array initializer
+  0xE5u, 0xA3u, 0xFDu, 0x00u, /* Tap(61), -0.0184358358383179 */
+         ^
+coeficientes.c:949:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:949:16: warning: excess elements in array initializer
+  0xE5u, 0xA3u, 0xFDu, 0x00u, /* Tap(61), -0.0184358358383179 */
+                ^
+coeficientes.c:949:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:949:23: warning: excess elements in array initializer
+  0xE5u, 0xA3u, 0xFDu, 0x00u, /* Tap(61), -0.0184358358383179 */
+                       ^
+coeficientes.c:949:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:951:2: warning: excess elements in array initializer
+  0x17u, 0x8Au, 0xFEu, 0x00u, /* Tap(62), -0.0114108324050903 */
+  ^
+coeficientes.c:951:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:951:9: warning: excess elements in array initializer
+  0x17u, 0x8Au, 0xFEu, 0x00u, /* Tap(62), -0.0114108324050903 */
+         ^
+coeficientes.c:951:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:951:16: warning: excess elements in array initializer
+  0x17u, 0x8Au, 0xFEu, 0x00u, /* Tap(62), -0.0114108324050903 */
+                ^
+coeficientes.c:951:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:951:23: warning: excess elements in array initializer
+  0x17u, 0x8Au, 0xFEu, 0x00u, /* Tap(62), -0.0114108324050903 */
+                       ^
+coeficientes.c:951:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:953:2: warning: excess elements in array initializer
+  0xD3u, 0x71u, 0x00u, 0x00u, /* Tap(63), 0.00347363948822021 */
+  ^
+coeficientes.c:953:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:953:9: warning: excess elements in array initializer
+  0xD3u, 0x71u, 0x00u, 0x00u, /* Tap(63), 0.00347363948822021 */
+         ^
+coeficientes.c:953:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:953:16: warning: excess elements in array initializer
+  0xD3u, 0x71u, 0x00u, 0x00u, /* Tap(63), 0.00347363948822021 */
+                ^
+coeficientes.c:953:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:953:23: warning: excess elements in array initializer
+  0xD3u, 0x71u, 0x00u, 0x00u, /* Tap(63), 0.00347363948822021 */
+                       ^
+coeficientes.c:953:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:955:2: warning: excess elements in array initializer
+  0xEFu, 0x68u, 0x01u, 0x00u, /* Tap(64), 0.0110148191452026 */
+  ^
+coeficientes.c:955:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:955:9: warning: excess elements in array initializer
+  0xEFu, 0x68u, 0x01u, 0x00u, /* Tap(64), 0.0110148191452026 */
+         ^
+coeficientes.c:955:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:955:16: warning: excess elements in array initializer
+  0xEFu, 0x68u, 0x01u, 0x00u, /* Tap(64), 0.0110148191452026 */
+                ^
+coeficientes.c:955:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:955:23: warning: excess elements in array initializer
+  0xEFu, 0x68u, 0x01u, 0x00u, /* Tap(64), 0.0110148191452026 */
+                       ^
+coeficientes.c:955:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:957:2: warning: excess elements in array initializer
+  0x4Au, 0xE1u, 0x00u, 0x00u, /* Tap(65), 0.00687527656555176 */
+  ^
+coeficientes.c:957:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:957:9: warning: excess elements in array initializer
+  0x4Au, 0xE1u, 0x00u, 0x00u, /* Tap(65), 0.00687527656555176 */
+         ^
+coeficientes.c:957:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:957:16: warning: excess elements in array initializer
+  0x4Au, 0xE1u, 0x00u, 0x00u, /* Tap(65), 0.00687527656555176 */
+                ^
+coeficientes.c:957:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:957:23: warning: excess elements in array initializer
+  0x4Au, 0xE1u, 0x00u, 0x00u, /* Tap(65), 0.00687527656555176 */
+                       ^
+coeficientes.c:957:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:959:2: warning: excess elements in array initializer
+  0xB9u, 0xC8u, 0xFFu, 0x00u, /* Tap(66), -0.00168693065643311 */
+  ^
+coeficientes.c:959:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:959:9: warning: excess elements in array initializer
+  0xB9u, 0xC8u, 0xFFu, 0x00u, /* Tap(66), -0.00168693065643311 */
+         ^
+coeficientes.c:959:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:959:16: warning: excess elements in array initializer
+  0xB9u, 0xC8u, 0xFFu, 0x00u, /* Tap(66), -0.00168693065643311 */
+                ^
+coeficientes.c:959:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:959:23: warning: excess elements in array initializer
+  0xB9u, 0xC8u, 0xFFu, 0x00u, /* Tap(66), -0.00168693065643311 */
+                       ^
+coeficientes.c:959:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:961:2: warning: excess elements in array initializer
+  0xC9u, 0x3Fu, 0xFFu, 0x00u, /* Tap(67), -0.00586593151092529 */
+  ^
+coeficientes.c:961:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:961:9: warning: excess elements in array initializer
+  0xC9u, 0x3Fu, 0xFFu, 0x00u, /* Tap(67), -0.00586593151092529 */
+         ^
+coeficientes.c:961:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:961:16: warning: excess elements in array initializer
+  0xC9u, 0x3Fu, 0xFFu, 0x00u, /* Tap(67), -0.00586593151092529 */
+                ^
+coeficientes.c:961:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:961:23: warning: excess elements in array initializer
+  0xC9u, 0x3Fu, 0xFFu, 0x00u, /* Tap(67), -0.00586593151092529 */
+                       ^
+coeficientes.c:961:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:963:2: warning: excess elements in array initializer
+  0x4Du, 0x88u, 0xFFu, 0x00u, /* Tap(68), -0.00365293025970459 */
+  ^
+coeficientes.c:963:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:963:9: warning: excess elements in array initializer
+  0x4Du, 0x88u, 0xFFu, 0x00u, /* Tap(68), -0.00365293025970459 */
+         ^
+coeficientes.c:963:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:963:16: warning: excess elements in array initializer
+  0x4Du, 0x88u, 0xFFu, 0x00u, /* Tap(68), -0.00365293025970459 */
+                ^
+coeficientes.c:963:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:963:23: warning: excess elements in array initializer
+  0x4Du, 0x88u, 0xFFu, 0x00u, /* Tap(68), -0.00365293025970459 */
+                       ^
+coeficientes.c:963:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:965:2: warning: excess elements in array initializer
+  0xDCu, 0x16u, 0x00u, 0x00u, /* Tap(69), 0.000697612762451172 */
+  ^
+coeficientes.c:965:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:965:9: warning: excess elements in array initializer
+  0xDCu, 0x16u, 0x00u, 0x00u, /* Tap(69), 0.000697612762451172 */
+         ^
+coeficientes.c:965:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:965:16: warning: excess elements in array initializer
+  0xDCu, 0x16u, 0x00u, 0x00u, /* Tap(69), 0.000697612762451172 */
+                ^
+coeficientes.c:965:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:965:23: warning: excess elements in array initializer
+  0xDCu, 0x16u, 0x00u, 0x00u, /* Tap(69), 0.000697612762451172 */
+                       ^
+coeficientes.c:965:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:967:2: warning: excess elements in array initializer
+  0x0Au, 0x58u, 0x00u, 0x00u, /* Tap(70), 0.00268673896789551 */
+  ^
+coeficientes.c:967:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:967:9: warning: excess elements in array initializer
+  0x0Au, 0x58u, 0x00u, 0x00u, /* Tap(70), 0.00268673896789551 */
+         ^
+coeficientes.c:967:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:967:16: warning: excess elements in array initializer
+  0x0Au, 0x58u, 0x00u, 0x00u, /* Tap(70), 0.00268673896789551 */
+                ^
+coeficientes.c:967:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:967:23: warning: excess elements in array initializer
+  0x0Au, 0x58u, 0x00u, 0x00u, /* Tap(70), 0.00268673896789551 */
+                       ^
+coeficientes.c:967:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:969:2: warning: excess elements in array initializer
+  0xB4u, 0x35u, 0x00u, 0x00u, /* Tap(71), 0.00163888931274414 */
+  ^
+coeficientes.c:969:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:969:9: warning: excess elements in array initializer
+  0xB4u, 0x35u, 0x00u, 0x00u, /* Tap(71), 0.00163888931274414 */
+         ^
+coeficientes.c:969:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:969:16: warning: excess elements in array initializer
+  0xB4u, 0x35u, 0x00u, 0x00u, /* Tap(71), 0.00163888931274414 */
+                ^
+coeficientes.c:969:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:969:23: warning: excess elements in array initializer
+  0xB4u, 0x35u, 0x00u, 0x00u, /* Tap(71), 0.00163888931274414 */
+                       ^
+coeficientes.c:969:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:971:2: warning: excess elements in array initializer
+  0x75u, 0xF8u, 0xFFu, 0x00u, /* Tap(72), -0.000230193138122559 */
+  ^
+coeficientes.c:971:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:971:9: warning: excess elements in array initializer
+  0x75u, 0xF8u, 0xFFu, 0x00u, /* Tap(72), -0.000230193138122559 */
+         ^
+coeficientes.c:971:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:971:16: warning: excess elements in array initializer
+  0x75u, 0xF8u, 0xFFu, 0x00u, /* Tap(72), -0.000230193138122559 */
+                ^
+coeficientes.c:971:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:971:23: warning: excess elements in array initializer
+  0x75u, 0xF8u, 0xFFu, 0x00u, /* Tap(72), -0.000230193138122559 */
+                       ^
+coeficientes.c:971:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:973:2: warning: excess elements in array initializer
+  0x9Eu, 0xDFu, 0xFFu, 0x00u, /* Tap(73), -0.000988245010375977 */
+  ^
+coeficientes.c:973:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:973:9: warning: excess elements in array initializer
+  0x9Eu, 0xDFu, 0xFFu, 0x00u, /* Tap(73), -0.000988245010375977 */
+         ^
+coeficientes.c:973:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:973:16: warning: excess elements in array initializer
+  0x9Eu, 0xDFu, 0xFFu, 0x00u, /* Tap(73), -0.000988245010375977 */
+                ^
+coeficientes.c:973:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:973:23: warning: excess elements in array initializer
+  0x9Eu, 0xDFu, 0xFFu, 0x00u, /* Tap(73), -0.000988245010375977 */
+                       ^
+coeficientes.c:973:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:975:2: warning: excess elements in array initializer
+  0x64u, 0xEDu, 0xFFu, 0x00u, /* Tap(74), -0.000567913055419922 */
+  ^
+coeficientes.c:975:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:975:9: warning: excess elements in array initializer
+  0x64u, 0xEDu, 0xFFu, 0x00u, /* Tap(74), -0.000567913055419922 */
+         ^
+coeficientes.c:975:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:975:16: warning: excess elements in array initializer
+  0x64u, 0xEDu, 0xFFu, 0x00u, /* Tap(74), -0.000567913055419922 */
+                ^
+coeficientes.c:975:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:975:23: warning: excess elements in array initializer
+  0x64u, 0xEDu, 0xFFu, 0x00u, /* Tap(74), -0.000567913055419922 */
+                       ^
+coeficientes.c:975:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:977:2: warning: excess elements in array initializer
+  0xBBu, 0x01u, 0x00u, 0x00u, /* Tap(75), 5.28097152709961E-05 */
+  ^
+coeficientes.c:977:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:977:9: warning: excess elements in array initializer
+  0xBBu, 0x01u, 0x00u, 0x00u, /* Tap(75), 5.28097152709961E-05 */
+         ^
+coeficientes.c:977:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:977:16: warning: excess elements in array initializer
+  0xBBu, 0x01u, 0x00u, 0x00u, /* Tap(75), 5.28097152709961E-05 */
+                ^
+coeficientes.c:977:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:977:23: warning: excess elements in array initializer
+  0xBBu, 0x01u, 0x00u, 0x00u, /* Tap(75), 5.28097152709961E-05 */
+                       ^
+coeficientes.c:977:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:979:2: warning: excess elements in array initializer
+  0x17u, 0x08u, 0x00u, 0x00u, /* Tap(76), 0.000246882438659668 */
+  ^
+coeficientes.c:979:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:979:9: warning: excess elements in array initializer
+  0x17u, 0x08u, 0x00u, 0x00u, /* Tap(76), 0.000246882438659668 */
+         ^
+coeficientes.c:979:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:979:16: warning: excess elements in array initializer
+  0x17u, 0x08u, 0x00u, 0x00u, /* Tap(76), 0.000246882438659668 */
+                ^
+coeficientes.c:979:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:979:23: warning: excess elements in array initializer
+  0x17u, 0x08u, 0x00u, 0x00u, /* Tap(76), 0.000246882438659668 */
+                       ^
+coeficientes.c:979:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:981:2: warning: excess elements in array initializer
+  0xE2u, 0x03u, 0x00u, 0x00u, /* Tap(77), 0.000118494033813477 */
+  ^
+coeficientes.c:981:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:981:9: warning: excess elements in array initializer
+  0xE2u, 0x03u, 0x00u, 0x00u, /* Tap(77), 0.000118494033813477 */
+         ^
+coeficientes.c:981:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:981:16: warning: excess elements in array initializer
+  0xE2u, 0x03u, 0x00u, 0x00u, /* Tap(77), 0.000118494033813477 */
+                ^
+coeficientes.c:981:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:981:23: warning: excess elements in array initializer
+  0xE2u, 0x03u, 0x00u, 0x00u, /* Tap(77), 0.000118494033813477 */
+                       ^
+coeficientes.c:981:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:983:2: warning: excess elements in array initializer
+  0xD3u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -5.36441802978516E-06 */
+  ^
+coeficientes.c:983:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:983:9: warning: excess elements in array initializer
+  0xD3u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -5.36441802978516E-06 */
+         ^
+coeficientes.c:983:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:983:16: warning: excess elements in array initializer
+  0xD3u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -5.36441802978516E-06 */
+                ^
+coeficientes.c:983:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:983:23: warning: excess elements in array initializer
+  0xD3u, 0xFFu, 0xFFu, 0x00u, /* Tap(78), -5.36441802978516E-06 */
+                       ^
+coeficientes.c:983:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:985:2: warning: excess elements in array initializer
+  0x60u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.9073486328125E-05 */
+  ^
+coeficientes.c:985:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:985:9: warning: excess elements in array initializer
+  0x60u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.9073486328125E-05 */
+         ^
+coeficientes.c:985:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:985:16: warning: excess elements in array initializer
+  0x60u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.9073486328125E-05 */
+                ^
+coeficientes.c:985:16: note: (near initialization for 'COEFFS_330')
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/lcd_i2c.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c lcd_i2c.c -o .\CortexM3\ARM_GCC_541\Debug\lcd_i2c.o
+coeficientes.c:985:23: warning: excess elements in array initializer
+  0x60u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.9073486328125E-05 */
+                       ^
+coeficientes.c:985:23: note: (near initialization for 'COEFFS_330')
+coeficientes.c:987:2: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+  ^
+coeficientes.c:987:2: note: (near initialization for 'COEFFS_330')
+coeficientes.c:987:9: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+         ^
+coeficientes.c:987:9: note: (near initialization for 'COEFFS_330')
+coeficientes.c:987:16: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                ^
+coeficientes.c:987:16: note: (near initialization for 'COEFFS_330')
+coeficientes.c:987:23: warning: excess elements in array initializer
+  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
+                       ^
+coeficientes.c:987:23: note: (near initialization for 'COEFFS_330')
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/procesamiento.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c procesamiento.c -o .\CortexM3\ARM_GCC_541\Debug\procesamiento.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/gestion_hardware.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c gestion_hardware.c -o .\CortexM3\ARM_GCC_541\Debug\gestion_hardware.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cymetadata.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Pin_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Pin_1.c -o .\CortexM3\ARM_GCC_541\Debug\Pin_1.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/PGA_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\PGA_1.c -o .\CortexM3\ARM_GCC_541\Debug\PGA_1.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/PGA_1_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\PGA_1_PM.c -o .\CortexM3\ARM_GCC_541\Debug\PGA_1_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Cm3Start.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyDmac.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyFlash.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CyFlash.c -o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyLib.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_541\Debug\CyLib.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyPm.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_541\Debug\cyPm.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CySpc.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_541\Debug\CySpc.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyutils.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_541\Debug\cyutils.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cy_em_eeprom.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cy_em_eeprom.c -o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Filter_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Filter_1.c -o .\CortexM3\ARM_GCC_541\Debug\Filter_1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Filter_1_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Filter_1_PM.c -o .\CortexM3\ARM_GCC_541\Debug\Filter_1_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Filter_1_PVT.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Filter_1_PVT.c -o .\CortexM3\ARM_GCC_541\Debug\Filter_1_PVT.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Filter_1_RAM_Data.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Filter_1_RAM_Data.c -o .\CortexM3\ARM_GCC_541\Debug\Filter_1_RAM_Data.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Filter_1_Coefficients.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Filter_1_Coefficients.c -o .\CortexM3\ARM_GCC_541\Debug\Filter_1_Coefficients.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/DMA_In_dma.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\DMA_In_dma.c -o .\CortexM3\ARM_GCC_541\Debug\DMA_In_dma.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/isr_dma_done.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\isr_dma_done.c -o .\CortexM3\ARM_GCC_541\Debug\isr_dma_done.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/DMA_Out_dma.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\DMA_Out_dma.c -o .\CortexM3\ARM_GCC_541\Debug\DMA_Out_dma.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CtrlReg_Filtro_Out.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CtrlReg_Filtro_Out.c -o .\CortexM3\ARM_GCC_541\Debug\CtrlReg_Filtro_Out.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CtrlReg_Filtro_Out_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CtrlReg_Filtro_Out_PM.c -o .\CortexM3\ARM_GCC_541\Debug\CtrlReg_Filtro_Out_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/DMA_a_Comp_dma.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\DMA_a_Comp_dma.c -o .\CortexM3\ARM_GCC_541\Debug\DMA_a_Comp_dma.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Status_Reg_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Status_Reg_1.c -o .\CortexM3\ARM_GCC_541\Debug\Status_Reg_1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/BUS_CLK_Ref.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\BUS_CLK_Ref.c -o .\CortexM3\ARM_GCC_541\Debug\BUS_CLK_Ref.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/BIT1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\BIT1.c -o .\CortexM3\ARM_GCC_541\Debug\BIT1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/BIT2.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\BIT2.c -o .\CortexM3\ARM_GCC_541\Debug\BIT2.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/BIT3.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\BIT3.c -o .\CortexM3\ARM_GCC_541\Debug\BIT3.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/SDA_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\SDA_1.c -o .\CortexM3\ARM_GCC_541\Debug\SDA_1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/SCL_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\SCL_1.c -o .\CortexM3\ARM_GCC_541\Debug\SCL_1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/I2C_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\I2C_1.c -o .\CortexM3\ARM_GCC_541\Debug\I2C_1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/I2C_1_BOOT.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\I2C_1_BOOT.c -o .\CortexM3\ARM_GCC_541\Debug\I2C_1_BOOT.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/I2C_1_INT.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\I2C_1_INT.c -o .\CortexM3\ARM_GCC_541\Debug\I2C_1_INT.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/I2C_1_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\I2C_1_PM.c -o .\CortexM3\ARM_GCC_541\Debug\I2C_1_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/I2C_1_SLAVE.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\I2C_1_SLAVE.c -o .\CortexM3\ARM_GCC_541\Debug\I2C_1_SLAVE.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/I2C_1_MASTER.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\I2C_1_MASTER.c -o .\CortexM3\ARM_GCC_541\Debug\I2C_1_MASTER.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OpAmp_Filtro1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\OpAmp_Filtro1.c -o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Filtro1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OpAmp_Filtro1_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\OpAmp_Filtro1_PM.c -o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Filtro1_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Pin_Salida_F1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Pin_Salida_F1.c -o .\CortexM3\ARM_GCC_541\Debug\Pin_Salida_F1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OpAmp_Filtro2.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\OpAmp_Filtro2.c -o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Filtro2.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OpAmp_Filtro2_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\OpAmp_Filtro2_PM.c -o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Filtro2_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Pin_Salida_F2.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Pin_Salida_F2.c -o .\CortexM3\ARM_GCC_541\Debug\Pin_Salida_F2.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OpAmp_Vref.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\OpAmp_Vref.c -o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Vref.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OpAmp_Vref_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\OpAmp_Vref_PM.c -o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Vref_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Pin_TierraVirtual.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Pin_TierraVirtual.c -o .\CortexM3\ARM_GCC_541\Debug\Pin_TierraVirtual.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Pin_Entrada_F1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Pin_Entrada_F1.c -o .\CortexM3\ARM_GCC_541\Debug\Pin_Entrada_F1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Pin_Entrada_F2.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Pin_Entrada_F2.c -o .\CortexM3\ARM_GCC_541\Debug\Pin_Entrada_F2.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ADC_DelSig_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ADC_DelSig_1.c -o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ADC_DelSig_1_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ADC_DelSig_1_PM.c -o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ADC_DelSig_1_INT.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ADC_DelSig_1_INT.c -o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_INT.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Pin_Salida_PGA.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Pin_Salida_PGA.c -o .\CortexM3\ARM_GCC_541\Debug\Pin_Salida_PGA.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ADC_DelSig_1_AMux.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ADC_DelSig_1_AMux.c -o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_AMux.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ADC_DelSig_1_Ext_CP_Clk.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk.c -o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_Ext_CP_Clk.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ADC_DelSig_1_IRQ.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ADC_DelSig_1_IRQ.c -o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_IRQ.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/ADC_DelSig_1_theACLK.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\ADC_DelSig_1_theACLK.c -o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_theACLK.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OpAmp_Acoplador.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\OpAmp_Acoplador.c -o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Acoplador.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/OpAmp_Acoplador_PM.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\OpAmp_Acoplador_PM.c -o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Acoplador_PM.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Vout_1.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Vout_1.c -o .\CortexM3\ARM_GCC_541\Debug\Vout_1.o
-arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/CyBootAsmGnu.lst -g -W -o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o Generated_Source\PSoC5\CyBootAsmGnu.s
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Design01.a .\CortexM3\ARM_GCC_541\Debug\Pin_1.o .\CortexM3\ARM_GCC_541\Debug\PGA_1.o .\CortexM3\ARM_GCC_541\Debug\PGA_1_PM.o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\Filter_1.o .\CortexM3\ARM_GCC_541\Debug\Filter_1_PM.o .\CortexM3\ARM_GCC_541\Debug\Filter_1_PVT.o .\CortexM3\ARM_GCC_541\Debug\Filter_1_RAM_Data.o .\CortexM3\ARM_GCC_541\Debug\Filter_1_Coefficients.o .\CortexM3\ARM_GCC_541\Debug\DMA_In_dma.o .\CortexM3\ARM_GCC_541\Debug\isr_dma_done.o .\CortexM3\ARM_GCC_541\Debug\DMA_Out_dma.o .\CortexM3\ARM_GCC_541\Debug\CtrlReg_Filtro_Out.o .\CortexM3\ARM_GCC_541\Debug\CtrlReg_Filtro_Out_PM.o .\CortexM3\ARM_GCC_541\Debug\DMA_a_Comp_dma.o .\CortexM3\ARM_GCC_541\Debug\Status_Reg_1.o .\CortexM3\ARM_GCC_541\Debug\BUS_CLK_Ref.o .\CortexM3\ARM_GCC_541\Debug\BIT1.o .\CortexM3\ARM_GCC_541\Debug\BIT2.o .\CortexM3\ARM_GCC_541\Debug\BIT3.o .\CortexM3\ARM_GCC_541\Debug\SDA_1.o .\CortexM3\ARM_GCC_541\Debug\SCL_1.o .\CortexM3\ARM_GCC_541\Debug\I2C_1.o .\CortexM3\ARM_GCC_541\Debug\I2C_1_BOOT.o .\CortexM3\ARM_GCC_541\Debug\I2C_1_INT.o .\CortexM3\ARM_GCC_541\Debug\I2C_1_PM.o .\CortexM3\ARM_GCC_541\Debug\I2C_1_SLAVE.o .\CortexM3\ARM_GCC_541\Debug\I2C_1_MASTER.o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Filtro1.o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Filtro1_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_Salida_F1.o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Filtro2.o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Filtro2_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_Salida_F2.o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Vref.o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Vref_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_TierraVirtual.o .\CortexM3\ARM_GCC_541\Debug\Pin_Entrada_F1.o .\CortexM3\ARM_GCC_541\Debug\Pin_Entrada_F2.o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1.o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_PM.o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_INT.o .\CortexM3\ARM_GCC_541\Debug\Pin_Salida_PGA.o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_AMux.o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_Ext_CP_Clk.o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_IRQ.o .\CortexM3\ARM_GCC_541\Debug\ADC_DelSig_1_theACLK.o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Acoplador.o .\CortexM3\ARM_GCC_541\Debug\OpAmp_Acoplador_PM.o .\CortexM3\ARM_GCC_541\Debug\Vout_1.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\Design01.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\user\Desktop\ProyectoPDS_V11\ProyectoPDS_V11\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\coeficientes.o .\CortexM3\ARM_GCC_541\Debug\lcd_i2c.o .\CortexM3\ARM_GCC_541\Debug\procesamiento.o .\CortexM3\ARM_GCC_541\Debug\gestion_hardware.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Design01.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Design01.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
-cyelftool.exe -C "C:\Users\user\Desktop\ProyectoPDS_V11\ProyectoPDS_V11\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+arm-none-eabi-gcc.exe -Wl,--start-group -o "D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\coeficientes.o .\CortexM3\ARM_GCC_541\Debug\lcd_i2c.o .\CortexM3\ARM_GCC_541\Debug\procesamiento.o .\CortexM3\ARM_GCC_541\Debug\gestion_hardware.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Design01.a "E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Design01.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C "D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
-cyelftool.exe -S "C:\Users\user\Desktop\ProyectoPDS_V11\ProyectoPDS_V11\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
+cyelftool.exe -S "D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
 Flash used: 25320 of 262144 bytes (9,7 %).
 SRAM used: 42773 of 65536 bytes (65,3 %). Stack: 16498 bytes. Heap: 16498 bytes.
---------------- Build Succeeded: 02/17/2026 12:11:24 ---------------
+--------------- Build Succeeded: 02/21/2026 17:19:24 ---------------

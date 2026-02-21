@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
   28:Generated_Source\PSoC5/PGA_1.c **** #endif /* (CY_ PSOC5A) */
   29:Generated_Source\PSoC5/PGA_1.c **** 
   30:Generated_Source\PSoC5/PGA_1.c **** uint8 PGA_1_initVar = 0u;
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 2
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 2
 
 
   31:Generated_Source\PSoC5/PGA_1.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
   80:Generated_Source\PSoC5/PGA_1.c ****     /* This is to restore the value of register CR1 and CR2 which is saved 
   81:Generated_Source\PSoC5/PGA_1.c ****       in prior to the modifications in stop() API */
   82:Generated_Source\PSoC5/PGA_1.c ****     #if (CY_PSOC5A)
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 3
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 3
 
 
   83:Generated_Source\PSoC5/PGA_1.c ****         if(PGA_1_P5backup.enableState == 1u)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  105:Generated_Source\PSoC5/PGA_1.c ****                 PGA_1_SC_MISC_REG |= PGA_1_PUMP_FORCE;
  106:Generated_Source\PSoC5/PGA_1.c ****                 CyScBoostClk_Start();
  107:Generated_Source\PSoC5/PGA_1.c ****             }
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 4
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 4
 
 
  108:Generated_Source\PSoC5/PGA_1.c ****             else
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  162:Generated_Source\PSoC5/PGA_1.c **** *
  163:Generated_Source\PSoC5/PGA_1.c **** *******************************************************************************/
  164:Generated_Source\PSoC5/PGA_1.c **** void PGA_1_Stop(void) 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 5
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 5
 
 
  165:Generated_Source\PSoC5/PGA_1.c **** { 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  188:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_P5backup.scCR2Reg = PGA_1_CR2_REG;
  189:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR1_REG = 0x00u;
  190:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR2_REG = 0x00u;
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 6
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 6
 
 
  191:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_P5backup.enableState = 1u;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  124              		.global	PGA_1_SetGain
  125              		.thumb
  126              		.thumb_func
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 7
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 7
 
 
  127              		.type	PGA_1_SetGain, %function
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  247:Generated_Source\PSoC5/PGA_1.c ****         (PGA_1_RVAL_490K | PGA_1_R20_40B_20K | PGA_1_BIAS_LOW)  /* G=50, Sets Rin as 10k */
  248:Generated_Source\PSoC5/PGA_1.c ****     };
  249:Generated_Source\PSoC5/PGA_1.c ****     
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 8
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 8
 
 
  250:Generated_Source\PSoC5/PGA_1.c ****     /* Constant array for gain compenstion settings */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  274:Generated_Source\PSoC5/PGA_1.c ****         /* Clear sc_comp  */
  275:Generated_Source\PSoC5/PGA_1.c ****         PGA_1_CR1_REG &= (uint8)(~PGA_1_COMP_MASK);
  180              		.loc 1 275 0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 9
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 9
 
 
  181 004c 094A     		ldr	r2, .L13+8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
   54:Generated_Source\PSoC5/PGA_1.c ****     /* Set default gain and ref mode */
  229              		.loc 1 54 0
  230 0008 084A     		ldr	r2, .L17+4
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 10
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 10
 
 
  231 000a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  143:Generated_Source\PSoC5/PGA_1.c ****     }
  279              		.loc 1 143 0
  280 000c 0122     		movs	r2, #1
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 11
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 11
 
 
  281 000e 024B     		ldr	r3, .L22
@@ -657,28 +657,28 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  333 0006 00000000 		.4byte	.Ldebug_abbrev0
  334 000a 04       		.byte	0x4
  335 000b 01       		.uleb128 0x1
- 336 000c 4C000000 		.4byte	.LASF27
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 12
+ 336 000c CC000000 		.4byte	.LASF27
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 12
 
 
  337 0010 0C       		.byte	0xc
- 338 0011 67010000 		.4byte	.LASF28
- 339 0015 BD010000 		.4byte	.LASF29
+ 338 0011 E7010000 		.4byte	.LASF28
+ 339 0015 3E000000 		.4byte	.LASF29
  340 0019 00000000 		.4byte	.Ldebug_ranges0+0
  341 001d 00000000 		.4byte	0
  342 0021 00000000 		.4byte	.Ldebug_line0
  343 0025 02       		.uleb128 0x2
  344 0026 01       		.byte	0x1
  345 0027 06       		.byte	0x6
- 346 0028 8A020000 		.4byte	.LASF0
+ 346 0028 61020000 		.4byte	.LASF0
  347 002c 02       		.uleb128 0x2
  348 002d 01       		.byte	0x1
  349 002e 08       		.byte	0x8
- 350 002f 3E000000 		.4byte	.LASF1
+ 350 002f BE000000 		.4byte	.LASF1
  351 0033 02       		.uleb128 0x2
  352 0034 02       		.byte	0x2
  353 0035 05       		.byte	0x5
- 354 0036 B3010000 		.4byte	.LASF2
+ 354 0036 33020000 		.4byte	.LASF2
  355 003a 02       		.uleb128 0x2
  356 003b 02       		.byte	0x2
  357 003c 07       		.byte	0x7
@@ -686,19 +686,19 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  359 0041 02       		.uleb128 0x2
  360 0042 04       		.byte	0x4
  361 0043 05       		.byte	0x5
- 362 0044 66020000 		.4byte	.LASF4
+ 362 0044 3D020000 		.4byte	.LASF4
  363 0048 02       		.uleb128 0x2
  364 0049 04       		.byte	0x4
  365 004a 07       		.byte	0x7
- 366 004b DF000000 		.4byte	.LASF5
+ 366 004b 5F010000 		.4byte	.LASF5
  367 004f 02       		.uleb128 0x2
  368 0050 08       		.byte	0x8
  369 0051 05       		.byte	0x5
- 370 0052 A0010000 		.4byte	.LASF6
+ 370 0052 20020000 		.4byte	.LASF6
  371 0056 02       		.uleb128 0x2
  372 0057 08       		.byte	0x8
  373 0058 07       		.byte	0x7
- 374 0059 32010000 		.4byte	.LASF7
+ 374 0059 B2010000 		.4byte	.LASF7
  375 005d 03       		.uleb128 0x3
  376 005e 04       		.byte	0x4
  377 005f 05       		.byte	0x5
@@ -706,9 +706,9 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  379 0064 02       		.uleb128 0x2
  380 0065 04       		.byte	0x4
  381 0066 07       		.byte	0x7
- 382 0067 18010000 		.4byte	.LASF8
+ 382 0067 98010000 		.4byte	.LASF8
  383 006b 04       		.uleb128 0x4
- 384 006c F1000000 		.4byte	.LASF12
+ 384 006c 71010000 		.4byte	.LASF12
  385 0070 02       		.byte	0x2
  386 0071 E901     		.2byte	0x1e9
  387 0073 2C000000 		.4byte	0x2c
@@ -718,17 +718,17 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  391 007a 38000000 		.4byte	.LASF9
  392 007e 02       		.uleb128 0x2
  393 007f 08       		.byte	0x8
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 13
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 13
 
 
  394 0080 04       		.byte	0x4
- 395 0081 F7000000 		.4byte	.LASF10
+ 395 0081 77010000 		.4byte	.LASF10
  396 0085 02       		.uleb128 0x2
  397 0086 01       		.byte	0x1
  398 0087 08       		.byte	0x8
- 399 0088 AE010000 		.4byte	.LASF11
+ 399 0088 2E020000 		.4byte	.LASF11
  400 008c 04       		.uleb128 0x4
- 401 008d DA000000 		.4byte	.LASF13
+ 401 008d 5A010000 		.4byte	.LASF13
  402 0091 02       		.byte	0x2
  403 0092 9302     		.2byte	0x293
  404 0094 98000000 		.4byte	0x98
@@ -737,13 +737,13 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  407 009d 02       		.uleb128 0x2
  408 009e 08       		.byte	0x8
  409 009f 04       		.byte	0x4
- 410 00a0 7E020000 		.4byte	.LASF14
+ 410 00a0 55020000 		.4byte	.LASF14
  411 00a4 02       		.uleb128 0x2
  412 00a5 04       		.byte	0x4
  413 00a6 07       		.byte	0x7
- 414 00a7 91010000 		.4byte	.LASF15
+ 414 00a7 11020000 		.4byte	.LASF15
  415 00ab 06       		.uleb128 0x6
- 416 00ac 25010000 		.4byte	.LASF16
+ 416 00ac A5010000 		.4byte	.LASF16
  417 00b0 01       		.byte	0x1
  418 00b1 4E       		.byte	0x4e
  419 00b2 00000000 		.4byte	.LFB1
@@ -751,7 +751,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  421 00ba 01       		.uleb128 0x1
  422 00bb 9C       		.byte	0x9c
  423 00bc 06       		.uleb128 0x6
- 424 00bd FE000000 		.4byte	.LASF17
+ 424 00bd 7E010000 		.4byte	.LASF17
  425 00c1 01       		.byte	0x1
  426 00c2 A4       		.byte	0xa4
  427 00c3 00000000 		.4byte	.LFB3
@@ -759,7 +759,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  429 00cb 01       		.uleb128 0x1
  430 00cc 9C       		.byte	0x9c
  431 00cd 07       		.uleb128 0x7
- 432 00ce 6F020000 		.4byte	.LASF18
+ 432 00ce 46020000 		.4byte	.LASF18
  433 00d2 01       		.byte	0x1
  434 00d3 D2       		.byte	0xd2
  435 00d4 00000000 		.4byte	.LFB4
@@ -768,7 +768,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  438 00dd 9C       		.byte	0x9c
  439 00de 01010000 		.4byte	0x101
  440 00e2 08       		.uleb128 0x8
- 441 00e3 9A010000 		.4byte	.LASF20
+ 441 00e3 1A020000 		.4byte	.LASF20
  442 00e7 01       		.byte	0x1
  443 00e8 D2       		.byte	0xd2
  444 00e9 6B000000 		.4byte	0x6b
@@ -778,13 +778,13 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  448 00f6 01       		.byte	0x1
  449 00f7 D4       		.byte	0xd4
  450 00f8 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 14
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 14
 
 
  451 00fc 21000000 		.4byte	.LLST1
  452 0100 00       		.byte	0
  453 0101 07       		.uleb128 0x7
- 454 0102 59010000 		.4byte	.LASF19
+ 454 0102 D9010000 		.4byte	.LASF19
  455 0106 01       		.byte	0x1
  456 0107 EB       		.byte	0xeb
  457 0108 00000000 		.4byte	.LFB5
@@ -799,7 +799,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  466 011d 6B000000 		.4byte	0x6b
  467 0121 3F000000 		.4byte	.LLST2
  468 0125 0A       		.uleb128 0xa
- 469 0126 49010000 		.4byte	.LASF23
+ 469 0126 C9010000 		.4byte	.LASF23
  470 012a 01       		.byte	0x1
  471 012b EE       		.byte	0xee
  472 012c 57010000 		.4byte	0x157
@@ -807,7 +807,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  474 0131 91       		.byte	0x91
  475 0132 6C       		.sleb128 -20
  476 0133 0A       		.uleb128 0xa
- 477 0134 09010000 		.4byte	.LASF24
+ 477 0134 89010000 		.4byte	.LASF24
  478 0138 01       		.byte	0x1
  479 0139 FB       		.byte	0xfb
  480 013a 5C010000 		.4byte	0x15c
@@ -829,7 +829,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  496 015c 0D       		.uleb128 0xd
  497 015d 42010000 		.4byte	0x142
  498 0161 07       		.uleb128 0x7
- 499 0162 86010000 		.4byte	.LASF25
+ 499 0162 06020000 		.4byte	.LASF25
  500 0166 01       		.byte	0x1
  501 0167 31       		.byte	0x31
  502 0168 00000000 		.4byte	.LFB0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  505 0171 9C       		.byte	0x9c
  506 0172 99010000 		.4byte	0x199
  507 0176 0E       		.uleb128 0xe
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 15
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 15
 
 
  508 0177 1E000000 		.4byte	.LVL6
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  562 0008 0E       		.uleb128 0xe
  563 0009 1B       		.uleb128 0x1b
  564 000a 0E       		.uleb128 0xe
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 16
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 16
 
 
  565 000b 55       		.uleb128 0x55
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  619 0041 19       		.uleb128 0x19
  620 0042 03       		.uleb128 0x3
  621 0043 0E       		.uleb128 0xe
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 17
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 17
 
 
  622 0044 3A       		.uleb128 0x3a
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  676 007c 00       		.byte	0
  677 007d 00       		.byte	0
  678 007e 09       		.uleb128 0x9
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 18
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 18
 
 
  679 007f 34       		.uleb128 0x34
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  733 00b5 0E       		.uleb128 0xe
  734 00b6 898201   		.uleb128 0x4109
  735 00b9 01       		.byte	0x1
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 19
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 19
 
 
  736 00ba 11       		.uleb128 0x11
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  790              	.Ldebug_loc0:
  791              	.LLST0:
  792 0000 00000000 		.4byte	.LVL0
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 20
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 20
 
 
  793 0004 0C000000 		.4byte	.LVL2
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  847 0034 34000000 		.4byte	.LFE0-.LFB0
  848 0038 00000000 		.4byte	.LFB2
  849 003c 1C000000 		.4byte	.LFE2-.LFB2
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 21
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 21
 
 
  850 0040 00000000 		.4byte	0
@@ -1250,151 +1250,146 @@ ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 1
  881              	.LASF9:
  882 0038 666C6F61 		.ascii	"float\000"
  882      7400
- 883              	.LASF1:
- 884 003e 756E7369 		.ascii	"unsigned char\000"
- 884      676E6564 
- 884      20636861 
- 884      7200
- 885              	.LASF27:
- 886 004c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 886      43313120 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 22
+ 883              	.LASF29:
+ 884 003e 443A5C44 		.ascii	"D:\\Documentos\\GitHub\\Afinador-Guitarra-PsoC-5LP\\"
+ 884      6F63756D 
+ 884      656E746F 
+ 884      735C4769 
+ 884      74487562 
+ 885 006e 50726F79 		.ascii	"ProyectoPDS\\ProyectoPDS solo matlab\\lab5-fiuna-fi"
+ 885      6563746F 
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 22
 
 
- 886      352E342E 
- 886      31203230 
- 886      31363036 
- 887 007f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 887      20726576 
- 887      6973696F 
- 887      6E203233 
- 887      37373135 
- 888 00b2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 888      66756E63 
- 888      74696F6E 
- 888      2D736563 
- 888      74696F6E 
- 889              	.LASF13:
- 890 00da 72656738 		.ascii	"reg8\000"
- 890      00
- 891              	.LASF5:
- 892 00df 6C6F6E67 		.ascii	"long unsigned int\000"
- 892      20756E73 
- 892      69676E65 
- 892      6420696E 
- 892      7400
- 893              	.LASF12:
- 894 00f1 75696E74 		.ascii	"uint8\000"
- 894      3800
- 895              	.LASF10:
- 896 00f7 646F7562 		.ascii	"double\000"
- 896      6C6500
- 897              	.LASF17:
- 898 00fe 5047415F 		.ascii	"PGA_1_Stop\000"
- 898      315F5374 
- 898      6F7000
- 899              	.LASF24:
- 900 0109 5047415F 		.ascii	"PGA_1_GainComp\000"
- 900      315F4761 
- 900      696E436F 
- 900      6D7000
- 901              	.LASF8:
- 902 0118 756E7369 		.ascii	"unsigned int\000"
- 902      676E6564 
- 902      20696E74 
- 902      00
- 903              	.LASF16:
- 904 0125 5047415F 		.ascii	"PGA_1_Enable\000"
- 904      315F456E 
- 904      61626C65 
- 904      00
- 905              	.LASF7:
- 906 0132 6C6F6E67 		.ascii	"long long unsigned int\000"
- 906      206C6F6E 
- 906      6720756E 
- 906      7369676E 
- 906      65642069 
- 907              	.LASF23:
- 908 0149 5047415F 		.ascii	"PGA_1_GainArray\000"
- 908      315F4761 
- 908      696E4172 
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 23
+ 885      5044535C 
+ 885      50726F79 
+ 885      6563746F 
+ 886 009f 6C74726F 		.ascii	"ltros_sencillos\\Design01.cydsn\000"
+ 886      735F7365 
+ 886      6E63696C 
+ 886      6C6F735C 
+ 886      44657369 
+ 887              	.LASF1:
+ 888 00be 756E7369 		.ascii	"unsigned char\000"
+ 888      676E6564 
+ 888      20636861 
+ 888      7200
+ 889              	.LASF27:
+ 890 00cc 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 890      43313120 
+ 890      352E342E 
+ 890      31203230 
+ 890      31363036 
+ 891 00ff 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 891      20726576 
+ 891      6973696F 
+ 891      6E203233 
+ 891      37373135 
+ 892 0132 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 892      66756E63 
+ 892      74696F6E 
+ 892      2D736563 
+ 892      74696F6E 
+ 893              	.LASF13:
+ 894 015a 72656738 		.ascii	"reg8\000"
+ 894      00
+ 895              	.LASF5:
+ 896 015f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 896      20756E73 
+ 896      69676E65 
+ 896      6420696E 
+ 896      7400
+ 897              	.LASF12:
+ 898 0171 75696E74 		.ascii	"uint8\000"
+ 898      3800
+ 899              	.LASF10:
+ 900 0177 646F7562 		.ascii	"double\000"
+ 900      6C6500
+ 901              	.LASF17:
+ 902 017e 5047415F 		.ascii	"PGA_1_Stop\000"
+ 902      315F5374 
+ 902      6F7000
+ 903              	.LASF24:
+ 904 0189 5047415F 		.ascii	"PGA_1_GainComp\000"
+ 904      315F4761 
+ 904      696E436F 
+ 904      6D7000
+ 905              	.LASF8:
+ 906 0198 756E7369 		.ascii	"unsigned int\000"
+ 906      676E6564 
+ 906      20696E74 
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 23
 
 
- 908      72617900 
- 909              	.LASF19:
- 910 0159 5047415F 		.ascii	"PGA_1_SetGain\000"
- 910      315F5365 
- 910      74476169 
- 910      6E00
- 911              	.LASF28:
- 912 0167 47656E65 		.ascii	"Generated_Source\\PSoC5\\PGA_1.c\000"
- 912      72617465 
- 912      645F536F 
- 912      75726365 
- 912      5C50536F 
- 913              	.LASF25:
- 914 0186 5047415F 		.ascii	"PGA_1_Init\000"
- 914      315F496E 
- 914      697400
- 915              	.LASF15:
- 916 0191 73697A65 		.ascii	"sizetype\000"
- 916      74797065 
- 916      00
- 917              	.LASF20:
- 918 019a 706F7765 		.ascii	"power\000"
- 918      7200
- 919              	.LASF6:
- 920 01a0 6C6F6E67 		.ascii	"long long int\000"
- 920      206C6F6E 
- 920      6720696E 
- 920      7400
- 921              	.LASF11:
- 922 01ae 63686172 		.ascii	"char\000"
- 922      00
- 923              	.LASF2:
- 924 01b3 73686F72 		.ascii	"short int\000"
- 924      7420696E 
+ 906      00
+ 907              	.LASF16:
+ 908 01a5 5047415F 		.ascii	"PGA_1_Enable\000"
+ 908      315F456E 
+ 908      61626C65 
+ 908      00
+ 909              	.LASF7:
+ 910 01b2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 910      206C6F6E 
+ 910      6720756E 
+ 910      7369676E 
+ 910      65642069 
+ 911              	.LASF23:
+ 912 01c9 5047415F 		.ascii	"PGA_1_GainArray\000"
+ 912      315F4761 
+ 912      696E4172 
+ 912      72617900 
+ 913              	.LASF19:
+ 914 01d9 5047415F 		.ascii	"PGA_1_SetGain\000"
+ 914      315F5365 
+ 914      74476169 
+ 914      6E00
+ 915              	.LASF28:
+ 916 01e7 47656E65 		.ascii	"Generated_Source\\PSoC5\\PGA_1.c\000"
+ 916      72617465 
+ 916      645F536F 
+ 916      75726365 
+ 916      5C50536F 
+ 917              	.LASF25:
+ 918 0206 5047415F 		.ascii	"PGA_1_Init\000"
+ 918      315F496E 
+ 918      697400
+ 919              	.LASF15:
+ 920 0211 73697A65 		.ascii	"sizetype\000"
+ 920      74797065 
+ 920      00
+ 921              	.LASF20:
+ 922 021a 706F7765 		.ascii	"power\000"
+ 922      7200
+ 923              	.LASF6:
+ 924 0220 6C6F6E67 		.ascii	"long long int\000"
+ 924      206C6F6E 
+ 924      6720696E 
  924      7400
- 925              	.LASF29:
- 926 01bd 433A5C55 		.ascii	"C:\\Users\\user\\Desktop\\ProyectoPDS_V11\\Proyecto"
- 926      73657273 
- 926      5C757365 
- 926      725C4465 
- 926      736B746F 
- 927 01eb 5044535F 		.ascii	"PDS_V11\\ProyectoPDS solo matlab-20251102T203416Z-1"
- 927      5631315C 
- 927      50726F79 
- 927      6563746F 
- 927      50445320 
- 928 021d 2D303031 		.ascii	"-001\\ProyectoPDS solo matlab\\lab5-fiuna-filtros_s"
- 928      5C50726F 
- 928      79656374 
- 928      6F504453 
- 928      20736F6C 
- 929 024e 656E6369 		.ascii	"encillos\\Design01.cydsn\000"
- 929      6C6C6F73 
- 929      5C446573 
- 929      69676E30 
- 929      312E6379 
- 930              	.LASF4:
-ARM GAS  C:\Users\user\AppData\Local\Temp\ccnFrSwG.s 			page 24
+ 925              	.LASF11:
+ 926 022e 63686172 		.ascii	"char\000"
+ 926      00
+ 927              	.LASF2:
+ 928 0233 73686F72 		.ascii	"short int\000"
+ 928      7420696E 
+ 928      7400
+ 929              	.LASF4:
+ 930 023d 6C6F6E67 		.ascii	"long int\000"
+ 930      20696E74 
+ 930      00
+ 931              	.LASF18:
+ 932 0246 5047415F 		.ascii	"PGA_1_SetPower\000"
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccuaPRph.s 			page 24
 
 
- 931 0266 6C6F6E67 		.ascii	"long int\000"
- 931      20696E74 
- 931      00
- 932              	.LASF18:
- 933 026f 5047415F 		.ascii	"PGA_1_SetPower\000"
- 933      315F5365 
- 933      74506F77 
- 933      657200
- 934              	.LASF14:
- 935 027e 6C6F6E67 		.ascii	"long double\000"
- 935      20646F75 
- 935      626C6500 
- 936              	.LASF0:
- 937 028a 7369676E 		.ascii	"signed char\000"
- 937      65642063 
- 937      68617200 
- 938              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 932      315F5365 
+ 932      74506F77 
+ 932      657200
+ 933              	.LASF14:
+ 934 0255 6C6F6E67 		.ascii	"long double\000"
+ 934      20646F75 
+ 934      626C6500 
+ 935              	.LASF0:
+ 936 0261 7369676E 		.ascii	"signed char\000"
+ 936      65642063 
+ 936      68617200 
+ 937              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
