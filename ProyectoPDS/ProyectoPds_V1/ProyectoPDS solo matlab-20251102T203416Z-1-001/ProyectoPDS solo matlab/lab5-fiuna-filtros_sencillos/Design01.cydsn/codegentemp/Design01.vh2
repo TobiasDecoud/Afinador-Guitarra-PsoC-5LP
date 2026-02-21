@@ -2,7 +2,7 @@
 --	Conversion of Design01.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Nov 05 16:18:03 2025
+--	Sat Feb 21 16:58:13 2026
 --
 
 USE cypress.cypress.all;
@@ -328,6 +328,171 @@ SIGNAL \Filter_1:Net_8\ : bit;
 SIGNAL \Filter_1:Net_9\ : bit;
 SIGNAL Net_61 : bit;
 SIGNAL Net_62 : bit;
+SIGNAL Net_95 : bit;
+SIGNAL cmp_vv_vv_MODGEN_3 : bit;
+SIGNAL Net_97_7 : bit;
+SIGNAL Net_97_6 : bit;
+SIGNAL Net_97_5 : bit;
+SIGNAL Net_97_4 : bit;
+SIGNAL Net_97_3 : bit;
+SIGNAL Net_97_2 : bit;
+SIGNAL Net_97_1 : bit;
+SIGNAL Net_97_0 : bit;
+SIGNAL \CtrlReg_Filtro_Out:clk\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:rst\ : bit;
+SIGNAL Net_110_7 : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_out_7\ : bit;
+SIGNAL Net_110_6 : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_out_6\ : bit;
+SIGNAL Net_110_5 : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_out_5\ : bit;
+SIGNAL Net_110_4 : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_out_4\ : bit;
+SIGNAL Net_110_3 : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_out_3\ : bit;
+SIGNAL Net_110_2 : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_out_2\ : bit;
+SIGNAL Net_110_1 : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_out_1\ : bit;
+SIGNAL Net_110_0 : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_out_0\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_7\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_6\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_5\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_4\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_3\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_2\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_1\ : bit;
+SIGNAL \CtrlReg_Filtro_Out:control_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:newa_7\ : bit;
+SIGNAL MODIN2_7 : bit;
+SIGNAL \MODULE_3:g1:a0:newa_6\ : bit;
+SIGNAL MODIN2_6 : bit;
+SIGNAL \MODULE_3:g1:a0:newa_5\ : bit;
+SIGNAL MODIN2_5 : bit;
+SIGNAL \MODULE_3:g1:a0:newa_4\ : bit;
+SIGNAL MODIN2_4 : bit;
+SIGNAL \MODULE_3:g1:a0:newa_3\ : bit;
+SIGNAL MODIN2_3 : bit;
+SIGNAL \MODULE_3:g1:a0:newa_2\ : bit;
+SIGNAL MODIN2_2 : bit;
+SIGNAL \MODULE_3:g1:a0:newa_1\ : bit;
+SIGNAL MODIN2_1 : bit;
+SIGNAL \MODULE_3:g1:a0:newa_0\ : bit;
+SIGNAL MODIN2_0 : bit;
+SIGNAL \MODULE_3:g1:a0:newb_7\ : bit;
+SIGNAL MODIN3_7 : bit;
+SIGNAL \MODULE_3:g1:a0:newb_6\ : bit;
+SIGNAL MODIN3_6 : bit;
+SIGNAL \MODULE_3:g1:a0:newb_5\ : bit;
+SIGNAL MODIN3_5 : bit;
+SIGNAL \MODULE_3:g1:a0:newb_4\ : bit;
+SIGNAL MODIN3_4 : bit;
+SIGNAL \MODULE_3:g1:a0:newb_3\ : bit;
+SIGNAL MODIN3_3 : bit;
+SIGNAL \MODULE_3:g1:a0:newb_2\ : bit;
+SIGNAL MODIN3_2 : bit;
+SIGNAL \MODULE_3:g1:a0:newb_1\ : bit;
+SIGNAL MODIN3_1 : bit;
+SIGNAL \MODULE_3:g1:a0:newb_0\ : bit;
+SIGNAL MODIN3_0 : bit;
+SIGNAL \MODULE_3:g1:a0:dataa_7\ : bit;
+SIGNAL \MODULE_3:g1:a0:dataa_6\ : bit;
+SIGNAL \MODULE_3:g1:a0:dataa_5\ : bit;
+SIGNAL \MODULE_3:g1:a0:dataa_4\ : bit;
+SIGNAL \MODULE_3:g1:a0:dataa_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:dataa_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:dataa_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:dataa_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:datab_7\ : bit;
+SIGNAL \MODULE_3:g1:a0:datab_6\ : bit;
+SIGNAL \MODULE_3:g1:a0:datab_5\ : bit;
+SIGNAL \MODULE_3:g1:a0:datab_4\ : bit;
+SIGNAL \MODULE_3:g1:a0:datab_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:datab_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:datab_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:datab_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:a_7\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:a_6\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:a_5\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:a_4\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:a_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:a_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:a_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:a_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:b_7\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:b_6\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:b_5\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:b_4\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:b_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:b_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:b_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:b_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:xnor_array_7\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:xnor_array_6\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:xnor_array_5\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:xnor_array_4\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:xnor_array_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:xnor_array_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:xnor_array_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:xnor_array_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:aeqb_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eq_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eq_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eq_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eq_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eq_4\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eq_5\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eq_6\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eq_7\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:eqi_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:aeqb_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:albi_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:agbi_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lt_6\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gt_6\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lt_7\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gt_7\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lti_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gti_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:albi_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:agbi_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lt_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gt_3\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lt_4\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gt_4\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lt_5\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gt_5\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lti_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gti_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:albi_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:agbi_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lt_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gt_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lt_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gt_1\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lt_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gt_2\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:lti_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:gti_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:albi_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:gx:u0:agbi_0\ : bit;
+SIGNAL \MODULE_3:g1:a0:xeq\ : bit;
+SIGNAL \MODULE_3:g1:a0:xneq\ : bit;
+SIGNAL \MODULE_3:g1:a0:xlt\ : bit;
+SIGNAL \MODULE_3:g1:a0:xlte\ : bit;
+SIGNAL \MODULE_3:g1:a0:xgt\ : bit;
+SIGNAL \MODULE_3:g1:a0:xgte\ : bit;
+SIGNAL \MODULE_3:lt\ : bit;
+ATTRIBUTE port_state_att of \MODULE_3:lt\:SIGNAL IS 2;
+SIGNAL \MODULE_3:gt\ : bit;
+ATTRIBUTE port_state_att of \MODULE_3:gt\:SIGNAL IS 2;
+SIGNAL \MODULE_3:gte\ : bit;
+ATTRIBUTE port_state_att of \MODULE_3:gte\:SIGNAL IS 2;
+SIGNAL \MODULE_3:lte\ : bit;
+ATTRIBUTE port_state_att of \MODULE_3:lte\:SIGNAL IS 2;
+SIGNAL \MODULE_3:neq\ : bit;
+ATTRIBUTE port_state_att of \MODULE_3:neq\:SIGNAL IS 2;
 SIGNAL \UART_1:BUART:reset_reg\\D\ : bit;
 SIGNAL \UART_1:BUART:txn\\D\ : bit;
 SIGNAL \UART_1:BUART:tx_state_1\\D\ : bit;
@@ -456,6 +621,17 @@ Net_32 <= (not \UART_1:BUART:txn\);
 \UART_1:BUART:rx_parity_bit\\D\ <= ((not \UART_1:BUART:rx_state_0\ and not \UART_1:BUART:rx_state_2\ and \UART_1:BUART:rx_parity_bit\)
 	OR (\UART_1:BUART:rx_state_2\ and Net_28 and \UART_1:BUART:rx_parity_bit\)
 	OR \UART_1:BUART:rx_parity_bit\);
+
+\MODULE_3:g1:a0:gx:u0:lt_7\ <= (not Net_110_6
+	OR not Net_110_7);
+
+\MODULE_3:g1:a0:gx:u0:lt_5\ <= (not Net_110_3
+	OR not Net_110_4
+	OR not Net_110_5);
+
+\MODULE_3:g1:a0:gx:u0:lt_2\ <= (not Net_110_0
+	OR not Net_110_1
+	OR not Net_110_2);
 
 isr_rx:cy_isr_v1_0
 	GENERIC MAP(int_type=>"10",
@@ -1006,6 +1182,34 @@ DMA_Out:cy_dma_v1_0
 	PORT MAP(drq=>Net_54,
 		trq=>zero,
 		nrq=>Net_53);
+\CtrlReg_Filtro_Out:Sync:ctrl_reg\:cy_psoc3_control
+	GENERIC MAP(cy_init_value=>"00000000",
+		cy_force_order=>'1',
+		cy_ctrl_mode_1=>"00000000",
+		cy_ctrl_mode_0=>"00000000",
+		cy_ext_reset=>'0')
+	PORT MAP(reset=>zero,
+		clock=>zero,
+		control=>(Net_110_7, Net_110_6, Net_110_5, Net_110_4,
+			Net_110_3, Net_110_2, Net_110_1, Net_110_0));
+\MODULE_3:g1:a0:gx:u0:gne(2):c4:c6:u1\:cy_buf
+	PORT MAP(x=>\MODULE_3:g1:a0:gx:u0:lt_7\,
+		y=>\MODULE_3:g1:a0:gx:u0:lti_2\);
+\MODULE_3:g1:a0:gx:u0:gne(2):c4:c6:u2\:cy_buf
+	PORT MAP(x=>zero,
+		y=>\MODULE_3:g1:a0:gx:u0:gti_2\);
+\MODULE_3:g1:a0:gx:u0:gne(1):c3:u1\:cy_buf
+	PORT MAP(x=>\MODULE_3:g1:a0:gx:u0:lt_5\,
+		y=>\MODULE_3:g1:a0:gx:u0:lti_1\);
+\MODULE_3:g1:a0:gx:u0:gne(1):c3:u2\:cy_buf
+	PORT MAP(x=>zero,
+		y=>\MODULE_3:g1:a0:gx:u0:gti_1\);
+\MODULE_3:g1:a0:gx:u0:gne(0):c3:u1\:cy_buf
+	PORT MAP(x=>\MODULE_3:g1:a0:gx:u0:lt_2\,
+		y=>\MODULE_3:g1:a0:gx:u0:lti_0\);
+\MODULE_3:g1:a0:gx:u0:gne(0):c3:u2\:cy_buf
+	PORT MAP(x=>zero,
+		y=>\MODULE_3:g1:a0:gx:u0:gti_0\);
 \UART_1:BUART:reset_reg\:cy_dff
 	PORT MAP(d=>zero,
 		clk=>\UART_1:BUART:clock_op\,

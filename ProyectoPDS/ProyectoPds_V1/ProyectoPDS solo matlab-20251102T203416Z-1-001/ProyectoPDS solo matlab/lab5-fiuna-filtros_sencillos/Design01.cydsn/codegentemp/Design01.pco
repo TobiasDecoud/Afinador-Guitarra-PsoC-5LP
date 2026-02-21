@@ -1,5 +1,5 @@
 # Design01
-# 2025-11-05 19:18:04Z
+# 2026-02-21 19:58:14Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -30,6 +30,7 @@ set_location "\UART_1:BUART:sRX:RxSts\" 1 0 4
 set_location "isr_dma_done" interrupt -1 -1 1
 set_location "\Filter_1:DFB\" dfbcell -1 -1 0
 set_location "DMA_Out" drqcell -1 -1 0
+set_location "Rx_1(0)_SYNC" 0 1 5 0
 set_location "\UART_1:BUART:txn\" 1 0 0 0
 set_location "\UART_1:BUART:tx_state_1\" 1 0 0 1
 set_location "\UART_1:BUART:tx_state_0\" 0 0 0 0
@@ -43,5 +44,4 @@ set_location "\UART_1:BUART:rx_state_2\" 0 1 1 0
 set_location "\UART_1:BUART:rx_bitclk_enable\" 1 1 0 2
 set_location "\UART_1:BUART:rx_state_stop1_reg\" 1 1 1 2
 set_location "\UART_1:BUART:rx_status_3\" 0 1 1 2
-set_location "Rx_1(0)_SYNC" 0 1 5 0
 set_location "\UART_1:BUART:rx_last\" 0 1 0 0

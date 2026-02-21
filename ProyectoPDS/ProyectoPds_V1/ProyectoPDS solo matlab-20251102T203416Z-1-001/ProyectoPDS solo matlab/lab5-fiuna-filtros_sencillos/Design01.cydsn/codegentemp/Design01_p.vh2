@@ -1,5 +1,5 @@
 -- Project:   Design01
--- Generated: 11/05/2025 16:18:03
+-- Generated: 02/21/2026 16:58:13
 -- PSoC Creator  4.4
 
 ENTITY Design01 IS
@@ -1061,6 +1061,15 @@ BEGIN
             termout => Net_53,
             clock => ClockBlock_BUS_CLK);
 
+    Rx_1(0)_SYNC:synccell
+        GENERIC MAP(
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            in => Net_28,
+            out => Net_28_SYNCOUT,
+            clock => ClockBlock_BUS_CLK);
+
     \UART_1:BUART:txn\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1 * !main_6) + (main_0 * main_4) + (!main_1 * main_2 * !main_3 * !main_4) + (!main_1 * main_2 * !main_4 * !main_6) + (main_1 * !main_2 * !main_3 * !main_4 * !main_5 * main_6)",
@@ -1267,15 +1276,6 @@ BEGIN
             main_3 => \UART_1:BUART:rx_state_3\,
             main_4 => \UART_1:BUART:rx_state_2\,
             main_5 => Net_28_SYNCOUT);
-
-    Rx_1(0)_SYNC:synccell
-        GENERIC MAP(
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            in => Net_28,
-            out => Net_28_SYNCOUT,
-            clock => ClockBlock_BUS_CLK);
 
     \UART_1:BUART:rx_last\:macrocell
         GENERIC MAP(

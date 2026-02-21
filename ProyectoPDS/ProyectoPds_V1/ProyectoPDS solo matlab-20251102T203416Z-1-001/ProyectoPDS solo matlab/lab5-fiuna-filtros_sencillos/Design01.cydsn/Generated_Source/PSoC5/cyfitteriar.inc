@@ -311,6 +311,9 @@ isr_dma_done__INTC_PRIOR_REG EQU CYREG_NVIC_PRI_1
 isr_dma_done__INTC_SET_EN_REG EQU CYREG_NVIC_SETENA0
 isr_dma_done__INTC_SET_PD_REG EQU CYREG_NVIC_SETPEND0
 
+/* CtrlReg_Filtro_Out */
+CtrlReg_Filtro_Out_Sync_ctrl_reg__REMOVED EQU 1
+
 /* Miscellaneous */
 BCLK__BUS_CLK__HZ EQU 70000000
 BCLK__BUS_CLK__KHZ EQU 70000

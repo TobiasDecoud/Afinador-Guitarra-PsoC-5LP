@@ -29,6 +29,7 @@
 #include "Filter_1.h"
 #include "Filter_1_PVT.h"
 #include "DMA_Out_dma.h"
+#include "CtrlReg_Filtro_Out.h"
 #include "UART_1_IntClock.h"
 #include "core_cm3_psoc5.h"
 #include "CyDmac.h"

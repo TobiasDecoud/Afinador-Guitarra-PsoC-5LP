@@ -4,21 +4,21 @@ clc
 
 %% 1. Señal de prueba
 N = 1000; % Longitud de la señal
-fs = 1000; % Frecuencia de muestreo (Hz)
+fs = 2000; % Frecuencia de muestreo (Hz)
 t = 0:1/fs:(N-1)/fs; % Vector de tiempo para 1000 puntos
 
 
 
-freq_pasa = 2000;
-freq_no_pasa = 1000;
-x_original = 0.8*sin(2*pi*freq_pasa*t) + 0.7*sin(2*pi*53*t);
-%x = x_original / 1.5; 
+freq_pasa = 82.5;
+freq_no_pasa = 160;
+x_original = 0.5*sin(2*pi*freq_pasa*t) + 0.7*sin(2*pi*freq_no_pasa*t);
+x = x_original / 1.5; 
 
 %x = 0.8*sin(2*pi*freq_pasa*t);
 
 %x = 1+ 0.9*sin(2*pi*freq_pasa*t) ;
 %x = zeros(1,N) ;
-x = generarSenaGuitarra(82.4);
+%x = generarSenaGuitarra(82.4);
 x = round(x,2);
 
 m = length(t); % m = 100

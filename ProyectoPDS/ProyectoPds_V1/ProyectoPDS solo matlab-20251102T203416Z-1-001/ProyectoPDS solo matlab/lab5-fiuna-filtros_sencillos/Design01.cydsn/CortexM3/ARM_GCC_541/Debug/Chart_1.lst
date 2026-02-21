@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
   27:Generated_Source\PSoC5/Chart_1.c **** 
   28:Generated_Source\PSoC5/Chart_1.c **** 
   29:Generated_Source\PSoC5/Chart_1.c **** 
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 2
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 2
 
 
   30:Generated_Source\PSoC5/Chart_1.c **** //====================================
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
   84:Generated_Source\PSoC5/Chart_1.c **** // Vals - values list   : "V1, V2,.."
   85:Generated_Source\PSoC5/Chart_1.c **** //==============================================================================
   86:Generated_Source\PSoC5/Chart_1.c **** void Chart_1_Plot(float32 V1) 
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 3
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 3
 
 
   87:Generated_Source\PSoC5/Chart_1.c **** {   
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  141:Generated_Source\PSoC5/Chart_1.c **** void Chart_1_Plot(float32 V1) 
  142:Generated_Source\PSoC5/Chart_1.c **** { 
  143:Generated_Source\PSoC5/Chart_1.c ****     // Format:      Custom Frame
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 4
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 4
 
 
  144:Generated_Source\PSoC5/Chart_1.c ****     // Frame Start: 0xAA, 0xBB
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  188:Generated_Source\PSoC5/Chart_1.c ****     // Channels:    1
  189:Generated_Source\PSoC5/Chart_1.c ****     // Delimiter:   comma
  190:Generated_Source\PSoC5/Chart_1.c **** 
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 5
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 5
 
 
  191:Generated_Source\PSoC5/Chart_1.c ****     char abuff[23];    // output UART buffer // todo: static? 
@@ -278,10 +278,10 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
   67      00
   68              		.text
   69              	.Letext0:
-  70              		.file 2 "d:\\programas\\psoc\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-e
-  71              		.file 3 "d:\\programas\\psoc\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-e
+  70              		.file 2 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\inc
+  71              		.file 3 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\inc
   72              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
-  73              		.file 5 "d:\\programas\\psoc\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-e
+  73              		.file 5 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\inc
   74              		.file 6 "Generated_Source\\PSoC5/UART_1.h"
   75              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
   76              		.section	.debug_info,"",%progbits
@@ -294,21 +294,21 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
   83 000c 36000000 		.4byte	.LASF19
   84 0010 0C       		.byte	0xc
   85 0011 01010000 		.4byte	.LASF20
-  86 0015 86010000 		.4byte	.LASF21
+  86 0015 30010000 		.4byte	.LASF21
   87 0019 00000000 		.4byte	.Ldebug_ranges0+0
   88 001d 00000000 		.4byte	0
   89 0021 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 6
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 6
 
 
   90 0025 02       		.uleb128 0x2
   91 0026 04       		.byte	0x4
   92 0027 04       		.byte	0x4
-  93 0028 41020000 		.4byte	.LASF0
+  93 0028 48020000 		.4byte	.LASF0
   94 002c 02       		.uleb128 0x2
   95 002d 01       		.byte	0x1
   96 002e 06       		.byte	0x6
-  97 002f 64010000 		.4byte	.LASF1
+  97 002f 26020000 		.4byte	.LASF1
   98 0033 02       		.uleb128 0x2
   99 0034 01       		.byte	0x1
  100 0035 08       		.byte	0x8
@@ -316,24 +316,24 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  102 003a 02       		.uleb128 0x2
  103 003b 02       		.byte	0x2
  104 003c 05       		.byte	0x5
- 105 003d 47020000 		.4byte	.LASF3
+ 105 003d 4E020000 		.4byte	.LASF3
  106 0041 02       		.uleb128 0x2
  107 0042 02       		.byte	0x2
  108 0043 07       		.byte	0x7
  109 0044 0E000000 		.4byte	.LASF4
  110 0048 03       		.uleb128 0x3
- 111 0049 7C010000 		.4byte	.LASF10
+ 111 0049 3E020000 		.4byte	.LASF10
  112 004d 02       		.byte	0x2
  113 004e 3F       		.byte	0x3f
  114 004f 53000000 		.4byte	0x53
  115 0053 02       		.uleb128 0x2
  116 0054 04       		.byte	0x4
  117 0055 05       		.byte	0x5
- 118 0056 35010000 		.4byte	.LASF5
+ 118 0056 EE010000 		.4byte	.LASF5
  119 005a 02       		.uleb128 0x2
  120 005b 04       		.byte	0x4
  121 005c 07       		.byte	0x7
- 122 005d 3E010000 		.4byte	.LASF6
+ 122 005d F7010000 		.4byte	.LASF6
  123 0061 02       		.uleb128 0x2
  124 0062 08       		.byte	0x8
  125 0063 05       		.byte	0x5
@@ -351,14 +351,14 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  137 0078 07       		.byte	0x7
  138 0079 21000000 		.4byte	.LASF9
  139 007d 03       		.uleb128 0x3
- 140 007e 51020000 		.4byte	.LASF11
+ 140 007e 58020000 		.4byte	.LASF11
  141 0082 03       		.byte	0x3
  142 0083 2C       		.byte	0x2c
  143 0084 48000000 		.4byte	0x48
  144 0088 05       		.uleb128 0x5
  145 0089 F9000000 		.4byte	.LASF12
  146 008d 04       		.byte	0x4
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 7
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 7
 
 
  147 008e EF01     		.2byte	0x1ef
@@ -366,19 +366,19 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  149 0094 02       		.uleb128 0x2
  150 0095 08       		.byte	0x8
  151 0096 04       		.byte	0x4
- 152 0097 50010000 		.4byte	.LASF13
+ 152 0097 09020000 		.4byte	.LASF13
  153 009b 02       		.uleb128 0x2
  154 009c 01       		.byte	0x1
  155 009d 08       		.byte	0x8
- 156 009e 30010000 		.4byte	.LASF14
+ 156 009e 60020000 		.4byte	.LASF14
  157 00a2 02       		.uleb128 0x2
  158 00a3 08       		.byte	0x8
  159 00a4 04       		.byte	0x4
- 160 00a5 70010000 		.4byte	.LASF15
+ 160 00a5 32020000 		.4byte	.LASF15
  161 00a9 02       		.uleb128 0x2
  162 00aa 04       		.byte	0x4
  163 00ab 07       		.byte	0x7
- 164 00ac 59020000 		.4byte	.LASF16
+ 164 00ac 10020000 		.4byte	.LASF16
  165 00b0 06       		.uleb128 0x6
  166 00b1 C4000000 		.4byte	.LASF22
  167 00b5 01       		.byte	0x1
@@ -395,7 +395,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  178 00cb 88000000 		.4byte	0x88
  179 00cf 00000000 		.4byte	.LLST0
  180 00d3 08       		.uleb128 0x8
- 181 00d4 62020000 		.4byte	.LASF23
+ 181 00d4 65020000 		.4byte	.LASF23
  182 00d8 01       		.byte	0x1
  183 00d9 BF       		.byte	0xbf
  184 00da 0F010000 		.4byte	0x10f
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  201 00f7 05       		.uleb128 0x5
  202 00f8 03       		.byte	0x3
  203 00f9 00000000 		.4byte	.LC0
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 8
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 8
 
 
  204 00fd 00       		.byte	0
@@ -441,7 +441,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  221 011d 16       		.byte	0x16
  222 011e 00       		.byte	0
  223 011f 0E       		.uleb128 0xe
- 224 0120 57010000 		.4byte	.LASF24
+ 224 0120 19020000 		.4byte	.LASF24
  225 0124 07       		.byte	0x7
  226 0125 1207     		.2byte	0x712
  227 0127 2B010000 		.4byte	0x12b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  258 000f 10       		.uleb128 0x10
  259 0010 17       		.uleb128 0x17
  260 0011 00       		.byte	0
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 9
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 9
 
 
  261 0012 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  315 0048 03       		.uleb128 0x3
  316 0049 0E       		.uleb128 0xe
  317 004a 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 10
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 10
 
 
  318 004b 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  372 0084 01       		.uleb128 0x1
  373 0085 13       		.uleb128 0x13
  374 0086 00       		.byte	0
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 11
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 11
 
 
  375 0087 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  429 00c2 0F       		.uleb128 0xf
  430 00c3 35       		.uleb128 0x35
  431 00c4 00       		.byte	0
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 12
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 12
 
 
  432 00c5 49       		.uleb128 0x49
@@ -718,14 +718,14 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  486 0000 00000000 		.4byte	.LFB64
  487 0004 24000000 		.4byte	.LFE64
  488 0008 00000000 		.4byte	0
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 13
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 13
 
 
  489 000c 00000000 		.4byte	0
  490              		.section	.debug_line,"",%progbits
  491              	.Ldebug_line0:
- 492 0000 C0010000 		.section	.debug_str,"MS",%progbits,1
- 492      0200A701 
+ 492 0000 AB010000 		.section	.debug_str,"MS",%progbits,1
+ 492      02009201 
  492      00000201 
  492      FB0E0D00 
  492      01010101 
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  509              	.LASF18:
  510 00e8 55415254 		.ascii	"UART_1_PutString\000"
  510      5F315F50 
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 14
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 14
 
 
  510      75745374 
@@ -798,78 +798,78 @@ ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 1
  516      676E6564 
  516      20636861 
  516      7200
- 517              	.LASF14:
- 518 0130 63686172 		.ascii	"char\000"
- 518      00
- 519              	.LASF5:
- 520 0135 6C6F6E67 		.ascii	"long int\000"
- 520      20696E74 
- 520      00
- 521              	.LASF6:
- 522 013e 6C6F6E67 		.ascii	"long unsigned int\000"
- 522      20756E73 
- 522      69676E65 
- 522      6420696E 
- 522      7400
- 523              	.LASF13:
- 524 0150 646F7562 		.ascii	"double\000"
- 524      6C6500
- 525              	.LASF24:
- 526 0157 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 526      52784275 
- 526      66666572 
- 526      00
- 527              	.LASF1:
- 528 0164 7369676E 		.ascii	"signed char\000"
- 528      65642063 
- 528      68617200 
- 529              	.LASF15:
- 530 0170 6C6F6E67 		.ascii	"long double\000"
- 530      20646F75 
- 530      626C6500 
- 531              	.LASF10:
- 532 017c 5F5F696E 		.ascii	"__int32_t\000"
- 532      7433325F 
- 532      7400
- 533              	.LASF21:
- 534 0186 433A5C55 		.ascii	"C:\\Users\\tobia\\Downloads\\ProyectoPDS solo matla"
- 534      73657273 
- 534      5C746F62 
- 534      69615C44 
- 534      6F776E6C 
- 535 01b5 622D3230 		.ascii	"b-20251102T203416Z-1-001\\ProyectoPDS solo matlab-2"
-ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccOeT4zI.s 			page 15
+ 517              	.LASF21:
+ 518 0130 443A5C44 		.ascii	"D:\\Documentos\\GitHub\\Afinador-Guitarra-PsoC-5LP\\"
+ 518      6F63756D 
+ 518      656E746F 
+ 518      735C4769 
+ 518      74487562 
+ 519 0160 50726F79 		.ascii	"ProyectoPDS\\ProyectoPds_V1\\ProyectoPDS solo matla"
+ 519      6563746F 
+ 519      5044535C 
+ 519      50726F79 
+ 519      6563746F 
+ 520 0191 622D3230 		.ascii	"b-20251102T203416Z-1-001\\ProyectoPDS solo matlab\\"
+ 520      32353131 
+ 520      30325432 
+ 520      30333431 
+ 520      365A2D31 
+ 521 01c2 6C616235 		.ascii	"lab5-fiuna-filtros_sencillos\\Design01.cydsn\000"
+ 521      2D666975 
+ 521      6E612D66 
+ 521      696C7472 
+ 521      6F735F73 
+ 522              	.LASF5:
+ 523 01ee 6C6F6E67 		.ascii	"long int\000"
+ 523      20696E74 
+ 523      00
+ 524              	.LASF6:
+ 525 01f7 6C6F6E67 		.ascii	"long unsigned int\000"
+ 525      20756E73 
+ 525      69676E65 
+ 525      6420696E 
+ 525      7400
+ 526              	.LASF13:
+ 527 0209 646F7562 		.ascii	"double\000"
+ 527      6C6500
+ 528              	.LASF16:
+ 529 0210 73697A65 		.ascii	"sizetype\000"
+ 529      74797065 
+ 529      00
+ 530              	.LASF24:
+ 531 0219 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\cclU4vyg.s 			page 15
 
 
- 535      32353131 
- 535      30325432 
- 535      30333431 
- 535      365A2D31 
- 536 01e7 30323531 		.ascii	"0251102T203416Z-1-001\\ProyectoPDS solo matlab\\lab"
- 536      31303254 
- 536      32303334 
- 536      31365A2D 
- 536      312D3030 
- 537 0218 352D6669 		.ascii	"5-fiuna-filtros_sencillos\\Design01.cydsn\000"
- 537      756E612D 
- 537      66696C74 
- 537      726F735F 
- 537      73656E63 
+ 531      52784275 
+ 531      66666572 
+ 531      00
+ 532              	.LASF1:
+ 533 0226 7369676E 		.ascii	"signed char\000"
+ 533      65642063 
+ 533      68617200 
+ 534              	.LASF15:
+ 535 0232 6C6F6E67 		.ascii	"long double\000"
+ 535      20646F75 
+ 535      626C6500 
+ 536              	.LASF10:
+ 537 023e 5F5F696E 		.ascii	"__int32_t\000"
+ 537      7433325F 
+ 537      7400
  538              	.LASF0:
- 539 0241 666C6F61 		.ascii	"float\000"
+ 539 0248 666C6F61 		.ascii	"float\000"
  539      7400
  540              	.LASF3:
- 541 0247 73686F72 		.ascii	"short int\000"
+ 541 024e 73686F72 		.ascii	"short int\000"
  541      7420696E 
  541      7400
  542              	.LASF11:
- 543 0251 696E7433 		.ascii	"int32_t\000"
+ 543 0258 696E7433 		.ascii	"int32_t\000"
  543      325F7400 
- 544              	.LASF16:
- 545 0259 73697A65 		.ascii	"sizetype\000"
- 545      74797065 
+ 544              	.LASF14:
+ 545 0260 63686172 		.ascii	"char\000"
  545      00
  546              	.LASF23:
- 547 0262 61627566 		.ascii	"abuff\000"
+ 547 0265 61627566 		.ascii	"abuff\000"
  547      6600
  548              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

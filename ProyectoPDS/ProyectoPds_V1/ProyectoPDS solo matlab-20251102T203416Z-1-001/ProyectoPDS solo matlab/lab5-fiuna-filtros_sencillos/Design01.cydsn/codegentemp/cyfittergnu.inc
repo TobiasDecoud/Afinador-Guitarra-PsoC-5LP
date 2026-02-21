@@ -312,6 +312,9 @@
 .set isr_dma_done__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 .set isr_dma_done__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
 
+/* CtrlReg_Filtro_Out */
+.set CtrlReg_Filtro_Out_Sync_ctrl_reg__REMOVED, 1
+
 /* Miscellaneous */
 .set BCLK__BUS_CLK__HZ, 70000000
 .set BCLK__BUS_CLK__KHZ, 70000

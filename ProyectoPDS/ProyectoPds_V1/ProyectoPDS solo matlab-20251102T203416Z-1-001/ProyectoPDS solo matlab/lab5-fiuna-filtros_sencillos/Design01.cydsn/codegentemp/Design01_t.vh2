@@ -1,5 +1,5 @@
--- Project:   C:\Users\tobia\Downloads\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj
--- Generated: 11/05/2025 16:18:05
+-- Project:   D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPds_V1\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj
+-- Generated: 02/21/2026 16:58:14
 -- PSoC Creator  4.4
 
 ENTITY Design01 IS
@@ -153,6 +153,7 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE Location OF \Filter_1:DFB\ : LABEL IS "F(DFB,0)";
     ATTRIBUTE lib_model OF DMA_Out : LABEL IS "drqcell2";
     ATTRIBUTE Location OF DMA_Out : LABEL IS "[DrqContainer=(0)][DrqId=(0)]";
+    ATTRIBUTE Location OF Rx_1(0)_SYNC : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:txn\ : LABEL IS "macrocell8";
     ATTRIBUTE Location OF \UART_1:BUART:txn\ : LABEL IS "U(1,0)";
     ATTRIBUTE lib_model OF \UART_1:BUART:tx_state_1\ : LABEL IS "macrocell9";
@@ -179,7 +180,6 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE Location OF \UART_1:BUART:rx_state_stop1_reg\ : LABEL IS "U(1,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_status_3\ : LABEL IS "macrocell20";
     ATTRIBUTE Location OF \UART_1:BUART:rx_status_3\ : LABEL IS "U(0,1)";
-    ATTRIBUTE Location OF Rx_1(0)_SYNC : LABEL IS "U(0,1)";
     ATTRIBUTE lib_model OF \UART_1:BUART:rx_last\ : LABEL IS "macrocell21";
     ATTRIBUTE Location OF \UART_1:BUART:rx_last\ : LABEL IS "U(0,1)";
     COMPONENT clockblockcell
@@ -1096,6 +1096,15 @@ BEGIN
             termout => Net_53,
             clock => ClockBlock_BUS_CLK);
 
+    Rx_1(0)_SYNC:synccell
+        GENERIC MAP(
+            clk_inv => '0',
+            clken_mode => 1)
+        PORT MAP(
+            in => Net_28,
+            out => Net_28_SYNCOUT,
+            clock => ClockBlock_BUS_CLK);
+
     \UART_1:BUART:txn\:macrocell
         GENERIC MAP(
             eqn_main => "(main_0 * main_1 * !main_6) + (main_0 * main_4) + (!main_1 * main_2 * !main_3 * !main_4) + (!main_1 * main_2 * !main_4 * !main_6) + (main_1 * !main_2 * !main_3 * !main_4 * !main_5 * main_6)",
@@ -1302,15 +1311,6 @@ BEGIN
             main_3 => \UART_1:BUART:rx_state_3\,
             main_4 => \UART_1:BUART:rx_state_2\,
             main_5 => Net_28_SYNCOUT);
-
-    Rx_1(0)_SYNC:synccell
-        GENERIC MAP(
-            clk_inv => '0',
-            clken_mode => 1)
-        PORT MAP(
-            in => Net_28,
-            out => Net_28_SYNCOUT,
-            clock => ClockBlock_BUS_CLK);
 
     \UART_1:BUART:rx_last\:macrocell
         GENERIC MAP(
