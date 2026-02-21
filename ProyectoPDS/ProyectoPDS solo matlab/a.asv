@@ -1,0 +1,108 @@
+%% Limpieza
+clear all
+close all
+clc
+
+%% 1. Carga y Preprocesamiento de Audio
+nombre_archivo = '1ra_MI_330.w'; % <--- REEMPLAZA ESTO CON TU ARCHIVO
+
+try
+    [y_raw, fs_original] = audioread(nombre_archivo);
+catch
+    error('No se encontró el archivo. Asegúrate de que el nombre sea correcto o esté en la carpeta.');
+end
+
+% Convertir a mono si es estéreo
+if size(y_raw, 2) > 1
+    y_raw = mean(y_raw, 2);
+end
+
+% Remuestrear a 2000 Hz (Solicitado por usuario)
+fs = 2000; 
+y = resample(y_raw, fs, fs_original);
+
+%% 2. Filtrado Pasa Banda (330 Hz, BW = 20 Hz)
+fc = 330;             % Frecuencia central
+bw = 20;              % Ancho de banda
+f_low  = fc - bw/2;   % 320 Hz
+f_high = fc + bw/2;   % 340 Hz
+
+% Diseño del filtro Butterworth (Orden 4)
+% Normalizamos frecuencias respecto a fs/2 (Nyquist)
+orden = 4;
+wn = [f_low f_high] / (fs/2); 
+[b, a] = butter(orden, wn, 'bandpass');
+
+% Aplicar filtro (filtfilt corrige el desfase)
+y = filtfilt(b, a, y);
+
+%% 3. Definición del Vector de Tiempo
+N = length(y);       % Número de puntos basado en el audio
+t = (0:N-1)/fs;      % Vector de tiempo real
+
+%% 4. Detección de Cruces por Cero (Tu lógica original)
+cruces_por_cero_indices = find(sign(y(1:end-1)) .* sign(y(2:end)) < 0) + 1;
+
+senal_cruces = zeros(size(y));
+% En los índices donde ocurre un cruce, establecer el valor a 1.
+senal_cruces(cruces_por_cero_indices) = 1;
+
+%% 5. Gráfica de Ambas Señales
+figure();
+
+% Graficar la señal filtrada
+% Nota: Si el audio es muy largo, se verá muy denso. Usa la lupa para acercar.
+plot(t, y, 'b-', 'LineWidth', 1);
+
+hold on;
+
+% Graficar la señal de cruces
+% Multiplicamos por el máximo de y para que las lineas rojas sean visibles
+scale_factor = max(abs(y)); 
+if scale_factor == 0, scale_factor = 1; end
+stem(t, senal_cruces * scale_factor, 'r', 'Marker', 'none', 'LineWidth', 1.5);
+
+titulo_str = sprintf('Señal Filtrada (330Hz) y Cruces (fs = %d Hz)', fs);
+title(titulo_str);
+xlabel('Tiempo (s)');
+ylabel('Amplitud');
+grid on;
+legend('Señal Filtrada', 'Cruce por Cero');
+% Ajustamos los límites un poco más grandes que la señal
+ylim([-scale_factor*1.2, scale_factor*1.2]); 
+hold off; 
+
+%% 6. Cálculos de Frecuencia
+indices_picos = find(senal_cruces);
+
+% Obtener los valores de tiempo correspondientes a esos picos
+tiempos_picos = t(indices_picos);
+
+% Calcular la diferencia de tiempo entre cada pico consecutivo
+intervalos_tiempo = diff(tiempos_picos);
+
+% Calcular el promedio de estos intervalos
+% Multiplicamos por 2 porque un ciclo completo tiene 2 cruces (subida y bajada)
+promedio_intervalo = mean(intervalos_tiempo) * 2;
+
+%% Mostrar los resultados en la ventana de comandos
+fprintf('\n--- Análisis de Cruces por Cero ---\n');
+fprintf('Archivo analizado: %s\n', nombre_archivo);
+fprintf('Número de cruces por cero detectados: %d\n', length(indices_picos));
+
+if isnan(promedio_intervalo) || isempty(intervalos_tiempo)
+    fprintf('No se detectaron suficientes cruces para calcular la frecuencia.\n');
+else
+    frecuencia_estimada = 1/promedio_intervalo;
+    fprintf('El tiempo promedio entre cruces es: %.6f segundos\n', mean(intervalos_tiempo));
+    fprintf('Periodo estimado (T): %.6f segundos\n', promedio_intervalo);
+    fprintf('La frecuencia estimada es: %.4f Hz\n', frecuencia_estimada);
+    
+    % Validación rápida
+    fprintf('\n--- Validación ---\n');
+    if frecuencia_estimada >= 320 && frecuencia_estimada <= 340
+        fprintf('RESULTADO: ÉXITO. La frecuencia detectada está dentro del filtro (320-340 Hz).\n');
+    else
+        fprintf('RESULTADO: ATENCIÓN. La frecuencia detectada está fuera del rango esperado.\n(Posiblemente ruido o silencio en el audio).\n');
+    end
+end

@@ -1,0 +1,10 @@
+f = 30; % Frecuencia del coseno (Hz)
+fs = 100; % Frecuencia de muestreo (Hz)
+t = 0:1/fs:(1-1/fs); % Vector de tiempo (100 puntos)
+
+x = sin(2*pi*f*t) + 2*cos(2*pi*20*t);
+
+x = 5 + sin(2*pi*f*t);
+
+figure(1);
+plot(t,x)

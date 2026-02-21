@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lab5-fiuna-filtros_sencillos\Design01\TopDesign">
+<ExpandedNodeIds>
+<v>lab5-fiuna-filtros_sencillos</v>
+<v>lab5-fiuna-filtros_sencillos\Design01</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\TopDesign</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Pins</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Analog</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Clocks</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Interrupts</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\DMA</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\System</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Directives</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Flash Security</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\EEPROM</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Header Files</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Header Files\cyapicallbacks.h</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\coeficientes.c</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\coeficientes.h</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\main.c</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\Filter_1</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>lab5-fiuna-filtros_sencillos</v>
+<v>lab5-fiuna-filtros_sencillos\Design01</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\TopDesign</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Pins</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Analog</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Clocks</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Interrupts</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\DMA</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\System</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Directives</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\Flash Security</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.cydwr\EEPROM</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Header Files</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Header Files\cyapicallbacks.h</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\coeficientes.c</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\coeficientes.h</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\configuracion.h</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\gestion_hardware.c</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\gestion_hardware.h</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\lcd_i2c.c</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\lcd_i2c.h</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\main.c</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\procesamiento.c</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Source Files\procesamiento.h</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\ADC_DelSig_1</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\ADC_DelSig_1_AMux</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\ADC_DelSig_1_Ext_CP_Clk</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\ADC_DelSig_1_IRQ</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\ADC_DelSig_1_theACLK</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\BIT1</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\BIT2</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\BIT3</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\BUS_CLK_Ref</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\CtrlReg_Filtro_Out</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Generated_Source\PSoC5\cy_boot</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>lab5-fiuna-filtros_sencillos</v>
+<v>lab5-fiuna-filtros_sencillos\Design01</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\TopDesign</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\TopDesign\TopDesign.cysch</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\TopDesign\TopDesign_01.cymacro</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>lab5-fiuna-filtros_sencillos</v>
+<v>lab5-fiuna-filtros_sencillos\Design01</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\TopDesign</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\TopDesign\TopDesign.cysch</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\TopDesign\TopDesign_01.cymacro</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>lab5-fiuna-filtros_sencillos</v>
+<v>lab5-fiuna-filtros_sencillos\Design01</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BIT1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BIT2.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BIT3.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BUS_CLK_Ref.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\coeficientes.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CtrlReg_Filtro_Out.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CtrlReg_Filtro_Out_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_a_Comp_dma.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_In_dma.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_Out_dma.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1_Coefficients.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1_PVT.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1_RAM_Data.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\gestion_hardware.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_BOOT.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_INT.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_MASTER.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_SLAVE.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_dma_done.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\lcd_i2c.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Filtro1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Filtro1_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Filtro2.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Filtro2_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Vref.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\OpAmp_Vref_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\PGA_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\PGA_1_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Entrada_F1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Entrada_F2.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Salida_F1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Salida_F2.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_Salida_PGA.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_TierraVirtual.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\procesamiento.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SCL_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SDA_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Status_Reg_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Design01.elf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Design01.hex</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Design01.map</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.gpdsc</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01.rpt</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Design01_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>lab5-fiuna-filtros_sencillos</v>
+<v>lab5-fiuna-filtros_sencillos\Design01</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_AMux.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_Ext_CP_Clk.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_INT.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_IRQ.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_DelSig_1_theACLK.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BIT1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BIT2.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BIT3.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\BUS_CLK_Ref.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\coeficientes.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CtrlReg_Filtro_Out.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CtrlReg_Filtro_Out_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_a_Comp_dma.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_In_dma.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\DMA_Out_dma.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1_Coefficients.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1_PM.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1_PVT.lst</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Filter_1_RAM_Data.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>lab5-fiuna-filtros_sencillos</v>
+<v>lab5-fiuna-filtros_sencillos\Design01</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\PSoC 5LP Architecture TRM</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CY8C58LP Family Datasheet</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\System Reference Guides</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\System Reference Guides\cy_boot_v6_10</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\ADC_DelSig_v3_30.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_clock_v2_20.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_dma_v1_70</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_dma_v1_70\cy_dma_v1_70.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_isr_v1_71.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_pins_v2_20</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_UDB_clockenable_v1_0.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_vref_v1_70.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CyControlReg_v1_80.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cydff_v1_30.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CyStatusReg_v1_90.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Filter_v2_30.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\I2C_v3_50.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\OpAmp_v1_90</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\OpAmp_v1_90\OpAmp_v1_90.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\PGA_v2_0.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\xor_v1_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>lab5-fiuna-filtros_sencillos</v>
+<v>lab5-fiuna-filtros_sencillos\Design01</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\PSoC 5LP Architecture TRM</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CY8C58LP Family Datasheet</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\System Reference Guides</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\System Reference Guides\cy_boot_v6_10</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\ADC_DelSig_v3_30.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_clock_v2_20.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_dma_v1_70</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_dma_v1_70\cy_dma_v1_70.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_isr_v1_71.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_pins_v2_20</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_UDB_clockenable_v1_0.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cy_vref_v1_70.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CyControlReg_v1_80.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\cydff_v1_30.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\CyStatusReg_v1_90.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\Filter_v2_30.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\I2C_v3_50.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\OpAmp_v1_90</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\OpAmp_v1_90\OpAmp_v1_90.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\PGA_v2_0.pdf</v>
+<v>lab5-fiuna-filtros_sencillos\Design01\xor_v1_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\Design01.cydsn\main.c" />
+<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="866, 535" SelectedTabbedMdiWindow="6d037b33-dd7f-4764-a83b-f57908e5dc17"><DocumentWindow Key="F:\ProyectoPDS\ProyectoPDS_V11\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\main.c" Guid="275cc5a3-58b8-446b-8cd1-18782f551584" /><DocumentWindow Key="F:\ProyectoPDS\ProyectoPDS_V11\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="6d037b33-dd7f-4764-a83b-f57908e5dc17" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
