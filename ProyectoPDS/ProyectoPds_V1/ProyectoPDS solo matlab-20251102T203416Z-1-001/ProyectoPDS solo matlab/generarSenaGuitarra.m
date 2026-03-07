@@ -16,7 +16,7 @@ function x = generarSenaGuitarra(f_fundamental, snr_db)
         snr_db = 25;
     end
 
-    Fs = 1000;              % Frecuencia de muestreo del sistema.
+    Fs = 2000;              % Frecuencia de muestreo del sistema.
     N = 1000;               % Número de puntos del buffer.
     f_limite = 1000;        % <-- CAMBIO CRÍTICO: Límite de frecuencia estricto.
     

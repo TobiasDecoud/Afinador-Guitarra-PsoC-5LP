@@ -14,6 +14,23 @@ freq_no_pasa = 160;
 x_original = 0.5*sin(2*pi*freq_pasa*t) + 0.7*sin(2*pi*freq_no_pasa*t);
 x = x_original / 1.5; 
 
+
+
+%%
+Fs    = 2000;  
+archivo_flac = '465490__timidity__savarez-esaite.flac';
+[audio_orig, Fs_orig] = audioread(archivo_flac);
+
+% Si es estéreo, tomar solo un canal
+if size(audio_orig, 2) > 1
+    audio_orig = audio_orig(:, 1);
+end
+
+%% --- Resamplear a Fs=2000 ---
+audio_rs = resample(audio_orig, Fs, Fs_orig);
+x = audio_rs(1000:1999)
+
+%%
 %x = 0.8*sin(2*pi*freq_pasa*t);
 
 %x = 1+ 0.9*sin(2*pi*freq_pasa*t) ;
