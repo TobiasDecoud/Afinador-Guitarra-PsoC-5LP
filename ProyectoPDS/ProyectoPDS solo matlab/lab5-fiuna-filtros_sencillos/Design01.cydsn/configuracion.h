@@ -8,11 +8,11 @@
 #define Kcal            0.99688f
 
     
-#define UMBRAL_RUIDO    3900  
+#define UMBRAL_RUIDO    0  
 #define OFFSET_DC     32768 
     
 // #define OFFSET_DC  32768
 // #define UMBRAL_RUIDO    3900    
-    
+    // #define UMBRAL_RUIDO    6500  
     
 #endif

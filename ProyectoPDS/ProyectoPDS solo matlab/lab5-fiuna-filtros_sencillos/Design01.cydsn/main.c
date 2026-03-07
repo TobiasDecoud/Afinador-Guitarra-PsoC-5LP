@@ -73,7 +73,7 @@ int main(void)
         // Si hay cambio en los botones
         if (sw_lectura != sw_estado_ant)
         {
-            CyDelay(20); // Debounce simple
+            CyDelay(50); // Debounce simple
             
             // Selección de Cuerda y Carga de Coeficientes del Filtro
             switch (sw_lectura)
@@ -140,9 +140,13 @@ int main(void)
                 
                 // LOGICA DE FILTRADO (ZONA MUERTA)
                 // Calculamos la diferencia absoluta respecto al centro (2.5V)
-                uint16 diferencia = lectura_adc - OFFSET_DC;
                 
-                if(abs((int)diferencia) < UMBRAL_RUIDO)
+                uint16 diferencia = abs(lectura_adc - OFFSET_DC);
+                
+ 
+                
+                
+                if(diferencia < UMBRAL_RUIDO)
                 {
                     // Si la amplitud es menor a 0.0125V, forzamos al centro.
                     // Así eliminamos la señal pequeña y dejamos una linea plana limpia.
@@ -151,7 +155,10 @@ int main(void)
                 // Si es mayor, dejamos pasar el valor original (lectura_adc se mantiene)
 
                 // Guardar en el buffer casteado a float
-                y_entrada[i] = (float)lectura_adc;
+                y_entrada[i] = (int)lectura_adc;
+                
+               
+   
 
             }
 
@@ -204,7 +211,7 @@ void Actualizar_LCD_Resultado(float freq_medida, float freq_target, int num_cuer
             LCD_Print("<< AFLOJAR (-)  ");
         } else {
             LCD_Print("** AFINADO **   ");
-            CyDelay(1000);
+            CyDelay(50);
         }
 
     } else {
