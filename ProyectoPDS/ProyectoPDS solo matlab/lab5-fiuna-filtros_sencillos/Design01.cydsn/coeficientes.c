@@ -1,7 +1,6 @@
 #include "coeficientes.h"
 
-const uint8 CYCODE COEFFS_82_4[Filter_Size] = {
- /* Coefficients of Section 0 */
+const uint8 CYCODE COEFFS_82_4[Filter_1_FIR_A_SIZE] = {
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(0), 0 */
 
  0x75u, 0xFFu, 0xFFu, 0x00u, /* Tap(1), -1.65700912475586E-05 */
@@ -163,9 +162,8 @@ const uint8 CYCODE COEFFS_82_4[Filter_Size] = {
  0x75u, 0xFFu, 0xFFu, 0x00u, /* Tap(79), -1.65700912475586E-05 */
 
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
-
 };
-const uint8 CYCODE COEFFS_110[Filter_Size] = {
+const uint8 CYCODE COEFFS_110[Filter_1_FIR_A_SIZE] = {
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(0), 0 */
 
  0x6Du, 0x00u, 0x00u, 0x00u, /* Tap(1), 1.29938125610352E-05 */
@@ -329,7 +327,7 @@ const uint8 CYCODE COEFFS_110[Filter_Size] = {
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
 
 };
-const uint8 CYCODE COEFFS_146_83[Filter_Size] = {
+const uint8 CYCODE COEFFS_146_83[Filter_1_FIR_A_SIZE] = {
  /* Coefficients of Section 0 */
   0x00u, 0x00u, 0x00u, 0x00u, /* Tap(0), 0 */
 
@@ -494,7 +492,7 @@ const uint8 CYCODE COEFFS_146_83[Filter_Size] = {
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
 
 };
-const uint8 CYCODE COEFFS_196[Filter_Size] = {
+const uint8 CYCODE COEFFS_196[Filter_1_FIR_A_SIZE] = {
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(0), 0 */
 
  0x4Eu, 0x00u, 0x00u, 0x00u, /* Tap(1), 9.29832458496094E-06 */
@@ -658,7 +656,7 @@ const uint8 CYCODE COEFFS_196[Filter_Size] = {
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
 
 };
-const uint8 CYCODE COEFFS_246_94[Filter_Size] = {
+const uint8 CYCODE COEFFS_246_94[Filter_1_FIR_A_SIZE] = {
  /* Coefficients of Section 0 */
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(0), 0 */
 
@@ -823,7 +821,7 @@ const uint8 CYCODE COEFFS_246_94[Filter_Size] = {
  0x00u, 0x00u, 0x00u, 0x00u, /* Tap(80), 0 */
 
 };
-const uint8 CYCODE COEFFS_330[Filter_Size] = {
+const uint8 CYCODE COEFFS_330[Filter_1_FIR_A_SIZE] = {
   0x00u, 0x00u, 0x00u, 0x00u, /* Tap(0), 0 */
 
  0x60u, 0xFFu, 0xFFu, 0x00u, /* Tap(1), -1.9073486328125E-05 */

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
   49 000a 06E0     		b	.L2
   50              	.LVL2:
   51              	.L3:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 2
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 2
 
 
   52              	.LBB3:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
   93              		@ args = 0, pretend = 0, frame = 32
   94              		@ frame_needed = 0, uses_anonymous_args = 0
   95              	.LVL5:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 3
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 3
 
 
   96 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  141 003c DDE90201 		ldrd	r0, [sp, #8]
  142 0040 FFF7FEFF 		bl	__aeabi_dadd
  143              	.LVL9:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 4
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 4
 
 
  144 0044 CDE90201 		strd	r0, [sp, #8]
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  194              	.L7:
   22:procesamiento.c ****         if (datos[i] & 0x01) { // Si hay pulso (LSB = 1)
  195              		.loc 1 22 0 discriminator 2
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 5
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 5
 
 
  196 009c 0134     		adds	r4, r4, #1
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  242              	.LVL33:
  243 00e8 0446     		mov	r4, r0
  244              	.LVL34:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 6
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 6
 
 
  245 00ea 0D46     		mov	r5, r1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  293              	.L12:
  294              	.LBE7:
  295              	.LBE6:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 7
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 7
 
 
   20:procesamiento.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  344 0026 01       		.byte	0x1
  345 0027 06       		.byte	0x6
  346 0028 98020000 		.4byte	.LASF0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 8
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 8
 
 
  347 002c 03       		.uleb128 0x3
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  401 0092 18       		.byte	0x18
  402 0093 2C000000 		.4byte	0x2c
  403 0097 03       		.uleb128 0x3
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 9
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 9
 
 
  404 0098 0B020000 		.4byte	.LASF13
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  458 010b 07       		.uleb128 0x7
  459 010c 69020000 		.4byte	.LASF23
  460 0110 01       		.byte	0x1
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 10
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 10
 
 
  461 0111 05       		.byte	0x5
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  515 0193 07       		.uleb128 0x7
  516 0194 B3000000 		.4byte	.LASF24
  517 0198 01       		.byte	0x1
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 11
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 11
 
 
  518 0199 11       		.byte	0x11
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  572 0221 01       		.byte	0x1
  573 0222 21       		.byte	0x21
  574 0223 C0000000 		.4byte	0xc0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 12
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 12
 
 
  575 0227 97020000 		.4byte	.LLST14
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  629 000e 01       		.uleb128 0x1
  630 000f 10       		.uleb128 0x10
  631 0010 17       		.uleb128 0x17
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 13
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 13
 
 
  632 0011 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  686 0047 19       		.uleb128 0x19
  687 0048 03       		.uleb128 0x3
  688 0049 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 14
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 14
 
 
  689 004a 3A       		.uleb128 0x3a
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  743 0081 17       		.uleb128 0x17
  744 0082 00       		.byte	0
  745 0083 00       		.byte	0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 15
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 15
 
 
  746 0084 0A       		.uleb128 0xa
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  800 00bb 01       		.uleb128 0x1
  801 00bc 13       		.uleb128 0x13
  802 00bd 00       		.byte	0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 16
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 16
 
 
  803 00be 00       		.byte	0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  857 002d 20000000 		.4byte	.LFE63
  858 0031 0100     		.2byte	0x1
  859 0033 56       		.byte	0x56
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 17
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 17
 
 
  860 0034 00000000 		.4byte	0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  914 00c2 51       		.byte	0x51
  915 00c3 24000000 		.4byte	.LVL7
  916 00c7 58010000 		.4byte	.LFE64
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 18
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 18
 
 
  917 00cb 0400     		.2byte	0x4
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  971 0149 62000000 		.4byte	.LVL14
  972 014d 68000000 		.4byte	.LVL15
  973 0151 0600     		.2byte	0x6
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 19
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 19
 
 
  974 0153 50       		.byte	0x50
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  1028 01cd 24000000 		.4byte	.LVL7
  1029 01d1 0A00     		.2byte	0xa
  1030 01d3 9E       		.byte	0x9e
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 20
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 20
 
 
  1031 01d4 08       		.uleb128 0x8
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  1085 0255 04       		.uleb128 0x4
  1086 0256 00000000 		.4byte	0
  1087 025a 48010000 		.4byte	.LVL48
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 21
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 21
 
 
  1088 025e 58010000 		.4byte	.LFE64
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  1142              	.LLST16:
  1143 02d7 08010000 		.4byte	.LVL37
  1144 02db 24010000 		.4byte	.LVL41
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 22
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 22
 
 
  1145 02df 0600     		.2byte	0x6
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  1199 0014 00000000 		.4byte	0
  1200 0018 00000000 		.4byte	.LFB63
  1201 001c 20000000 		.4byte	.LFE63
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 23
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 23
 
 
  1202 0020 00000000 		.4byte	.LFB64
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  1228      352E342E 
  1228      31203230 
  1228      31363036 
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 24
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 24
 
 
  1229 00eb 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  1250      6E743332 
  1250      5F7400
  1251              	.LASF15:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 25
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 25
 
 
  1252 01c6 75696E74 		.ascii	"uint16\000"
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 1
  1280 025f 73686F72 		.ascii	"short int\000"
  1280      7420696E 
  1280      7400
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccj7gJlf.s 			page 26
+ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccogg0Ej.s 			page 26
 
 
  1281              	.LASF23:
