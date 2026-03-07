@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="lab5-fiuna-filtros_sencillos\Design01\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>lab5-fiuna-filtros_sencillos</v>
 <v>lab5-fiuna-filtros_sencillos\Design01</v>
@@ -308,6 +308,8 @@
 <OpenDocs>
 <name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Design01.cydsn\Design01.cydwr" />
+<name v=".\Design01.cydsn\coeficientes.c" />
+<name v=".\Design01.cydsn\configuracion.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -315,7 +317,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1242, 692" SelectedTabbedMdiWindow="a5c0dd98-828e-4f32-97f9-7b2c3cba86db"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="299985b9-5d5f-4b13-a4ea-3b8d806eb3cc" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="a5c0dd98-828e-4f32-97f9-7b2c3cba86db" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cydwr" Guid="7cda1b93-d65c-46ab-8c95-b9cf02bb299d" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1242, 692" SelectedTabbedMdiWindow="a5c0dd98-828e-4f32-97f9-7b2c3cba86db"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="299985b9-5d5f-4b13-a4ea-3b8d806eb3cc" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="a5c0dd98-828e-4f32-97f9-7b2c3cba86db" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cydwr" Guid="7cda1b93-d65c-46ab-8c95-b9cf02bb299d" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\coeficientes.c" Guid="8cb8ba88-95e0-4187-9d5c-3559e3ad876c" /><DocumentWindow Key="D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\configuracion.h" Guid="b5dd74c9-829c-4a42-8115-d60560345d1e" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
