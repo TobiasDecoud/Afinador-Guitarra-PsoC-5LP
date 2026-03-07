@@ -1,7 +1,7 @@
-D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPds_V1\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj|6e3ad6d4-52bf-4fc3-af99-218f1fd400c1
-D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPds_V1\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\SerialPlot_lib\SerialPlot_lib.cylib\SerialPlot_lib.cyprj|de6e0d63-2f3a-4a78-a1f4-821135299f16
-E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|8cc792b2-3f13-4c16-99b9-f7c82c1aecda
-D:\Documentos\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|e38bab0f-c8af-4455-b4b8-241e2a9c7617
-E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|4ae761c7-80f9-4e49-b9c0-0423086369c2
-E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|9e35d7f7-ce89-44fc-9f43-c8e592a9bbaf
-E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|75c2336c-9ca8-4fa7-9115-747ac0fa3fe5
+D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPds_V1\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj|d1a2b434-ccab-4fdd-9081-757cccd49725
+D:\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPds_V1\ProyectoPDS solo matlab-20251102T203416Z-1-001\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\SerialPlot_lib\SerialPlot_lib.cylib\SerialPlot_lib.cyprj|4d34532f-639e-4fca-a5db-e325ccffea32
+E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|4ca875da-f97f-4104-b461-3f09640fe005
+D:\Documentos\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|31ed09f7-47e9-4eb5-975f-5195d25b6fa2
+E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|f07d7f7e-ce24-4027-a73e-8da09e09f8ff
+E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|cd8e78e2-2f46-4d0a-9b43-b54ece803e42
+E:\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|068cd648-345c-4210-965a-48ed8683aaba
