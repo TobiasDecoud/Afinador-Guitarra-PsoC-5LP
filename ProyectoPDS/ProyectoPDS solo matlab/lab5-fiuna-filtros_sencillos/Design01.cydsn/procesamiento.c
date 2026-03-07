@@ -2,6 +2,8 @@
 #include <string.h> // Para memcpy
 
 
+
+
 void convertToQ32(const float* input, uint32_t* output, size_t size) {
     for (size_t i = 0; i < size; i++) {
         // Opción A: Si input viene del ADC (ej. 15000.0)
@@ -18,7 +20,7 @@ float Calcular_Frecuencia_Regresion(const uint8_t* datos, uint16 size) {
     double sum_x = 0, sum_y = 0, sum_xy = 0, sum_xx = 0;
     int pulse_count = 0;
     float frecuencia = 0.0f;
-
+   
     for(int i = 0; i < size; i++) {
         if (datos[i] & 0x01) { // Si hay pulso (LSB = 1)
             sum_x += pulse_count;
