@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
   20:main.c        **** int cuerda_actual = 0; // 0 = Ninguna cuerda seleccionada (Idle)
   21:main.c        **** float freq_objetivo = 0.0f;
   22:main.c        **** float freq_calculada = 0.0f;
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 2
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 2
 
 
   23:main.c        **** char buffer_LCD[20];
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
   77:main.c        ****             
   78:main.c        ****             // Selección de Cuerda y Carga de Coeficientes del Filtro
   79:main.c        ****             switch (sw_lectura)
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 3
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 3
 
 
   80:main.c        ****             {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  134:main.c        ****                 
  135:main.c        ****                 ADC_DelSig_1_IsEndConversion(ADC_DelSig_1_WAIT_FOR_RESULT);
  136:main.c        ****     
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 4
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 4
 
 
  137:main.c        ****                 // Leer resultado (int16 o uint16 dependiendo de config)
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
   40              	.LVL0:
   41 0000 F0B5     		push	{r4, r5, r6, r7, lr}
   42              		.cfi_def_cfa_offset 20
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 5
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 5
 
 
   43              		.cfi_offset 4, -20
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
   87              		.loc 1 196 0
   88 0040 3146     		mov	r1, r6
   89 0042 2046     		mov	r0, r4
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 6
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 6
 
 
   90 0044 FFF7FEFF 		bl	__aeabi_fsub
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  212:main.c        ****         sprintf(buffer_LCD, "Cuerda %d (---)", num_cuerda);
  129              		.loc 1 212 0
  130 007c 094C     		ldr	r4, .L16+4
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 7
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 7
 
 
  131              	.LVL18:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  180              	main:
  181              	.LFB64:
   30:main.c        **** {
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 8
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 8
 
 
  182              		.loc 1 30 0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  225              	.LVL34:
   50:main.c        ****     CyGlobalIntEnable;
  226              		.loc 1 50 0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 9
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 9
 
 
  227              		.syntax unified
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  273 0072 44B2     		sxtb	r4, r0
  274 0074 E6B2     		uxtb	r6, r4
  275              	.LVL45:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 10
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 10
 
 
   74:main.c        ****         if (sw_lectura != sw_estado_ant)
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
   88:main.c        ****                     break;
  322              		.loc 1 88 0
  323 00b6 26E0     		b	.L21
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 11
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 11
 
 
  324              	.L25:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  368 00f4 C821     		movs	r1, #200
  369 00f6 3C48     		ldr	r0, .L38+52
  370 00f8 FFF7FEFF 		bl	Hardware_Cargar_Coeficientes
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 12
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 12
 
 
  371              	.LVL52:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  416              		.loc 1 126 0
  417 0138 214B     		ldr	r3, .L38+12
  418 013a 1B68     		ldr	r3, [r3]
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 13
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 13
 
 
  419 013c 002B     		cmp	r3, #0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  464              		.loc 1 160 0 is_stmt 1
  465 0176 4FF48062 		mov	r2, #1024
  466 017a 1F49     		ldr	r1, .L38+68
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 14
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 14
 
 
  467 017c 1F48     		ldr	r0, .L38+72
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  516 01f4 88000000 		.word	.LC8
  517 01f8 00000000 		.word	y_entrada_q32
  518 01fc 08000000 		.word	.LANCHOR0+8
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 15
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 15
 
 
  519 0200 00000000 		.word	dma_transfer_complete
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  549      00
  550 0079 000000   		.space	3
  551              	.LC7:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 16
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 16
 
 
  552 007c 4C697374 		.ascii	"Listo...\000"
@@ -936,13 +936,13 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  575 1008 00000000 		.space	4
  576              		.text
  577              	.Letext0:
- 578              		.file 2 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\inc
- 579              		.file 3 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\inc
+ 578              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+ 579              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  580              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
  581              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
  582              		.file 6 "coeficientes.h"
  583              		.file 7 "gestion_hardware.h"
- 584              		.file 8 "e:\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\inc
+ 584              		.file 8 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  585              		.file 9 "lcd_i2c.h"
  586              		.file 10 "Generated_Source\\PSoC5/CyLib.h"
  587              		.file 11 "Generated_Source\\PSoC5/ADC_DelSig_1.h"
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  597              		.file 21 "procesamiento.h"
  598              		.section	.debug_info,"",%progbits
  599              	.Ldebug_info0:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 17
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 17
 
 
  600 0000 80070000 		.4byte	0x780
@@ -966,10 +966,10 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  602 0006 00000000 		.4byte	.Ldebug_abbrev0
  603 000a 04       		.byte	0x4
  604 000b 01       		.uleb128 0x1
- 605 000c 4C040000 		.4byte	.LASF70
+ 605 000c 57040000 		.4byte	.LASF70
  606 0010 0C       		.byte	0xc
- 607 0011 69030000 		.4byte	.LASF71
- 608 0015 DF020000 		.4byte	.LASF72
+ 607 0011 74030000 		.4byte	.LASF71
+ 608 0015 CF010000 		.4byte	.LASF72
  609 0019 00000000 		.4byte	.Ldebug_ranges0+0
  610 001d 00000000 		.4byte	0
  611 0021 00000000 		.4byte	.Ldebug_line0
@@ -980,7 +980,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  616 002c 02       		.uleb128 0x2
  617 002d 01       		.byte	0x1
  618 002e 06       		.byte	0x6
- 619 002f E2010000 		.4byte	.LASF1
+ 619 002f 6D020000 		.4byte	.LASF1
  620 0033 03       		.uleb128 0x3
  621 0034 66010000 		.4byte	.LASF5
  622 0038 02       		.byte	0x2
@@ -989,7 +989,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  625 003e 02       		.uleb128 0x2
  626 003f 01       		.byte	0x1
  627 0040 08       		.byte	0x8
- 628 0041 B7010000 		.4byte	.LASF2
+ 628 0041 C1010000 		.4byte	.LASF2
  629 0045 02       		.uleb128 0x2
  630 0046 02       		.byte	0x2
  631 0047 05       		.byte	0x5
@@ -997,9 +997,9 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  633 004c 02       		.uleb128 0x2
  634 004d 02       		.byte	0x2
  635 004e 07       		.byte	0x7
- 636 004f 9B020000 		.4byte	.LASF4
+ 636 004f 26030000 		.4byte	.LASF4
  637 0053 03       		.uleb128 0x3
- 638 0054 B9030000 		.4byte	.LASF6
+ 638 0054 C4030000 		.4byte	.LASF6
  639 0058 02       		.byte	0x2
  640 0059 3F       		.byte	0x3f
  641 005a 5E000000 		.4byte	0x5e
@@ -1015,10 +1015,10 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  651 0070 02       		.uleb128 0x2
  652 0071 04       		.byte	0x4
  653 0072 07       		.byte	0x7
- 654 0073 70030000 		.4byte	.LASF9
+ 654 0073 7B030000 		.4byte	.LASF9
  655 0077 02       		.uleb128 0x2
  656 0078 08       		.byte	0x8
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 18
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 18
 
 
  657 0079 05       		.byte	0x5
@@ -1026,7 +1026,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  659 007e 02       		.uleb128 0x2
  660 007f 08       		.byte	0x8
  661 0080 07       		.byte	0x7
- 662 0081 FD010000 		.4byte	.LASF11
+ 662 0081 88020000 		.4byte	.LASF11
  663 0085 04       		.uleb128 0x4
  664 0086 04       		.byte	0x4
  665 0087 05       		.byte	0x5
@@ -1034,19 +1034,19 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  667 008c 02       		.uleb128 0x2
  668 008d 04       		.byte	0x4
  669 008e 07       		.byte	0x7
- 670 008f 1D020000 		.4byte	.LASF12
+ 670 008f A8020000 		.4byte	.LASF12
  671 0093 03       		.uleb128 0x3
  672 0094 A1000000 		.4byte	.LASF13
  673 0098 03       		.byte	0x3
  674 0099 18       		.byte	0x18
  675 009a 33000000 		.4byte	0x33
  676 009e 03       		.uleb128 0x3
- 677 009f 93020000 		.4byte	.LASF14
+ 677 009f 1E030000 		.4byte	.LASF14
  678 00a3 03       		.byte	0x3
  679 00a4 2C       		.byte	0x2c
  680 00a5 53000000 		.4byte	0x53
  681 00a9 03       		.uleb128 0x3
- 682 00aa 14020000 		.4byte	.LASF15
+ 682 00aa 9F020000 		.4byte	.LASF15
  683 00ae 03       		.byte	0x3
  684 00af 30       		.byte	0x30
  685 00b0 65000000 		.4byte	0x65
@@ -1063,26 +1063,26 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  696 00cc 02       		.uleb128 0x2
  697 00cd 08       		.byte	0x8
  698 00ce 04       		.byte	0x4
- 699 00cf 1A040000 		.4byte	.LASF18
+ 699 00cf 25040000 		.4byte	.LASF18
  700 00d3 02       		.uleb128 0x2
  701 00d4 01       		.byte	0x1
  702 00d5 08       		.byte	0x8
- 703 00d6 8E020000 		.4byte	.LASF19
+ 703 00d6 19030000 		.4byte	.LASF19
  704 00da 06       		.uleb128 0x6
  705 00db B4000000 		.4byte	0xb4
  706 00df 02       		.uleb128 0x2
  707 00e0 08       		.byte	0x8
  708 00e1 04       		.byte	0x4
- 709 00e2 96010000 		.4byte	.LASF20
+ 709 00e2 A0010000 		.4byte	.LASF20
  710 00e6 02       		.uleb128 0x2
  711 00e7 04       		.byte	0x4
  712 00e8 07       		.byte	0x7
  713 00e9 73000000 		.4byte	.LASF21
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 19
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 19
 
 
  714 00ed 07       		.uleb128 0x7
- 715 00ee E7030000 		.4byte	.LASF73
+ 715 00ee F2030000 		.4byte	.LASF73
  716 00f2 01       		.byte	0x1
  717 00f3 BA       		.byte	0xba
  718 00f4 00000000 		.4byte	.LFB65
@@ -1091,7 +1091,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  721 00fd 9C       		.byte	0x9c
  722 00fe 6C020000 		.4byte	0x26c
  723 0102 08       		.uleb128 0x8
- 724 0103 0E040000 		.4byte	.LASF22
+ 724 0103 19040000 		.4byte	.LASF22
  725 0107 01       		.byte	0x1
  726 0108 BA       		.byte	0xba
  727 0109 25000000 		.4byte	0x25
@@ -1103,7 +1103,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  733 0118 25000000 		.4byte	0x25
  734 011c 49000000 		.4byte	.LLST1
  735 0120 08       		.uleb128 0x8
- 736 0121 AC010000 		.4byte	.LASF24
+ 736 0121 B6010000 		.4byte	.LASF24
  737 0125 01       		.byte	0x1
  738 0126 BA       		.byte	0xba
  739 0127 85000000 		.4byte	0x85
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  768 0168 01       		.uleb128 0x1
  769 0169 52       		.byte	0x52
  770 016a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 20
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 20
 
 
  771 016b 75       		.byte	0x75
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  825 01d1 DF010000 		.4byte	0x1df
  826 01d5 0C       		.uleb128 0xc
  827 01d6 01       		.uleb128 0x1
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 21
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 21
 
 
  828 01d7 50       		.byte	0x50
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  882 022c 0B       		.uleb128 0xb
  883 022d 8E000000 		.4byte	.LVL20
  884 0231 70060000 		.4byte	0x670
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 22
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 22
 
 
  885 0235 40020000 		.4byte	0x240
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  939 029b 93000000 		.4byte	0x93
  940 029f 01       		.uleb128 0x1
  941 02a0 56       		.byte	0x56
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 23
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 23
 
 
  942 02a1 10       		.uleb128 0x10
@@ -1332,7 +1332,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  950 02b3 28000000 		.4byte	.LBE3-.LBB3
  951 02b7 F6020000 		.4byte	0x2f6
  952 02bb 0A       		.uleb128 0xa
- 953 02bc 82020000 		.4byte	.LASF28
+ 953 02bc 0D030000 		.4byte	.LASF28
  954 02c0 01       		.byte	0x1
  955 02c1 8A       		.byte	0x8a
  956 02c2 C0000000 		.4byte	0xc0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  996 032c 36030000 		.4byte	0x336
  997 0330 0C       		.uleb128 0xc
  998 0331 01       		.uleb128 0x1
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 24
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 24
 
 
  999 0332 50       		.byte	0x50
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1053 03a4 0C       		.uleb128 0xc
  1054 03a5 01       		.uleb128 0x1
  1055 03a6 51       		.byte	0x51
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 25
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 25
 
 
  1056 03a7 01       		.uleb128 0x1
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1110 041d 02       		.uleb128 0x2
  1111 041e 08       		.byte	0x8
  1112 041f C8       		.byte	0xc8
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 26
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 26
 
 
  1113 0420 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1167 0483 C8       		.byte	0xc8
  1168 0484 00       		.byte	0
  1169 0485 11       		.uleb128 0x11
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 27
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 27
 
 
  1170 0486 12010000 		.4byte	.LVL53
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1224 04ef 50       		.byte	0x50
  1225 04f0 05       		.uleb128 0x5
  1226 04f1 03       		.byte	0x3
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 28
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 28
 
 
  1227 04f2 08000000 		.4byte	.LANCHOR0+8
@@ -1648,7 +1648,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1251 0521 ED000000 		.4byte	0xed
  1252 0525 00       		.byte	0
  1253 0526 12       		.uleb128 0x12
- 1254 0527 3F040000 		.4byte	.LASF29
+ 1254 0527 4A040000 		.4byte	.LASF29
  1255 052b 05       		.byte	0x5
  1256 052c 1207     		.2byte	0x712
  1257 052e 32050000 		.4byte	0x532
@@ -1664,45 +1664,45 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1267 0547 15       		.uleb128 0x15
  1268 0548 B4000000 		.4byte	0xb4
  1269 054c 16       		.uleb128 0x16
- 1270 054d E2040000 		.4byte	.LASF30
+ 1270 054d ED040000 		.4byte	.LASF30
  1271 0551 06       		.byte	0x6
  1272 0552 0A       		.byte	0xa
  1273 0553 57050000 		.4byte	0x557
  1274 0557 15       		.uleb128 0x15
  1275 0558 37050000 		.4byte	0x537
  1276 055c 16       		.uleb128 0x16
- 1277 055d D7010000 		.4byte	.LASF31
+ 1277 055d 62020000 		.4byte	.LASF31
  1278 0561 06       		.byte	0x6
  1279 0562 0B       		.byte	0xb
  1280 0563 67050000 		.4byte	0x567
  1281 0567 15       		.uleb128 0x15
  1282 0568 37050000 		.4byte	0x537
  1283 056c 16       		.uleb128 0x16
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 29
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 29
 
 
- 1284 056d C3030000 		.4byte	.LASF32
+ 1284 056d CE030000 		.4byte	.LASF32
  1285 0571 06       		.byte	0x6
  1286 0572 0C       		.byte	0xc
  1287 0573 77050000 		.4byte	0x577
  1288 0577 15       		.uleb128 0x15
  1289 0578 37050000 		.4byte	0x537
  1290 057c 16       		.uleb128 0x16
- 1291 057d AE020000 		.4byte	.LASF33
+ 1291 057d 39030000 		.4byte	.LASF33
  1292 0581 06       		.byte	0x6
  1293 0582 0D       		.byte	0xd
  1294 0583 87050000 		.4byte	0x587
  1295 0587 15       		.uleb128 0x15
  1296 0588 37050000 		.4byte	0x537
  1297 058c 16       		.uleb128 0x16
- 1298 058d 47020000 		.4byte	.LASF34
+ 1298 058d D2020000 		.4byte	.LASF34
  1299 0591 06       		.byte	0x6
  1300 0592 0E       		.byte	0xe
  1301 0593 97050000 		.4byte	0x597
  1302 0597 15       		.uleb128 0x15
  1303 0598 37050000 		.4byte	0x537
  1304 059c 16       		.uleb128 0x16
- 1305 059d AE030000 		.4byte	.LASF35
+ 1305 059d B9030000 		.4byte	.LASF35
  1306 05a1 06       		.byte	0x6
  1307 05a2 0F       		.byte	0xf
  1308 05a3 A7050000 		.4byte	0x5a7
@@ -1716,7 +1716,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1316 05ba FF03     		.2byte	0x3ff
  1317 05bc 00       		.byte	0
  1318 05bd 16       		.uleb128 0x16
- 1319 05be 8C030000 		.4byte	.LASF36
+ 1319 05be 97030000 		.4byte	.LASF36
  1320 05c2 07       		.byte	0x7
  1321 05c3 08       		.byte	0x8
  1322 05c4 AC050000 		.4byte	0x5ac
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1338 05ea 0C       		.byte	0xc
  1339 05eb DA000000 		.4byte	0xda
  1340 05ef 13       		.uleb128 0x13
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 30
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 30
 
 
  1341 05f0 25000000 		.4byte	0x25
@@ -1748,7 +1748,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1345 05fd FF03     		.2byte	0x3ff
  1346 05ff 00       		.byte	0
  1347 0600 18       		.uleb128 0x18
- 1348 0601 5F030000 		.4byte	.LASF39
+ 1348 0601 6A030000 		.4byte	.LASF39
  1349 0605 01       		.byte	0x1
  1350 0606 11       		.byte	0x11
  1351 0607 EF050000 		.4byte	0x5ef
@@ -1772,7 +1772,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1369 062e 03       		.byte	0x3
  1370 062f 00000000 		.4byte	freq_objetivo
  1371 0633 18       		.uleb128 0x18
- 1372 0634 EE010000 		.4byte	.LASF42
+ 1372 0634 79020000 		.4byte	.LASF42
  1373 0638 01       		.byte	0x1
  1374 0639 16       		.byte	0x16
  1375 063a 25000000 		.4byte	0x25
@@ -1787,7 +1787,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1384 0652 13       		.byte	0x13
  1385 0653 00       		.byte	0
  1386 0654 18       		.uleb128 0x18
- 1387 0655 8B010000 		.4byte	.LASF43
+ 1387 0655 95010000 		.4byte	.LASF43
  1388 0659 01       		.byte	0x1
  1389 065a 17       		.byte	0x17
  1390 065b 44060000 		.4byte	0x644
@@ -1795,10 +1795,10 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1392 0660 03       		.byte	0x3
  1393 0661 00000000 		.4byte	buffer_LCD
  1394 0665 19       		.uleb128 0x19
- 1395 0666 CF010000 		.4byte	.LASF44
- 1396 066a CF010000 		.4byte	.LASF44
+ 1395 0666 5A020000 		.4byte	.LASF44
+ 1396 066a 5A020000 		.4byte	.LASF44
  1397 066e 08       		.byte	0x8
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 31
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 31
 
 
  1398 066f E7       		.byte	0xe7
@@ -1813,8 +1813,8 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1407 0684 09       		.byte	0x9
  1408 0685 09       		.byte	0x9
  1409 0686 19       		.uleb128 0x19
- 1410 0687 DA040000 		.4byte	.LASF47
- 1411 068b DA040000 		.4byte	.LASF47
+ 1410 0687 E5040000 		.4byte	.LASF47
+ 1411 068b E5040000 		.4byte	.LASF47
  1412 068f 0A       		.byte	0xa
  1413 0690 76       		.byte	0x76
  1414 0691 19       		.uleb128 0x19
@@ -1828,8 +1828,8 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1422 06a5 0B       		.byte	0xb
  1423 06a6 41       		.byte	0x41
  1424 06a7 19       		.uleb128 0x19
- 1425 06a8 C2020000 		.4byte	.LASF50
- 1426 06ac C2020000 		.4byte	.LASF50
+ 1425 06a8 4D030000 		.4byte	.LASF50
+ 1426 06ac 4D030000 		.4byte	.LASF50
  1427 06b0 07       		.byte	0x7
  1428 06b1 0F       		.byte	0xf
  1429 06b2 19       		.uleb128 0x19
@@ -1838,27 +1838,27 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1432 06bb 0C       		.byte	0xc
  1433 06bc 93       		.byte	0x93
  1434 06bd 19       		.uleb128 0x19
- 1435 06be B9020000 		.4byte	.LASF52
- 1436 06c2 B9020000 		.4byte	.LASF52
+ 1435 06be 44030000 		.4byte	.LASF52
+ 1436 06c2 44030000 		.4byte	.LASF52
  1437 06c6 09       		.byte	0x9
  1438 06c7 08       		.byte	0x8
  1439 06c8 19       		.uleb128 0x19
- 1440 06c9 EE040000 		.4byte	.LASF53
- 1441 06cd EE040000 		.4byte	.LASF53
+ 1440 06c9 F9040000 		.4byte	.LASF53
+ 1441 06cd F9040000 		.4byte	.LASF53
  1442 06d1 0D       		.byte	0xd
  1443 06d2 33       		.byte	0x33
  1444 06d3 19       		.uleb128 0x19
- 1445 06d4 D3020000 		.4byte	.LASF54
- 1446 06d8 D3020000 		.4byte	.LASF54
+ 1445 06d4 5E030000 		.4byte	.LASF54
+ 1446 06d8 5E030000 		.4byte	.LASF54
  1447 06dc 0E       		.byte	0xe
  1448 06dd 3E       		.byte	0x3e
  1449 06de 19       		.uleb128 0x19
- 1450 06df 00040000 		.4byte	.LASF55
- 1451 06e3 00040000 		.4byte	.LASF55
+ 1450 06df 0B040000 		.4byte	.LASF55
+ 1451 06e3 0B040000 		.4byte	.LASF55
  1452 06e7 0E       		.byte	0xe
  1453 06e8 41       		.byte	0x41
  1454 06e9 19       		.uleb128 0x19
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 32
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 32
 
 
  1455 06ea 1F000000 		.4byte	.LASF56
@@ -1866,48 +1866,48 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1457 06f2 0F       		.byte	0xf
  1458 06f3 33       		.byte	0x33
  1459 06f4 19       		.uleb128 0x19
- 1460 06f5 9A030000 		.4byte	.LASF57
- 1461 06f9 9A030000 		.4byte	.LASF57
+ 1460 06f5 A5030000 		.4byte	.LASF57
+ 1461 06f9 A5030000 		.4byte	.LASF57
  1462 06fd 10       		.byte	0x10
  1463 06fe 33       		.byte	0x33
  1464 06ff 19       		.uleb128 0x19
- 1465 0700 D1030000 		.4byte	.LASF58
- 1466 0704 D1030000 		.4byte	.LASF58
+ 1465 0700 DC030000 		.4byte	.LASF58
+ 1466 0704 DC030000 		.4byte	.LASF58
  1467 0708 11       		.byte	0x11
  1468 0709 33       		.byte	0x33
  1469 070a 19       		.uleb128 0x19
- 1470 070b 6F020000 		.4byte	.LASF59
- 1471 070f 6F020000 		.4byte	.LASF59
+ 1470 070b FA020000 		.4byte	.LASF59
+ 1471 070f FA020000 		.4byte	.LASF59
  1472 0713 0B       		.byte	0xb
  1473 0714 3A       		.byte	0x3a
  1474 0715 19       		.uleb128 0x19
- 1475 0716 55020000 		.4byte	.LASF60
- 1476 071a 55020000 		.4byte	.LASF60
+ 1475 0716 E0020000 		.4byte	.LASF60
+ 1476 071a E0020000 		.4byte	.LASF60
  1477 071e 0B       		.byte	0xb
  1478 071f 3D       		.byte	0x3d
  1479 0720 19       		.uleb128 0x19
- 1480 0721 82030000 		.4byte	.LASF61
- 1481 0725 82030000 		.4byte	.LASF61
+ 1480 0721 8D030000 		.4byte	.LASF61
+ 1481 0725 8D030000 		.4byte	.LASF61
  1482 0729 09       		.byte	0x9
  1483 072a 0B       		.byte	0xb
  1484 072b 19       		.uleb128 0x19
- 1485 072c C5010000 		.4byte	.LASF62
- 1486 0730 C5010000 		.4byte	.LASF62
+ 1485 072c 8B010000 		.4byte	.LASF62
+ 1486 0730 8B010000 		.4byte	.LASF62
  1487 0734 12       		.byte	0x12
  1488 0735 29       		.byte	0x29
  1489 0736 19       		.uleb128 0x19
- 1490 0737 FF040000 		.4byte	.LASF63
- 1491 073b FF040000 		.4byte	.LASF63
+ 1490 0737 0A050000 		.4byte	.LASF63
+ 1491 073b 0A050000 		.4byte	.LASF63
  1492 073f 13       		.byte	0x13
  1493 0740 29       		.byte	0x29
  1494 0741 19       		.uleb128 0x19
- 1495 0742 A2010000 		.4byte	.LASF64
- 1496 0746 A2010000 		.4byte	.LASF64
+ 1495 0742 AC010000 		.4byte	.LASF64
+ 1496 0746 AC010000 		.4byte	.LASF64
  1497 074a 14       		.byte	0x14
  1498 074b 29       		.byte	0x29
  1499 074c 19       		.uleb128 0x19
- 1500 074d 2A020000 		.4byte	.LASF65
- 1501 0751 2A020000 		.4byte	.LASF65
+ 1500 074d B5020000 		.4byte	.LASF65
+ 1501 0751 B5020000 		.4byte	.LASF65
  1502 0755 07       		.byte	0x7
  1503 0756 11       		.byte	0x11
  1504 0757 19       		.uleb128 0x19
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1509 0762 19       		.uleb128 0x19
  1510 0763 FB000000 		.4byte	.LASF67
  1511 0767 FB000000 		.4byte	.LASF67
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 33
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 33
 
 
  1512 076b 15       		.byte	0x15
@@ -1929,8 +1929,8 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1517 0776 07       		.byte	0x7
  1518 0777 10       		.byte	0x10
  1519 0778 19       		.uleb128 0x19
- 1520 0779 21040000 		.4byte	.LASF69
- 1521 077d 21040000 		.4byte	.LASF69
+ 1520 0779 2C040000 		.4byte	.LASF69
+ 1521 077d 2C040000 		.4byte	.LASF69
  1522 0781 15       		.byte	0x15
  1523 0782 0C       		.byte	0xc
  1524 0783 00       		.byte	0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1566 0027 49       		.uleb128 0x49
  1567 0028 13       		.uleb128 0x13
  1568 0029 00       		.byte	0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 34
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 34
 
 
  1569 002a 00       		.byte	0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1623 0061 13       		.uleb128 0x13
  1624 0062 00       		.byte	0
  1625 0063 00       		.byte	0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 35
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 35
 
 
  1626 0064 08       		.uleb128 0x8
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1680 009e 00       		.byte	0
  1681 009f 02       		.uleb128 0x2
  1682 00a0 18       		.uleb128 0x18
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 36
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 36
 
 
  1683 00a1 9142     		.uleb128 0x2111
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1737 00dc 18       		.uleb128 0x18
  1738 00dd 00       		.byte	0
  1739 00de 00       		.byte	0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 37
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 37
 
 
  1740 00df 10       		.uleb128 0x10
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1794 0117 13       		.uleb128 0x13
  1795 0118 2F       		.uleb128 0x2f
  1796 0119 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 38
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 38
 
 
  1797 011a 00       		.byte	0
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1851 0150 00       		.byte	0
  1852 0151 3F       		.uleb128 0x3f
  1853 0152 19       		.uleb128 0x19
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 39
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 39
 
 
  1854 0153 3C       		.uleb128 0x3c
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1908 0058 A0000000 		.4byte	.LVL23
  1909 005c 0100     		.2byte	0x1
  1910 005e 56       		.byte	0x56
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 40
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 40
 
 
  1911 005f A0000000 		.4byte	.LVL23
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  1965 00e3 55       		.byte	0x55
  1966 00e4 00000000 		.4byte	0
  1967 00e8 00000000 		.4byte	0
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 41
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 41
 
 
  1968              	.LLST5:
@@ -2450,15 +2450,15 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  2014 0014 00000000 		.4byte	0
  2015              		.section	.debug_line,"",%progbits
  2016              	.Ldebug_line0:
- 2017 0000 F5020000 		.section	.debug_str,"MS",%progbits,1
- 2017      02006702 
+ 2017 0000 31030000 		.section	.debug_str,"MS",%progbits,1
+ 2017      0200A302 
  2017      00000201 
  2017      FB0E0D00 
  2017      01010101 
  2018              	.LASF37:
  2019 0000 795F7361 		.ascii	"y_salida_pulsos_hw\000"
  2019      6C696461 
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 42
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 42
 
 
  2019      5F70756C 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  2045 00a9 4144435F 		.ascii	"ADC_DelSig_1_IsEndConversion\000"
  2045      44656C53 
  2045      69675F31 
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 43
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 43
 
 
  2045      5F497345 
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  2069      64615F61 
  2069      63747561 
  2069      6C00
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 44
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 44
 
 
  2070              	.LASF5:
@@ -2591,254 +2591,254 @@ ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 1
  2073      5F526569 
  2073      6E696369 
  2073      61725F50 
- 2074              	.LASF43:
- 2075 018b 62756666 		.ascii	"buffer_LCD\000"
- 2075      65725F4C 
- 2075      434400
- 2076              	.LASF20:
- 2077 0196 6C6F6E67 		.ascii	"long double\000"
- 2077      20646F75 
- 2077      626C6500 
- 2078              	.LASF64:
- 2079 01a2 42495433 		.ascii	"BIT3_Read\000"
- 2079      5F526561 
- 2079      6400
- 2080              	.LASF24:
- 2081 01ac 6E756D5F 		.ascii	"num_cuerda\000"
- 2081      63756572 
- 2081      646100
- 2082              	.LASF2:
- 2083 01b7 756E7369 		.ascii	"unsigned char\000"
- 2083      676E6564 
- 2083      20636861 
- 2083      7200
- 2084              	.LASF62:
- 2085 01c5 42495431 		.ascii	"BIT1_Read\000"
- 2085      5F526561 
- 2085      6400
- 2086              	.LASF44:
- 2087 01cf 73707269 		.ascii	"sprintf\000"
- 2087      6E746600 
- 2088              	.LASF31:
- 2089 01d7 434F4546 		.ascii	"COEFFS_110\000"
- 2089      46535F31 
- 2089      313000
- 2090              	.LASF1:
- 2091 01e2 7369676E 		.ascii	"signed char\000"
- 2091      65642063 
- 2091      68617200 
- 2092              	.LASF42:
- 2093 01ee 66726571 		.ascii	"freq_calculada\000"
- 2093      5F63616C 
- 2093      63756C61 
- 2093      646100
- 2094              	.LASF11:
- 2095 01fd 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2095      206C6F6E 
- 2095      6720756E 
- 2095      7369676E 
- 2095      65642069 
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 45
+ 2074              	.LASF62:
+ 2075 018b 42495431 		.ascii	"BIT1_Read\000"
+ 2075      5F526561 
+ 2075      6400
+ 2076              	.LASF43:
+ 2077 0195 62756666 		.ascii	"buffer_LCD\000"
+ 2077      65725F4C 
+ 2077      434400
+ 2078              	.LASF20:
+ 2079 01a0 6C6F6E67 		.ascii	"long double\000"
+ 2079      20646F75 
+ 2079      626C6500 
+ 2080              	.LASF64:
+ 2081 01ac 42495433 		.ascii	"BIT3_Read\000"
+ 2081      5F526561 
+ 2081      6400
+ 2082              	.LASF24:
+ 2083 01b6 6E756D5F 		.ascii	"num_cuerda\000"
+ 2083      63756572 
+ 2083      646100
+ 2084              	.LASF2:
+ 2085 01c1 756E7369 		.ascii	"unsigned char\000"
+ 2085      676E6564 
+ 2085      20636861 
+ 2085      7200
+ 2086              	.LASF72:
+ 2087 01cf 433A5C55 		.ascii	"C:\\Users\\tobia\\Documents\\GitHub\\Afinador-Guita"
+ 2087      73657273 
+ 2087      5C746F62 
+ 2087      69615C44 
+ 2087      6F63756D 
+ 2088 01fd 7272612D 		.ascii	"rra-PsoC-5LP\\ProyectoPDS\\ProyectoPDS solo matlab\\"
+ 2088      50736F43 
+ 2088      2D354C50 
+ 2088      5C50726F 
+ 2088      79656374 
+ 2089 022e 6C616235 		.ascii	"lab5-fiuna-filtros_sencillos\\Design01.cydsn\000"
+ 2089      2D666975 
+ 2089      6E612D66 
+ 2089      696C7472 
+ 2089      6F735F73 
+ 2090              	.LASF44:
+ 2091 025a 73707269 		.ascii	"sprintf\000"
+ 2091      6E746600 
+ 2092              	.LASF31:
+ 2093 0262 434F4546 		.ascii	"COEFFS_110\000"
+ 2093      46535F31 
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 45
 
 
- 2096              	.LASF15:
- 2097 0214 75696E74 		.ascii	"uint32_t\000"
- 2097      33325F74 
- 2097      00
- 2098              	.LASF12:
- 2099 021d 756E7369 		.ascii	"unsigned int\000"
- 2099      676E6564 
- 2099      20696E74 
- 2099      00
- 2100              	.LASF65:
- 2101 022a 48617264 		.ascii	"Hardware_Cargar_Coeficientes\000"
- 2101      77617265 
- 2101      5F436172 
- 2101      6761725F 
- 2101      436F6566 
- 2102              	.LASF34:
- 2103 0247 434F4546 		.ascii	"COEFFS_246_94\000"
- 2103      46535F32 
- 2103      34365F39 
- 2103      3400
- 2104              	.LASF60:
- 2105 0255 4144435F 		.ascii	"ADC_DelSig_1_StartConvert\000"
- 2105      44656C53 
- 2105      69675F31 
- 2105      5F537461 
- 2105      7274436F 
- 2106              	.LASF59:
- 2107 026f 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
- 2107      44656C53 
- 2107      69675F31 
- 2107      5F537461 
- 2107      727400
- 2108              	.LASF28:
- 2109 0282 6C656374 		.ascii	"lectura_adc\000"
- 2109      7572615F 
- 2109      61646300 
- 2110              	.LASF19:
- 2111 028e 63686172 		.ascii	"char\000"
- 2111      00
- 2112              	.LASF14:
- 2113 0293 696E7433 		.ascii	"int32_t\000"
- 2113      325F7400 
- 2114              	.LASF4:
- 2115 029b 73686F72 		.ascii	"short unsigned int\000"
- 2115      7420756E 
- 2115      7369676E 
- 2115      65642069 
- 2115      6E7400
- 2116              	.LASF33:
- 2117 02ae 434F4546 		.ascii	"COEFFS_196\000"
- 2117      46535F31 
- 2117      393600
- 2118              	.LASF52:
- 2119 02b9 4C43445F 		.ascii	"LCD_Init\000"
- 2119      496E6974 
- 2119      00
- 2120              	.LASF50:
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 46
+ 2093      313000
+ 2094              	.LASF1:
+ 2095 026d 7369676E 		.ascii	"signed char\000"
+ 2095      65642063 
+ 2095      68617200 
+ 2096              	.LASF42:
+ 2097 0279 66726571 		.ascii	"freq_calculada\000"
+ 2097      5F63616C 
+ 2097      63756C61 
+ 2097      646100
+ 2098              	.LASF11:
+ 2099 0288 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2099      206C6F6E 
+ 2099      6720756E 
+ 2099      7369676E 
+ 2099      65642069 
+ 2100              	.LASF15:
+ 2101 029f 75696E74 		.ascii	"uint32_t\000"
+ 2101      33325F74 
+ 2101      00
+ 2102              	.LASF12:
+ 2103 02a8 756E7369 		.ascii	"unsigned int\000"
+ 2103      676E6564 
+ 2103      20696E74 
+ 2103      00
+ 2104              	.LASF65:
+ 2105 02b5 48617264 		.ascii	"Hardware_Cargar_Coeficientes\000"
+ 2105      77617265 
+ 2105      5F436172 
+ 2105      6761725F 
+ 2105      436F6566 
+ 2106              	.LASF34:
+ 2107 02d2 434F4546 		.ascii	"COEFFS_246_94\000"
+ 2107      46535F32 
+ 2107      34365F39 
+ 2107      3400
+ 2108              	.LASF60:
+ 2109 02e0 4144435F 		.ascii	"ADC_DelSig_1_StartConvert\000"
+ 2109      44656C53 
+ 2109      69675F31 
+ 2109      5F537461 
+ 2109      7274436F 
+ 2110              	.LASF59:
+ 2111 02fa 4144435F 		.ascii	"ADC_DelSig_1_Start\000"
+ 2111      44656C53 
+ 2111      69675F31 
+ 2111      5F537461 
+ 2111      727400
+ 2112              	.LASF28:
+ 2113 030d 6C656374 		.ascii	"lectura_adc\000"
+ 2113      7572615F 
+ 2113      61646300 
+ 2114              	.LASF19:
+ 2115 0319 63686172 		.ascii	"char\000"
+ 2115      00
+ 2116              	.LASF14:
+ 2117 031e 696E7433 		.ascii	"int32_t\000"
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 46
 
 
- 2121 02c2 48617264 		.ascii	"Hardware_Iniciar\000"
- 2121      77617265 
- 2121      5F496E69 
- 2121      63696172 
- 2121      00
- 2122              	.LASF54:
- 2123 02d3 5047415F 		.ascii	"PGA_1_Start\000"
- 2123      315F5374 
- 2123      61727400 
- 2124              	.LASF72:
- 2125 02df 443A5C44 		.ascii	"D:\\Documentos\\GitHub\\Afinador-Guitarra-PsoC-5LP\\"
- 2125      6F63756D 
- 2125      656E746F 
- 2125      735C4769 
- 2125      74487562 
- 2126 030f 50726F79 		.ascii	"ProyectoPDS\\ProyectoPDS solo matlab\\lab5-fiuna-fi"
- 2126      6563746F 
- 2126      5044535C 
- 2126      50726F79 
- 2126      6563746F 
- 2127 0340 6C74726F 		.ascii	"ltros_sencillos\\Design01.cydsn\000"
- 2127      735F7365 
- 2127      6E63696C 
- 2127      6C6F735C 
- 2127      44657369 
+ 2117      325F7400 
+ 2118              	.LASF4:
+ 2119 0326 73686F72 		.ascii	"short unsigned int\000"
+ 2119      7420756E 
+ 2119      7369676E 
+ 2119      65642069 
+ 2119      6E7400
+ 2120              	.LASF33:
+ 2121 0339 434F4546 		.ascii	"COEFFS_196\000"
+ 2121      46535F31 
+ 2121      393600
+ 2122              	.LASF52:
+ 2123 0344 4C43445F 		.ascii	"LCD_Init\000"
+ 2123      496E6974 
+ 2123      00
+ 2124              	.LASF50:
+ 2125 034d 48617264 		.ascii	"Hardware_Iniciar\000"
+ 2125      77617265 
+ 2125      5F496E69 
+ 2125      63696172 
+ 2125      00
+ 2126              	.LASF54:
+ 2127 035e 5047415F 		.ascii	"PGA_1_Start\000"
+ 2127      315F5374 
+ 2127      61727400 
  2128              	.LASF39:
- 2129 035f 795F656E 		.ascii	"y_entrada\000"
+ 2129 036a 795F656E 		.ascii	"y_entrada\000"
  2129      74726164 
  2129      6100
  2130              	.LASF71:
- 2131 0369 6D61696E 		.ascii	"main.c\000"
+ 2131 0374 6D61696E 		.ascii	"main.c\000"
  2131      2E6300
  2132              	.LASF9:
- 2133 0370 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2133 037b 6C6F6E67 		.ascii	"long unsigned int\000"
  2133      20756E73 
  2133      69676E65 
  2133      6420696E 
  2133      7400
  2134              	.LASF61:
- 2135 0382 4C43445F 		.ascii	"LCD_Clear\000"
+ 2135 038d 4C43445F 		.ascii	"LCD_Clear\000"
  2135      436C6561 
  2135      7200
  2136              	.LASF36:
- 2137 038c 795F656E 		.ascii	"y_entrada_q32\000"
+ 2137 0397 795F656E 		.ascii	"y_entrada_q32\000"
  2137      74726164 
  2137      615F7133 
  2137      3200
  2138              	.LASF57:
- 2139 039a 4F70416D 		.ascii	"OpAmp_Filtro2_Start\000"
+ 2139 03a5 4F70416D 		.ascii	"OpAmp_Filtro2_Start\000"
  2139      705F4669 
  2139      6C74726F 
  2139      325F5374 
  2139      61727400 
  2140              	.LASF35:
- 2141 03ae 434F4546 		.ascii	"COEFFS_330\000"
+ 2141 03b9 434F4546 		.ascii	"COEFFS_330\000"
  2141      46535F33 
  2141      333000
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 47
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 47
 
 
  2142              	.LASF6:
- 2143 03b9 5F5F696E 		.ascii	"__int32_t\000"
+ 2143 03c4 5F5F696E 		.ascii	"__int32_t\000"
  2143      7433325F 
  2143      7400
  2144              	.LASF32:
- 2145 03c3 434F4546 		.ascii	"COEFFS_146_83\000"
+ 2145 03ce 434F4546 		.ascii	"COEFFS_146_83\000"
  2145      46535F31 
  2145      34365F38 
  2145      3300
  2146              	.LASF58:
- 2147 03d1 4F70416D 		.ascii	"OpAmp_Acoplador_Start\000"
+ 2147 03dc 4F70416D 		.ascii	"OpAmp_Acoplador_Start\000"
  2147      705F4163 
  2147      6F706C61 
  2147      646F725F 
  2147      53746172 
  2148              	.LASF73:
- 2149 03e7 41637475 		.ascii	"Actualizar_LCD_Resultado\000"
+ 2149 03f2 41637475 		.ascii	"Actualizar_LCD_Resultado\000"
  2149      616C697A 
  2149      61725F4C 
  2149      43445F52 
  2149      6573756C 
  2150              	.LASF55:
- 2151 0400 5047415F 		.ascii	"PGA_1_SetGain\000"
+ 2151 040b 5047415F 		.ascii	"PGA_1_SetGain\000"
  2151      315F5365 
  2151      74476169 
  2151      6E00
  2152              	.LASF22:
- 2153 040e 66726571 		.ascii	"freq_medida\000"
+ 2153 0419 66726571 		.ascii	"freq_medida\000"
  2153      5F6D6564 
  2153      69646100 
  2154              	.LASF18:
- 2155 041a 646F7562 		.ascii	"double\000"
+ 2155 0425 646F7562 		.ascii	"double\000"
  2155      6C6500
  2156              	.LASF69:
- 2157 0421 43616C63 		.ascii	"Calcular_Frecuencia_Regresion\000"
+ 2157 042c 43616C63 		.ascii	"Calcular_Frecuencia_Regresion\000"
  2157      756C6172 
  2157      5F467265 
  2157      6375656E 
  2157      6369615F 
  2158              	.LASF29:
- 2159 043f 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2159 044a 49544D5F 		.ascii	"ITM_RxBuffer\000"
  2159      52784275 
  2159      66666572 
  2159      00
  2160              	.LASF70:
- 2161 044c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2161 0457 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  2161      43313120 
  2161      352E342E 
  2161      31203230 
  2161      31363036 
- 2162 047f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2162 048a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  2162      20726576 
  2162      6973696F 
  2162      6E203233 
  2162      37373135 
- 2163 04b2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2163 04bd 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  2163      66756E63 
-ARM GAS  C:\Users\Admin\AppData\Local\Temp\ccKDI772.s 			page 48
+ARM GAS  C:\Users\tobia\AppData\Local\Temp\ccuf1XJw.s 			page 48
 
 
  2163      74696F6E 
  2163      2D736563 
  2163      74696F6E 
  2164              	.LASF47:
- 2165 04da 43794465 		.ascii	"CyDelay\000"
+ 2165 04e5 43794465 		.ascii	"CyDelay\000"
  2165      6C617900 
  2166              	.LASF30:
- 2167 04e2 434F4546 		.ascii	"COEFFS_82_4\000"
+ 2167 04ed 434F4546 		.ascii	"COEFFS_82_4\000"
  2167      46535F38 
  2167      325F3400 
  2168              	.LASF53:
- 2169 04ee 4F70416D 		.ascii	"OpAmp_Vref_Start\000"
+ 2169 04f9 4F70416D 		.ascii	"OpAmp_Vref_Start\000"
  2169      705F5672 
  2169      65665F53 
  2169      74617274 
  2169      00
  2170              	.LASF63:
- 2171 04ff 42495432 		.ascii	"BIT2_Read\000"
+ 2171 050a 42495432 		.ascii	"BIT2_Read\000"
  2171      5F526561 
  2171      6400
  2172              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
