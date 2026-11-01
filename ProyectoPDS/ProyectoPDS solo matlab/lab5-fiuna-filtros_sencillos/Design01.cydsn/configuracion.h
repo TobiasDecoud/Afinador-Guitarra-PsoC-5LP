@@ -5,7 +5,7 @@
 #define N               1024
 #define SAMPLING_FREQ   2000.0f
 #define TOLERANCIA      0.3f
-#define Kcal            0.99699f
+#define Kcal           0.99663f
 
     
 #define UMBRAL_RUIDO    0  
