@@ -1,7 +1,7 @@
-C:\Users\tobia\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj|20e25feb-c43e-4ccb-9bf9-c755248cb836
-C:\Users\tobia\Documentos\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\SerialPlot_lib\SerialPlot_lib.cylib\SerialPlot_lib.cyprj|4c066ca6-7b38-4a16-a288-aac06e78d11c
-D:\Programas\PSoc\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|d3476c77-9c49-4935-bdb7-440dbd098c2e
-C:\Users\tobia\Documentos\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|e5b53a6b-a52b-4cbe-8be4-4024f6abb56c
-D:\Programas\PSoc\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|6f406ae2-f134-4a0f-abc0-90bdc1c44b33
-D:\Programas\PSoc\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|91576956-d370-464c-b0ec-7c7fc2da7ccd
-D:\Programas\PSoc\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|36405881-46d8-47aa-981f-e97b4df7e118
+C:\Users\tobia\Documents\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\Design01.cydsn\Design01.cyprj|3c81023c-18af-4709-a521-261da71ef4ab
+C:\Users\tobia\Documents\GitHub\Afinador-Guitarra-PsoC-5LP\ProyectoPDS\ProyectoPDS solo matlab\lab5-fiuna-filtros_sencillos\SerialPlot_lib\SerialPlot_lib.cylib\SerialPlot_lib.cyprj|d7141901-f996-43e3-adbc-e864d10d5a71
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|5ced33d3-3728-4a72-bc35-e74baddc4108
+C:\Users\tobia\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|9bf69b99-467e-4ab9-ad36-2a3cff7995ac
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|77b5ec0d-d976-4246-be59-2dd680944675
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|70cd581b-0ee9-46c0-a474-4920e3f1161b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|0a452630-f724-414d-aae1-c280c1ca9a07
